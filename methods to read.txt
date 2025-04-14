@@ -1,0 +1,4 @@
+stream writer
+	-over write
+	-line-by-line, just like string reader
+	-auto-creates file
