@@ -13,6 +13,6 @@ namespace AdressBook
         internal string email;
         internal string phone;
         internal bool buisness;
-        internal string notes
+        internal string notes;
     }
 }
