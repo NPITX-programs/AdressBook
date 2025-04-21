@@ -13,6 +13,7 @@ namespace AdressBook
 {
     public partial class frm_main : Form
     {
+        string sep = "~"
         public frm_main()
         {
             InitializeComponent();
@@ -29,7 +30,12 @@ namespace AdressBook
             {
                 using (StreamWriter sw = new StreamWriter(filepath))
                 {
-
+                    foreach(var c in Program.contacts)
+                    {
+                        //csv - comma seperated values
+                        //firstname-lastname-email-phone-buisness-notes
+                        
+                    }
                 }
             } catch(Exception ex)
             {
