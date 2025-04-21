@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace AdressBook
         {
             InitializeComponent();
         }
-
+        string filepath = "placeholder";
         private void frm_main_Load(object sender, EventArgs e)
         {
 
@@ -24,7 +25,16 @@ namespace AdressBook
 
         private void WriteToFile()
         {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(filepath))
+                {
 
+                }
+            } catch
+            {
+
+            }
         }
     }
 }
