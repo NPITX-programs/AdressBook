@@ -31,9 +31,9 @@ namespace AdressBook
                 {
 
                 }
-            } catch
+            } catch(Exception ex)
             {
-
+                ex.ToString();
             }
         }
     }
