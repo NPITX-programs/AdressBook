@@ -13,7 +13,7 @@ namespace AdressBook
 {
     public partial class frm_main : Form
     {
-        string sep = "~"
+        string sep = "~";
         public frm_main()
         {
             InitializeComponent();
@@ -34,7 +34,9 @@ namespace AdressBook
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
-                        
+                        string line = c.firstname + sep + c.lastname + sep +  //first and last name
+                            c.email + sep + c.phone + sep + c.buisness + sep + //contact information
+                            c.notes; //notes
                     }
                 }
             } catch(Exception ex)
