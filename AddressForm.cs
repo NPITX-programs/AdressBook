@@ -33,7 +33,7 @@ namespace AdressBook
                 }
             } catch(Exception ex)
             {
-                MessageBox.Show(ex.Message); //show error
+                MessageBox.Show("error" + ex.Message); //show error
             }
         }
     }
