@@ -34,8 +34,9 @@ namespace AdressBook
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
-                        string line c.firstname + sep + c.lastname + sep +
+                        string line = c.firstname + sep + c.lastname + sep +
                             c.email + sep + c.phone + sep + c.buisness + sep +
+                            c.notes;
                     }
                 }
             } catch(Exception ex)
