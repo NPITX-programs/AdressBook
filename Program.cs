@@ -18,6 +18,6 @@ namespace AdressBook
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_main());
         }
-        internal static List<>
+        internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
     }
 }
