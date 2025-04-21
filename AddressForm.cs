@@ -21,5 +21,10 @@ namespace AdressBook
         {
 
         }
+
+        private void WriteToFile()
+        {
+
+        }
     }
 }
