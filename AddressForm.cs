@@ -30,7 +30,7 @@ namespace AdressBook
             {
                 using (StreamWriter sw = new StreamWriter(filepath))
                 {
-                    foreach(var c in Program.contacts)
+                    foreach(var c in Program.contacts) //the loop for createing the contents which will be saved
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
