@@ -6,3 +6,6 @@ notes
 e-mail
 business vs. personal
 
+output:
+listbox for business
+listbox for personal
