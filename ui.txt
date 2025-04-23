@@ -1,0 +1,8 @@
+inputs:
+first
+last
+phone
+notes
+e-mail
+business vs. personal
+
