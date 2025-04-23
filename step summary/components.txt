@@ -1,3 +1,0 @@
-this folder will contain all the quick explanations of the steps I make, (I think it might be psudo code, will ask, and if so alter name)
-
-this file will be modified to contain a "hub", explaining the connection
