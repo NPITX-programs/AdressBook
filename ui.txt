@@ -9,3 +9,7 @@ business vs. personal
 output:
 listbox for business
 listbox for personal
+
+other:
+save to CSV
+read from that file and add that data upon load
