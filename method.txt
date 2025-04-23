@@ -1,9 +1,0 @@
-if c.buisiness
-lstBuisness
-
-else
-Personal
-
-
-to write to file, call the already created method
-
