@@ -1,0 +1,10 @@
+contact c = new contact();
+
+if validate
+c."each info" = "source of info"
+
+if c.buisiness
+lstBuisness
+
+else
+Personal
