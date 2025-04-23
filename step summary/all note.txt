@@ -1,17 +1,8 @@
-contact c = new contact();
+validate
+if validation passed, do all of the following: 
 
-if validate
-c."each info" = "source of info"
+save to class
 
-if c.buisiness
-lstBuisness
+call the file save method
 
-else
-Personal
-
-
-to write to file, call the already created method
-
-clear data input:
-txt"source" clear
-checkbox uncheck
+clear UI input
