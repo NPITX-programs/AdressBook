@@ -1,0 +1,17 @@
+contact c = new contact();
+
+if validate
+c."each info" = "source of info"
+
+if c.buisiness
+lstBuisness
+
+else
+Personal
+
+
+to write to file, call the already created method
+
+clear data input:
+txt"source" clear
+checkbox uncheck
