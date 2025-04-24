@@ -1,5 +1,3 @@
-txt_EMail
-
 txt_phoNum
 
 txt_notes
