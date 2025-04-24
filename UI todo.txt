@@ -9,3 +9,5 @@ txt_firName
 txt_lastName
 
 txt_EMail
+
+txt_phoNum
