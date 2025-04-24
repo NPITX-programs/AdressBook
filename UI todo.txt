@@ -1,5 +1,3 @@
-correct names
-
 lst_buisness
 lst_personal
 
