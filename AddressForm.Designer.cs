@@ -33,7 +33,7 @@
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_contNote = new System.Windows.Forms.TextBox();
             this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -78,12 +78,12 @@
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 4;
             // 
-            // textBox3
+            // txt_contNote
             // 
-            this.textBox3.Location = new System.Drawing.Point(264, 44);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.txt_contNote.Location = new System.Drawing.Point(264, 44);
+            this.txt_contNote.Name = "txt_contNote";
+            this.txt_contNote.Size = new System.Drawing.Size(100, 20);
+            this.txt_contNote.TabIndex = 5;
             // 
             // txt_phoNum
             // 
@@ -106,7 +106,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txt_lastName);
             this.Controls.Add(this.txt_phoNum);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_contNote);
             this.Controls.Add(this.txt_EMail);
             this.Controls.Add(this.txt_firName);
             this.Controls.Add(this.chk_type);
@@ -127,7 +127,7 @@
         private System.Windows.Forms.CheckBox chk_type;
         private System.Windows.Forms.TextBox txt_firName;
         private System.Windows.Forms.TextBox txt_EMail;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_contNote;
         private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
     }
