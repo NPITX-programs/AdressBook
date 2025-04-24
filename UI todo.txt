@@ -7,3 +7,5 @@ chk_type
 
 txt_firName
 txt_lastName
+
+txt_EMail
