@@ -4,3 +4,6 @@ lst_buisness
 lst_personal
 
 chk_type
+
+txt_firName
+txt_lastName
