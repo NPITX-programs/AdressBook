@@ -34,7 +34,7 @@
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -85,12 +85,12 @@
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 5;
             // 
-            // maskedTextBox1
+            // txt_phoNum
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(272, 52);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 6;
+            this.txt_phoNum.Location = new System.Drawing.Point(12, 363);
+            this.txt_phoNum.Name = "txt_phoNum";
+            this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
+            this.txt_phoNum.TabIndex = 6;
             // 
             // txt_lastName
             // 
@@ -105,7 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txt_lastName);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txt_phoNum);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txt_EMail);
             this.Controls.Add(this.txt_firName);
@@ -128,7 +128,7 @@
         private System.Windows.Forms.TextBox txt_firName;
         private System.Windows.Forms.TextBox txt_EMail;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
     }
 }
