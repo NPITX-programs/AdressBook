@@ -41,7 +41,7 @@
             // lst_personal
             // 
             this.lst_personal.FormattingEnabled = true;
-            this.lst_personal.Location = new System.Drawing.Point(387, 12);
+            this.lst_personal.Location = new System.Drawing.Point(138, 12);
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(120, 95);
             this.lst_personal.TabIndex = 0;
@@ -49,7 +49,7 @@
             // lst_buisnes
             // 
             this.lst_buisnes.FormattingEnabled = true;
-            this.lst_buisnes.Location = new System.Drawing.Point(232, 12);
+            this.lst_buisnes.Location = new System.Drawing.Point(12, 12);
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(120, 95);
             this.lst_buisnes.TabIndex = 1;
@@ -57,7 +57,7 @@
             // chk_type
             // 
             this.chk_type.AutoSize = true;
-            this.chk_type.Location = new System.Drawing.Point(240, 20);
+            this.chk_type.Location = new System.Drawing.Point(284, 13);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(80, 17);
             this.chk_type.TabIndex = 2;
