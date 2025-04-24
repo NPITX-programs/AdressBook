@@ -31,11 +31,11 @@
             this.lst_personal = new System.Windows.Forms.ListBox();
             this.lst_buisnes = new System.Windows.Forms.ListBox();
             this.chk_type = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_firName = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_lastName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lst_personal
@@ -64,12 +64,12 @@
             this.chk_type.Text = "checkBox1";
             this.chk_type.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txt_firName
             // 
-            this.textBox1.Location = new System.Drawing.Point(248, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txt_firName.Location = new System.Drawing.Point(12, 169);
+            this.txt_firName.Name = "txt_firName";
+            this.txt_firName.Size = new System.Drawing.Size(100, 20);
+            this.txt_firName.TabIndex = 3;
             // 
             // textBox2
             // 
@@ -92,23 +92,23 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox1.TabIndex = 6;
             // 
-            // textBox4
+            // txt_lastName
             // 
-            this.textBox4.Location = new System.Drawing.Point(280, 60);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.txt_lastName.Location = new System.Drawing.Point(12, 211);
+            this.txt_lastName.Name = "txt_lastName";
+            this.txt_lastName.Size = new System.Drawing.Size(100, 20);
+            this.txt_lastName.TabIndex = 7;
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_lastName);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_firName);
             this.Controls.Add(this.chk_type);
             this.Controls.Add(this.lst_buisnes);
             this.Controls.Add(this.lst_personal);
@@ -125,11 +125,11 @@
         private System.Windows.Forms.ListBox lst_personal;
         private System.Windows.Forms.ListBox lst_buisnes;
         private System.Windows.Forms.CheckBox chk_type;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_firName;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_lastName;
     }
 }
 
