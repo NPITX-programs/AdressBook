@@ -32,7 +32,7 @@
             this.lst_buisnes = new System.Windows.Forms.ListBox();
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_EMail = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
@@ -71,12 +71,12 @@
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
             this.txt_firName.TabIndex = 3;
             // 
-            // textBox2
+            // txt_EMail
             // 
-            this.textBox2.Location = new System.Drawing.Point(256, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_EMail.Location = new System.Drawing.Point(12, 286);
+            this.txt_EMail.Name = "txt_EMail";
+            this.txt_EMail.Size = new System.Drawing.Size(100, 20);
+            this.txt_EMail.TabIndex = 4;
             // 
             // textBox3
             // 
@@ -107,7 +107,7 @@
             this.Controls.Add(this.txt_lastName);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_EMail);
             this.Controls.Add(this.txt_firName);
             this.Controls.Add(this.chk_type);
             this.Controls.Add(this.lst_buisnes);
@@ -126,7 +126,7 @@
         private System.Windows.Forms.ListBox lst_buisnes;
         private System.Windows.Forms.CheckBox chk_type;
         private System.Windows.Forms.TextBox txt_firName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_EMail;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.TextBox txt_lastName;
