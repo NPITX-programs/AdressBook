@@ -2,3 +2,4 @@ this contains what will be the GUI:
 
 add text
 finalize (or at least decide on temporary, placehold positions) UI components
+move components and such
