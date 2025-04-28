@@ -88,7 +88,7 @@
             // 
             // txt_contNote
             // 
-            this.txt_contNote.Location = new System.Drawing.Point(264, 44);
+            this.txt_contNote.Location = new System.Drawing.Point(575, 12);
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(100, 20);
             this.txt_contNote.TabIndex = 5;
