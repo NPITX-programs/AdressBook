@@ -107,7 +107,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
-            this.btn_add.Text = "button1";
+            this.btn_add.Text = "Add Entry";
             this.btn_add.UseVisualStyleBackColor = true;
             // 
             // btn_close
@@ -116,7 +116,7 @@
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(75, 23);
             this.btn_close.TabIndex = 10;
-            this.btn_close.Text = "button3";
+            this.btn_close.Text = "Close Application";
             this.btn_close.UseVisualStyleBackColor = true;
             // 
             // frm_main
