@@ -63,7 +63,7 @@
             // chk_type
             // 
             this.chk_type.AutoSize = true;
-            this.chk_type.Location = new System.Drawing.Point(225, 366);
+            this.chk_type.Location = new System.Drawing.Point(12, 215);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 2;
