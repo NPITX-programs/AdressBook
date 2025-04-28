@@ -112,7 +112,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(138, 167);
+            this.btn_add.Location = new System.Drawing.Point(138, 9);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(138, 211);
+            this.btn_close.Location = new System.Drawing.Point(138, 61);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(75, 23);
             this.btn_close.TabIndex = 10;
