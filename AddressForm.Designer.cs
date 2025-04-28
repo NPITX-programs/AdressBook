@@ -28,108 +28,258 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lst_personal = new System.Windows.Forms.ListBox();
+            this.lst_buisnes = new System.Windows.Forms.ListBox();
+            this.chk_type = new System.Windows.Forms.CheckBox();
+            this.txt_firName = new System.Windows.Forms.TextBox();
+            this.txt_EMail = new System.Windows.Forms.TextBox();
+            this.txt_contNote = new System.Windows.Forms.TextBox();
+            this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
+            this.txt_lastName = new System.Windows.Forms.TextBox();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lst_personal
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(387, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 0;
+            this.lst_personal.FormattingEnabled = true;
+            this.lst_personal.Items.AddRange(new object[] {
+            "Personal"});
+            this.lst_personal.Location = new System.Drawing.Point(10, 44);
+            this.lst_personal.Name = "lst_personal";
+            this.lst_personal.Size = new System.Drawing.Size(184, 160);
+            this.lst_personal.TabIndex = 0;
             // 
-            // listBox2
+            // lst_buisnes
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(232, 12);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
-            this.listBox2.TabIndex = 1;
+            this.lst_buisnes.FormattingEnabled = true;
+            this.lst_buisnes.Items.AddRange(new object[] {
+            "Buisness"});
+            this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
+            this.lst_buisnes.Name = "lst_buisnes";
+            this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
+            this.lst_buisnes.TabIndex = 1;
             // 
-            // checkBox1
+            // chk_type
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(240, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chk_type.AutoSize = true;
+            this.chk_type.Location = new System.Drawing.Point(0, 232);
+            this.chk_type.Name = "chk_type";
+            this.chk_type.Size = new System.Drawing.Size(90, 17);
+            this.chk_type.TabIndex = 2;
+            this.chk_type.Text = "Contact Type";
+            this.chk_type.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txt_firName
             // 
-            this.textBox1.Location = new System.Drawing.Point(248, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txt_firName.Location = new System.Drawing.Point(6, 32);
+            this.txt_firName.Name = "txt_firName";
+            this.txt_firName.Size = new System.Drawing.Size(100, 20);
+            this.txt_firName.TabIndex = 3;
+            this.txt_firName.Text = "First Name";
             // 
-            // textBox2
+            // txt_EMail
             // 
-            this.textBox2.Location = new System.Drawing.Point(256, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_EMail.Location = new System.Drawing.Point(6, 193);
+            this.txt_EMail.Name = "txt_EMail";
+            this.txt_EMail.Size = new System.Drawing.Size(100, 20);
+            this.txt_EMail.TabIndex = 4;
+            this.txt_EMail.Text = "E-Mail";
             // 
-            // textBox3
+            // txt_contNote
             // 
-            this.textBox3.Location = new System.Drawing.Point(264, 44);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.txt_contNote.AcceptsReturn = true;
+            this.txt_contNote.Location = new System.Drawing.Point(0, 298);
+            this.txt_contNote.Multiline = true;
+            this.txt_contNote.Name = "txt_contNote";
+            this.txt_contNote.Size = new System.Drawing.Size(188, 122);
+            this.txt_contNote.TabIndex = 5;
+            this.txt_contNote.Text = "Information";
             // 
-            // maskedTextBox1
+            // txt_phoNum
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(272, 52);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 6;
+            this.txt_phoNum.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txt_phoNum.Location = new System.Drawing.Point(6, 142);
+            this.txt_phoNum.Mask = "(999) 000-0000";
+            this.txt_phoNum.Name = "txt_phoNum";
+            this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
+            this.txt_phoNum.TabIndex = 6;
+            this.txt_phoNum.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // textBox4
+            // txt_lastName
             // 
-            this.textBox4.Location = new System.Drawing.Point(280, 60);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.txt_lastName.Location = new System.Drawing.Point(6, 84);
+            this.txt_lastName.Name = "txt_lastName";
+            this.txt_lastName.Size = new System.Drawing.Size(100, 20);
+            this.txt_lastName.TabIndex = 7;
+            this.txt_lastName.Text = "Last Name";
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(125, 6);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.TabIndex = 8;
+            this.btn_add.Text = "Add Entry";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Location = new System.Drawing.Point(12, -1);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(113, 23);
+            this.btn_close.TabIndex = 10;
+            this.btn_close.Text = "Close Application";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "First Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Last Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Phone Number";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "E-Mail";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 271);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Contact Information";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Personal Contacts";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Buisness Contacts";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.lst_personal);
+            this.groupBox1.Controls.Add(this.lst_buisnes);
+            this.groupBox1.Location = new System.Drawing.Point(588, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 426);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txt_firName);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.btn_add);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.chk_type);
+            this.groupBox2.Controls.Add(this.txt_EMail);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txt_contNote);
+            this.groupBox2.Controls.Add(this.txt_phoNum);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txt_lastName);
+            this.groupBox2.Location = new System.Drawing.Point(12, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 410);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_close);
             this.Name = "frm_main";
             this.Text = "Primary Form";
             this.Load += new System.EventHandler(this.frm_main_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ListBox lst_personal;
+        private System.Windows.Forms.ListBox lst_buisnes;
+        private System.Windows.Forms.CheckBox chk_type;
+        private System.Windows.Forms.TextBox txt_firName;
+        private System.Windows.Forms.TextBox txt_EMail;
+        private System.Windows.Forms.TextBox txt_contNote;
+        private System.Windows.Forms.MaskedTextBox txt_phoNum;
+        private System.Windows.Forms.TextBox txt_lastName;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
