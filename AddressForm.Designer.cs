@@ -72,7 +72,7 @@
             // 
             // txt_firName
             // 
-            this.txt_firName.Location = new System.Drawing.Point(12, 169);
+            this.txt_firName.Location = new System.Drawing.Point(12, 12);
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
             this.txt_firName.TabIndex = 3;
@@ -104,7 +104,7 @@
             // 
             // txt_lastName
             // 
-            this.txt_lastName.Location = new System.Drawing.Point(12, 211);
+            this.txt_lastName.Location = new System.Drawing.Point(12, 61);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 7;
