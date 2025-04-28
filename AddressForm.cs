@@ -45,5 +45,15 @@ namespace AdressBook
                 MessageBox.Show("error" + ex.Message); //show error
             }
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
