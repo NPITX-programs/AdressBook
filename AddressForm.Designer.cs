@@ -88,6 +88,7 @@
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(100, 20);
             this.txt_contNote.TabIndex = 5;
+            this.txt_contNote.Text = "Information";
             // 
             // txt_phoNum
             // 
