@@ -1,1 +1,3 @@
-this contains what will be the GUI
+this contains what will be the GUI:
+
+add text
