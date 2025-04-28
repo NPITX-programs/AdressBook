@@ -43,6 +43,8 @@
             // lst_personal
             // 
             this.lst_personal.FormattingEnabled = true;
+            this.lst_personal.Items.AddRange(new object[] {
+            "Personal"});
             this.lst_personal.Location = new System.Drawing.Point(138, 12);
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(120, 95);
@@ -51,6 +53,8 @@
             // lst_buisnes
             // 
             this.lst_buisnes.FormattingEnabled = true;
+            this.lst_buisnes.Items.AddRange(new object[] {
+            "Buisness"});
             this.lst_buisnes.Location = new System.Drawing.Point(12, 12);
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(120, 95);
