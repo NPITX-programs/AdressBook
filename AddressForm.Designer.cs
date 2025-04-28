@@ -45,7 +45,7 @@
             this.lst_personal.FormattingEnabled = true;
             this.lst_personal.Items.AddRange(new object[] {
             "Personal"});
-            this.lst_personal.Location = new System.Drawing.Point(555, 251);
+            this.lst_personal.Location = new System.Drawing.Point(548, 61);
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(120, 95);
             this.lst_personal.TabIndex = 0;
@@ -55,7 +55,7 @@
             this.lst_buisnes.FormattingEnabled = true;
             this.lst_buisnes.Items.AddRange(new object[] {
             "Buisness"});
-            this.lst_buisnes.Location = new System.Drawing.Point(407, 251);
+            this.lst_buisnes.Location = new System.Drawing.Point(548, 235);
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(120, 95);
             this.lst_buisnes.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             // txt_contNote
             // 
-            this.txt_contNote.Location = new System.Drawing.Point(575, 12);
+            this.txt_contNote.Location = new System.Drawing.Point(12, 284);
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(100, 20);
             this.txt_contNote.TabIndex = 5;
