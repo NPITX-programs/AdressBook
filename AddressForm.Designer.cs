@@ -63,7 +63,7 @@
             // chk_type
             // 
             this.chk_type.AutoSize = true;
-            this.chk_type.Location = new System.Drawing.Point(12, 125);
+            this.chk_type.Location = new System.Drawing.Point(225, 366);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             // txt_EMail
             // 
-            this.txt_EMail.Location = new System.Drawing.Point(12, 286);
+            this.txt_EMail.Location = new System.Drawing.Point(12, 114);
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             // txt_phoNum
             // 
-            this.txt_phoNum.Location = new System.Drawing.Point(12, 363);
+            this.txt_phoNum.Location = new System.Drawing.Point(12, 167);
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
             this.txt_phoNum.TabIndex = 6;
