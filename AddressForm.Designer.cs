@@ -79,6 +79,7 @@
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 4;
+            this.txt_EMail.Text = "E-Mail";
             // 
             // txt_contNote
             // 
@@ -93,6 +94,7 @@
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
             this.txt_phoNum.TabIndex = 6;
+            this.txt_phoNum.Text = "Phone Number";
             // 
             // txt_lastName
             // 
