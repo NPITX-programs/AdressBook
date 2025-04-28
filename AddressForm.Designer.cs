@@ -57,9 +57,9 @@
             this.lst_personal.FormattingEnabled = true;
             this.lst_personal.Items.AddRange(new object[] {
             "Personal"});
-            this.lst_personal.Location = new System.Drawing.Point(9, 56);
+            this.lst_personal.Location = new System.Drawing.Point(10, 44);
             this.lst_personal.Name = "lst_personal";
-            this.lst_personal.Size = new System.Drawing.Size(120, 95);
+            this.lst_personal.Size = new System.Drawing.Size(184, 160);
             this.lst_personal.TabIndex = 0;
             // 
             // lst_buisnes
@@ -67,9 +67,9 @@
             this.lst_buisnes.FormattingEnabled = true;
             this.lst_buisnes.Items.AddRange(new object[] {
             "Buisness"});
-            this.lst_buisnes.Location = new System.Drawing.Point(9, 241);
+            this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
             this.lst_buisnes.Name = "lst_buisnes";
-            this.lst_buisnes.Size = new System.Drawing.Size(120, 95);
+            this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
             this.lst_buisnes.TabIndex = 1;
             // 
             // chk_type
@@ -128,7 +128,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(294, 138);
+            this.btn_add.Location = new System.Drawing.Point(125, 6);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
@@ -138,9 +138,9 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(282, 339);
+            this.btn_close.Location = new System.Drawing.Point(12, -1);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(75, 23);
+            this.btn_close.Size = new System.Drawing.Size(113, 23);
             this.btn_close.TabIndex = 10;
             this.btn_close.Text = "Close Application";
             this.btn_close.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 30);
+            this.label6.Location = new System.Drawing.Point(7, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 13);
             this.label6.TabIndex = 16;
@@ -203,7 +203,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 212);
+            this.label7.Location = new System.Drawing.Point(7, 232);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 13);
             this.label7.TabIndex = 17;
@@ -215,7 +215,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.lst_personal);
             this.groupBox1.Controls.Add(this.lst_buisnes);
-            this.groupBox1.Location = new System.Drawing.Point(404, 12);
+            this.groupBox1.Location = new System.Drawing.Point(588, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 426);
             this.groupBox1.TabIndex = 18;
@@ -226,6 +226,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_firName);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.btn_add);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.chk_type);
             this.groupBox2.Controls.Add(this.txt_EMail);
@@ -234,9 +235,9 @@
             this.groupBox2.Controls.Add(this.txt_phoNum);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_lastName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 426);
+            this.groupBox2.Size = new System.Drawing.Size(200, 410);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
@@ -248,7 +249,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.btn_add);
             this.Name = "frm_main";
             this.Text = "Primary Form";
             this.Load += new System.EventHandler(this.frm_main_Load);
