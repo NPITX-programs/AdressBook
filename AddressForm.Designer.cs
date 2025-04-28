@@ -36,6 +36,8 @@
             this.txt_contNote = new System.Windows.Forms.TextBox();
             this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lst_personal
@@ -99,11 +101,31 @@
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 7;
             // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(138, 167);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.TabIndex = 8;
+            this.btn_add.Text = "button1";
+            this.btn_add.UseVisualStyleBackColor = true;
+            // 
+            // btn_close
+            // 
+            this.btn_close.Location = new System.Drawing.Point(138, 211);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(75, 23);
+            this.btn_close.TabIndex = 10;
+            this.btn_close.Text = "button3";
+            this.btn_close.UseVisualStyleBackColor = true;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.txt_lastName);
             this.Controls.Add(this.txt_phoNum);
             this.Controls.Add(this.txt_contNote);
@@ -130,6 +152,8 @@
         private System.Windows.Forms.TextBox txt_contNote;
         private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_close;
     }
 }
 
