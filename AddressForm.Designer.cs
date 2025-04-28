@@ -45,7 +45,7 @@
             this.lst_personal.FormattingEnabled = true;
             this.lst_personal.Items.AddRange(new object[] {
             "Personal"});
-            this.lst_personal.Location = new System.Drawing.Point(138, 12);
+            this.lst_personal.Location = new System.Drawing.Point(548, 61);
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(120, 95);
             this.lst_personal.TabIndex = 0;
@@ -55,7 +55,7 @@
             this.lst_buisnes.FormattingEnabled = true;
             this.lst_buisnes.Items.AddRange(new object[] {
             "Buisness"});
-            this.lst_buisnes.Location = new System.Drawing.Point(12, 12);
+            this.lst_buisnes.Location = new System.Drawing.Point(548, 235);
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(120, 95);
             this.lst_buisnes.TabIndex = 1;
@@ -63,7 +63,7 @@
             // chk_type
             // 
             this.chk_type.AutoSize = true;
-            this.chk_type.Location = new System.Drawing.Point(12, 125);
+            this.chk_type.Location = new System.Drawing.Point(12, 215);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // txt_firName
             // 
-            this.txt_firName.Location = new System.Drawing.Point(12, 169);
+            this.txt_firName.Location = new System.Drawing.Point(12, 12);
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
             this.txt_firName.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // txt_EMail
             // 
-            this.txt_EMail.Location = new System.Drawing.Point(12, 286);
+            this.txt_EMail.Location = new System.Drawing.Point(12, 114);
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             // txt_contNote
             // 
-            this.txt_contNote.Location = new System.Drawing.Point(264, 44);
+            this.txt_contNote.Location = new System.Drawing.Point(12, 284);
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(100, 20);
             this.txt_contNote.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // txt_phoNum
             // 
-            this.txt_phoNum.Location = new System.Drawing.Point(12, 363);
+            this.txt_phoNum.Location = new System.Drawing.Point(12, 167);
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
             this.txt_phoNum.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             // txt_lastName
             // 
-            this.txt_lastName.Location = new System.Drawing.Point(12, 211);
+            this.txt_lastName.Location = new System.Drawing.Point(12, 61);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(138, 167);
+            this.btn_add.Location = new System.Drawing.Point(138, 9);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(138, 211);
+            this.btn_close.Location = new System.Drawing.Point(138, 61);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(75, 23);
             this.btn_close.TabIndex = 10;
