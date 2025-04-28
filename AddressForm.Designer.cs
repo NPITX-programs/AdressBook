@@ -36,11 +36,15 @@
             this.txt_contNote = new System.Windows.Forms.TextBox();
             this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lst_personal
             // 
             this.lst_personal.FormattingEnabled = true;
+            this.lst_personal.Items.AddRange(new object[] {
+            "Personal"});
             this.lst_personal.Location = new System.Drawing.Point(138, 12);
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(120, 95);
@@ -49,6 +53,8 @@
             // lst_buisnes
             // 
             this.lst_buisnes.FormattingEnabled = true;
+            this.lst_buisnes.Items.AddRange(new object[] {
+            "Buisness"});
             this.lst_buisnes.Location = new System.Drawing.Point(12, 12);
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(120, 95);
@@ -59,9 +65,9 @@
             this.chk_type.AutoSize = true;
             this.chk_type.Location = new System.Drawing.Point(12, 125);
             this.chk_type.Name = "chk_type";
-            this.chk_type.Size = new System.Drawing.Size(80, 17);
+            this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 2;
-            this.chk_type.Text = "checkBox1";
+            this.chk_type.Text = "Contact Type";
             this.chk_type.UseVisualStyleBackColor = true;
             // 
             // txt_firName
@@ -70,6 +76,7 @@
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
             this.txt_firName.TabIndex = 3;
+            this.txt_firName.Text = "First Name";
             // 
             // txt_EMail
             // 
@@ -77,6 +84,7 @@
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 4;
+            this.txt_EMail.Text = "E-Mail";
             // 
             // txt_contNote
             // 
@@ -84,6 +92,7 @@
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(100, 20);
             this.txt_contNote.TabIndex = 5;
+            this.txt_contNote.Text = "Information";
             // 
             // txt_phoNum
             // 
@@ -91,6 +100,7 @@
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
             this.txt_phoNum.TabIndex = 6;
+            this.txt_phoNum.Text = "Phone Number";
             // 
             // txt_lastName
             // 
@@ -98,12 +108,33 @@
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 7;
+            this.txt_lastName.Text = "Last Name";
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(138, 167);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.TabIndex = 8;
+            this.btn_add.Text = "Add Entry";
+            this.btn_add.UseVisualStyleBackColor = true;
+            // 
+            // btn_close
+            // 
+            this.btn_close.Location = new System.Drawing.Point(138, 211);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(75, 23);
+            this.btn_close.TabIndex = 10;
+            this.btn_close.Text = "Close Application";
+            this.btn_close.UseVisualStyleBackColor = true;
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.txt_lastName);
             this.Controls.Add(this.txt_phoNum);
             this.Controls.Add(this.txt_contNote);
@@ -130,6 +161,8 @@
         private System.Windows.Forms.TextBox txt_contNote;
         private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_close;
     }
 }
 
