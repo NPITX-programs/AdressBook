@@ -44,15 +44,27 @@ namespace AdressBook
                 MessageBox.Show("error" + ex.Message); //show error
             }
         }
-        private void clearAll()
+        private void presetClear()
         {
-            foreach (string name in controlNames) { 
+            foreach (string name in Program.controlNames) { 
+                clearName(name); //clear the controls
             }
         }
 
-        private void clear(object item) //input textbox to clear
+        private void clearName(string name) //input textbox to clear
         {
-           
+            Control control = this.Controls[name];
+            if (control is TextBox) //determine if textbox
+            {
+                ((TextBox)control).Clear(); //clear the textbox
+            } else if (control is RichTextBox) //determine if rich text box
+            {
+                ((RichTextBox)control).Clear(); //clear the richtextbox
+            }
+            else if (control is CheckBox) //if the control is a checkbox
+            {
+                ((CheckBox)control).Checked = false; //uncheck the checkbox
+            }
         }
 
         private string add()
@@ -96,6 +108,8 @@ namespace AdressBook
                 Program.contacts.Add(c);
                 entry = add();
             }
+
+            presetClear();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
