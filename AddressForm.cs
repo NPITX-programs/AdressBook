@@ -74,14 +74,15 @@ namespace AdressBook
             if (valid == true) {
 
 
-                Contact c = new Contact();
-                c.firstname = txt_firName.Text;
-                c.lastname = txt_lastName.Text;
-                c.phone = txt_phoNum.Text;
-                c.email = txt_EMail.Text;
-                c.notes = txt_contNote.Text;
-                c.buisness = chk_type.Checked;
+                Contact i = new Contact();
+                i.firstname = txt_firName.Text;
+                i.lastname = txt_lastName.Text;
+                i.phone = txt_phoNum.Text;
+                i.email = txt_EMail.Text;
+                i.notes = txt_contNote.Text;
+                i.buisness = chk_type.Checked;
             }
+
         }
 
         private void btn_close_Click(object sender, EventArgs e)
