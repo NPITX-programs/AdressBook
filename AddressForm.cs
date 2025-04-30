@@ -60,7 +60,16 @@ namespace AdressBook
             }
             else if(txt_lastName.Text == string.Empty) {
                 valid = false;
-            } else if(txt_lastName.t)
+            } else if(txt_phoNum.Text == string.Empty)
+            {
+                valid = false;
+            } else if(txt_EMail.Text == string.Empty)
+            {
+                valid = false;
+            } else if (txt_contNote.Text == string.Empty)
+            {
+                valid = false;
+            }
 
             if (valid == true) {
 
