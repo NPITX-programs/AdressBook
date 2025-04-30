@@ -73,6 +73,14 @@ namespace AdressBook
 
             if (valid == true) {
 
+
+                Contact c = new Contact();
+                c.firstname = txt_firName.Text;
+                c.lastname = txt_lastName.Text;
+                c.phone = txt_phoNum.Text;
+                c.email = txt_EMail.Text;
+                c.notes = txt_contNote.Text;
+                c.buisness = chk_type.Checked;
             }
         }
 
