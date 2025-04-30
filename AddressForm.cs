@@ -46,9 +46,22 @@ namespace AdressBook
             }
         }
 
+        private void clear(object txt) //input textbox to clear
+        {
+            txt = string.Empty; //clear the box
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
+            bool valid = true;
+            if( txt_firName.Text == string.Empty )
+            {
+                valid = false;
+            }
 
+            if valid {
+
+            }
         }
 
         private void btn_close_Click(object sender, EventArgs e)
