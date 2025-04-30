@@ -53,6 +53,7 @@ namespace AdressBook
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            Contact c = new Contact();
             bool valid = true;
             if (txt_firName.Text == string.Empty)
             {
@@ -72,15 +73,13 @@ namespace AdressBook
             }
 
             if (valid == true) {
-
-
-                Contact c = new Contact();
                 c.firstname = txt_firName.Text;
                 c.lastname = txt_lastName.Text;
                 c.phone = txt_phoNum.Text;
                 c.email = txt_EMail.Text;
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
+                Program.contacts.Add(c);
             }
         }
 
