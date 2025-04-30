@@ -51,11 +51,20 @@ namespace AdressBook
             txt = string.Empty; //clear the box
         }
 
+        private string add()
+        {
+            string add = string.Empty;
+            int leng;
+            leng = Program.contacts.Count;
+            return add;
+        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
             Contact c = new Contact();
             bool valid = true;
+            string entry = string.Empty;
+
             if (txt_firName.Text == string.Empty)
             {
                 valid = false;
@@ -81,6 +90,7 @@ namespace AdressBook
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
+                entry = add();
             }
         }
 
