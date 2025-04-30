@@ -30,7 +30,7 @@ namespace AdressBook
             {
                 using (StreamWriter sw = new StreamWriter(filepath))
                 {
-                    foreach(var c in Program.contacts) //the loop for createing the contents which will be saved
+                    foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
@@ -40,7 +40,7 @@ namespace AdressBook
                         sw.Write(line); //write the information to the line
                     }
                 }
-            } catch(Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show("error" + ex.Message); //show error
             }
@@ -49,6 +49,17 @@ namespace AdressBook
         private void clear(object txt) //input textbox to clear
         {
             txt = string.Empty; //clear the box
+        }
+
+        private void update(class input)
+        {
+            input.firstname = txt_firName.Text;
+            c.lastname = txt_lastName.Text;
+            c.phone = txt_phoNum.Text;
+            c.email = txt_EMail.Text;
+            c.notes = txt_contNote.Text;
+            c.buisness = chk_type.Checked;
+            Program.contacts.Add(c);
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -73,13 +84,7 @@ namespace AdressBook
             }
 
             if (valid == true) {
-                c.firstname = txt_firName.Text;
-                c.lastname = txt_lastName.Text;
-                c.phone = txt_phoNum.Text;
-                c.email = txt_EMail.Text;
-                c.notes = txt_contNote.Text;
-                c.buisness = chk_type.Checked;
-                Program.contacts.Add(c);
+                update(c);
             }
         }
 
