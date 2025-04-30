@@ -23,7 +23,6 @@ namespace AdressBook
         {
 
         }
-        
         private void WriteToFile()
         {
             try
@@ -45,10 +44,15 @@ namespace AdressBook
                 MessageBox.Show("error" + ex.Message); //show error
             }
         }
-
-        private void clear(object txt) //input textbox to clear
+        private void clearAll()
         {
-            txt = string.Empty; //clear the box
+            foreach (string name in controlNames) { 
+            }
+        }
+
+        private void clear(object item) //input textbox to clear
+        {
+           
         }
 
         private string add()
