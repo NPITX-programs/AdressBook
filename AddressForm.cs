@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,12 +59,8 @@ namespace AdressBook
                 valid = false;
             }
 
-            if valid {
-                Contact u = new Contact();
-                u.username = uID;
-                u.password = pass;
-                u.secQuest = secQuest;
-                u.secAnswer = secAns;
+            if (valid == true) {
+
             }
         }
 
