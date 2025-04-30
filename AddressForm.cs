@@ -56,14 +56,14 @@ namespace AdressBook
             Control control = this.Controls[name];
             if (control is TextBox textBox) //determine if textbox
             {
-                ((textBox)control).Clear(); //clear the textbox
+                textBox.Clear();
             } else if (control is RichTextBox richTextBox) //determine if rich text box
             {
-                ((richTextBox)control).Clear(); //clear the richtextbox
+                richTextBox.Clear();
             }
             else if (control is CheckBox checkBox) //if the control is a checkbox
             {
-                ((checkBox)control).Checked = false; //uncheck the checkbox
+                checkBox.Checked = false;
             }
         }
 
