@@ -103,6 +103,12 @@ namespace AdressBook
                 Program.contacts.Add(c);
                 entry = add();
             }
+            clear(txt_firName);
+            clear(txt_lastName);
+            clear(txt_phoNum);
+            clear(txt_EMail);
+            clear(txt_contNote);
+            clear(chk_type);
         }
 
         private void btn_close_Click(object sender, EventArgs e)
