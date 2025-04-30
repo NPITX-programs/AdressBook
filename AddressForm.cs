@@ -51,16 +51,36 @@ namespace AdressBook
             txt = string.Empty; //clear the box
         }
 
+
         private void btn_add_Click(object sender, EventArgs e)
         {
+            Contact c = new Contact();
             bool valid = true;
-            if( txt_firName.Text == string.Empty )
+            if (txt_firName.Text == string.Empty)
+            {
+                valid = false;
+            }
+            else if(txt_lastName.Text == string.Empty) {
+                valid = false;
+            } else if(txt_phoNum.Text == string.Empty)
+            {
+                valid = false;
+            } else if(txt_EMail.Text == string.Empty)
+            {
+                valid = false;
+            } else if (txt_contNote.Text == string.Empty)
             {
                 valid = false;
             }
 
             if (valid == true) {
-
+                c.firstname = txt_firName.Text;
+                c.lastname = txt_lastName.Text;
+                c.phone = txt_phoNum.Text;
+                c.email = txt_EMail.Text;
+                c.notes = txt_contNote.Text;
+                c.buisness = chk_type.Checked;
+                Program.contacts.Add(c);
             }
         }
 
