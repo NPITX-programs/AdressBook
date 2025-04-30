@@ -19,6 +19,6 @@ namespace AdressBook
             Application.Run(new frm_main());
         }
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
-        internal static List<string> controllNames = new List<string>() { "txt_firName", "txt_lastName", "txt_phoNum" , "txt_EMail" , "txt_contNote" , "chk_type" };
+        internal static List<string> controlNames = new List<string>() { "txt_firName", "txt_lastName", "txt_phoNum" , "txt_EMail" , "txt_contNote" , "chk_type" };
     }
 }

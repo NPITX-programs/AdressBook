@@ -54,16 +54,16 @@ namespace AdressBook
         private void clearName(string name) //input textbox to clear
         {
             Control control = this.Controls[name];
-            if (control is TextBox) //determine if textbox
+            if (control is TextBox textBox) //determine if textbox
             {
-                ((TextBox)control).Clear(); //clear the textbox
-            } else if (control is RichTextBox) //determine if rich text box
+                ((textBox)control).Clear(); //clear the textbox
+            } else if (control is RichTextBox richTextBox) //determine if rich text box
             {
-                ((RichTextBox)control).Clear(); //clear the richtextbox
+                ((richTextBox)control).Clear(); //clear the richtextbox
             }
-            else if (control is CheckBox) //if the control is a checkbox
+            else if (control is CheckBox checkBox) //if the control is a checkbox
             {
-                ((CheckBox)control).Checked = false; //uncheck the checkbox
+                ((checkBox)control).Checked = false; //uncheck the checkbox
             }
         }
 
