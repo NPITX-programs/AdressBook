@@ -46,18 +46,29 @@ namespace AdressBook
             }
         }
 
-        private void clear(object txt) //input textbox to clear
+        private void clear(object input) //input textbox to clear
         {
-            txt = string.Empty; //clear the box
+            if (input is TextBox)
+            {
+                input = string.Empty; //clear the box
+            }
+            else if (input is CheckBox)
+            {
+                input = false; //clear the checkbox
+            }
+            else if (input is RichTextBox)
+            {
+                input = string.Empty; //clear the rich text box
+            }
         }
 
-        private string add()
-        {
-            string add = string.Empty;
-            int leng;
-            leng = Program.contacts.Count;
-            return add;
-        }
+                private string add()
+                {
+                    string add = string.Empty;
+                    int leng;
+                    leng = Program.contacts.Count;
+                    return add;
+                }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
