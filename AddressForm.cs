@@ -54,7 +54,19 @@ namespace AdressBook
         private void btn_add_Click(object sender, EventArgs e)
         {
             bool valid = true;
-            if( txt_firName.Text == string.Empty )
+            if (txt_firName.Text == string.Empty)
+            {
+                valid = false;
+            }
+            else if(txt_lastName.Text == string.Empty) {
+                valid = false;
+            } else if(txt_phoNum.Text == string.Empty)
+            {
+                valid = false;
+            } else if(txt_EMail.Text == string.Empty)
+            {
+                valid = false;
+            } else if (txt_contNote.Text == string.Empty)
             {
                 valid = false;
             }
