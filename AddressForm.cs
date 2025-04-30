@@ -51,6 +51,7 @@ namespace AdressBook
             txt = string.Empty; //clear the box
         }
 
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             Contact c = new Contact();
