@@ -62,7 +62,8 @@ namespace AdressBook
             string add = string.Empty;
             int leng;
             leng = Program.contacts.Count;
-            return add;
+            int ind = leng - 1;
+            Program.contacts.
         }
 
         private void btn_add_Click(object sender, EventArgs e)
