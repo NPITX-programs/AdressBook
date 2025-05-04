@@ -46,23 +46,29 @@ namespace AdressBook
             }
         }
 
-        private void clear() //triger to clear inputs
+        private void clear(object input) //input textbox to clear
         {
-            txt_firName.Text = string.Empty; //empty first name
-            txt_lastName.Text = string.Empty; //empty last name
-            txt_phoNum.Text = string.Empty; //empty phone number
-            txt_EMail.Text = string.Empty; //empty email
-            txt_contNote.Text = string.Empty; //epty contact note
-            chk_type.Checked = false; //set checkbox to false
+            if (input is TextBox)
+            {
+                input = string.Empty; //clear the box
+            }
+            else if (input is CheckBox)
+            {
+                input = false; //clear the checkbox
+            }
+            else if (input is RichTextBox)
+            {
+                input = string.Empty; //clear the rich text box
+            }
         }
 
-        private string add()
-        {
-            string add = string.Empty;
-            int leng;
-            leng = Program.contacts.Count;
-            return add;
-        }
+                private string add()
+                {
+                    string add = string.Empty;
+                    int leng;
+                    leng = Program.contacts.Count;
+                    return add;
+                }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -97,6 +103,12 @@ namespace AdressBook
                 Program.contacts.Add(c);
                 entry = add();
             }
+            clear(txt_firName);
+            clear(txt_lastName);
+            clear(txt_phoNum);
+            clear(txt_EMail);
+            clear(txt_contNote);
+            clear(chk_type);
         }
 
         private void btn_close_Click(object sender, EventArgs e)
