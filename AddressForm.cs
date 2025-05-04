@@ -19,6 +19,7 @@ namespace AdressBook
             InitializeComponent();
         }
         string filepath = "placeholder";
+        bool debug = true;
         private void frm_main_Load(object sender, EventArgs e)
         {
             clear();
@@ -70,21 +71,28 @@ namespace AdressBook
             bool valid = true;
             string entry = string.Empty;
 
-            if (txt_firName.Text == string.Empty)
+            if(debug == false)
             {
-                valid = false;
-            }
-            else if(txt_lastName.Text == string.Empty) {
-                valid = false;
-            } else if(txt_phoNum.Text == string.Empty)
-            {
-                valid = false;
-            } else if(txt_EMail.Text == string.Empty)
-            {
-                valid = false;
-            } else if (txt_contNote.Text == string.Empty)
-            {
-                valid = false;
+                if (txt_firName.Text == string.Empty)
+                {
+                    valid = false;
+                }
+                else if (txt_lastName.Text == string.Empty)
+                {
+                    valid = false;
+                }
+                else if (txt_phoNum.Text == string.Empty)
+                {
+                    valid = false;
+                }
+                else if (txt_EMail.Text == string.Empty)
+                {
+                    valid = false;
+                }
+                else if (txt_contNote.Text == string.Empty)
+                {
+                    valid = false;
+                }
             }
 
             if (valid == true) {
@@ -96,8 +104,8 @@ namespace AdressBook
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
                 entry = add();
+                clear();
             }
-            clear();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
