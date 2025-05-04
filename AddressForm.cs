@@ -57,13 +57,12 @@ namespace AdressBook
             chk_type.Checked = false; //set checkbox to false
         }
 
-        private string add()
-        {
-            string add = string.Empty;
-            int leng;
-            leng = Program.contacts.Count;
-            int ind = leng - 1;
-            Program.contacts.
+        private Contact add()
+        {          
+            int leng = Program.contacts.Count; //get the length
+            int ind = leng - 1; //get the index (a.k.a the length minus 1)
+            Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
+            return curr; //output that value
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -104,7 +103,7 @@ namespace AdressBook
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
-                entry = add();
+                add();
                 clear();
             }
         }
