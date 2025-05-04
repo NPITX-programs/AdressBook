@@ -21,7 +21,7 @@ namespace AdressBook
         string filepath = "placeholder";
         private void frm_main_Load(object sender, EventArgs e)
         {
-
+            clear();
         }
 
         private void WriteToFile()
