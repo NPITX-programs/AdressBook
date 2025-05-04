@@ -66,12 +66,12 @@ namespace AdressBook
         }
         private void updateList(Contact value)
         {
-            if (value.buisness == true) ;
+            if (value.buisness == true)
             {
-
+                lst_buisnes.Items.Add(value);
             } else
             {
-
+                lst_personal.Items.Add(value);
             }
         }
 
@@ -114,7 +114,7 @@ namespace AdressBook
                 Program.contacts.Add(c);
 
                 var entry = nextEntry();
-                updateList()
+                updateList(entry);
                 clear();
             }
         }
