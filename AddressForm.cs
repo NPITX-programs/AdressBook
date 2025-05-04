@@ -64,6 +64,16 @@ namespace AdressBook
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value
         }
+        private void updateList(Contact value)
+        {
+            if (value.buisness == true) ;
+            {
+
+            } else
+            {
+
+            }
+        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -102,8 +112,9 @@ namespace AdressBook
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
-                var entry = nextEntry();
 
+                var entry = nextEntry();
+                updateList()
                 clear();
             }
         }
