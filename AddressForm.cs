@@ -46,9 +46,9 @@ namespace AdressBook
             }
         }
 
-        private void clear(object txt) //input textbox to clear
+        private void clear() //triger to clear inputs
         {
-            txt = string.Empty; //clear the box
+
         }
 
         private string add()
