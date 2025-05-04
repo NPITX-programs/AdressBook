@@ -64,6 +64,8 @@ namespace AdressBook
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value
         }
+        
+
         private void updateList(Contact value)
         {
             if (value.buisness == true)
