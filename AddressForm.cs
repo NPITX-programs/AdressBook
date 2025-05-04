@@ -57,7 +57,7 @@ namespace AdressBook
             chk_type.Checked = false; //set checkbox to false
         }
 
-        private Contact add()
+        private Contact nextEntry()
         {          
             int leng = Program.contacts.Count; //get the length
             int ind = leng - 1; //get the index (a.k.a the length minus 1)
@@ -69,7 +69,6 @@ namespace AdressBook
         {
             Contact c = new Contact();
             bool valid = true;
-            string entry = string.Empty;
 
             if(debug == false)
             {
@@ -103,7 +102,8 @@ namespace AdressBook
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
-                add();
+                var entry = nextEntry();
+
                 clear();
             }
         }
