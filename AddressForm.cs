@@ -131,9 +131,9 @@ namespace AdressBook
             }
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e) //hit closed button
         {
-            Application.Exit();
+            Application.Exit(); //close
         }
     }
 }
