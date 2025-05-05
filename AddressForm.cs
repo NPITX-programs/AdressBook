@@ -145,18 +145,25 @@ namespace AdressBook
             else
             {
                 int index = lst.SelectedIndex; //get the index of the current item
-                string id = lst.Tag.ToString(); //get the identifyer tag
-                if (id == "per") //if it's personal
+                if (index == -1) //if no item is selected, clear it
                 {
-                    index = Program.perIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
+                    clear(); //clear form
+                } else {
+                    string id = lst.Tag.ToString(); //get the identifyer tag
+                    if (id == "per") //if it's personal
+                    {
+                        index = Program.perIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
+                    }
+                    else if (id == "bui") //if it's buisness
+                    {
+                        index = Program.buiIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
+                    }
+                    else
+                    {
+                        MessageBox.Show("error, tag not found"); //show error
+                    }
                 }
-                else if (id == "bui") //if it's buisness
-                {
-                    index = Program.buiIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
-                } else
-                {
-                    MessageBox.Show("error, tag not found"); //show error
-                }
+
 
                 Contact c = Program.contacts[index]; //get the contact at the index
 
