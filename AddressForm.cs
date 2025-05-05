@@ -14,7 +14,6 @@ namespace AdressBook
     public partial class frm_main : Form
     {
         string sep = "~";
-        int ind = 0;
         public frm_main()
         {
             InitializeComponent();
