@@ -69,7 +69,6 @@ namespace AdressBook
             txt_EMail.Text = string.Empty; //empty email
             txt_contNote.Text = string.Empty; //epty contact note
             chk_type.Checked = false; //set checkbox to false
-            MessageBox.Show(filepath); //show cleared message
         }
 
         private Contact nextEntry()
@@ -142,6 +141,7 @@ namespace AdressBook
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
+                WriteToFile(); //write to file
             }
         }
 
