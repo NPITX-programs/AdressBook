@@ -14,6 +14,5 @@ namespace AdressBook
         internal string phone;
         internal bool buisness;
         internal string notes;
-        internal int ind;
     }
 }
