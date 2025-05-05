@@ -13,18 +13,31 @@ namespace AdressBook
 {
     public partial class frm_main : Form
     {
+        bool debug = true;
         string sep = "~";
         public frm_main()
         {
             InitializeComponent();
         }
-        string filepath = "placeholder";
-        bool debug = true;
+        string filepath = string.Empty;
+
+        private string CreatePath(string root, string path, string name, string extension)
+        {
+            string finalPath = string.Empty;
+            finalPath = root + path + extension; //create the final path
+
+            return finalPath;
+        }
+
+        string fileName = "store";
+        const string exten1 = ".csv";
         private void frm_main_Load(object sender, EventArgs e)
         {
             clear();
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"\\contacts","fileName",exten1);
         }
         int ind = 0; //index for the current contact
+       
         private void WriteToFile()
         {
             try
@@ -55,6 +68,7 @@ namespace AdressBook
             txt_EMail.Text = string.Empty; //empty email
             txt_contNote.Text = string.Empty; //epty contact note
             chk_type.Checked = false; //set checkbox to false
+            MessageBox.Show(fileName); //show cleared message
         }
 
         private Contact nextEntry()
