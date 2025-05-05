@@ -83,6 +83,8 @@ namespace AdressBook
             {
                 lst_personal.Items.Add(entry); //if it's not buisness, add to personal list
                 leng = lst_personal.Items.Count;
+
+                Program.perIndex.Add(ind);
             }
         }
 
