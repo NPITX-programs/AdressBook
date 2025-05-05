@@ -78,7 +78,7 @@ namespace AdressBook
                 lst_buisnes.Items.Add(entry); //if it's buisness, add to buisness list
                 leng = lst_buisnes.Items.Count;
 
-                Program.conIndex.Add(ind);
+                Program.buiIndex.Add(ind);
             } else
             {
                 lst_personal.Items.Add(entry); //if it's not buisness, add to personal list
