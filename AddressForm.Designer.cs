@@ -54,22 +54,22 @@
             // lst_personal
             // 
             this.lst_personal.FormattingEnabled = true;
-            this.lst_personal.Items.AddRange(new object[] {
-            "Personal"});
             this.lst_personal.Location = new System.Drawing.Point(10, 44);
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(184, 160);
             this.lst_personal.TabIndex = 0;
+            this.lst_personal.Tag = "per";
+            this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // lst_buisnes
             // 
             this.lst_buisnes.FormattingEnabled = true;
-            this.lst_buisnes.Items.AddRange(new object[] {
-            "Buisness"});
             this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
             this.lst_buisnes.TabIndex = 1;
+            this.lst_buisnes.Tag = "bui";
+            this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // chk_type
             // 
