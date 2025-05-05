@@ -25,7 +25,7 @@ namespace AdressBook
         private string CreatePath(string root, string path, string name, string extension)
         {
             string finalPath = string.Empty;
-            finalPath = root + path + extension; //create the final path
+            finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
             return finalPath;
         }
@@ -34,7 +34,7 @@ namespace AdressBook
         const string exten1 = ".csv";
         private void frm_main_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"\contacts",name1,exten1);
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
             clear();
         }
         int ind = 0; //index for the current contact
