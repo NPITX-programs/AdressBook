@@ -85,6 +85,7 @@ namespace AdressBook
                 leng = lst_personal.Items.Count;
             }
             ind = leng - 1;
+            value.ind = ind;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
