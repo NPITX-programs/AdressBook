@@ -66,7 +66,7 @@ namespace AdressBook
         }
         
 
-        private void updateList(Contact value)
+        private int updateList(Contact value)
         {
             string first = value.firstname; //get last name
             string last = value.lastname; //get first name
@@ -85,7 +85,7 @@ namespace AdressBook
                 leng = lst_personal.Items.Count;
             }
             ind = leng - 1;
-            value.ind = ind;
+            return ind;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -93,6 +93,7 @@ namespace AdressBook
             Contact c = new Contact();
             bool valid = true;
             Contact entry = null;
+            int ind = 0;
 
             if (txt_firName.Text == string.Empty) //check if no firstname
             {
@@ -125,7 +126,7 @@ namespace AdressBook
                 Program.contacts.Add(c);
 
                 entry = nextEntry();
-                updateList(entry);
+                ind = updateList(entry);
                 clear(); //clear inputs and set checkbox to false
             }
         }
