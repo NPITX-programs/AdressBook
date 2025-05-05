@@ -70,7 +70,7 @@ namespace AdressBook
         {
             string first = value.firstname;
             string last = value.lastname;
-            string entry = first + last;
+            string entry = first + " " + last;
             
             if (value.buisness == true)
             {
