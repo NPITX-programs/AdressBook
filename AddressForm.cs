@@ -66,19 +66,26 @@ namespace AdressBook
         }
         
 
-        private void updateList(Contact value)
+        private int updateList(Contact value)
         {
             string first = value.firstname; //get last name
             string last = value.lastname; //get first name
             string entry = first + " " + last; //combine first and last name
+
+            int leng = 0; //create length var
+            int ind = 0; //create index var
             
             if (value.buisness == true) //check contact type
             {
                 lst_buisnes.Items.Add(entry); //if it's buisness, add to buisness list
+                leng = lst_buisnes.Items.Count;
             } else
             {
                 lst_personal.Items.Add(entry); //if it's not buisness, add to personal list
+                leng = lst_personal.Items.Count;
             }
+            ind = leng - 1;
+            return ind;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -86,6 +93,7 @@ namespace AdressBook
             Contact c = new Contact();
             bool valid = true;
             Contact entry = null;
+            int ind = 0;
 
             if (txt_firName.Text == string.Empty) //check if no firstname
             {
@@ -118,14 +126,14 @@ namespace AdressBook
                 Program.contacts.Add(c);
 
                 entry = nextEntry();
-                updateList(entry);
+                ind = updateList(entry);
                 clear(); //clear inputs and set checkbox to false
             }
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e) //hit closed button
         {
-            Application.Exit();
+            Application.Exit(); //close
         }
     }
 }
