@@ -83,31 +83,28 @@ namespace AdressBook
             bool valid = true;
             Contact entry = null;
 
-            if(debug == false)
+            if (txt_firName.Text == string.Empty)
             {
-                if (txt_firName.Text == string.Empty)
-                {
-                    valid = false;
-                }
-                else if (txt_lastName.Text == string.Empty)
-                {
-                    valid = false;
-                }
-                else if (txt_phoNum.Text == string.Empty)
-                {
-                    valid = false;
-                }
-                else if (txt_EMail.Text == string.Empty)
-                {
-                    valid = false;
-                }
-                else if (txt_contNote.Text == string.Empty)
-                {
-                    valid = false;
-                }
+                valid = false;
+            }
+            else if (txt_lastName.Text == string.Empty)
+            {
+                valid = false;
+            }
+            else if (txt_phoNum.Text == string.Empty)
+            {
+                valid = false;
+            }
+            else if (txt_EMail.Text == string.Empty)
+            {
+                valid = false;
+            }
+            else if (txt_contNote.Text == string.Empty)
+            {
+                valid = false;
             }
 
-            if (valid == true) {
+            if (valid == true || debug == true) {
                 c.firstname = txt_firName.Text;
                 c.lastname = txt_lastName.Text;
                 c.phone = txt_phoNum.Text;
