@@ -106,7 +106,7 @@ namespace AdressBook
                 }
             }
 
-            if (valid == true) {
+            if (valid == true || debug == true) {
                 c.firstname = txt_firName.Text;
                 c.lastname = txt_lastName.Text;
                 c.phone = txt_phoNum.Text;
