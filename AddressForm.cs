@@ -81,6 +81,7 @@ namespace AdressBook
         {
             Contact c = new Contact();
             bool valid = true;
+            Contact entry = null;
 
             if(debug == false)
             {
@@ -115,7 +116,7 @@ namespace AdressBook
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
 
-                var entry = nextEntry();
+                entry = nextEntry();
                 updateList(entry);
                 clear();
             }
