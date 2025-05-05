@@ -19,6 +19,7 @@ namespace AdressBook
         {
             InitializeComponent();
         }
+
         string filepath = string.Empty;
 
         private string CreatePath(string root, string path, string name, string extension)
@@ -29,12 +30,12 @@ namespace AdressBook
             return finalPath;
         }
 
-        string fileName = "store";
+        const string name1 = "store";
         const string exten1 = ".csv";
         private void frm_main_Load(object sender, EventArgs e)
         {
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"\contacts",name1,exten1);
             clear();
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"\\contacts","fileName",exten1);
         }
         int ind = 0; //index for the current contact
        
@@ -68,7 +69,7 @@ namespace AdressBook
             txt_EMail.Text = string.Empty; //empty email
             txt_contNote.Text = string.Empty; //epty contact note
             chk_type.Checked = false; //set checkbox to false
-            MessageBox.Show(fileName); //show cleared message
+            MessageBox.Show(filepath); //show cleared message
         }
 
         private Contact nextEntry()
