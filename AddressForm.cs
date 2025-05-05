@@ -118,7 +118,7 @@ namespace AdressBook
 
                 entry = nextEntry();
                 updateList(entry);
-                clear();
+                clear(); //clear inputs and set checkbox to false
             }
         }
 
