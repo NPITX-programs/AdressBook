@@ -138,14 +138,8 @@ namespace AdressBook
         private void select_contact(object sender, EventArgs e)
         {
             ListBox lst = sender as ListBox; //get the list being used
-            if (lst != null)
-            {
-                MessageBox.Show("Error. No listbox"); //show the selected item
-            }
-            else
-            {
-                int index = lst.SelectedIndex; //get the index of the current item
-                if (index == -1) //if no item is selected, clear it
+            int index = lst.SelectedIndex; //get the index of the current item
+            if (index == -1) //if no item is selected, clear it
                 {
                     clear(); //clear form
                 } else {
@@ -163,17 +157,15 @@ namespace AdressBook
                         MessageBox.Show("error, tag not found"); //show error
                     }
                 }
+            Contact c = Program.contacts[index]; //get the contact at the index
 
+            txt_firName.Text = c.firstname; //set the first name
+            txt_lastName.Text = c.lastname; //set the last name
+            txt_phoNum.Text = c.phone; //set the phone number
+            txt_EMail.Text = c.email; //set the email
+            txt_contNote.Text = c.notes; //set the notes
+            chk_type.Checked = c.buisness; //set the checkbox
 
-                Contact c = Program.contacts[index]; //get the contact at the index
-
-                txt_firName.Text = c.firstname; //set the first name
-                txt_lastName.Text = c.lastname; //set the last name
-                txt_phoNum.Text = c.phone; //set the phone number
-                txt_EMail.Text = c.email; //set the email
-                txt_contNote.Text = c.notes; //set the notes
-                chk_type.Checked = c.buisness; //set the checkbox
-            }
         }
     }
 }
