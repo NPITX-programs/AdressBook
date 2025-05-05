@@ -1,3 +1,0 @@
-this here gets the list index
-
-one of the main issues with this is that the contacts are all stored in one list. to get around that, this system was created
