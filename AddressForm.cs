@@ -14,6 +14,7 @@ namespace AdressBook
     public partial class frm_main : Form
     {
         string sep = "~";
+        int ind = 0;
         public frm_main()
         {
             InitializeComponent();
@@ -60,32 +61,25 @@ namespace AdressBook
         private Contact nextEntry()
         {          
             int leng = Program.contacts.Count; //get the length
-            int ind = leng - 1; //get the index (a.k.a the length minus 1)
+            ind = leng - 1; //get the index (a.k.a the length minus 1)
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value
         }
         
 
-        private int updateList(Contact value)
+        private void updateList(Contact value)
         {
             string first = value.firstname; //get last name
             string last = value.lastname; //get first name
             string entry = first + " " + last; //combine first and last name
-
-            int leng = 0; //create length var
-            int ind = 0; //create index var
             
             if (value.buisness == true) //check contact type
             {
                 lst_buisnes.Items.Add(entry); //if it's buisness, add to buisness list
-                leng = lst_buisnes.Items.Count;
             } else
             {
                 lst_personal.Items.Add(entry); //if it's not buisness, add to personal list
-                leng = lst_personal.Items.Count;
             }
-            ind = leng - 1;
-            return ind;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -93,7 +87,6 @@ namespace AdressBook
             Contact c = new Contact();
             bool valid = true;
             Contact entry = null;
-            int ind = 0;
 
             if (txt_firName.Text == string.Empty) //check if no firstname
             {
@@ -126,7 +119,7 @@ namespace AdressBook
                 Program.contacts.Add(c);
 
                 entry = nextEntry();
-                ind = updateList(entry);
+                updateList(entry);
                 clear(); //clear inputs and set checkbox to false
             }
         }
