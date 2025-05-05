@@ -70,21 +70,22 @@ namespace AdressBook
             bool valid = true;
             string entry = string.Empty;
 
-            if (txt_firName.Text == string.Empty)
+            if (txt_firName.Text == string.Empty) //check if no firstname
             {
-                valid = false;
+                valid = false; //invalid
             }
-            else if(txt_lastName.Text == string.Empty) {
-                valid = false;
-            } else if(txt_phoNum.Text == string.Empty)
+            else if(txt_lastName.Text == string.Empty) //check if no lastname
             {
-                valid = false;
-            } else if(txt_EMail.Text == string.Empty)
+                valid = false; //invalid
+            } else if(txt_phoNum.Text == string.Empty) //check if no phonenumber
             {
-                valid = false;
-            } else if (txt_contNote.Text == string.Empty)
+                valid = false; //invalid
+            } else if(txt_EMail.Text == string.Empty) //check if no e-mail
             {
-                valid = false;
+                valid = false; //invalid
+            } else if (txt_contNote.Text == string.Empty) //check if no note
+            {
+                valid = false; //invalid
             }
 
             if (valid == true) {
