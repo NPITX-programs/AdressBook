@@ -63,7 +63,7 @@ namespace AdressBook
             int leng = Program.contacts.Count; //get the length
             ind = leng - 1; //get the index (a.k.a the length minus 1)
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
-            return curr; //output that value
+            return curr; //output that value 
         }
         
 
