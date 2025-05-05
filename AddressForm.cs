@@ -68,16 +68,16 @@ namespace AdressBook
 
         private void updateList(Contact value)
         {
-            string first = value.firstname;
-            string last = value.lastname;
-            string entry = first + " " + last;
+            string first = value.firstname; //get last name
+            string last = value.lastname; //get first name
+            string entry = first + " " + last; //combine first and last name
             
-            if (value.buisness == true)
+            if (value.buisness == true) //check contact type
             {
-                lst_buisnes.Items.Add(entry);
+                lst_buisnes.Items.Add(entry); //if it's buisness, add to buisness list
             } else
             {
-                lst_personal.Items.Add(entry);
+                lst_personal.Items.Add(entry); //if it's not buisness, add to personal list
             }
         }
 
