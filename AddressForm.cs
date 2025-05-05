@@ -19,6 +19,7 @@ namespace AdressBook
             InitializeComponent();
         }
         string filepath = "placeholder";
+        bool debug = true;
         private void frm_main_Load(object sender, EventArgs e)
         {
             clear();
@@ -56,39 +57,58 @@ namespace AdressBook
             chk_type.Checked = false; //set checkbox to false
         }
 
-        private string add()
+        private Contact nextEntry()
+        {          
+            int leng = Program.contacts.Count; //get the length
+            int ind = leng - 1; //get the index (a.k.a the length minus 1)
+            Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
+            return curr; //output that value
+        }
+        
+
+        private void updateList(Contact value)
         {
-            string add = string.Empty;
-            int leng;
-            leng = Program.contacts.Count;
-            return add;
+            string first = value.firstname; //get last name
+            string last = value.lastname; //get first name
+            string entry = first + " " + last; //combine first and last name
+            
+            if (value.buisness == true) //check contact type
+            {
+                lst_buisnes.Items.Add(entry); //if it's buisness, add to buisness list
+            } else
+            {
+                lst_personal.Items.Add(entry); //if it's not buisness, add to personal list
+            }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
             Contact c = new Contact();
             bool valid = true;
-            string entry = string.Empty;
+            Contact entry = null;
 
-            if (txt_firName.Text == string.Empty) //check if no firstname
+            if (txt_firName.Text == string.Empty)
             {
-                valid = false; //invalid
+                valid = false;
             }
-            else if(txt_lastName.Text == string.Empty) //check if no lastname
+            else if (txt_lastName.Text == string.Empty)
             {
-                valid = false; //invalid
-            } else if(txt_phoNum.Text == string.Empty) //check if no phonenumber
+                valid = false;
+            }
+            else if (txt_phoNum.Text == string.Empty)
             {
-                valid = false; //invalid
-            } else if(txt_EMail.Text == string.Empty) //check if no e-mail
+                valid = false;
+            }
+            else if (txt_EMail.Text == string.Empty)
             {
-                valid = false; //invalid
-            } else if (txt_contNote.Text == string.Empty) //check if no note
+                valid = false;
+            }
+            else if (txt_contNote.Text == string.Empty)
             {
-                valid = false; //invalid
+                valid = false;
             }
 
-            if (valid == true) {
+            if (valid == true || debug == true) {
                 c.firstname = txt_firName.Text;
                 c.lastname = txt_lastName.Text;
                 c.phone = txt_phoNum.Text;
@@ -96,9 +116,11 @@ namespace AdressBook
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
-                entry = add();
+
+                entry = nextEntry();
+                updateList(entry);
+                clear(); //clear inputs and set checkbox to false
             }
-            clear();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
