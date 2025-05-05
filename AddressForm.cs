@@ -31,7 +31,7 @@ namespace AdressBook
         }
 
         const string name1 = "store";
-        const string exten1 = ".csv";
+        const string exten1 = "csv";
         private void frm_main_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
