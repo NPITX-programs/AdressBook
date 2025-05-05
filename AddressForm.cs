@@ -13,37 +13,62 @@ namespace AdressBook
 {
     public partial class frm_main : Form
     {
+        bool debug = true;
         string sep = "~";
         public frm_main()
         {
             InitializeComponent();
         }
-        string filepath = "placeholder";
-        bool debug = true;
+
+        string filepath = string.Empty;
+
+        private string CreatePath(string root, string path, string name, string extension)
+        {
+            string finalPath = string.Empty;
+            finalPath = root + path + @"/" + name + "." + extension; //create the final path
+
+            return finalPath;
+        }
+
+        const string name1 = "store";
+        const string exten1 = "csv";
+        string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void frm_main_Load(object sender, EventArgs e)
         {
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
+
             clear();
         }
         int ind = 0; //index for the current contact
+
         private void WriteToFile()
         {
-            try
+            bool status = File.Exists(filepath); //check if the file exists
+            if (status || debug)
             {
-                using (StreamWriter sw = new StreamWriter(filepath))
+                try
                 {
-                    foreach(var c in Program.contacts) //the loop for createing the contents which will be saved
+                    using (StreamWriter sw = new StreamWriter(filepath))
                     {
-                        //csv - comma seperated values
-                        //firstname-lastname-email-phone-buisness-notes
-                        string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                            c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                            c.notes; //notes
-                        sw.Write(line); //write the information to the line
-                    }
+                        foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
+                        {
+                            //csv - comma seperated values
+                            //firstname-lastname-email-phone-buisness-notes
+                            string line = c.firstname + sep + c.lastname + sep +  //first and last name
+                                c.email + sep + c.phone + sep + c.buisness + sep + //contact information
+                                c.notes; //notes
+                            sw.Write(line); //write the information to the line
+                        }
+                    } //streamwriter
                 }
-            } catch(Exception ex)
+                catch (Exception ex)
+                {
+                    MessageBox.Show("error" + ex.Message); //show error
+                }
+            }
+            else
             {
-                MessageBox.Show("error" + ex.Message); //show error
+                MessageBox.Show("file not found"); //show error
             }
         }
 
@@ -127,6 +152,7 @@ namespace AdressBook
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
+                WriteToFile(); //write to file
             }
         }
 
