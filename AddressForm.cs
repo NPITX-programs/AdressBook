@@ -127,23 +127,23 @@ namespace AdressBook
             string contNote = txt_contNote.Text;
             #endregion //simplified variables for the content of the contact
 
-            if (txt_firName.Text == string.Empty) //check if no firstname
+            if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
             }
-            else if (txt_lastName.Text == string.Empty) //check if no lastname
+            else if (lastName == string.Empty) //check if no lastname
             {
                 valid = false; //invalid
             }
-            else if (txt_phoNum.Text == string.Empty) //check if no phonenumber
+            else if (phoNum == string.Empty) //check if no phonenumber
             {
                 valid = false; //invalid
             }
-            else if (txt_EMail.Text == string.Empty) //check if no e-mail
+            else if (eMail == string.Empty) //check if no e-mail
             {
                 valid = false; //invalid
             }
-            else if (txt_contNote.Text == string.Empty) //check if no note
+            else if (contNote == string.Empty) //check if no note
             {
                 valid = false; //invalid
             }
