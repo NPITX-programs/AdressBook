@@ -1,1 +1,0 @@
-use a function to make the class. this should make it more modular for things like, say, reading from file

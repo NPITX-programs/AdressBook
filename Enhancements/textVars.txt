@@ -1,1 +1,0 @@
-this will move the text into multiple variables, so acessing them can be done via simpler text
