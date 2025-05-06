@@ -125,6 +125,7 @@ namespace AdressBook
             string phoNum = txt_phoNum.Text;
             string eMail = txt_EMail.Text;
             string contNote = txt_contNote.Text;
+            bool contType = chk_type.Checked;
             #endregion //simplified variables for the content of the contact
 
             if (firstName == string.Empty) //check if no firstname
@@ -154,7 +155,7 @@ namespace AdressBook
                 c.phone = phoNum;
                 c.email = eMail;
                 c.notes = contNote;
-                c.buisness = chk_type.Checked;
+                c.buisness = contType;
                 Program.contacts.Add(c);
 
                 entry = nextEntry();
