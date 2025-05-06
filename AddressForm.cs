@@ -33,7 +33,7 @@ namespace AdressBook
         const string name1 = "store";
         const string exten1 = "con";
         const int min = 6;
-        const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
+        // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void frm_main_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
