@@ -50,17 +50,14 @@ namespace AdressBook
                 {
                     using (StreamReader sr = new StreamReader(filepath))
                     {
-                        foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
+                        //csv - comma seperated values
+                        //firstname-lastname-email-phone-buisness-notes
+                        while (!sr.EndOfStream) //add each line to it one by one
                         {
-                            //csv - comma seperated values
-                            //firstname-lastname-email-phone-buisness-notes
-                            while (!sr.EndOfStream) //add each line to it one by one
-                            {
-                                string line = sr.ReadLine(); //gets the next line of text from the file
-
-                            }
+                            string contact = sr.ReadLine(); //gets the next line of text from the file
+                            contact.Split(sep);
                         }
-                    } //streamwriterMessageBox.Show("test");
+                    }
                 }
                 catch(Exception ex)
                 {
@@ -74,7 +71,7 @@ namespace AdressBook
 
             }
         }
-                private void WriteToFile()
+        private void WriteToFile()
                 {
                     bool status = File.Exists(filepath); //check if the file exists
                     if (status || debug)
