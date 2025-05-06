@@ -48,16 +48,17 @@ namespace AdressBook
             {
                 try
                 {
-                    using (StreamWriter sw = new StreamWriter(filepath))
+                    using (StreamReader sr = new StreamReader(filepath))
                     {
                         foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
                         {
                             //csv - comma seperated values
                             //firstname-lastname-email-phone-buisness-notes
-                            string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                                c.notes; //notes
-                            sw.Write(line); //write the information to the line
+                            while (!sr.EndOfStream) //add each line to it one by one
+                            {
+                                string line = sr.ReadLine(); //gets the next line of text from the file
+
+                            }
                         }
                     } //streamwriterMessageBox.Show("test");
                 }
