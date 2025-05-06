@@ -102,7 +102,7 @@ namespace AdressBook
                                     string line = c.firstname + sep + c.lastname + sep +  //first and last name
                                         c.email + sep + c.phone + sep + c.buisness + sep + //contact information
                                         c.notes; //notes
-                                    sw.Write(line); //write the information to the line
+                                    sw.WriteLine(line); //write the information to the line
                                 }
                             } //streamwriter
                         }
