@@ -1,5 +1,6 @@
-test~test~test~2891234567~False~test
-testing~the~system~ 12345678~True~okay?
-what~is~your~1111111111~False~name
-is~it~a~9999999999~False~name?
-or~is~it~1111111111~True~something else
+test~test~False~2891234567~False~test
+the~system~True~ 12345678~False~okay?
+is~your~False~1111111111~False~name
+it~a~False~9999999999~False~name?
+is~it~True~1111111111~False~something else
+is~it~True~1111111111~False~something else?
