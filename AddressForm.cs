@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace AdressBook
 {
-    public partial class frm_main : Form
+    public partial class AddressForm : Form
     {
-        bool debug = false;
-        char sep = '~';
-        public frm_main()
+        const bool debug = false;
+        const char sep = '~';
+        public AddressForm()
         {
             InitializeComponent();
         }
@@ -25,8 +25,7 @@ namespace AdressBook
 
         private string CreatePath(string root, string path, string name, string extension)
         {
-            string finalPath = string.Empty;
-            finalPath = root + path + @"/" + name + "." + extension; //create the final path
+            string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
             return finalPath;
         }
@@ -34,8 +33,8 @@ namespace AdressBook
         const string name1 = "store";
         const string exten1 = "con";
         const int min = 6;
-        string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
-        private void frm_main_Load(object sender, EventArgs e)
+        // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
+        private void Frm_main_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
 
@@ -165,13 +164,15 @@ namespace AdressBook
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
-            Contact c = new Contact();
-            c.firstname = firstName;
-            c.lastname = lastName;
-            c.phone = phoNum;
-            c.email = eMail;
-            c.notes = contNote;
-            c.buisness = contType;
+            Contact c = new Contact
+            {
+                firstname = firstName,
+                lastname = lastName,
+                phone = phoNum,
+                email = eMail,
+                notes = contNote,
+                buisness = contType
+            };
             Program.contacts.Add(c);
             return c;
         }
