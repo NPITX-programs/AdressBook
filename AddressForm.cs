@@ -112,12 +112,25 @@ namespace AdressBook
                 Program.perIndex.Add(ind);
             }
         }
+        
+        private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
+        {
+            Contact c = new Contact();
+            c.firstname = firstName;
+            c.lastname = lastName;
+            c.phone = phoNum;
+            c.email = eMail;
+            c.notes = contNote;
+            c.buisness = contType;
+            Program.contacts.Add(c);
+            return c;
+        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Contact c = new Contact();
             bool valid = true;
             Contact entry = null;
+            Contact newContact = null;
 
             #region contactParts
             string firstName = txt_firName.Text;
@@ -150,14 +163,7 @@ namespace AdressBook
             }
 
             if (valid == true || debug == true) {
-                c.firstname = firstName;
-                c.lastname = lastName;
-                c.phone = phoNum;
-                c.email = eMail;
-                c.notes = contNote;
-                c.buisness = contType;
-                Program.contacts.Add(c);
-
+                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
