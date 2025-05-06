@@ -116,8 +116,12 @@ namespace AdressBook
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact();
-
-
+            c.firstname = firstName;
+            c.lastname = lastName;
+            c.phone = phoNum;
+            c.email = eMail;
+            c.notes = contNote;
+            c.buisness = contType;
             return c;
         }
 
