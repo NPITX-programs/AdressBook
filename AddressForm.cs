@@ -146,6 +146,13 @@ namespace AdressBook
             }
         }
 
+        private Contact(string firstname, string lastname, string phoneNum, string EMail, string note)
+        {
+            Contact c = new Contact();
+
+            return = c;
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             Contact c = new Contact();
@@ -180,7 +187,7 @@ namespace AdressBook
                 c.email = txt_EMail.Text;
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
-                Program.contacts.Add(c);
+                Program.contacts.Add
 
                 entry = nextEntry();
                 updateList(entry);
