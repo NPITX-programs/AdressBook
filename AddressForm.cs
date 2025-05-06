@@ -130,6 +130,7 @@ namespace AdressBook
         {
             bool valid = true;
             Contact entry = null;
+            Contact newContact = null;
 
             #region contactParts
             string firstName = txt_firName.Text;
@@ -162,12 +163,11 @@ namespace AdressBook
             }
 
             if (valid == true || debug == true) {
-
-                // entry = nextEntry(); for now, will use the creation function
-                entry = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
+                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
+                entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
-                WriteToFile(); //write to file (designed right now to work for a different design, so... yeah, disable for now
+                WriteToFile(); //write to file
             }
         }
 
