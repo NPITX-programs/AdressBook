@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace AdressBook
 {
-    public partial class frm_main : Form
+    public partial class AddressForm : Form
     {
-        bool debug = false;
-        char sep = '~';
-        public frm_main()
+        const bool debug = false;
+        const char sep = '~';
+        public AddressForm()
         {
             InitializeComponent();
         }

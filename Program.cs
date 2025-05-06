@@ -16,7 +16,7 @@ namespace AdressBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_main());
+            Application.Run(new AddressForm());
         }
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal static List<int> buiIndex = new List<int>(); //makes a list to store the correct index for buisness contacts. That way, when an item is selected, it will know the location

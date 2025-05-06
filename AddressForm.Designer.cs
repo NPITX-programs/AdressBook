@@ -1,6 +1,6 @@
 ﻿namespace AdressBook
 {
-    partial class frm_main
+    partial class AddressForm
     {
         /// <summary>
         /// Required designer variable.
