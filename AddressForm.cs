@@ -15,7 +15,7 @@ namespace AdressBook
     public partial class frm_main : Form
     {
         bool debug = false;
-        string sep = "~";
+        char sep = '~';
         public frm_main()
         {
             InitializeComponent();
@@ -57,7 +57,7 @@ namespace AdressBook
                         while (!sr.EndOfStream) //add each line to it one by one
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
-                            var cont = contact.Split();
+                            var cont = contact.Split(sep);
                             if (cont.Length >= min)
                             {
                                 bool conType = false;
