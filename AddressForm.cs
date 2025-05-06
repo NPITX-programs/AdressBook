@@ -119,6 +119,14 @@ namespace AdressBook
             bool valid = true;
             Contact entry = null;
 
+            #region contactParts
+            string firstName = txt_firName.Text;
+            string lastName = txt_lastName.Text;
+            string phoNum = txt_phoNum.Text;
+            string eMail = txt_EMail.Text;
+            string contNote = txt_contNote.Text;
+            #endregion //simplified variables for the content of the contact
+
             if (txt_firName.Text == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
