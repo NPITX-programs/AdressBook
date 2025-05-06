@@ -1,6 +1,6 @@
 ﻿namespace AdressBook
 {
-    partial class frm_main
+    partial class AddressForm
     {
         /// <summary>
         /// Required designer variable.
@@ -250,7 +250,7 @@
             this.Controls.Add(this.btn_close);
             this.Name = "frm_main";
             this.Text = "Primary Form";
-            this.Load += new System.EventHandler(this.frm_main_Load);
+            this.Load += new System.EventHandler(this.Frm_main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
