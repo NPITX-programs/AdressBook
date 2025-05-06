@@ -123,7 +123,6 @@ namespace AdressBook
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Contact c = new Contact();
             bool valid = true;
             Contact entry = null;
 
@@ -158,15 +157,9 @@ namespace AdressBook
             }
 
             if (valid == true || debug == true) {
-                c.firstname = firstName;
-                c.lastname = lastName;
-                c.phone = phoNum;
-                c.email = eMail;
-                c.notes = contNote;
-                c.buisness = contType;
-                Program.contacts.Add(c);
 
-                entry = nextEntry();
+                // entry = nextEntry(); for now, will use the creation function
+                entry = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
                 WriteToFile(); //write to file
