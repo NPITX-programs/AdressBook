@@ -37,10 +37,14 @@ namespace AdressBook
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
 
-            clear();
+            readFromFile();
         }
         int ind = 0; //index for the current contact
 
+        private void readFromFile()
+        {
+            MessageBox.Show("test");
+        }
         private void WriteToFile()
         {
             bool status = File.Exists(filepath); //check if the file exists
