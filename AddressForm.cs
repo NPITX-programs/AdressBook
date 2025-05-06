@@ -34,7 +34,7 @@ namespace AdressBook
         const string exten1 = "con";
         const int min = 6;
         // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
-        private void frm_main_Load(object sender, EventArgs e)
+        private void Frm_main_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
 
@@ -164,13 +164,15 @@ namespace AdressBook
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
-            Contact c = new Contact();
-            c.firstname = firstName;
-            c.lastname = lastName;
-            c.phone = phoNum;
-            c.email = eMail;
-            c.notes = contNote;
-            c.buisness = contType;
+            Contact c = new Contact
+            {
+                firstname = firstName,
+                lastname = lastName,
+                phone = phoNum,
+                email = eMail,
+                notes = contNote,
+                buisness = contType
+            };
             Program.contacts.Add(c);
             return c;
         }
