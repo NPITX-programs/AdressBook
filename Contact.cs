@@ -8,11 +8,11 @@ namespace AdressBook
 {
     internal class Contact
     {
-        internal string firstname;
-        internal string lastname;
-        internal string email;
-        internal string phone;
-        internal bool buisness;
-        internal string notes;
+        internal string firstname; //first name
+        internal string lastname; //last name
+        internal string email; //e-mail address
+        internal string phone; //phone number
+        internal bool buisness; //buisness
+        internal string notes; //notes about contact
     }
 }

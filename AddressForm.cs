@@ -14,8 +14,8 @@ namespace AdressBook
 {
     public partial class AddressForm : Form
     {
-        const bool debug = false;
-        const char sep = '~';
+        const bool debug = false; //toggle debug
+        const char sep = '~'; //seperation character
         public AddressForm()
         {
             InitializeComponent();
@@ -27,54 +27,54 @@ namespace AdressBook
         {
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
-            return finalPath;
+            return finalPath; //output said path
         }
 
-        const string name1 = "store";
-        const string exten1 = "con";
-        const int min = 6;
+        const string name1 = "store"; //name of file
+        const string exten1 = "con"; //extension of file
+        const int min = 6; //minimum total values in an entry
         // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void Frm_main_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
-            readFromFile();
+            readFromFile(); //read from the file
         }
         int ind = 0; //index for the current contact
 
         private void readFromFile()
         {
             bool status = File.Exists(filepath); //check if the file exists
-            if (status || debug)
+            if (status || debug) //check if there
             {
                 try
                 {
-                    using (StreamReader sr = new StreamReader(filepath))
+                    using (StreamReader sr = new StreamReader(filepath)) //make stringreader
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
                         while (!sr.EndOfStream) //add each line to it one by one
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
-                            var cont = contact.Split(sep);
+                            var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                bool conType = false;
-                                if (cont[5] == "true")
+                                bool conType = false; //assumes contact is personal
+                                if (cont[5] == "true") //if the text is true, and it's therefore buisness, change
                                 {
-                                    conType = true;
+                                    conType = true; //part of buisness, set to true
                                 }
-                                createCont(cont[1], cont[2], cont[3], cont[4], cont[5], conType);
-                                generateList();
+                                createCont(cont[1], cont[2], cont[3], cont[4], cont[5], conType); //create the class
+                                generateList(); //generate what will go onto the listboxes
                             }
                             else {
-                                MessageBox.Show("error");
+                                MessageBox.Show("error"); //show error
                             }
                             
                         }
                     }
                 }
-                catch(Exception ex)
+                catch(Exception ex) //show if exception
                 {
                     MessageBox.Show("error" + ex.Message); //show error
 
@@ -164,17 +164,17 @@ namespace AdressBook
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
-            Contact c = new Contact
+            Contact c = new Contact //make new constact
             {
-                firstname = firstName,
-                lastname = lastName,
-                phone = phoNum,
-                email = eMail,
-                notes = contNote,
-                buisness = contType
+                firstname = firstName, //put the realevent input into the releavent field
+                lastname = lastName, //same
+                phone = phoNum, //same
+                email = eMail, //same
+                notes = contNote, //same
+                buisness = contType //same
             };
-            Program.contacts.Add(c);
-            return c;
+            Program.contacts.Add(c); //add to list
+            return c; //output the new contact
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -184,12 +184,12 @@ namespace AdressBook
             Contact newContact = null;
 
             #region contactParts
-            string firstName = txt_firName.Text;
-            string lastName = txt_lastName.Text;
-            string phoNum = txt_phoNum.Text;
-            string eMail = txt_EMail.Text;
-            string contNote = txt_contNote.Text;
-            bool contType = chk_type.Checked;
+            string firstName = txt_firName.Text; //first name
+            string lastName = txt_lastName.Text; //last name
+            string phoNum = txt_phoNum.Text; //phone number
+            string eMail = txt_EMail.Text; //email
+            string contNote = txt_contNote.Text; //note
+            bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
             if (firstName == string.Empty) //check if no firstname
