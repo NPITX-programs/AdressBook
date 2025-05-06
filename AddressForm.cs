@@ -164,17 +164,17 @@ namespace AdressBook
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
-            Contact c = new Contact
+            Contact c = new Contact //make new constact
             {
-                firstname = firstName,
-                lastname = lastName,
-                phone = phoNum,
-                email = eMail,
-                notes = contNote,
-                buisness = contType
+                firstname = firstName, //put the realevent input into the releavent field
+                lastname = lastName, //same
+                phone = phoNum, //same
+                email = eMail, //same
+                notes = contNote, //same
+                buisness = contType //same
             };
-            Program.contacts.Add(c);
-            return c;
+            Program.contacts.Add(c); //add to list
+            return c; //output the new contact
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -184,12 +184,12 @@ namespace AdressBook
             Contact newContact = null;
 
             #region contactParts
-            string firstName = txt_firName.Text;
-            string lastName = txt_lastName.Text;
-            string phoNum = txt_phoNum.Text;
-            string eMail = txt_EMail.Text;
-            string contNote = txt_contNote.Text;
-            bool contType = chk_type.Checked;
+            string firstName = txt_firName.Text; //first name
+            string lastName = txt_lastName.Text; //last name
+            string phoNum = txt_phoNum.Text; //phone number
+            string eMail = txt_EMail.Text; //email
+            string contNote = txt_contNote.Text; //note
+            bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
             if (firstName == string.Empty) //check if no firstname
