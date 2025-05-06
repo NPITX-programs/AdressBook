@@ -162,7 +162,7 @@ namespace AdressBook
                 entry = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
-                WriteToFile(); //write to file
+              //  WriteToFile(); //write to file (designed right now to work for a different design, so... yeah, disable for now
             }
         }
 
