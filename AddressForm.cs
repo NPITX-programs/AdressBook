@@ -146,11 +146,19 @@ namespace AdressBook
             }
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private Contact newEntry(string firstname, string lastname, string phoneNum, string EMail, string note)
         {
             Contact c = new Contact();
-            bool valid = true;
+
+            return = c;
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
             Contact entry = null;
+
+# region contact parts
+
 
             if (txt_firName.Text == string.Empty) //check if no firstname
             {
@@ -180,9 +188,9 @@ namespace AdressBook
                 c.email = txt_EMail.Text;
                 c.notes = txt_contNote.Text;
                 c.buisness = chk_type.Checked;
-                Program.contacts.Add(c);
+                Program.contacts.Add
 
-                entry = nextEntry();
+                entry = newEntry()
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
                 WriteToFile(); //write to file
