@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +33,7 @@ namespace AdressBook
 
         const string name1 = "store";
         const string exten1 = "csv";
-        const int min = 7;
+        const int min = 6;
         string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void frm_main_Load(object sender, EventArgs e)
         {
@@ -59,7 +60,13 @@ namespace AdressBook
                             var cont = contact.Split();
                             if (cont.Length >= min)
                             {
-
+                                bool conType = false;
+                                if (cont[5] == "true")
+                                {
+                                    conType = true;
+                                }
+                                createCont(cont[1], cont[2], cont[3], cont[4], cont[5], conType);
+                                generateList();
                             }
                             else {
                                 MessageBox.Show("error");
