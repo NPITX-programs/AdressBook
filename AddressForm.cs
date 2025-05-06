@@ -60,7 +60,7 @@ namespace AdressBook
                             if (cont.Length >= min)
                             {
                                 bool conType = false; //assumes contact is personal
-                                if (cont[5] == "true") //if the text is true, and it's therefore buisness, change
+                                if (cont[5] == "True") //if the text is true, and it's therefore buisness, change
                                 {
                                     conType = true; //part of buisness, set to true
                                 }
