@@ -145,7 +145,11 @@ namespace AdressBook
                 Program.perIndex.Add(ind);
             }
         }
-        
+        private void generateList()
+        {
+            Contact next = nextEntry();
+            updateList(next);
+        }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact();
