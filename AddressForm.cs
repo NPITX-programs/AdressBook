@@ -149,11 +149,11 @@ namespace AdressBook
             }
 
             if (valid == true || debug == true) {
-                c.firstname = txt_firName.Text;
-                c.lastname = txt_lastName.Text;
-                c.phone = txt_phoNum.Text;
-                c.email = txt_EMail.Text;
-                c.notes = txt_contNote.Text;
+                c.firstname = firstName;
+                c.lastname = lastName;
+                c.phone = phoNum;
+                c.email = eMail;
+                c.notes = contNote;
                 c.buisness = chk_type.Checked;
                 Program.contacts.Add(c);
 
