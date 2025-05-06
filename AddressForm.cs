@@ -14,8 +14,8 @@ namespace AdressBook
 {
     public partial class frm_main : Form
     {
-        bool debug = false;
-        char sep = '~';
+        bool debug = false; //toggle debug
+        char sep = '~'; //seperation character
         public frm_main()
         {
             InitializeComponent();
