@@ -32,6 +32,7 @@ namespace AdressBook
 
         const string name1 = "store";
         const string exten1 = "csv";
+        const int min = 3;
         string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void frm_main_Load(object sender, EventArgs e)
         {
@@ -55,7 +56,15 @@ namespace AdressBook
                         while (!sr.EndOfStream) //add each line to it one by one
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
-                            contact.Split(sep);
+                            var cont = contact.Split();
+                            if (cont.Length >= min)
+                            {
+
+                            }
+                            else {
+                                MessageBox.Show("error");
+                            }
+                            
                         }
                     }
                 }
