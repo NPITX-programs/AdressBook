@@ -58,6 +58,7 @@
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(184, 160);
             this.lst_personal.TabIndex = 0;
+            this.lst_personal.TabStop = false;
             this.lst_personal.Tag = "per";
             this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
@@ -68,6 +69,7 @@
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
             this.lst_buisnes.TabIndex = 1;
+            this.lst_buisnes.TabStop = false;
             this.lst_buisnes.Tag = "bui";
             this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
@@ -77,7 +79,7 @@
             this.chk_type.Location = new System.Drawing.Point(0, 232);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(90, 17);
-            this.chk_type.TabIndex = 2;
+            this.chk_type.TabIndex = 5;
             this.chk_type.Text = "Contact Type";
             this.chk_type.UseVisualStyleBackColor = true;
             // 
@@ -86,7 +88,7 @@
             this.txt_firName.Location = new System.Drawing.Point(6, 32);
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
-            this.txt_firName.TabIndex = 3;
+            this.txt_firName.TabIndex = 1;
             // 
             // txt_EMail
             // 
@@ -102,7 +104,7 @@
             this.txt_contNote.Multiline = true;
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(188, 122);
-            this.txt_contNote.TabIndex = 5;
+            this.txt_contNote.TabIndex = 6;
             // 
             // txt_phoNum
             // 
@@ -111,7 +113,7 @@
             this.txt_phoNum.Mask = "(999) 000-0000";
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
-            this.txt_phoNum.TabIndex = 6;
+            this.txt_phoNum.TabIndex = 3;
             this.txt_phoNum.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txt_lastName
@@ -119,7 +121,7 @@
             this.txt_lastName.Location = new System.Drawing.Point(6, 84);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
-            this.txt_lastName.TabIndex = 7;
+            this.txt_lastName.TabIndex = 2;
             // 
             // btn_add
             // 
@@ -127,6 +129,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
+            this.btn_add.TabStop = false;
             this.btn_add.Text = "Add Entry";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
@@ -137,6 +140,7 @@
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(113, 23);
             this.btn_close.TabIndex = 10;
+            this.btn_close.TabStop = false;
             this.btn_close.Text = "Close Application";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
