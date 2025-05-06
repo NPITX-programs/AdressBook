@@ -13,7 +13,7 @@ namespace AdressBook
 {
     public partial class frm_main : Form
     {
-        bool debug = true;
+        bool debug = false;
         string sep = "~";
         public frm_main()
         {

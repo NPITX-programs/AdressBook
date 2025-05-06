@@ -87,7 +87,6 @@
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
             this.txt_firName.TabIndex = 3;
-            this.txt_firName.Text = "First Name";
             // 
             // txt_EMail
             // 
@@ -95,7 +94,6 @@
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 4;
-            this.txt_EMail.Text = "E-Mail";
             // 
             // txt_contNote
             // 
@@ -105,7 +103,6 @@
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(188, 122);
             this.txt_contNote.TabIndex = 5;
-            this.txt_contNote.Text = "Information";
             // 
             // txt_phoNum
             // 
@@ -123,7 +120,6 @@
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 7;
-            this.txt_lastName.Text = "Last Name";
             // 
             // btn_add
             // 
