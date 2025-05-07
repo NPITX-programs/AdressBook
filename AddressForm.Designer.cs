@@ -141,6 +141,8 @@
             this.btn_add.TabIndex = 8;
             this.btn_add.TabStop = false;
             this.btn_add.Text = "Add Entry";
+            this.toolTip1.SetToolTip(this.btn_add, "Add the entry into the lists\r\nthis saves it into the list that loads on start\r\n\r\n" +
+        "");
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -152,6 +154,7 @@
             this.btn_close.TabIndex = 10;
             this.btn_close.TabStop = false;
             this.btn_close.Text = "Close Application";
+            this.toolTip1.SetToolTip(this.btn_close, "Close the application");
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
