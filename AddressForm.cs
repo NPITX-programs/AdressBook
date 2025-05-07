@@ -59,11 +59,6 @@ namespace AdressBook
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                //bool conType = false; //assumes contact is personal
-                                //if (cont[5] == "True") //if the text is true, and it's therefore buisness, change
-                                //{
-                                //    conType = true; //part of buisness, set to true
-                                //}
                                 createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
                                 generateList(); //generate what will go onto the listboxes
                             }
