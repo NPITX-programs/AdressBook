@@ -1,6 +1,6 @@
 ﻿namespace AdressBook
 {
-    partial class frm_main
+    partial class AddressForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lst_personal = new System.Windows.Forms.ListBox();
             this.lst_buisnes = new System.Windows.Forms.ListBox();
             this.chk_type = new System.Windows.Forms.CheckBox();
@@ -47,6 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -54,22 +56,26 @@
             // lst_personal
             // 
             this.lst_personal.FormattingEnabled = true;
-            this.lst_personal.Items.AddRange(new object[] {
-            "Personal"});
             this.lst_personal.Location = new System.Drawing.Point(10, 44);
             this.lst_personal.Name = "lst_personal";
             this.lst_personal.Size = new System.Drawing.Size(184, 160);
             this.lst_personal.TabIndex = 0;
+            this.lst_personal.TabStop = false;
+            this.lst_personal.Tag = "per";
+            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
+            this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // lst_buisnes
             // 
             this.lst_buisnes.FormattingEnabled = true;
-            this.lst_buisnes.Items.AddRange(new object[] {
-            "Buisness"});
             this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
             this.lst_buisnes.Name = "lst_buisnes";
             this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
             this.lst_buisnes.TabIndex = 1;
+            this.lst_buisnes.TabStop = false;
+            this.lst_buisnes.Tag = "bui";
+            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
+            this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // chk_type
             // 
@@ -77,8 +83,10 @@
             this.chk_type.Location = new System.Drawing.Point(0, 232);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(90, 17);
-            this.chk_type.TabIndex = 2;
+            this.chk_type.TabIndex = 5;
             this.chk_type.Text = "Contact Type";
+            this.toolTip1.SetToolTip(this.chk_type, "Please mark the contact type\r\n\r\nA checkmark means \"buisness\"\r\nNo Checkmark means " +
+        "\"personal\"");
             this.chk_type.UseVisualStyleBackColor = true;
             // 
             // txt_firName
@@ -86,16 +94,16 @@
             this.txt_firName.Location = new System.Drawing.Point(6, 32);
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
-            this.txt_firName.TabIndex = 3;
-            this.txt_firName.Text = "First Name";
+            this.txt_firName.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txt_firName, "Please enter a First Name. Must be at least 1 character");
             // 
             // txt_EMail
             // 
-            this.txt_EMail.Location = new System.Drawing.Point(6, 193);
+            this.txt_EMail.Location = new System.Drawing.Point(0, 138);
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
-            this.txt_EMail.TabIndex = 4;
-            this.txt_EMail.Text = "E-Mail";
+            this.txt_EMail.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txt_EMail, "Please enter an e-mail address\r\nmust be at least 1 character");
             // 
             // txt_contNote
             // 
@@ -104,26 +112,28 @@
             this.txt_contNote.Multiline = true;
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(188, 122);
-            this.txt_contNote.TabIndex = 5;
-            this.txt_contNote.Text = "Information";
+            this.txt_contNote.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txt_contNote, "Please input in whatever information about the contact\r\nmust be at least 1 charac" +
+        "ter");
             // 
             // txt_phoNum
             // 
             this.txt_phoNum.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.txt_phoNum.Location = new System.Drawing.Point(6, 142);
+            this.txt_phoNum.Location = new System.Drawing.Point(0, 191);
             this.txt_phoNum.Mask = "(999) 000-0000";
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
-            this.txt_phoNum.TabIndex = 6;
+            this.txt_phoNum.TabIndex = 4;
             this.txt_phoNum.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.toolTip1.SetToolTip(this.txt_phoNum, "Please input a phone number");
             // 
             // txt_lastName
             // 
             this.txt_lastName.Location = new System.Drawing.Point(6, 84);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
-            this.txt_lastName.TabIndex = 7;
-            this.txt_lastName.Text = "Last Name";
+            this.txt_lastName.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txt_lastName, "Please Input a Last Name. Must be at least 1 character");
             // 
             // btn_add
             // 
@@ -131,7 +141,10 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
+            this.btn_add.TabStop = false;
             this.btn_add.Text = "Add Entry";
+            this.toolTip1.SetToolTip(this.btn_add, "Add the entry into the lists\r\nthis saves it into the list that loads on start\r\n\r\n" +
+        "");
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -141,7 +154,9 @@
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(113, 23);
             this.btn_close.TabIndex = 10;
+            this.btn_close.TabStop = false;
             this.btn_close.Text = "Close Application";
+            this.toolTip1.SetToolTip(this.btn_close, "Close the application");
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
@@ -166,7 +181,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 126);
+            this.label3.Location = new System.Drawing.Point(0, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 13;
@@ -175,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 177);
+            this.label4.Location = new System.Drawing.Point(3, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 14;
@@ -184,7 +199,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 271);
+            this.label5.Location = new System.Drawing.Point(-3, 282);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 15;
@@ -225,13 +240,13 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_firName);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txt_phoNum);
             this.groupBox2.Controls.Add(this.btn_add);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.chk_type);
             this.groupBox2.Controls.Add(this.txt_EMail);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txt_contNote);
-            this.groupBox2.Controls.Add(this.txt_phoNum);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_lastName);
             this.groupBox2.Location = new System.Drawing.Point(12, 28);
@@ -240,7 +255,7 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
-            // frm_main
+            // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,9 +263,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_close);
-            this.Name = "frm_main";
+            this.Name = "AddressForm";
             this.Text = "Primary Form";
-            this.Load += new System.EventHandler(this.frm_main_Load);
+            this.Load += new System.EventHandler(this.Frm_main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -280,6 +295,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

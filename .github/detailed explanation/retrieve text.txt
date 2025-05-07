@@ -1,0 +1,5 @@
+this here gets the list index
+
+one of the main issues with this is that the contacts are all stored in one list. to get around that, this system was created:
+
+how it works is interesting. each list box has another list "parallel" to it (made at the same time, same order) that refers to the index in the main list where the contact actually is. that could lead to issues with editing contacts, removeing, ect. but, cross that when it comes to it
