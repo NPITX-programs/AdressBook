@@ -162,7 +162,7 @@ namespace AdressBook
             Contact next = nextEntry();
             updateList(next);
         }
-        private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
+        private Contact createCont(string firstName, string lastName, string eMail, string phoNum, bool contType, string contNote)
         {
             Contact c = new Contact //make new constact
             {
