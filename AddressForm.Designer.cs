@@ -123,7 +123,7 @@
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
             this.txt_phoNum.TabIndex = 4;
             this.txt_phoNum.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.toolTip1.SetToolTip(this.txt_phoNum, "Please input a tooltip");
+            this.toolTip1.SetToolTip(this.txt_phoNum, "Please input a phone number");
             // 
             // txt_lastName
             // 
