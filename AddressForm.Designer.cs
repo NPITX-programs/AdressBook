@@ -83,6 +83,8 @@
             this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 5;
             this.chk_type.Text = "Contact Type";
+            this.toolTip1.SetToolTip(this.chk_type, "Please mark the contact type\r\n\r\nA checkmark means \"buisness\"\r\nNo Checkmark means " +
+        "\"personal\"");
             this.chk_type.UseVisualStyleBackColor = true;
             // 
             // txt_firName
@@ -99,6 +101,7 @@
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txt_EMail, "Please enter an e-mail address\r\nmust be at least 1 character");
             // 
             // txt_contNote
             // 
@@ -108,6 +111,8 @@
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(188, 122);
             this.txt_contNote.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txt_contNote, "Please input in whatever information about the contact\r\nmust be at least 1 charac" +
+        "ter");
             // 
             // txt_phoNum
             // 
@@ -118,6 +123,7 @@
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
             this.txt_phoNum.TabIndex = 4;
             this.txt_phoNum.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.toolTip1.SetToolTip(this.txt_phoNum, "Please input a tooltip");
             // 
             // txt_lastName
             // 
@@ -125,6 +131,7 @@
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txt_lastName, "Please Input a Last Name. Must be at least 1 character");
             // 
             // btn_add
             // 
