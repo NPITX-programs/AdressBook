@@ -172,7 +172,14 @@ namespace AdressBook
                 email = eMail, //same
                 notes = contNote, //same
                 buisness = contType //same
-            };
+
+                        internal string firstname; //first name
+        internal string lastname; //last name
+        internal string email; //e-mail address
+        internal string phone; //phone number
+        internal bool buisness; //buisness
+        internal string notes; //notes about contact
+    };
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
         }
