@@ -59,12 +59,7 @@ namespace AdressBook
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                bool conType = false; //assumes contact is personal
-                                if (cont[5] == "true") //if the text is true, and it's therefore buisness, change
-                                {
-                                    conType = true; //part of buisness, set to true
-                                }
-                                createCont(cont[1], cont[2], cont[3], cont[4], cont[5], conType); //create the class
+                                createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
                                 generateList(); //generate what will go onto the listboxes
                             }
                             else {
@@ -102,7 +97,7 @@ namespace AdressBook
                                     string line = c.firstname + sep + c.lastname + sep +  //first and last name
                                         c.email + sep + c.phone + sep + c.buisness + sep + //contact information
                                         c.notes; //notes
-                                    sw.Write(line); //write the information to the line
+                                    sw.WriteLine(line); //write the information to the line
                                 }
                             } //streamwriter
                         }
