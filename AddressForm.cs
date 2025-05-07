@@ -5,17 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdressBook
 {
-    public partial class frm_main : Form
+    public partial class AddressForm : Form
     {
-        bool debug = true;
-        string sep = "~";
-        public frm_main()
+        const bool debug = false; //toggle debug
+        const char sep = '~'; //seperation character
+        public AddressForm()
         {
             InitializeComponent();
         }
@@ -24,53 +25,92 @@ namespace AdressBook
 
         private string CreatePath(string root, string path, string name, string extension)
         {
-            string finalPath = string.Empty;
-            finalPath = root + path + @"/" + name + "." + extension; //create the final path
+            string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
-            return finalPath;
+            return finalPath; //output said path
         }
 
-        const string name1 = "store";
-        const string exten1 = "csv";
-        string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
-        private void frm_main_Load(object sender, EventArgs e)
+        const string name1 = "store"; //name of file
+        const string exten1 = "con"; //extension of file
+        const int min = 6; //minimum total values in an entry
+        // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
+        private void Frm_main_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1);
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
-            clear();
+            readFromFile(); //read from the file
         }
         int ind = 0; //index for the current contact
 
-        private void WriteToFile()
+        private void readFromFile()
         {
             bool status = File.Exists(filepath); //check if the file exists
-            if (status || debug)
+            if (status || debug) //check if there
             {
                 try
                 {
-                    using (StreamWriter sw = new StreamWriter(filepath))
+                    using (StreamReader sr = new StreamReader(filepath)) //make stringreader
                     {
-                        foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
+                        //csv - comma seperated values
+                        //firstname-lastname-email-phone-buisness-notes
+                        while (!sr.EndOfStream) //add each line to it one by one
                         {
-                            //csv - comma seperated values
-                            //firstname-lastname-email-phone-buisness-notes
-                            string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                                c.notes; //notes
-                            sw.Write(line); //write the information to the line
+                            string contact = sr.ReadLine(); //gets the next line of text from the file
+                            var cont = contact.Split(sep); //splits it by the seperator
+                            if (cont.Length >= min)
+                            {
+                                createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
+                                generateList(); //generate what will go onto the listboxes
+                            }
+                            else {
+                                MessageBox.Show("error"); //show error
+                            }
+                            
                         }
-                    } //streamwriter
+                    }
                 }
-                catch (Exception ex)
+                catch(Exception ex) //show if exception
                 {
                     MessageBox.Show("error" + ex.Message); //show error
+
                 }
             }
             else
             {
                 MessageBox.Show("file not found"); //show error
+
             }
         }
+        private void WriteToFile()
+                {
+                    bool status = File.Exists(filepath); //check if the file exists
+                    if (status || debug)
+                    {
+                        try
+                        {
+                            using (StreamWriter sw = new StreamWriter(filepath))
+                            {
+                                foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
+                                {
+                                    //csv - comma seperated values
+                                    //firstname-lastname-email-phone-buisness-notes
+                                    string line = c.firstname + sep + c.lastname + sep +  //first and last name
+                                        c.email + sep + c.phone + sep + c.buisness + sep + //contact information
+                                        c.notes; //notes
+                                    sw.WriteLine(line); //write the information to the line
+                                }
+                            } //streamwriter
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("error" + ex.Message); //show error
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("file not found"); //show error
+                    }
+                }
 
         private void clear() //triger to clear inputs
         {
@@ -112,43 +152,64 @@ namespace AdressBook
                 Program.perIndex.Add(ind);
             }
         }
+        private void generateList()
+        {
+            Contact next = nextEntry();
+            updateList(next);
+        }
+        private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
+        {
+            Contact c = new Contact //make new constact
+            {
+                firstname = firstName, //put the realevent input into the releavent field
+                lastname = lastName, //same
+                phone = phoNum, //same
+                email = eMail, //same
+                notes = contNote, //same
+                buisness = contType //same
+            };
+            Program.contacts.Add(c); //add to list
+            return c; //output the new contact
+        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Contact c = new Contact();
             bool valid = true;
             Contact entry = null;
+            Contact newContact = null;
 
-            if (txt_firName.Text == string.Empty) //check if no firstname
+            #region contactParts
+            string firstName = txt_firName.Text; //first name
+            string lastName = txt_lastName.Text; //last name
+            string phoNum = txt_phoNum.Text; //phone number
+            string eMail = txt_EMail.Text; //email
+            string contNote = txt_contNote.Text; //note
+            bool contType = chk_type.Checked; //if checked
+            #endregion //simplified variables for the content of the contact
+
+            if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
             }
-            else if (txt_lastName.Text == string.Empty) //check if no lastname
+            else if (lastName == string.Empty) //check if no lastname
             {
                 valid = false; //invalid
             }
-            else if (txt_phoNum.Text == string.Empty) //check if no phonenumber
+            else if (phoNum == string.Empty) //check if no phonenumber
             {
                 valid = false; //invalid
             }
-            else if (txt_EMail.Text == string.Empty) //check if no e-mail
+            else if (eMail == string.Empty) //check if no e-mail
             {
                 valid = false; //invalid
             }
-            else if (txt_contNote.Text == string.Empty) //check if no note
+            else if (contNote == string.Empty) //check if no note
             {
                 valid = false; //invalid
             }
 
             if (valid == true || debug == true) {
-                c.firstname = txt_firName.Text;
-                c.lastname = txt_lastName.Text;
-                c.phone = txt_phoNum.Text;
-                c.email = txt_EMail.Text;
-                c.notes = txt_contNote.Text;
-                c.buisness = chk_type.Checked;
-                Program.contacts.Add(c);
-
+                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
