@@ -162,16 +162,16 @@ namespace AdressBook
             Contact next = nextEntry();
             updateList(next);
         }
-        private Contact createCont(string firstName, string lastName, string eMail, string phoNum, bool contType, string contNote)
+        private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
             {
                 firstname = firstName, //put the realevent input into the releavent field
                 lastname = lastName, //same
-                phone = phoNum, //same
                 email = eMail, //same
+                phone = phoNum, //same
+                buisness = contType, //same
                 notes = contNote, //same
-                buisness = contType //same
             };
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
