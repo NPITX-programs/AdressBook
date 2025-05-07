@@ -186,10 +186,10 @@ namespace AdressBook
             #region contactParts
             string firstName = txt_firName.Text; //first name
             string lastName = txt_lastName.Text; //last name
-            string phoNum = txt_phoNum.Text; //phone number
             string eMail = txt_EMail.Text; //email
-            string contNote = txt_contNote.Text; //note
+            string phoNum = txt_phoNum.Text; //phone number
             bool contType = chk_type.Checked; //if checked
+            string contNote = txt_contNote.Text; //note
             #endregion //simplified variables for the content of the contact
 
             if (firstName == string.Empty) //check if no firstname
@@ -214,7 +214,7 @@ namespace AdressBook
             }
 
             if (valid == true || debug == true) {
-                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
+                newContact = createCont(firstName, lastName, eMail, phoNum, contType, contNote);
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
