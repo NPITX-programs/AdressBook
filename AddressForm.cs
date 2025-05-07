@@ -59,12 +59,7 @@ namespace AdressBook
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                bool conType = false; //assumes contact is personal
-                                if (cont[5] == "True") //if the text is true, and it's therefore buisness, change
-                                {
-                                    conType = true; //part of buisness, set to true
-                                }
-                                createCont(cont[1], cont[2], cont[3], cont[4], conType, cont[6]); //create the class
+                                createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
                                 generateList(); //generate what will go onto the listboxes
                             }
                             else {
@@ -162,16 +157,16 @@ namespace AdressBook
             Contact next = nextEntry();
             updateList(next);
         }
-        private Contact createCont(string firstName, string lastName, string eMail, string phoNum, bool contType, string contNote)
+        private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
             {
                 firstname = firstName, //put the realevent input into the releavent field
                 lastname = lastName, //same
-                email = eMail, //same
                 phone = phoNum, //same
-                buisness = contType, //same
+                email = eMail, //same
                 notes = contNote, //same
+                buisness = contType //same
             };
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
@@ -186,10 +181,10 @@ namespace AdressBook
             #region contactParts
             string firstName = txt_firName.Text; //first name
             string lastName = txt_lastName.Text; //last name
-            string eMail = txt_EMail.Text; //email
             string phoNum = txt_phoNum.Text; //phone number
-            bool contType = chk_type.Checked; //if checked
+            string eMail = txt_EMail.Text; //email
             string contNote = txt_contNote.Text; //note
+            bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
             if (firstName == string.Empty) //check if no firstname
@@ -200,21 +195,21 @@ namespace AdressBook
             {
                 valid = false; //invalid
             }
-            else if (eMail == string.Empty) //check if no phonenumber
+            else if (phoNum == string.Empty) //check if no phonenumber
             {
                 valid = false; //invalid
             }
-            else if (phoNum == string.Empty) //check if no e-mail
+            else if (eMail == string.Empty) //check if no e-mail
             {
                 valid = false; //invalid
-            } //imagine phone buisness type is here
+            }
             else if (contNote == string.Empty) //check if no note
             {
                 valid = false; //invalid
             }
 
             if (valid == true || debug == true) {
-                newContact = createCont(firstName, lastName, eMail, phoNum, contType, contNote);
+                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
