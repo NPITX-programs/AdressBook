@@ -62,6 +62,7 @@
             this.lst_personal.TabIndex = 0;
             this.lst_personal.TabStop = false;
             this.lst_personal.Tag = "per";
+            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
             this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // lst_buisnes
@@ -73,6 +74,7 @@
             this.lst_buisnes.TabIndex = 1;
             this.lst_buisnes.TabStop = false;
             this.lst_buisnes.Tag = "bui";
+            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
             this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // chk_type
@@ -141,6 +143,8 @@
             this.btn_add.TabIndex = 8;
             this.btn_add.TabStop = false;
             this.btn_add.Text = "Add Entry";
+            this.toolTip1.SetToolTip(this.btn_add, "Add the entry into the lists\r\nthis saves it into the list that loads on start\r\n\r\n" +
+        "");
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -152,6 +156,7 @@
             this.btn_close.TabIndex = 10;
             this.btn_close.TabStop = false;
             this.btn_close.Text = "Close Application";
+            this.toolTip1.SetToolTip(this.btn_close, "Close the application");
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
