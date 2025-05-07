@@ -100,7 +100,7 @@ namespace AdressBook
                                     //csv - comma seperated values
                                     //firstname-lastname-email-phone-buisness-notes
                                     string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                        c.email + sep + c.phone + sep + c.buisness + sep + //contact information
+                                        c.phone + sep + c.phone + sep + c.buisness + sep + //contact information
                                         c.notes; //notes
                                     sw.WriteLine(line); //write the information to the line
                                 }
@@ -200,14 +200,14 @@ namespace AdressBook
             {
                 valid = false; //invalid
             }
-            else if (phoNum == string.Empty) //check if no phonenumber
+            else if (eMail == string.Empty) //check if no phonenumber
             {
                 valid = false; //invalid
             }
-            else if (eMail == string.Empty) //check if no e-mail
+            else if (phoNum == string.Empty) //check if no e-mail
             {
                 valid = false; //invalid
-            }
+            } //imagine phone buisness type is here
             else if (contNote == string.Empty) //check if no note
             {
                 valid = false; //invalid
