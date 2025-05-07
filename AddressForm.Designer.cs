@@ -62,6 +62,7 @@
             this.lst_personal.TabIndex = 0;
             this.lst_personal.TabStop = false;
             this.lst_personal.Tag = "per";
+            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
             this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // lst_buisnes
@@ -73,6 +74,7 @@
             this.lst_buisnes.TabIndex = 1;
             this.lst_buisnes.TabStop = false;
             this.lst_buisnes.Tag = "bui";
+            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
             this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // chk_type
