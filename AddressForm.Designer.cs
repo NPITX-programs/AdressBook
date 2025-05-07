@@ -62,6 +62,7 @@
             this.lst_personal.TabIndex = 0;
             this.lst_personal.TabStop = false;
             this.lst_personal.Tag = "per";
+            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
             this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // lst_buisnes
@@ -73,6 +74,7 @@
             this.lst_buisnes.TabIndex = 1;
             this.lst_buisnes.TabStop = false;
             this.lst_buisnes.Tag = "bui";
+            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
             this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // chk_type
@@ -83,6 +85,8 @@
             this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 5;
             this.chk_type.Text = "Contact Type";
+            this.toolTip1.SetToolTip(this.chk_type, "Please mark the contact type\r\n\r\nA checkmark means \"buisness\"\r\nNo Checkmark means " +
+        "\"personal\"");
             this.chk_type.UseVisualStyleBackColor = true;
             // 
             // txt_firName
@@ -99,6 +103,7 @@
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txt_EMail, "Please enter an e-mail address\r\nmust be at least 1 character");
             // 
             // txt_contNote
             // 
@@ -108,6 +113,8 @@
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(188, 122);
             this.txt_contNote.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txt_contNote, "Please input in whatever information about the contact\r\nmust be at least 1 charac" +
+        "ter");
             // 
             // txt_phoNum
             // 
@@ -118,6 +125,7 @@
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
             this.txt_phoNum.TabIndex = 4;
             this.txt_phoNum.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.toolTip1.SetToolTip(this.txt_phoNum, "Please input a phone number");
             // 
             // txt_lastName
             // 
@@ -125,6 +133,7 @@
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txt_lastName, "Please Input a Last Name. Must be at least 1 character");
             // 
             // btn_add
             // 
@@ -134,6 +143,8 @@
             this.btn_add.TabIndex = 8;
             this.btn_add.TabStop = false;
             this.btn_add.Text = "Add Entry";
+            this.toolTip1.SetToolTip(this.btn_add, "Add the entry into the lists\r\nthis saves it into the list that loads on start\r\n\r\n" +
+        "");
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -145,6 +156,7 @@
             this.btn_close.TabIndex = 10;
             this.btn_close.TabStop = false;
             this.btn_close.Text = "Close Application";
+            this.toolTip1.SetToolTip(this.btn_close, "Close the application");
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
