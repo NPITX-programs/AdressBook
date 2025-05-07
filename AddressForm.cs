@@ -64,7 +64,7 @@ namespace AdressBook
                                 {
                                     conType = true; //part of buisness, set to true
                                 }
-                                createCont(cont[1], cont[2], cont[3], cont[4], cont[5], conType); //create the class
+                                createCont(cont[1], cont[2], cont[3], cont[4], conType, cont[6]); //create the class
                                 generateList(); //generate what will go onto the listboxes
                             }
                             else {
