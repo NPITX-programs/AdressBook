@@ -100,7 +100,7 @@ namespace AdressBook
                                     //csv - comma seperated values
                                     //firstname-lastname-email-phone-buisness-notes
                                     string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                        c.phone + sep + c.phone + sep + c.buisness + sep + //contact information
+                                        c.email + sep + c.phone + sep + c.buisness + sep + //contact information
                                         c.notes; //notes
                                     sw.WriteLine(line); //write the information to the line
                                 }
