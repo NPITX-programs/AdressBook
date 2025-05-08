@@ -1,0 +1,3 @@
+for adding files that are basicly the framework for the repo, and documentation of the program
+
+it may contain the full program to allow ease of merge, but it isn't for editing it! (except maybe comments)
