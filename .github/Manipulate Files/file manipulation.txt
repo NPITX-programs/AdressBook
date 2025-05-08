@@ -1,0 +1,18 @@
+for adding from the saved file, the idea is that the "add" function can be modified to output the whole thing/ be used to get all of the entrie.
+
+that way, the order is:
+
+1. open
+2. read file
+3. split CSV
+4. create classes based on CSV
+5. add that into the list
+6. use this to add it to the contacts
+7. done!
+
+___________________________________________________________
+save to file just adds a new line with the necessary separation symbol (determined by a constant variable, in this case a "~")
+
+a new system will be added to replace tildes with something else, so the splitting symbol is replaced in the text by something, then that becomes a tilde.
+
+details to be figured out
