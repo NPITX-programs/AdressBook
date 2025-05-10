@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 .github/Design Information/Thumbs.db
 /.transfer
+*.bkp
