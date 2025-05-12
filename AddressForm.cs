@@ -39,6 +39,8 @@ namespace AdressBook
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
             readFromFile(); //read from the file
+            openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
+            saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
         }
         int ind = 0; //index for the current contact
 
@@ -274,7 +276,7 @@ namespace AdressBook
             if (openFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
             {
                 filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
-                Program.contacts.Clear(); //clear the list
+                Program.contacts.Clear(); //clear the class
                 Program.buiIndex.Clear(); //clear the buisness index
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
