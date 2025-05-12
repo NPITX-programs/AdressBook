@@ -2,9 +2,7 @@ validate
 if validation passed, do all of the following: 
 
 save to class
-	save to class
 
 call the file save method
 
 clear UI input
-	file component
