@@ -51,6 +51,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_svAs = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btn_op = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -272,11 +274,26 @@
             this.saveFileDialog1.DefaultExt = "con";
             this.saveFileDialog1.Title = "Save As";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btn_op
+            // 
+            this.btn_op.Location = new System.Drawing.Point(361, -1);
+            this.btn_op.Name = "btn_op";
+            this.btn_op.Size = new System.Drawing.Size(75, 23);
+            this.btn_op.TabIndex = 20;
+            this.btn_op.Text = "Open File";
+            this.btn_op.UseVisualStyleBackColor = true;
+            this.btn_op.Click += new System.EventHandler(this.btn_op_Click);
+            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_op);
             this.Controls.Add(this.btn_svAs);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -316,6 +333,8 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btn_svAs;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btn_op;
     }
 }
 
