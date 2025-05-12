@@ -13,3 +13,6 @@ if validation passed, do all of the following:
 		stream writer to targeted location, utilizing CSV (or something conceptually like that)
 
 clear UI input
+	clear data input:
+	txt"source" clear
+	checkbox uncheck
