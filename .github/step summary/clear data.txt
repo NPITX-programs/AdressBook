@@ -1,3 +1,0 @@
-clear data input:
-txt"source" clear
-checkbox uncheck
