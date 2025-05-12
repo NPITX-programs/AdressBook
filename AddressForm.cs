@@ -260,7 +260,11 @@ namespace AdressBook
             //filter
             saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con";
 
-            saveFileDialog1.ShowDialog();
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filepath = saveFileDialog1.FileName;
+                WriteToFile();
+            }
         }
     }
 }
