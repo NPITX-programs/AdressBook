@@ -265,6 +265,7 @@
             this.btn_svAs.TabIndex = 19;
             this.btn_svAs.Text = "Save As";
             this.btn_svAs.UseVisualStyleBackColor = true;
+            this.btn_svAs.Click += new System.EventHandler(this.btn_svAs_Click);
             // 
             // saveFileDialog1
             // 

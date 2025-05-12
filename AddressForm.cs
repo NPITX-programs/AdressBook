@@ -254,5 +254,11 @@ namespace AdressBook
             chk_type.Checked = c.buisness; //set the checkbox
 
         }
+
+        private void btn_svAs_Click(object sender, EventArgs e)
+        {
+            //filter
+            saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con|";
+        }
     }
 }
