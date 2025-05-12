@@ -266,5 +266,19 @@ namespace AdressBook
                 WriteToFile(); //write to files
             }
         }
+
+        private void btn_op_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con"; //allow them to sort for a specific extension (the one utilized by this program), or any file
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
+            {
+                filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
+                Program.contacts.Clear(); //clear the list
+                Program.buiIndex.Clear(); //clear the buisness index
+                Program.perIndex.Clear(); //clear the personal index
+                readFromFile(); //read from file
+            }
+        }
     }
 }
