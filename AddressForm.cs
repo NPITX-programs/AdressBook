@@ -258,12 +258,12 @@ namespace AdressBook
         private void btn_svAs_Click(object sender, EventArgs e)
         {
             //filter
-            saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con";
+            saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con"; //allow them to sort for a specific extension (the one utilized by this program), or any file
 
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
             {
-                filepath = saveFileDialog1.FileName;
-                WriteToFile();
+                filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
+                WriteToFile(); //write to files
             }
         }
     }
