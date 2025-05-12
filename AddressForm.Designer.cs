@@ -50,6 +50,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_svAs = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -265,6 +266,11 @@
             this.btn_svAs.Text = "Save As";
             this.btn_svAs.UseVisualStyleBackColor = true;
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "con";
+            this.saveFileDialog1.Title = "Save As";
+            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,6 +314,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btn_svAs;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
