@@ -258,7 +258,9 @@ namespace AdressBook
         private void btn_svAs_Click(object sender, EventArgs e)
         {
             //filter
-            saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con|";
+            saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con";
+
+            saveFileDialog1.ShowDialog();
         }
     }
 }
