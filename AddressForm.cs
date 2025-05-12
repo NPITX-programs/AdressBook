@@ -266,5 +266,10 @@ namespace AdressBook
                 WriteToFile(); //write to files
             }
         }
+
+        private void btn_op_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
