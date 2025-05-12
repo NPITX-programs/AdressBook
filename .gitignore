@@ -363,5 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 .github/Design Information/Thumbs.db
 /.transfer
-*.bkp
-*.dtmp
+.github/Refferences/.$flowchart.drawio.bkp
