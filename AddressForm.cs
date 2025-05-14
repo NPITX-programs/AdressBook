@@ -113,6 +113,11 @@ namespace AdressBook
                         MessageBox.Show("file not found"); //show error
                     }
                 }
+        //save
+
+        //save as
+            //to make new file, use stream writer?
+            //didin't work earlier, unknown why
 
         private void clear() //triger to clear inputs
         {
