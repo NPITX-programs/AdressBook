@@ -260,7 +260,7 @@ namespace AdressBook
             txt_contNote.Text = c.notes; //set the notes
             chk_type.Checked = c.buisness; //set the checkbox
 
-        } 
+        }  //put contents of selected list in UI
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
