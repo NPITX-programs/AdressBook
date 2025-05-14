@@ -290,7 +290,7 @@ namespace AdressBook
 
         private void btn_placeHold(object sender, EventArgs e) //temporary placeholder
         {
-            MessageBox.Show("To Be Added");
+            WriteToFile();
         }
     }
 }
