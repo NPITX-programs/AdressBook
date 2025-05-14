@@ -286,6 +286,11 @@ namespace AdressBook
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        } //save
+        } //open file
+
+        private void btn_placeHold(object sender, EventArgs e) //temporary placeholder
+        {
+            MessageBox.Show("To Be Added");
+        }
     }
 }
