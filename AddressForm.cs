@@ -82,7 +82,7 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
-        }
+        } //read from file
         private void WriteToFile()
                 {
                     bool status = File.Exists(filepath); //check if the file exists
@@ -112,7 +112,7 @@ namespace AdressBook
                     {
                         MessageBox.Show("file not found"); //show error
                     }
-                }
+                } //write to file (effectively an auto-save)
         //save
 
         //save as
