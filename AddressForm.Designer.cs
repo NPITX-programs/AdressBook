@@ -38,6 +38,7 @@
             this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,8 +49,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_svAs = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btn_op = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,6 +161,18 @@
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
+            // btn_close
+            // 
+            this.btn_close.Location = new System.Drawing.Point(372, 184);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(113, 23);
+            this.btn_close.TabIndex = 10;
+            this.btn_close.TabStop = false;
+            this.btn_close.Text = "Close Application";
+            this.toolTip1.SetToolTip(this.btn_close, "Close the application");
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -253,6 +268,16 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
+            // btn_svAs
+            // 
+            this.btn_svAs.Location = new System.Drawing.Point(327, 260);
+            this.btn_svAs.Name = "btn_svAs";
+            this.btn_svAs.Size = new System.Drawing.Size(75, 23);
+            this.btn_svAs.TabIndex = 19;
+            this.btn_svAs.Text = "Save As";
+            this.btn_svAs.UseVisualStyleBackColor = true;
+            this.btn_svAs.Click += new System.EventHandler(this.btn_svAs_Click);
+            // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "con";
@@ -261,6 +286,16 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btn_op
+            // 
+            this.btn_op.Location = new System.Drawing.Point(410, 326);
+            this.btn_op.Name = "btn_op";
+            this.btn_op.Size = new System.Drawing.Size(75, 23);
+            this.btn_op.TabIndex = 20;
+            this.btn_op.Text = "Open File";
+            this.btn_op.UseVisualStyleBackColor = true;
+            this.btn_op.Click += new System.EventHandler(this.btn_op_Click);
             // 
             // menuStrip1
             // 
@@ -304,7 +339,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // openToolStripMenuItem
             // 
@@ -317,7 +352,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(183, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -332,8 +367,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_op);
+            this.Controls.Add(this.btn_svAs);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddressForm";
@@ -361,6 +399,7 @@
         private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -371,8 +410,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btn_svAs;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btn_op;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
