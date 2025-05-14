@@ -28,7 +28,7 @@ namespace AdressBook
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
             return finalPath; //output said path
-        }
+        } //dynamicly generate base path
 
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
@@ -41,7 +41,7 @@ namespace AdressBook
             readFromFile(); //read from the file
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
-        }
+        } //load
         int ind = 0; //index for the current contact
 
         private void readFromFile()
@@ -82,7 +82,7 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
-        }
+        } //read from file
         private void WriteToFile()
                 {
                     bool status = File.Exists(filepath); //check if the file exists
@@ -112,7 +112,7 @@ namespace AdressBook
                     {
                         MessageBox.Show("file not found"); //show error
                     }
-                }
+                } //write to file
         //save
 
         //save as
@@ -260,7 +260,7 @@ namespace AdressBook
             txt_contNote.Text = c.notes; //set the notes
             chk_type.Checked = c.buisness; //set the checkbox
 
-        }
+        } //show the selected contact
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
@@ -272,7 +272,7 @@ namespace AdressBook
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
                 WriteToFile(); //write to files
             }
-        }
+        } //save as
 
         private void btn_op_Click(object sender, EventArgs e)
         {
@@ -286,7 +286,7 @@ namespace AdressBook
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        }
+        } //open file
 
         private void btn_placeHold(object sender, EventArgs e)
         {
