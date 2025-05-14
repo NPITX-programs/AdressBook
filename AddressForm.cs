@@ -113,7 +113,7 @@ namespace AdressBook
                         MessageBox.Show("file not found"); //show error
                     }
                 }
-        //save
+        //save (currently placeholder)
 
         //save as
             //to make new file, use stream writer?
