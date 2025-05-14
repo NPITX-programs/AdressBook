@@ -38,6 +38,7 @@
             this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -157,6 +158,18 @@
         "");
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Location = new System.Drawing.Point(366, 193);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(113, 23);
+            this.btn_close.TabIndex = 10;
+            this.btn_close.TabStop = false;
+            this.btn_close.Text = "Close Application";
+            this.toolTip1.SetToolTip(this.btn_close, "Close the application");
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label1
             // 
@@ -334,6 +347,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddressForm";
@@ -361,6 +375,7 @@
         private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
