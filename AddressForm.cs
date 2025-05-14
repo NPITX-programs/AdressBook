@@ -287,10 +287,5 @@ namespace AdressBook
                 readFromFile(); //read from file
             }
         } //save
-
-        private void btn_placeHold(object sender, EventArgs e)
-        {
-            MessageBox.Show("To Be Added");
-        }
     }
 }
