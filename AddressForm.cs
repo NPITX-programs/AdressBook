@@ -272,7 +272,7 @@ namespace AdressBook
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
                 WriteToFile(); //write to files
             }
-        } 
+        }  //save as
 
         private void btn_op_Click(object sender, EventArgs e)
         {
@@ -286,7 +286,7 @@ namespace AdressBook
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        }
+        } //save
 
         private void btn_placeHold(object sender, EventArgs e)
         {
