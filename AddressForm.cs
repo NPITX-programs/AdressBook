@@ -21,14 +21,14 @@ namespace AdressBook
             InitializeComponent();
         }
 
-        string filepath = string.Empty;
+        string filepath = string.Empty; //placeholder
 
         private string CreatePath(string root, string path, string name, string extension)
         {
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
             return finalPath; //output said path
-        }
+        } //dynamicly generate base path
 
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
@@ -82,7 +82,7 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
-        }
+        } //read from file
         private void WriteToFile()
                 {
                     bool status = File.Exists(filepath); //check if the file exists
@@ -112,12 +112,12 @@ namespace AdressBook
                     {
                         MessageBox.Show("file not found"); //show error
                     }
-                }
-        //save
+        } //write to file
+          //save
 
         //save as
-            //to make new file, use stream writer?
-            //didin't work earlier, unknown why
+        //to make new file, use stream writer?
+        //didin't work earlier, unknown why
 
         private void clear() //triger to clear inputs
         {
@@ -135,7 +135,7 @@ namespace AdressBook
             ind = leng - 1; //get the index (a.k.a the length minus 1)
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value 
-        } 
+        }  //find final entry in list
         
 
         private void updateList(Contact value)
@@ -260,7 +260,7 @@ namespace AdressBook
             txt_contNote.Text = c.notes; //set the notes
             chk_type.Checked = c.buisness; //set the checkbox
 
-        }
+        } //show information from selected contact
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
@@ -272,7 +272,7 @@ namespace AdressBook
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
                 WriteToFile(); //write to files
             }
-        }
+        } //save as
 
         private void btn_op_Click(object sender, EventArgs e)
         {
@@ -286,6 +286,6 @@ namespace AdressBook
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        } 
+        }  //open
     }
 }
