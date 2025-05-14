@@ -135,7 +135,7 @@ namespace AdressBook
             ind = leng - 1; //get the index (a.k.a the length minus 1)
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value 
-        }
+        } 
         
 
         private void updateList(Contact value)
@@ -158,12 +158,12 @@ namespace AdressBook
 
                 Program.perIndex.Add(ind);
             }
-        }
+        } //update the list of contacts list
         private void generateList()
         {
             Contact next = nextEntry();
             updateList(next);
-        }
+        } //generate the list
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
@@ -177,7 +177,7 @@ namespace AdressBook
             };
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
-        }
+        } //generate the contact
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -222,9 +222,9 @@ namespace AdressBook
                 clear(); //clear inputs and set checkbox to false
                 WriteToFile(); //write to file
             }
-        }
+        } //add to items
 
-        private void btn_close_Click(object sender, EventArgs e) //hit closed button
+        private void btn_close_Click(object sender, EventArgs e) //close shortcut (or hit the part of the menu button used to close)
         {
             Application.Exit(); //close
         }
