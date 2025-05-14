@@ -21,14 +21,14 @@ namespace AdressBook
             InitializeComponent();
         }
 
-        string filepath = string.Empty; //placeholder
+        string filepath = string.Empty;
 
         private string CreatePath(string root, string path, string name, string extension)
         {
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
             return finalPath; //output said path
-        } //dynamicly generate base path
+        }
 
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
@@ -36,7 +36,7 @@ namespace AdressBook
         // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void Frm_main_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory, "contacts", name1, exten1); //create the name, which is stored outside
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
             readFromFile(); //read from the file
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
@@ -67,11 +67,11 @@ namespace AdressBook
                             else {
                                 MessageBox.Show("error"); //show error
                             }
-
+                            
                         }
                     }
                 }
-                catch (Exception ex) //show if exception
+                catch(Exception ex) //show if exception
                 {
                     MessageBox.Show("error" + ex.Message); //show error
 
@@ -82,42 +82,42 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
-        } //read from file
+        }
         private void WriteToFile()
-        {
-            bool status = File.Exists(filepath); //check if the file exists
-            if (status || debug)
-            {
-                try
                 {
-                    using (StreamWriter sw = new StreamWriter(filepath))
+                    bool status = File.Exists(filepath); //check if the file exists
+                    if (status || debug)
                     {
-                        foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
+                        try
                         {
-                            //csv - comma seperated values
-                            //firstname-lastname-email-phone-buisness-notes
-                            string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                                c.notes; //notes
-                            sw.WriteLine(line); //write the information to the line
+                            using (StreamWriter sw = new StreamWriter(filepath))
+                            {
+                                foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
+                                {
+                                    //csv - comma seperated values
+                                    //firstname-lastname-email-phone-buisness-notes
+                                    string line = c.firstname + sep + c.lastname + sep +  //first and last name
+                                        c.email + sep + c.phone + sep + c.buisness + sep + //contact information
+                                        c.notes; //notes
+                                    sw.WriteLine(line); //write the information to the line
+                                }
+                            } //streamwriter
                         }
-                    } //streamwriter
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("error" + ex.Message); //show error
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("file not found"); //show error
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("error" + ex.Message); //show error
-                }
-            }
-            else
-            {
-                MessageBox.Show("file not found"); //show error
-            }
-        } //write to file
-          //save
+        //save
 
         //save as
-        //to make new file, use stream writer?
-        //didin't work earlier, unknown why
+            //to make new file, use stream writer?
+            //didin't work earlier, unknown why
 
         private void clear() //triger to clear inputs
         {
@@ -130,13 +130,13 @@ namespace AdressBook
         }
 
         private Contact nextEntry()
-        {
+        {          
             int leng = Program.contacts.Count; //get the length
             ind = leng - 1; //get the index (a.k.a the length minus 1)
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value 
-        }  //find final entry in list
-
+        }
+        
 
         private void updateList(Contact value)
         {
@@ -158,12 +158,12 @@ namespace AdressBook
 
                 Program.perIndex.Add(ind);
             }
-        } //update the list of contacts list
+        }
         private void generateList()
         {
             Contact next = nextEntry();
             updateList(next);
-        } //generate the list
+        }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
@@ -177,7 +177,7 @@ namespace AdressBook
             };
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
-        } //generate the contact
+        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -222,9 +222,9 @@ namespace AdressBook
                 clear(); //clear inputs and set checkbox to false
                 WriteToFile(); //write to file
             }
-        } //add to items
+        }
 
-        private void btn_close_Click(object sender, EventArgs e) //close shortcut (or hit the part of the menu button used to close)
+        private void btn_close_Click(object sender, EventArgs e) //hit closed button
         {
             Application.Exit(); //close
         }
@@ -234,23 +234,23 @@ namespace AdressBook
             ListBox lst = sender as ListBox; //get the list being used
             int index = lst.SelectedIndex; //get the index of the current item
             if (index == -1) //if no item is selected, clear it
-            {
-                clear(); //clear form
-            } else {
-                string id = lst.Tag.ToString(); //get the identifyer tag
-                if (id == "per") //if it's personal
                 {
-                    index = Program.perIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
+                    clear(); //clear form
+                } else {
+                    string id = lst.Tag.ToString(); //get the identifyer tag
+                    if (id == "per") //if it's personal
+                    {
+                        index = Program.perIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
+                    }
+                    else if (id == "bui") //if it's buisness
+                    {
+                        index = Program.buiIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
+                    }
+                    else
+                    {
+                        MessageBox.Show("error, tag not found"); //show error
+                    }
                 }
-                else if (id == "bui") //if it's buisness
-                {
-                    index = Program.buiIndex[index]; //get the item at this index in the second list, which contains the indix of it's equivlent entry
-                }
-                else
-                {
-                    MessageBox.Show("error, tag not found"); //show error
-                }
-            }
             Contact c = Program.contacts[index]; //get the contact at the index
 
             txt_firName.Text = c.firstname; //set the first name
@@ -260,19 +260,19 @@ namespace AdressBook
             txt_contNote.Text = c.notes; //set the notes
             chk_type.Checked = c.buisness; //set the checkbox
 
-        } //show information from selected contact
+        }
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
             //filter
             saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con"; //allow them to sort for a specific extension (the one utilized by this program), or any file
 
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
             {
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
                 WriteToFile(); //write to files
             }
-        } //save as
+        }
 
         private void btn_op_Click(object sender, EventArgs e)
         {
@@ -286,6 +286,6 @@ namespace AdressBook
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        }  //open
+        } 
     }
 }
