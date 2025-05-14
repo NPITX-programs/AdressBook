@@ -281,6 +281,6 @@ namespace AdressBook
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        }
+        } 
     }
 }
