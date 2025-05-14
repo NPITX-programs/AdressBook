@@ -113,9 +113,9 @@ namespace AdressBook
                         MessageBox.Show("file not found"); //show error
                     }
                 }
-        //save
+        //save: tba
 
-        //save as
+        //save as: tba
             //to make new file, use stream writer?
             //didin't work earlier, unknown why
 
