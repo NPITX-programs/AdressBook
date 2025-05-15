@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace AdressBook
+﻿
+namespace AdressBook.files
 {
-    internal static class Files
+    internal static class Utils
     {
-        static void Main()
+        internal static string Greet(string name)
         {
-            MessageBox.Show("test"); //show error
+            return $"Hello, {name}!";
+        }
+
+        internal static int Add(int a, int b)
+        {
+            return a + b;
         }
     }
 }
