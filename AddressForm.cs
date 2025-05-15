@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdressBook
+namespace AdressBook //major updates needed
 {
     public partial class AddressForm : Form
     {
@@ -113,9 +113,9 @@ namespace AdressBook
                         MessageBox.Show("file not found"); //show error
                     }
                 }
-        //save
+        //save: tba
 
-        //save as
+        //save as: tba
             //to make new file, use stream writer?
             //didin't work earlier, unknown why
 
