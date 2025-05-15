@@ -287,5 +287,10 @@ namespace AdressBook
                 readFromFile(); //read from file
             }
         } 
+    
+        private void updateTooltip()
+        {
+            
+        }
     }
 }
