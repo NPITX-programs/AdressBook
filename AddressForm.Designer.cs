@@ -248,12 +248,11 @@
             this.groupBox2.Controls.Add(this.txt_contNote);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_lastName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 34);
+            this.groupBox2.Location = new System.Drawing.Point(0, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 414);
+            this.groupBox2.Size = new System.Drawing.Size(212, 413);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
-            this.toolTip2.SetToolTip(this.groupBox2, "Test");
             // 
             // saveFileDialog1
             // 
