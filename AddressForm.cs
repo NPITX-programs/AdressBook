@@ -36,11 +36,7 @@ namespace AdressBook
         // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void Frm_main_Load(object sender, EventArgs e)
         {
-           Files test();
-            {
-
-            }
-            test();
+            files.Utils.Greet("test"); //test the greet function
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
             readFromFile(); //read from the file
