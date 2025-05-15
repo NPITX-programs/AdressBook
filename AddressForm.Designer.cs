@@ -253,6 +253,7 @@
             this.groupBox2.Size = new System.Drawing.Size(200, 420);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
+            this.toolTip2.SetToolTip(this.groupBox2, "Test");
             // 
             // saveFileDialog1
             // 
@@ -330,6 +331,7 @@
             // 
             // toolTip2
             // 
+            this.toolTip2.ToolTipTitle = "Test This";
             this.toolTip2.UseAnimation = false;
             this.toolTip2.UseFading = false;
             // 
