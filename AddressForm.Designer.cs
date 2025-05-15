@@ -228,9 +228,9 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.lst_personal);
             this.groupBox1.Controls.Add(this.lst_buisnes);
-            this.groupBox1.Location = new System.Drawing.Point(588, 34);
+            this.groupBox1.Location = new System.Drawing.Point(588, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 414);
+            this.groupBox1.Size = new System.Drawing.Size(200, 421);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
@@ -248,9 +248,9 @@
             this.groupBox2.Controls.Add(this.txt_contNote);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_lastName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 28);
+            this.groupBox2.Location = new System.Drawing.Point(0, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 420);
+            this.groupBox2.Size = new System.Drawing.Size(212, 413);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
@@ -327,11 +327,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // toolTip2
-            // 
-            this.toolTip2.UseAnimation = false;
-            this.toolTip2.UseFading = false;
             // 
             // AddressForm
             // 
