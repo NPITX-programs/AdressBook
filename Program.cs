@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdressBook.files; //this is the namespace for the files that are in the project. This is where the classes are stored
 
 namespace AdressBook
 {
