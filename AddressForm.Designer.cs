@@ -331,7 +331,10 @@
             // 
             // toolTip2
             // 
-            this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip2.AutomaticDelay = 0;
+            this.toolTip2.AutoPopDelay = 0;
+            this.toolTip2.InitialDelay = 0;
+            this.toolTip2.ReshowDelay = 0;
             this.toolTip2.UseAnimation = false;
             this.toolTip2.UseFading = false;
             // 
