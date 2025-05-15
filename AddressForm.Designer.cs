@@ -328,15 +328,6 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // toolTip2
-            // 
-            this.toolTip2.AutomaticDelay = 0;
-            this.toolTip2.AutoPopDelay = 0;
-            this.toolTip2.InitialDelay = 0;
-            this.toolTip2.ReshowDelay = 0;
-            this.toolTip2.UseAnimation = false;
-            this.toolTip2.UseFading = false;
-            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
