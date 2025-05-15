@@ -82,6 +82,8 @@ namespace AdressBook //major updates needed
                 MessageBox.Show("file not found"); //show error
 
             }
+
+            
         }
         private void WriteToFile()
                 {
