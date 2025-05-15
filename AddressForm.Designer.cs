@@ -333,7 +333,6 @@
             // 
             this.toolTip2.ShowAlways = true;
             this.toolTip2.ToolTipTitle = "Test This";
-            this.toolTip2.UseAnimation = false;
             this.toolTip2.UseFading = false;
             // 
             // AddressForm
