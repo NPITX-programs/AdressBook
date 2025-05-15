@@ -1,16 +1,15 @@
 ﻿
 namespace AdressBook.files
 {
-    internal static class Utils
+    internal static class files
     {
-        internal static string Greet(string name)
+        internal static void Write()
         {
-            return $"Hello, {name}!";
         }
 
-        internal static int Add(int a, int b)
+        internal static void read()
         {
-            return a + b;
+            
         }
     }
 }
