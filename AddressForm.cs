@@ -82,6 +82,7 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
+            CodeFile1
         }
         private void WriteToFile()
                 {

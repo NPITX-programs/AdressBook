@@ -1,4 +1,4 @@
-﻿void WriteToFile()
+﻿public void WriteToFile2()
 {
 
 }
