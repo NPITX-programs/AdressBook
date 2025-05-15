@@ -253,6 +253,7 @@
             this.groupBox2.Size = new System.Drawing.Size(200, 420);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
+            this.toolTip2.SetToolTip(this.groupBox2, "Test");
             // 
             // toolTip1
             // 
@@ -331,6 +332,15 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.AutomaticDelay = 0;
+            this.toolTip2.AutoPopDelay = 0;
+            this.toolTip2.InitialDelay = 0;
+            this.toolTip2.ReshowDelay = 0;
+            this.toolTip2.UseAnimation = false;
+            this.toolTip2.UseFading = false;
             // 
             // AddressForm
             // 
