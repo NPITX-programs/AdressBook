@@ -10,7 +10,7 @@ namespace AdressBook
     {
         static void Main()
         {
-            MessageBox.Show("file not found"); //show error
+            MessageBox.Show("test"); //show error
         }
     }
 }
