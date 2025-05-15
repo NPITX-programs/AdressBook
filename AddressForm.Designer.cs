@@ -328,6 +328,11 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
             // 
+            // toolTip2
+            // 
+            this.toolTip2.UseAnimation = false;
+            this.toolTip2.UseFading = false;
+            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
