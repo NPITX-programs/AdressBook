@@ -254,6 +254,10 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "con";
