@@ -49,9 +49,7 @@ namespace AdressBook //major updates needed
             //read from path: filepath
             // call other file
             files.files.read(filepath, sep, min); //call the function used to read files
-            foreach(var c in Program.contacts) {
-                updateList(c);
-                }
+            generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
         }
         private void WriteToFile()
         {
@@ -103,10 +101,22 @@ namespace AdressBook //major updates needed
                 Program.perIndex.Add(ind);
             }
         }
-        private void generateList()
+        private void generateList(int total = 0) //generate the list, if no input it's assumed to use the entire length of the list
         {
-            Contact next = nextEntry();
-            updateList(next);
+            var val = 0; //set as a placeholder
+            if(total == 0)
+            {
+                val = Program.contacts.Count; //set total to be the length of the list
+            } else
+            {
+                val = total; //set total to the input value
+            }
+            total = val; //set the total to val. as val was set to total, it's the same, unless it was set to 0
+                         //if the "total" was 0, then it will be set to the length of the list
+            for (int count = 0; count < total; count++) //for each item in the list
+                {
+                    updateList(Program.contacts[count]); //update the list
+                }
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
@@ -166,7 +176,7 @@ namespace AdressBook //major updates needed
                 clear(); //clear inputs and set checkbox to false
                 WriteToFile(); //write to file
             }
-        }
+        }//add contact
 
         private void btn_close_Click(object sender, EventArgs e) //hit closed button
         {
@@ -204,7 +214,7 @@ namespace AdressBook //major updates needed
             txt_contNote.Text = c.notes; //set the notes
             chk_type.Checked = c.buisness; //set the checkbox
 
-        }
+        } //select contact
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
@@ -216,7 +226,7 @@ namespace AdressBook //major updates needed
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
                 WriteToFile(); //write to files
             }
-        }
+        } //save as
 
         private void btn_op_Click(object sender, EventArgs e)
         {
@@ -230,6 +240,6 @@ namespace AdressBook //major updates needed
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        } 
+        }  //open
     }
 }
