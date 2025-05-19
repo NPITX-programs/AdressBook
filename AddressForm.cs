@@ -49,14 +49,15 @@ namespace AdressBook
             //read from path: filepath
             // call other file
             files.files.read(filepath, sep, min); //call the function used to read files
-            foreach(var c in Program.contacts) {
+            foreach(var c in Program.contacts)
+            {
                 updateList(c);
-                }
+            }
         }
         private void WriteToFile()
                 {
                     bool status = File.Exists(filepath); //check if the file exists
-                    if (status || debug)
+                    if (files.files.status(filepath) || debug)
                     {
                         try
                         {

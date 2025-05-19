@@ -8,6 +8,12 @@ namespace AdressBook.files
 {
     internal static class files
     {
+
+        internal static bool status(string path) //check if the file exists
+        {
+            bool status = File.Exists(path); //check if the file exists
+            return status; //return the status
+        }
         internal static void Write() 
         {
 
