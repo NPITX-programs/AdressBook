@@ -15,4 +15,22 @@ namespace AdressBook
         internal bool buisness; //buisness
         internal string notes; //notes about contact
     } //the class which contains the framework for storing the contacts
+
+    internal class  formContacts
+    {
+        internal static Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
+        {
+            Contact c = new Contact //make new constact
+            {
+                firstname = firstName, //put the realevent input into the releavent field
+                lastname = lastName, //same
+                phone = phoNum, //same
+                email = eMail, //same
+                notes = contNote, //same
+                buisness = contType //same
+            };
+            Program.contacts.Add(c); //add to list
+            return c; //output the new contact 
+        }
+    }
 }
