@@ -101,10 +101,23 @@ namespace AdressBook //major updates needed
                 Program.perIndex.Add(ind);
             }
         }
-        private void generateList()
+        private void generateList(int total = 0) //generate the list, if no input it's assumed to use the entire length of the list
         {
-            Contact next = nextEntry();
-            updateList(next);
+            var val = 0; //set as a placeholder
+            if(total == 0)
+            {
+                val = Program.contacts.Count; //set total to be the length of the list
+            } else
+            {
+                val = total; //set total to the input value
+            }
+            total = val; //set the total to val. as val was set to total, it's the same, unless it was set to 0
+                         //if the "total" was 0, then it will be set to the length of the list
+            for (int count = 0; count < total; count++) //for each item in the list
+                {
+                    Contact next = nextEntry(); //determine the next entry
+                    updateList(next); //update the list
+                }
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
