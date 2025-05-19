@@ -30,8 +30,17 @@ namespace AdressBook.files
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
-                                generateList(); //generate what will go onto the listboxes
+                                Contact c = new Contact //make new constact
+                                {
+                                    firstname = cont[0], //put the realevent input into the releavent field
+                                    lastname = cont[1], //same
+                                    phone = cont[2], //same
+                                    email = cont[3], //same
+                                    notes = cont[5], //same
+                                    buisness = Convert.ToBoolean(cont[4] //same
+                                };
+                                Program.contacts.Add(c); //add to list
+                                return c; //output the new contact
                             }
                             else
                             {
