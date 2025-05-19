@@ -49,9 +49,7 @@ namespace AdressBook //major updates needed
             //read from path: filepath
             // call other file
             files.files.read(filepath, sep, min); //call the function used to read files
-            foreach(var c in Program.contacts) {
-                generateList(); //generate the list
-            }
+
         }
         private void WriteToFile()
         {
