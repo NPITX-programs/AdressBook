@@ -1,2 +1,1 @@
-- the part which allows you to read different contacts upon clicking broke
-	-still broken
+for some reason the part for reading for extracting data from the lists seems to be breaking
