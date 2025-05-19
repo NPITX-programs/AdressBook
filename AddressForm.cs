@@ -116,7 +116,7 @@ namespace AdressBook //major updates needed
             for (int count = 0; count < total; count++) //for each item in the list
                 {
                     Contact next = nextEntry(); //determine the next entry
-                    updateList(next); //update the list
+                updateList(Program.contacts[count]); //update the list
                 }
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
