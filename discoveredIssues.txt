@@ -1,1 +1,2 @@
 - the part which allows you to read different contacts upon clicking broke
+	-still broken
