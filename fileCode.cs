@@ -13,7 +13,7 @@ namespace AdressBook.files
 
         }
 
-        internal static Contact read(string path, char sep) //the read function
+        internal static void read(string path, char sep) //the read function
         {
             bool status = File.Exists(path); //check if the file exists
             if (status || debug) //check if there
@@ -40,13 +40,11 @@ namespace AdressBook.files
                                     buisness = Convert.ToBoolean(cont[4] //same
                                 };
                                 Program.contacts.Add(c); //add to list
-                                return c; //output the new contact
                             }
                             else
                             {
                                 MessageBox.Show("error"); //show error
                             }
-
                         }
                     }
                 }
