@@ -11,7 +11,7 @@ namespace AdressBook.files
         internal static void Write(string filepath, char sep) 
         {
             bool status = File.Exists(filepath); //check if the file exists
-            if (status || debug)
+            if (status || Program.debug)
             {
                 try
                 {
