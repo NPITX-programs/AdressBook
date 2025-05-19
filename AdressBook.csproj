@@ -52,8 +52,8 @@
     <Compile Include="AddressForm.Designer.cs">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CodeFile1.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="fileCode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddressForm.resx">

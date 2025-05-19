@@ -5,6 +5,7 @@ namespace AdressBook.files
     {
         internal static void Write()
         {
+
         }
 
         internal static void read()
