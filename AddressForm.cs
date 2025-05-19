@@ -49,7 +49,7 @@ namespace AdressBook //major updates needed
             //read from path: filepath
             // call other file
             files.files.read(filepath, sep, min); //call the function used to read files
-
+            generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
         }
         private void WriteToFile()
         {
