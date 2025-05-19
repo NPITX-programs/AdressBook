@@ -183,7 +183,7 @@ namespace AdressBook
             }
 
             if (valid == true || debug == true) {
-                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType);
+                newContact = formContacts(firstName, lastName, phoNum, eMail, contNote, contType);
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
