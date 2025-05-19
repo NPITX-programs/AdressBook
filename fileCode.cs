@@ -13,14 +13,14 @@ namespace AdressBook.files
 
         }
 
-        internal static void read(string path) //the read function
+        internal static void read(string path, string sep) //the read function
         {
-            bool status = File.Exists(filepath); //check if the file exists
+            bool status = File.Exists(path); //check if the file exists
             if (status || debug) //check if there
             {
                 try
                 {
-                    using (StreamReader sr = new StreamReader(filepath)) //make stringreader
+                    using (StreamReader sr = new StreamReader(path)) //make stringreader
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
