@@ -55,4 +55,7 @@ namespace AdressBook.files
             }
         }
     } //code for manipulateing files
+    internal static class contacts { 
+    
+    } //code for manipulateing contacts
 }
