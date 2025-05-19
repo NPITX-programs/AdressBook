@@ -54,35 +54,9 @@ namespace AdressBook
                 }
         }
         private void WriteToFile()
-                {
-                    bool status = File.Exists(filepath); //check if the file exists
-                    if (status || debug)
-                    {
-                        try
-                        {
-                            using (StreamWriter sw = new StreamWriter(filepath))
-                            {
-                                foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
-                                {
-                                    //csv - comma seperated values
-                                    //firstname-lastname-email-phone-buisness-notes
-                                    string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                        c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                                        c.notes; //notes
-                                    sw.WriteLine(line); //write the information to the line
-                                }
-                            } //streamwriter
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("error" + ex.Message); //show error
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("file not found"); //show error
-                    }
-                }
+        {
+            files.files.Write(filepath, sep); //call the function used to write files
+        }
         //save: tba
 
         //save as: tba
