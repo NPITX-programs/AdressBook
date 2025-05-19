@@ -176,7 +176,7 @@ namespace AdressBook //major updates needed
                 clear(); //clear inputs and set checkbox to false
                 WriteToFile(); //write to file
             }
-        }
+        }//add contact
 
         private void btn_close_Click(object sender, EventArgs e) //hit closed button
         {
@@ -214,7 +214,7 @@ namespace AdressBook //major updates needed
             txt_contNote.Text = c.notes; //set the notes
             chk_type.Checked = c.buisness; //set the checkbox
 
-        }
+        } //select contact
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
@@ -226,7 +226,7 @@ namespace AdressBook //major updates needed
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
                 WriteToFile(); //write to files
             }
-        }
+        } //save as
 
         private void btn_op_Click(object sender, EventArgs e)
         {
@@ -240,6 +240,6 @@ namespace AdressBook //major updates needed
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        } 
+        }  //open
     }
 }
