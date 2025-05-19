@@ -31,7 +31,7 @@ namespace AdressBook.files
                             if (cont.Length >= min)
                             {
 
-                                createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
+                                contacts.Cotact.createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
                                 generateList(); //generate what will go onto the listboxes
                             }
                             else
@@ -55,7 +55,21 @@ namespace AdressBook.files
             }
         }
     } //code for manipulateing files
-    internal static class contacts { 
-    
+    internal class manipulateConts {
+        internal Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
+        {
+            Contact c = new Contact //make new constact
+            {
+                firstname = firstName, //put the realevent input into the releavent field
+                lastname = lastName, //same
+                phone = phoNum, //same
+                email = eMail, //same
+                notes = contNote, //same
+                buisness = contType //same
+            };
+            Program.contacts.Add(c); //add to list
+            return c; //output the new contact
+        }
+
     } //code for manipulateing contacts
 }
