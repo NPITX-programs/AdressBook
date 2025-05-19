@@ -61,7 +61,7 @@ namespace AdressBook //major updates needed
 
         //save as: tba
             //to make new file, use stream writer?
-            //didin't work earlier, unknown why
+            
 
         private void clear() //triger to clear inputs
         {
