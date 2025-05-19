@@ -27,7 +27,7 @@ namespace AdressBook.files
                         while (!sr.EndOfStream) //add each line to it one by one
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
-                            var cont = contact.Split(sep); //splits it by the seperator 
+                            var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
 
@@ -41,7 +41,7 @@ namespace AdressBook.files
 
                         }
                     }
-                } 
+                }
                 catch (Exception ex) //show if exception
                 {
                     MessageBox.Show("error" + ex.Message); //show error
