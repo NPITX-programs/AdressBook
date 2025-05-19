@@ -1,1 +1,0 @@
-update the write to file to also be in the new area
