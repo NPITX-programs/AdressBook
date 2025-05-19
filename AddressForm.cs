@@ -133,7 +133,17 @@ namespace AdressBook
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
-
+            Contact c = new Contact //make new constact
+            {
+                firstname = firstName, //put the realevent input into the releavent field
+                lastname = lastName, //same
+                phone = phoNum, //same
+                email = eMail, //same
+                notes = contNote, //same
+                buisness = contType //same
+            };
+            Program.contacts.Add(c); //add to list
+            return c; //output the new contact
         }
 
         private void btn_add_Click(object sender, EventArgs e)
