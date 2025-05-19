@@ -13,10 +13,10 @@ namespace AdressBook.files
 
         }
 
-        internal static void read(string path, char sep) //the read function
+        internal static void read(string path, char sep, int min) //the read function
         {
             bool status = File.Exists(path); //check if the file exists
-            if (status || debug) //check if there
+            if (status || Program.debug) //check if there
             {
                 try
                 {
@@ -37,7 +37,7 @@ namespace AdressBook.files
                                     phone = cont[2], //same
                                     email = cont[3], //same
                                     notes = cont[5], //same
-                                    buisness = Convert.ToBoolean(cont[4] //same
+                                    buisness = Convert.ToBoolean(cont[4]) //same
                                 };
                                 Program.contacts.Add(c); //add to list
                             }
