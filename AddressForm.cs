@@ -48,7 +48,7 @@ namespace AdressBook
         {
             //read from path: filepath
             // call other file
-            files.files.read(filepath);
+            files.files.read(filepath); //call the function used to read files
         }
         private void WriteToFile()
                 {
