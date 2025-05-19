@@ -14,5 +14,5 @@ namespace AdressBook
         internal string phone; //phone number
         internal bool buisness; //buisness
         internal string notes; //notes about contact
-    }
+    } //the class which contains the framework for storing the contacts
 }

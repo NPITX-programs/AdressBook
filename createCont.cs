@@ -6,25 +6,6 @@ using System;
 
 namespace AdressBook.files
 {
-    internal static class manipulateCont
-    {
-        internal static Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
-        {
-            Contact c = new Contact //make new constact
-            {
-                firstname = firstName, //put the realevent input into the releavent field
-                lastname = lastName, //same
-                phone = phoNum, //same
-                email = eMail, //same
-                notes = contNote, //same
-                buisness = contType //same
-            };
-            Program.contacts.Add(c); //add to list
-            return c; //output the new contact
-        }
-
-    } //code for manipulateing contacts
-}
     internal static class files
     {
         internal static void Write() 
@@ -46,11 +27,11 @@ namespace AdressBook.files
                         while (!sr.EndOfStream) //add each line to it one by one
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
-                            var cont = contact.Split(sep); //splits it by the seperator 
+                            var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                files
-                                (cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
+
+                                createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
                                 generateList(); //generate what will go onto the listboxes
                             }
                             else
@@ -60,7 +41,7 @@ namespace AdressBook.files
 
                         }
                     }
-                } 
+                }
                 catch (Exception ex) //show if exception
                 {
                     MessageBox.Show("error" + ex.Message); //show error
@@ -73,5 +54,5 @@ namespace AdressBook.files
 
             }
         }
-    } //code for manipulateing files
+    }
 }
