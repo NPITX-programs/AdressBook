@@ -42,7 +42,7 @@ namespace AdressBook //major updates needed
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
         }
-        int  ind = 0; //index for the current contact
+        int ind = 0; //index for the current contact
 
         private void readFromFile()
         {
@@ -50,8 +50,8 @@ namespace AdressBook //major updates needed
             // call other file
             files.files.read(filepath, sep, min); //call the function used to read files
             foreach(var c in Program.contacts) {
-                updateList(c);
-                }
+                generateList(); //generate the list
+            }
         }
         private void WriteToFile()
         {
