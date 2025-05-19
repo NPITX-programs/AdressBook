@@ -13,7 +13,7 @@ namespace AdressBook.files
 
         }
 
-        internal static void read() //the read function
+        internal static void read(string path) //the read function
         {
             bool status = File.Exists(filepath); //check if the file exists
             if (status || debug) //check if there
