@@ -1,0 +1,1 @@
+transfer the read function into the class
