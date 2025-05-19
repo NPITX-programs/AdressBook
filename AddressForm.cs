@@ -230,6 +230,6 @@ namespace AdressBook //major updates needed
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        } 
+        }  //open
     }
 }
