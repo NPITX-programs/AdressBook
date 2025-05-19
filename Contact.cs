@@ -16,9 +16,9 @@ namespace AdressBook
         internal string notes; //notes about contact
     } //the class which contains the framework for storing the contacts
 
-    internal static class formContacts
+    internal static class manipulateContacts
     {
-        internal static Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
+        internal static formContact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
             {
