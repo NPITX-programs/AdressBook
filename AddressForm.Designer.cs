@@ -348,8 +348,11 @@
             this.col_contType,
             this.col_contNotes});
             this.dgv_contacts.Location = new System.Drawing.Point(218, 27);
+            this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
+            this.dgv_contacts.RowHeadersVisible = false;
+            this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_contacts.Size = new System.Drawing.Size(582, 414);
             this.dgv_contacts.TabIndex = 18;
             // 
