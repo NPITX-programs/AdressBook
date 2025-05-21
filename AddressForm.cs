@@ -28,7 +28,7 @@ namespace AdressBook //major updates needed
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
             return finalPath; //output said path
-        }
+        } //create the final default path
 
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
@@ -55,12 +55,7 @@ namespace AdressBook //major updates needed
         {
             files.files.Write(filepath, sep); //call the function used to write files
         }
-        //save: tba
-
-        //save as: tba
-            //to make new file, use stream writer?
-            
-
+         
         private void clear() //triger to clear inputs
         {
             txt_firName.Text = string.Empty; //empty first name
