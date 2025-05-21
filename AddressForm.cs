@@ -200,7 +200,16 @@ namespace AdressBook //major updates needed
 
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //check if somethings selected
+            if (dgv_contacts.CurrentRow != null) {
+                var row = dgv_contacts.CurrentRow;
+                foreach(var c in Program.contacts)
+                {
+                    if(c.firstname == row.Cells[0].Value.ToString()
+                        && c.lastname == row.Cells[1].Value.ToString()
+                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value));
+                }
+            }
         }
     }
 }
