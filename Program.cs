@@ -20,7 +20,6 @@ namespace AdressBook
             Application.Run(new AddressForm());
         }
         internal static bool debug = true;
-
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
     }
 }
