@@ -191,8 +191,6 @@ namespace AdressBook //major updates needed
             {
                 filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
                 Program.contacts.Clear(); //clear the class
-                Program.buiIndex.Clear(); //clear the buisness index
-                Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
         }  //open
