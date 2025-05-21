@@ -154,7 +154,9 @@ namespace AdressBook //major updates needed
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
-                WriteToFile(); //write to file
+                // WriteToFile(); 
+                    //write to file
+                    //disabled for now so it won't auto
             }
         }//add contact
 
