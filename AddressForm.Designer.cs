@@ -59,6 +59,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
+            this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -331,11 +335,43 @@
             // 
             // dgv_contacts
             // 
+            this.dgv_contacts.AllowUserToAddRows = false;
+            this.dgv_contacts.AllowUserToDeleteRows = false;
             this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_firName,
+            this.col_lastName,
+            this.col_EMail,
+            this.col_phoNum});
             this.dgv_contacts.Location = new System.Drawing.Point(247, 34);
             this.dgv_contacts.Name = "dgv_contacts";
+            this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.Size = new System.Drawing.Size(321, 414);
             this.dgv_contacts.TabIndex = 18;
+            // 
+            // col_firName
+            // 
+            this.col_firName.HeaderText = "First Name";
+            this.col_firName.Name = "col_firName";
+            this.col_firName.ReadOnly = true;
+            // 
+            // col_lastName
+            // 
+            this.col_lastName.HeaderText = "Last Name";
+            this.col_lastName.Name = "col_lastName";
+            this.col_lastName.ReadOnly = true;
+            // 
+            // col_EMail
+            // 
+            this.col_EMail.HeaderText = "E-Mail";
+            this.col_EMail.Name = "col_EMail";
+            this.col_EMail.ReadOnly = true;
+            // 
+            // col_phoNum
+            // 
+            this.col_phoNum.HeaderText = "Phone Number";
+            this.col_phoNum.Name = "col_phoNum";
+            this.col_phoNum.ReadOnly = true;
             // 
             // AddressForm
             // 
@@ -393,6 +429,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgv_contacts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
     }
 }
 
