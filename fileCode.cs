@@ -37,7 +37,7 @@ namespace AdressBook.files
             {
                 MessageBox.Show("file not found"); //show error
             }
-        }
+        } //the write function
 
         internal static void read(string path, char sep, int min) //the read function
         {

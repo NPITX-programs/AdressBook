@@ -1,1 +1,0 @@
-for some reason the part for reading for extracting data from the lists seems to be breaking
