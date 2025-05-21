@@ -43,6 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lst_buisnes = new System.Windows.Forms.ListBox();
+            this.lst_personal = new System.Windows.Forms.ListBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -53,8 +55,6 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lst_buisnes = new System.Windows.Forms.ListBox();
-            this.lst_personal = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -63,6 +63,8 @@
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -205,6 +207,30 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
+            // lst_buisnes
+            // 
+            this.lst_buisnes.FormattingEnabled = true;
+            this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
+            this.lst_buisnes.Name = "lst_buisnes";
+            this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
+            this.lst_buisnes.TabIndex = 1;
+            this.lst_buisnes.TabStop = false;
+            this.lst_buisnes.Tag = "bui";
+            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
+            this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
+            // 
+            // lst_personal
+            // 
+            this.lst_personal.FormattingEnabled = true;
+            this.lst_personal.Location = new System.Drawing.Point(10, 44);
+            this.lst_personal.Name = "lst_personal";
+            this.lst_personal.Size = new System.Drawing.Size(184, 160);
+            this.lst_personal.TabIndex = 0;
+            this.lst_personal.TabStop = false;
+            this.lst_personal.Tag = "per";
+            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
+            this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
+            // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "con";
@@ -279,30 +305,6 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // lst_buisnes
-            // 
-            this.lst_buisnes.FormattingEnabled = true;
-            this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
-            this.lst_buisnes.Name = "lst_buisnes";
-            this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
-            this.lst_buisnes.TabIndex = 1;
-            this.lst_buisnes.TabStop = false;
-            this.lst_buisnes.Tag = "bui";
-            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
-            this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
-            // 
-            // lst_personal
-            // 
-            this.lst_personal.FormattingEnabled = true;
-            this.lst_personal.Location = new System.Drawing.Point(10, 44);
-            this.lst_personal.Name = "lst_personal";
-            this.lst_personal.Size = new System.Drawing.Size(184, 160);
-            this.lst_personal.TabIndex = 0;
-            this.lst_personal.TabStop = false;
-            this.lst_personal.Tag = "per";
-            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
-            this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -342,11 +344,13 @@
             this.col_firName,
             this.col_lastName,
             this.col_EMail,
-            this.col_phoNum});
-            this.dgv_contacts.Location = new System.Drawing.Point(247, 34);
+            this.col_phoNum,
+            this.col_contType,
+            this.col_contNotes});
+            this.dgv_contacts.Location = new System.Drawing.Point(218, 27);
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
-            this.dgv_contacts.Size = new System.Drawing.Size(321, 414);
+            this.dgv_contacts.Size = new System.Drawing.Size(582, 414);
             this.dgv_contacts.TabIndex = 18;
             // 
             // col_firName
@@ -372,6 +376,18 @@
             this.col_phoNum.HeaderText = "Phone Number";
             this.col_phoNum.Name = "col_phoNum";
             this.col_phoNum.ReadOnly = true;
+            // 
+            // col_contType
+            // 
+            this.col_contType.HeaderText = "Contact Type";
+            this.col_contType.Name = "col_contType";
+            this.col_contType.ReadOnly = true;
+            // 
+            // col_contNotes
+            // 
+            this.col_contNotes.HeaderText = "Contact Notes";
+            this.col_contNotes.Name = "col_contNotes";
+            this.col_contNotes.ReadOnly = true;
             // 
             // AddressForm
             // 
@@ -433,6 +449,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
     }
 }
 
