@@ -215,6 +215,8 @@ namespace AdressBook //major updates needed
                     txt_phoNum.Text = c.phone;
                     chk_type.Checked = c.buisness;
                     txt_contNote.Text = c.notes;
+
+
                 }
             }
         }
