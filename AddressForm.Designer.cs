@@ -43,6 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lst_buisnes = new System.Windows.Forms.ListBox();
+            this.lst_personal = new System.Windows.Forms.ListBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -53,6 +55,9 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +67,7 @@
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,6 +207,30 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
+            // lst_buisnes
+            // 
+            this.lst_buisnes.FormattingEnabled = true;
+            this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
+            this.lst_buisnes.Name = "lst_buisnes";
+            this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
+            this.lst_buisnes.TabIndex = 1;
+            this.lst_buisnes.TabStop = false;
+            this.lst_buisnes.Tag = "bui";
+            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
+            this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
+            // 
+            // lst_personal
+            // 
+            this.lst_personal.FormattingEnabled = true;
+            this.lst_personal.Location = new System.Drawing.Point(10, 44);
+            this.lst_personal.Name = "lst_personal";
+            this.lst_personal.Size = new System.Drawing.Size(184, 160);
+            this.lst_personal.TabIndex = 0;
+            this.lst_personal.TabStop = false;
+            this.lst_personal.Tag = "per";
+            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
+            this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
+            // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "con";
@@ -216,7 +246,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(897, 24);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -275,6 +305,36 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Buisness Contacts";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Personal Contacts";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.lst_personal);
+            this.groupBox1.Controls.Add(this.lst_buisnes);
+            this.groupBox1.Location = new System.Drawing.Point(588, 34);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 414);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            // 
             // dgv_contacts
             // 
             this.dgv_contacts.AllowUserToAddRows = false;
@@ -293,7 +353,7 @@
             this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(364, 414);
+            this.dgv_contacts.Size = new System.Drawing.Size(672, 414);
             this.dgv_contacts.TabIndex = 18;
             // 
             // col_firName
@@ -336,9 +396,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(897, 450);
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddressForm";
@@ -348,6 +409,8 @@
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,6 +442,11 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ListBox lst_buisnes;
+        private System.Windows.Forms.ListBox lst_personal;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgv_contacts;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
