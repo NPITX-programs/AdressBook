@@ -145,19 +145,6 @@ namespace AdressBook //major updates needed
             string entry = first + " " + last; //combine first and last name
             int leng = 0; //length of the list
 
-            if (value.buisness == true) //check contact type
-            {
-                lst_buisnes.Items.Add(entry); //if it's buisness, add to buisness list
-                leng = lst_buisnes.Items.Count;
-
-                Program.buiIndex.Add(ind);
-            } else
-            {
-                lst_personal.Items.Add(entry); //if it's not buisness, add to personal list
-                leng = lst_personal.Items.Count;
-
-                Program.perIndex.Add(ind);
-            }
         }
         private void generateList()
         {
