@@ -46,78 +46,20 @@ namespace AdressBook //major updates needed
 
         private void readFromFile()
         {
-            bool status = File.Exists(filepath); //check if the file exists
-            if (status || debug) //check if there
-            {
-                try
-                {
-                    using (StreamReader sr = new StreamReader(filepath)) //make stringreader
-                    {
-                        //csv - comma seperated values
-                        //firstname-lastname-email-phone-buisness-notes
-                        while (!sr.EndOfStream) //add each line to it one by one
-                        {
-                            string contact = sr.ReadLine(); //gets the next line of text from the file
-                            var cont = contact.Split(sep); //splits it by the seperator
-                            if (cont.Length >= min)
-                            {
-                                createCont(cont[0], cont[1], cont[2], cont[3], cont[5], Convert.ToBoolean(cont[4])); //create the class
-                                generateList(); //generate what will go onto the listboxes
-                            }
-                            else {
-                                MessageBox.Show("error"); //show error
-                            }
-                            
-                        }
-                    }
-                }
-                catch(Exception ex) //show if exception
-                {
-                    MessageBox.Show("error" + ex.Message); //show error
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("file not found"); //show error
-
-            }
+            //read from path: filepath
+            // call other file
+            files.files.read(filepath, sep, min); //call the function used to read files
+            generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
         }
         private void WriteToFile()
-                {
-                    bool status = File.Exists(filepath); //check if the file exists
-                    if (status || debug)
-                    {
-                        try
-                        {
-                            using (StreamWriter sw = new StreamWriter(filepath))
-                            {
-                                foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
-                                {
-                                    //csv - comma seperated values
-                                    //firstname-lastname-email-phone-buisness-notes
-                                    string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                        c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                                        c.notes; //notes
-                                    sw.WriteLine(line); //write the information to the line
-                                }
-                            } //streamwriter
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("error" + ex.Message); //show error
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("file not found"); //show error
-                    }
-                }
+        {
+            files.files.Write(filepath, sep); //call the function used to write files
+        }
         //save: tba
 
         //save as: tba
             //to make new file, use stream writer?
-            //didin't work earlier, unknown why
+            
 
         private void clear() //triger to clear inputs
         {
@@ -146,10 +88,24 @@ namespace AdressBook //major updates needed
             int leng = 0; //length of the list
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes);
         }
-        private void generateList()
+        private void generateList(int total = 0) //generate the list, if no input it's assumed to use the entire length of the list
         {
-            Contact next = nextEntry();
-            updateList(next);
+            var val = 0; //set as a placeholder
+            int ind = 0; //what will be the index to extract from the main list
+            if(total == 0)
+            {
+                val = Program.contacts.Count; //set total to be the length of the list
+            } else
+            {
+                val = total; //set total to the input value
+            }
+            total = val; //set the total to val. as val was set to total, it's the same, unless it was set to 0
+                         //if the "total" was 0, then it will be set to the length of the list
+            for (int count = 0; count < total; count++)
+            {
+                updateList(Program.contacts[ind]); //update the list
+                ind++; //
+            }
         }
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
@@ -209,7 +165,7 @@ namespace AdressBook //major updates needed
                 clear(); //clear inputs and set checkbox to false
                 WriteToFile(); //write to file
             }
-        }
+        }//add contact
 
         private void btn_close_Click(object sender, EventArgs e) //hit closed button
         {
@@ -219,7 +175,7 @@ namespace AdressBook //major updates needed
         private void select_contact(object sender, EventArgs e)
         {
 
-        }
+        } //select contact
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
@@ -231,7 +187,7 @@ namespace AdressBook //major updates needed
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
                 WriteToFile(); //write to files
             }
-        }
+        } //save as
 
         private void btn_op_Click(object sender, EventArgs e)
         {
@@ -245,6 +201,6 @@ namespace AdressBook //major updates needed
                 Program.perIndex.Clear(); //clear the personal index
                 readFromFile(); //read from file
             }
-        } 
+        }  //open
     }
 }
