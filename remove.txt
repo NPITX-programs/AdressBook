@@ -1,1 +1,0 @@
-the  program used multiple lists to store the info on which where the info about whether it was a list or not was kept
