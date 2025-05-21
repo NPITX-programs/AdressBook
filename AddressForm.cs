@@ -172,11 +172,6 @@ namespace AdressBook //major updates needed
             Application.Exit(); //close
         }
 
-        private void select_contact(object sender, EventArgs e)
-        {
-
-        } //select contact
-
         private void btn_svAs_Click(object sender, EventArgs e)
         {
             //filter
@@ -202,5 +197,7 @@ namespace AdressBook //major updates needed
                 readFromFile(); //read from file
             }
         }  //open
+
+
     }
 }
