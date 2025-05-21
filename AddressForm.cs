@@ -85,7 +85,6 @@ namespace AdressBook //major updates needed
             string first = value.firstname; //get last name
             string last = value.lastname; //get first name
             string entry = first + " " + last; //combine first and last name
-            int leng = 0; //length of the list
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes);
         }
         private void generateList(int total = 0) //generate the list, if no input it's assumed to use the entire length of the list
