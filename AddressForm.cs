@@ -210,5 +210,10 @@ namespace AdressBook //major updates needed
                 }
             }
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WriteToFile();
+        }
     }
 }
