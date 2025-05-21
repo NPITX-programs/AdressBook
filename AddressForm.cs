@@ -198,6 +198,9 @@ namespace AdressBook //major updates needed
             }
         }  //open
 
+        private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

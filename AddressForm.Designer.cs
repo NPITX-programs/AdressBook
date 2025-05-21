@@ -295,6 +295,7 @@
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_contacts.Size = new System.Drawing.Size(672, 414);
             this.dgv_contacts.TabIndex = 18;
+            this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
             // col_firName
             // 
