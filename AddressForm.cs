@@ -206,16 +206,15 @@ namespace AdressBook //major updates needed
                 {
                     if(c.firstname == row.Cells[0].Value.ToString()
                         && c.lastname == row.Cells[1].Value.ToString()
-                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value));
-
-                    txt_firName.Text = c.firstname;
-                    txt_lastName.Text = c.lastname;
-                    txt_EMail.Text = c.email;
-                    txt_phoNum.Text = c.phone;
-                    chk_type.Checked = c.buisness;
-                    txt_contNote.Text = c.notes;
-
-
+                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value))
+                    {
+                        txt_firName.Text = c.firstname;
+                        txt_lastName.Text = c.lastname;
+                        txt_EMail.Text = c.email;
+                        txt_phoNum.Text = c.phone;
+                        chk_type.Checked = c.buisness;
+                        txt_contNote.Text = c.notes;
+                    }
                 }
             }
         }
