@@ -74,7 +74,6 @@ namespace AdressBook //major updates needed
             return curr; //output that value 
         } //gets the final entry in the list of contacts, which is the one that was just made (and thus the one that should be added)
         
-
         private void updateList(Contact value)
         {
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes); //update the data grid view with the contents of the contact
