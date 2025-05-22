@@ -78,7 +78,7 @@ namespace AdressBook //major updates needed
         private void updateList(Contact value)
         {
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes); //update the data grid view with the contents of the contact
-        }
+        } //update list
         private void generateList(int total = 0) 
         {
             var val = 0; //set as a placeholder
@@ -188,7 +188,7 @@ namespace AdressBook //major updates needed
                 Program.contacts.Clear(); //clear the class
                 readFromFile(); //read from file
             }
-        }  //open
+        } //open
 
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
