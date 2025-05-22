@@ -126,7 +126,7 @@ namespace AdressBook //major updates needed
             string eMail = txt_EMail.Text; //email
             string contNote = txt_contNote.Text; //note
             bool contType = chk_type.Checked; //if checked
-            #endregion  //simplified variables for the content of the contact
+            #endregion //simplified variables for the content of the contact
 
             if (firstName == string.Empty) //check if no firstname
             {
