@@ -28,12 +28,12 @@ namespace AdressBook //major updates needed
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
             return finalPath; //output said path
-        } //create the final default path
+        } //create the final directory path
 
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
-        //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
+            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
 
         private void Frm_main_Load(object sender, EventArgs e)
         {
