@@ -220,7 +220,7 @@ namespace AdressBook
                 entry = nextEntry();
                 updateList(entry);
                 clear(); //clear inputs and set checkbox to false
-                WriteToFile(); //write to file function
+                WriteToFile(); //write to file
             }
         }
 
