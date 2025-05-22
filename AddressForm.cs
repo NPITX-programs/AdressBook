@@ -68,11 +68,11 @@ namespace AdressBook //major updates needed
 
         private Contact nextEntry()
         {          
-            int leng = Program.contacts.Count; //get the length
+            int leng = Program.contacts.Count; //get the length of the list
             ind = leng - 1; //get the index (a.k.a the length minus 1)
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value 
-        }
+        } //gets the final entry in the list of contacts, which is the one that was just made (and thus the one that should be added)
         
 
         private void updateList(Contact value) //update list
@@ -111,7 +111,7 @@ namespace AdressBook //major updates needed
             }; //assemble contact
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
-        }
+        } //creates the class for the current input
 
         private void btn_add_Click(object sender, EventArgs e)
         {
