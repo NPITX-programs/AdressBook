@@ -33,7 +33,7 @@ namespace AdressBook //major updates needed
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
-        // const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
+        //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
         private void Frm_main_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
@@ -56,7 +56,7 @@ namespace AdressBook //major updates needed
             files.files.Write(filepath, sep); //call the function used to write files
         } //call the write to file. Same as above
          
-        private void clear() //triger to clear inputs
+        private void clear()
         {
             txt_firName.Text = string.Empty; //empty first name
             txt_lastName.Text = string.Empty; //empty last name
@@ -64,22 +64,22 @@ namespace AdressBook //major updates needed
             txt_EMail.Text = string.Empty; //empty email
             txt_contNote.Text = string.Empty; //epty contact note
             chk_type.Checked = false; //set checkbox to false
-        }
+        } //triger to clear inputs
 
         private Contact nextEntry()
         {          
-            int leng = Program.contacts.Count; //get the length
+            int leng = Program.contacts.Count; //get the length of the list
             ind = leng - 1; //get the index (a.k.a the length minus 1)
             Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value 
-        }
+        } //gets the final entry in the list of contacts, which is the one that was just made (and thus the one that should be added)
         
 
-        private void updateList(Contact value) //update list
+        private void updateList(Contact value)
         {
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes); //update the data grid view with the contents of the contact
-        }
-        private void generateList(int total = 0) //generate the list, if no input it's assumed to use the entire length of the list
+        } //update list
+        private void generateList(int total = 0) 
         {
             var val = 0; //set as a placeholder
             int ind = 0; //what will be the index to extract from the main list
@@ -97,7 +97,7 @@ namespace AdressBook //major updates needed
                 updateList(Program.contacts[ind]); //update the list
                 ind++; //increase index by one (apparently count doesn't increase)
             }
-        }
+        } //generate the list, if no input it's assumed to use the entire length of the list
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
@@ -111,7 +111,7 @@ namespace AdressBook //major updates needed
             }; //assemble contact
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
-        }
+        } //creates the class for the current input
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -160,10 +160,10 @@ namespace AdressBook //major updates needed
             } //the creation and setting code
         } //add contact
 
-        private void btn_close_Click(object sender, EventArgs e) //hit closed button
+        private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit(); //close
-        }
+        } //hit closed button
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
@@ -188,7 +188,7 @@ namespace AdressBook //major updates needed
                 Program.contacts.Clear(); //clear the class
                 readFromFile(); //read from file
             }
-        }  //open
+        } //open
 
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
