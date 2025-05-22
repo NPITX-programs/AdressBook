@@ -56,7 +56,7 @@ namespace AdressBook //major updates needed
             files.files.Write(filepath, sep); //call the function used to write files
         }
          
-        private void clear() //triger to clear inputs
+        private void clear()
         {
             txt_firName.Text = string.Empty; //empty first name
             txt_lastName.Text = string.Empty; //empty last name
@@ -64,7 +64,7 @@ namespace AdressBook //major updates needed
             txt_EMail.Text = string.Empty; //empty email
             txt_contNote.Text = string.Empty; //epty contact note
             chk_type.Checked = false; //set checkbox to false
-        }
+        } //triger to clear inputs
 
         private Contact nextEntry()
         {          
@@ -79,7 +79,7 @@ namespace AdressBook //major updates needed
         {
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes);
         }
-        private void generateList(int total = 0) //generate the list, if no input it's assumed to use the entire length of the list
+        private void generateList(int total = 0) 
         {
             var val = 0; //set as a placeholder
             int ind = 0; //what will be the index to extract from the main list
@@ -97,7 +97,7 @@ namespace AdressBook //major updates needed
                 updateList(Program.contacts[ind]); //update the list
                 ind++; //
             }
-        }
+        } //generate the list, if no input it's assumed to use the entire length of the list
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
@@ -160,10 +160,10 @@ namespace AdressBook //major updates needed
             }
         }//add contact
 
-        private void btn_close_Click(object sender, EventArgs e) //hit closed button
+        private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit(); //close
-        }
+        } //hit closed button
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
