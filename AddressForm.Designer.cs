@@ -290,13 +290,14 @@
             this.col_phoNum,
             this.col_contType,
             this.col_contNotes});
-            this.dgv_contacts.Location = new System.Drawing.Point(218, 27);
+            this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(672, 414);
+            this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
