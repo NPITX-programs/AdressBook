@@ -194,7 +194,7 @@ namespace AdressBook //major updates needed
         {
             //check if somethings selected
             if (dgv_contacts.CurrentRow != null) {
-                var row = dgv_contacts.CurrentRow;
+                var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
                 foreach(var c in Program.contacts)
                 {
                     if(c.firstname == row.Cells[0].Value.ToString()
@@ -208,13 +208,14 @@ namespace AdressBook //major updates needed
                         chk_type.Checked = c.buisness;
                         txt_contNote.Text = c.notes;
                     }
-                }
-            }
-        }
+                } //find the correct class
+            } //make sure there is something selected
+        } //populate text boxes with the content of the selected row
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             WriteToFile(); //save the file to the most recent path
-        }
+                //when you hit save as, the "path" variable is updated, and write to file utilizes that path variable, so using save as on it changes the save target
+        } //save
     }
 }
