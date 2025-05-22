@@ -54,7 +54,7 @@ namespace AdressBook //major updates needed
         private void WriteToFile()
         {
             files.files.Write(filepath, sep); //call the function used to write files
-        } //call the write to file. Same as above
+        } //call the write to file. Same as above comment
          
         private void clear()
         {
