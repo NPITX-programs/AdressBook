@@ -200,17 +200,19 @@ namespace AdressBook //major updates needed
                 var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
                 foreach(var c in Program.contacts)
                 {
-                    if(c.firstname == row.Cells[0].Value.ToString()
-                        && c.lastname == row.Cells[1].Value.ToString()
-                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value))
+                    if(c.firstname == row.Cells[0].Value.ToString() //first name match?
+                        && c.lastname == row.Cells[1].Value.ToString() //last name match?
+                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value)) //buisness contact?
                     {
-                        txt_firName.Text = c.firstname;
-                        txt_lastName.Text = c.lastname;
-                        txt_EMail.Text = c.email;
-                        txt_phoNum.Text = c.phone;
-                        chk_type.Checked = c.buisness;
-                        txt_contNote.Text = c.notes;
-                    }
+                        txt_firName.Text = c.firstname; //put first name in text box
+                        txt_lastName.Text = c.lastname; //put last name in text box
+                        txt_EMail.Text = c.email; //put e-mail in text box
+                        txt_phoNum.Text = c.phone; //put phone number in text box
+                        chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
+                        txt_contNote.Text = c.notes; //put notes in text box
+                    } //see if contact matches conditions.
+                        //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
+                        //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
                 } //find the correct class
             } //make sure there is something selected
         } //populate text boxes with the content of the selected row
