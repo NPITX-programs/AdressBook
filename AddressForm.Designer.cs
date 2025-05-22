@@ -280,11 +280,7 @@
             // 
             this.dgv_contacts.AllowUserToAddRows = false;
             this.dgv_contacts.AllowUserToDeleteRows = false;
-<<<<<<< HEAD
-=======
             this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgv_contacts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
->>>>>>> parent of 2278a51 (Revert "auto-size columns")
             this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_firName,
