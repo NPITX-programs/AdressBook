@@ -39,6 +39,7 @@ namespace AdressBook //major updates needed
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
             readFromFile(); //read from the file
+            generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
         } //when form loads
@@ -49,7 +50,6 @@ namespace AdressBook //major updates needed
             //read from path: filepath
             // call other file
             files.files.read(filepath, sep, min); //call the function used to read files
-            generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
         } //call the read from file method (that way I don't have to do file.files first)
         private void WriteToFile()
         {
@@ -126,7 +126,8 @@ namespace AdressBook //major updates needed
             string eMail = txt_EMail.Text; //email
             string contNote = txt_contNote.Text; //note
             bool contType = chk_type.Checked; //if checked
-            #endregion //simplified variables for the content of the contact
+            #endregion
+                //simplified variables for the content of the contact
 
             if (firstName == string.Empty) //check if no firstname
             {
@@ -213,7 +214,7 @@ namespace AdressBook //major updates needed
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WriteToFile();
+            WriteToFile(); //save the file to the most recent path
         }
     }
 }
