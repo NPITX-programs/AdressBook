@@ -34,6 +34,7 @@ namespace AdressBook //major updates needed
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
         //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts"; //create the directory path
+
         private void Frm_main_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
@@ -51,6 +52,7 @@ namespace AdressBook //major updates needed
             // call other file
             files.files.read(filepath, sep, min); //call the function used to read files
         } //call the read from file method (that way I don't have to do file.files first)
+
         private void WriteToFile()
         {
             files.files.Write(filepath, sep); //call the function used to write files
@@ -74,11 +76,11 @@ namespace AdressBook //major updates needed
             return curr; //output that value 
         } //gets the final entry in the list of contacts, which is the one that was just made (and thus the one that should be added)
         
-
         private void updateList(Contact value)
         {
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes); //update the data grid view with the contents of the contact
         } //update list
+
         private void generateList(int total = 0) 
         {
             var val = 0; //set as a placeholder
@@ -98,6 +100,7 @@ namespace AdressBook //major updates needed
                 ind++; //increase index by one (apparently count doesn't increase)
             }
         } //generate the list, if no input it's assumed to use the entire length of the list
+
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
         {
             Contact c = new Contact //make new constact
