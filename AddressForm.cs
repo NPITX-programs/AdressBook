@@ -74,7 +74,6 @@ namespace AdressBook //major updates needed
             return curr; //output that value 
         }
         
-
         private void updateList(Contact value) //update list
         {
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes); //update the data grid view with the contents of the contact
