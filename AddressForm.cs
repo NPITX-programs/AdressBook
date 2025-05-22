@@ -159,7 +159,7 @@ namespace AdressBook //major updates needed
                     //write to file
                     //disabled for now so it won't auto
             } //the creation and setting code
-        }//add contact
+        } //add contact
 
         private void btn_close_Click(object sender, EventArgs e) //hit closed button
         {
@@ -185,6 +185,7 @@ namespace AdressBook //major updates needed
             if (openFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
             {
                 filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
+                    //also sets the filepath for saveing to be the new one, that way if you save the file it is now the one you used save as on, not the in-built default
                 Program.contacts.Clear(); //clear the class
                 readFromFile(); //read from file
             }
