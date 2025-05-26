@@ -9,6 +9,6 @@ exit
 	so, after some quick research, I found that the actual key was alt+f4, not f14. Amazing what a single extra one will do...
 
 |Command Checked|What changed|Reason| Note|
-| ---    | ---   | ---     |
+| ---    | ---   | ---     | --- |
 | save | nothing | it was correct, as I knew |I knew this one was correct, but as I was unsure about one command, and checking another, I figured "might as well check them all"|
 |open|nothing|once again correct|
