@@ -6,3 +6,4 @@ save
 		
 exit
 	now it gets interesting. this one has a story. I thought it was f14, but I then noticed my computer only had f1 to f12, as do most computers. So, I started to double check that. In fact, it was this very observation which made me check all these shortcuts
+	so, after some quick research, I found that the actual key was alt+f4, not f14. Amazing what a single extra one will do...
