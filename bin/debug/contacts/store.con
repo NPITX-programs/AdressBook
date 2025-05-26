@@ -10,7 +10,4 @@ tests ~h~      11~      1~True~test
 1~2~3~         4~False~5
 t~e~        1~    1~False~tests
 charlie~hatch~test~1234567891~True~this is a largeer scale test
-test~test~large~    12~True~this is a very large scale test
-and I do mean very
-
-as in very, very, very....................................
+test~test~large~    12~True~this is a very large scale test and I do mean very as in very, very, very....................................
