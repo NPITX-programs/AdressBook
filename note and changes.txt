@@ -1,0 +1,2 @@
+save
+	No surprise here, it's shortcut was correct. Save is, as many know, ctrl+s. Reason for checking was because I was already checking a few I was less certain of, so I figured I might as well check them all, even ones I know for a fact are right
