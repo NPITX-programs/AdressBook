@@ -1,4 +1,3 @@
 exit is alt+f4
-save is ctrl+s
 save as is... f12 ?!
 open is ctrl O
