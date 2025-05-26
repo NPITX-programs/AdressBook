@@ -1,2 +1,1 @@
-exit is alt+f4
 save as is... f12 ?!
