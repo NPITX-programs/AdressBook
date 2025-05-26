@@ -6,4 +6,4 @@
 |||||
 |exit|changed from F14 to F4|alt+f4 is exit, not alt+14|So, for some reason I thought it was alt+F14. But, I noticed my computer (and many others) only have F1 to F12. So, I realized I might be wrong, and double checked. Turned out it's alt+f4. In fact, it was this very observation which made me decide to check all the shortcut commands, even ones I knew for a fact!|
 |||||
-|save as||Looked up what was used in word and such|||
+|save as|changed to f12|Looked up what was used in word and such|apparently word uses F12|this was surprising and didn't make sense|
