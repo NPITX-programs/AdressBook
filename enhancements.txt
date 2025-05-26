@@ -1,0 +1,4 @@
+planned enhancements:
+	auto-save (will add a toggle for an auto-save feature)
+	improved exit control (an improved exit button)
+	check if it's been saved, if not confirm close
