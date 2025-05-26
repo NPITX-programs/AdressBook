@@ -1,3 +1,6 @@
+##Notes on shortcut changes
+I noticed a minor flaw within the shortcuts, so I decided to check each one, even the ones I knew for a fact. Found some interesting stuff!
+
 |Command Checked|What changed|Reason| Note|
 | ---    | ---   | ---     | --- |
 | save | nothing | it was correct, as I knew |I knew this one was correct, but as I was unsure about one command, and checking another, I figured "might as well check them all"|
