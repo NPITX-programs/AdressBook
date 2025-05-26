@@ -2,3 +2,4 @@ exit is alt+f4
 save is ctrl+s
 save as is... f12 ?!
 open is ctrl O
+the notes on the results should be a markdown file, in the format of a table
