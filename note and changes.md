@@ -11,3 +11,4 @@ exit
 |Command Checked|What changed|Reason|
 | ---    | ---   | ---     |
 | save | nothing | it was correct |
+|open|nothing|once again correct|
