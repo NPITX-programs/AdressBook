@@ -9,4 +9,4 @@ exit
 |Command Checked|What changed|Reason| Note|
 | ---    | ---   | ---     | --- |
 | save | nothing | it was correct, as I knew |I knew this one was correct, but as I was unsure about one command, and checking another, I figured "might as well check them all"|
-|open|nothing|once again correct|
+|open|nothing|once again correct| I was pretty sure, but not as sure, about this one. But, after double checking, I now know it's correct |
