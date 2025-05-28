@@ -1,0 +1,18 @@
+validate
+if validation passed, do all of the following: 
+	save to class
+		contact c = new contact();
+		c."each info" = "source of info"
+
+		if c.buisiness
+		lstBuisness
+
+		else
+		Personal
+	call the file save method
+		stream writer to targeted location, utilizing CSV (or something conceptually like that)
+
+clear UI input
+	clear data input:
+	txt"source" clear
+	checkbox uncheck

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdressBook.files; //this is the namespace for the files that are in the project. This is where the classes are stored
 
 namespace AdressBook
 {
@@ -16,7 +17,9 @@ namespace AdressBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_main());
+            Application.Run(new AddressForm());
         }
+        internal static bool debug = true;
+        internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
     }
 }
