@@ -3,3 +3,4 @@ enhanced tooltips
 main1
 duplicate enhanced tooltips form
 main2
+main3
