@@ -1,0 +1,4 @@
+-update: the ui and the ux needs to be updated
+-currently there is an error with entries that have line breaks, that needs to be fixeds
+
+-integrate some concepts (to be merged in)
