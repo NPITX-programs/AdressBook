@@ -1,0 +1,2 @@
+	improved exit control (an improved exit button)
+	check if it's been saved, if not confirm close
