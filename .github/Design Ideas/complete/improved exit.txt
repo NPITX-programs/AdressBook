@@ -5,3 +5,4 @@ ideas to improve exit:
 
 interesting format?
 something dynamic?
+timer-based?
