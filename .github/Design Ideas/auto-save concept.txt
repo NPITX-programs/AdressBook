@@ -1,2 +1,4 @@
 an auto-save feature that makes the write thing work as before-ish?
 	use toggle in toolbar
+
+if try to close & no save, ask if save?
