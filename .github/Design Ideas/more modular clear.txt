@@ -1,6 +1,6 @@
 concept:
 use a loop to inherently detect the parts of the class, and clear them
 
-use method with an input of a text box to clear the menue, not manual define
+use method with an input of a text box to clear the menu, not manual define
 
 might be useful concept, locate all text boxes on field, and clear them in one fell swoop
