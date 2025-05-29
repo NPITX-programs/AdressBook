@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.lst_personal = new System.Windows.Forms.ListBox();
+            this.lst_buisnes = new System.Windows.Forms.ListBox();
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
@@ -42,29 +43,50 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgv_contacts = new System.Windows.Forms.DataGridView();
-            this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lst_personal
+            // 
+            this.lst_personal.FormattingEnabled = true;
+            this.lst_personal.Location = new System.Drawing.Point(10, 44);
+            this.lst_personal.Name = "lst_personal";
+            this.lst_personal.Size = new System.Drawing.Size(184, 160);
+            this.lst_personal.TabIndex = 0;
+            this.lst_personal.TabStop = false;
+            this.lst_personal.Tag = "per";
+            this.toolTip1.SetToolTip(this.lst_personal, "Personal Contacts");
+            this.lst_personal.SelectedIndexChanged += new System.EventHandler(this.select_contact);
+            // 
+            // lst_buisnes
+            // 
+            this.lst_buisnes.FormattingEnabled = true;
+            this.lst_buisnes.Location = new System.Drawing.Point(10, 260);
+            this.lst_buisnes.Name = "lst_buisnes";
+            this.lst_buisnes.Size = new System.Drawing.Size(184, 160);
+            this.lst_buisnes.TabIndex = 1;
+            this.lst_buisnes.TabStop = false;
+            this.lst_buisnes.Tag = "bui";
+            this.toolTip1.SetToolTip(this.lst_buisnes, "Buisness Contacts");
+            this.lst_buisnes.SelectedIndexChanged += new System.EventHandler(this.select_contact);
             // 
             // chk_type
             // 
@@ -182,6 +204,36 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Contact Information";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Personal Contacts";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Buisness Contacts";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.lst_personal);
+            this.groupBox1.Controls.Add(this.lst_buisnes);
+            this.groupBox1.Location = new System.Drawing.Point(588, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 421);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label1);
@@ -196,9 +248,9 @@
             this.groupBox2.Controls.Add(this.txt_contNote);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_lastName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 28);
+            this.groupBox2.Location = new System.Drawing.Point(0, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 420);
+            this.groupBox2.Size = new System.Drawing.Size(212, 413);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
@@ -217,15 +269,15 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(897, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
+            this.saveAsToolStripMenuItem1,
             this.toolStripMenuItem1,
             this.openToolStripMenuItem,
             this.toolStripMenuItem2,
@@ -234,22 +286,21 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.btn_svAs_Click);
+            this.saveAsToolStripMenuItem.Text = "Save";
+            // 
+            // saveAsToolStripMenuItem1
+            // 
+            this.saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
+            this.saveAsToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAsToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.saveAsToolStripMenuItem1.Text = "Save As";
+            this.saveAsToolStripMenuItem1.Click += new System.EventHandler(this.btn_svAs_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -272,105 +323,38 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F14)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // dgv_contacts
-            // 
-            this.dgv_contacts.AllowUserToAddRows = false;
-            this.dgv_contacts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_firName,
-            this.col_lastName,
-            this.col_EMail,
-            this.col_phoNum,
-            this.col_contType,
-            this.col_contNotes});
-            this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
-            this.dgv_contacts.MultiSelect = false;
-            this.dgv_contacts.Name = "dgv_contacts";
-            this.dgv_contacts.ReadOnly = true;
-            this.dgv_contacts.RowHeadersVisible = false;
-            this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
-            this.dgv_contacts.TabIndex = 18;
-            this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
-            // 
-            // col_firName
-            // 
-            this.col_firName.HeaderText = "First Name";
-            this.col_firName.Name = "col_firName";
-            this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 76;
-            // 
-            // col_lastName
-            // 
-            this.col_lastName.HeaderText = "Last Name";
-            this.col_lastName.Name = "col_lastName";
-            this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 77;
-            // 
-            // col_EMail
-            // 
-            this.col_EMail.HeaderText = "E-Mail";
-            this.col_EMail.Name = "col_EMail";
-            this.col_EMail.ReadOnly = true;
-            this.col_EMail.Width = 61;
-            // 
-            // col_phoNum
-            // 
-            this.col_phoNum.HeaderText = "Phone Number";
-            this.col_phoNum.Name = "col_phoNum";
-            this.col_phoNum.ReadOnly = true;
-            this.col_phoNum.Width = 95;
-            // 
-            // col_contType
-            // 
-            this.col_contType.HeaderText = "Contact Type";
-            this.col_contType.Name = "col_contType";
-            this.col_contType.ReadOnly = true;
-            this.col_contType.Width = 69;
-            // 
-            // col_contNotes
-            // 
-            this.col_contNotes.HeaderText = "Contact Notes";
-            this.col_contNotes.Name = "col_contNotes";
-            this.col_contNotes.ReadOnly = true;
-            this.col_contNotes.Width = 92;
             // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 450);
-            this.Controls.Add(this.dgv_contacts);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddressForm";
             this.Text = "Primary Form";
             this.Load += new System.EventHandler(this.Frm_main_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lst_personal;
+        private System.Windows.Forms.ListBox lst_buisnes;
         private System.Windows.Forms.CheckBox chk_type;
         private System.Windows.Forms.TextBox txt_firName;
         private System.Windows.Forms.TextBox txt_EMail;
@@ -383,25 +367,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dgv_contacts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
 

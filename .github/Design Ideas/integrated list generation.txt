@@ -1,0 +1,5 @@
+instead of useing the generate list that was there. It was based on the total list length, but as the entire file was read first...
+however, if I'm correct and this system only needs to run while it's loading a file, I can make a system similar to the old one, and with modifications fully integrate it into the reading of the file
+
+	- for instance, the "next entry" might make sense to go elsewhere. If that is done, then we can go back to utilizing something similar to the old one.
+	-- even better would be to integrate the contents of the loop inside the read file loop.
