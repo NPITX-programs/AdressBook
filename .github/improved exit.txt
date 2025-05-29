@@ -1,3 +1,4 @@
 ideas to improve exit:
-	a confirm system. Also perhaps if unsaved, ask if save is wanted
+	a confirm system.
+		Perhaps if unsaved, ask if save is wanted
 	better UI access
