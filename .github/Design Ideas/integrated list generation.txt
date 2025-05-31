@@ -1,5 +1,9 @@
-instead of using the generate list that was there. 
-It was based on the total list length, but as the entire file was read first...
+the original generate list used the length of the file
+however, the new read method gets the entire file at once
+
+few options;
+	-
+
 however, if I'm correct and this system only needs to run while it's loading a file, I can make a system similar to the old one, and with modifications fully integrate it into the reading of the file
 
 	- for instance, the "next entry" might make sense to go elsewhere. If that is done, then we can go back to utilizing something similar to the old one.
