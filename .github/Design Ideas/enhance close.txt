@@ -1,1 +1,0 @@
-the close button should have a warning thing, +more?

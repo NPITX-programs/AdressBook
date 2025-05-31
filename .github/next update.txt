@@ -2,3 +2,9 @@
 -currently there is an error with entries that have line breaks, that needs to be fixeds
 
 -integrate some concepts (to be merged in)
+
+parts:
+-edit
+-auto-save
+-integrate parts
+-better menue
