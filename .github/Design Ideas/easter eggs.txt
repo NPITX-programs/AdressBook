@@ -1,3 +1,2 @@
-this is based on a simple mistake I made. I added "put tooltip here"
-
-so... what if that becomes an easter egg!
+a tooltip had "put tooltip here" by accident
+somehow partly add as an easter eg?
