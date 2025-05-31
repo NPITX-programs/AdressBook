@@ -1,4 +1,6 @@
 concept:
+make the clear system more modular and robust. possible methods include:
+
 use a loop to inherently detect the parts of the class, and clear them
 
 use method with an input of a text box to clear the menu, not manual define
