@@ -1,0 +1,7 @@
+when an item is selected, the text fields auto-populate.
+
+if any changes are made, the system will detect any alterations to the text, and;
+
+if there are no changes, the button hides itself
+if there are changes, the text is changed to "edit". if the text is add, it will add the entry. if edit, it will check which entry is accesed, and edit it.
+	perhaps add a way to also add in an entry, even if done via this method? such as the menue strip allows it?
