@@ -1,6 +1,5 @@
 concept:
-use a loop to inherently detect the parts of the class, and clear them
-
-use method with an input of a text box to clear the menue, not manual define
-
-might be useful concept, locate all text boxes on field, and clear them in one fell swoop
+make the clear system more modular and robust. possible methods include:
+	-use a loop to detect the parts that are the class, and clear them
+	-use a method with a text box input
+	-locate all text boxes in a field (perhaps the input group box), and use a loop to iterate through them
