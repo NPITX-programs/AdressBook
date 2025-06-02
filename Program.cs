@@ -20,6 +20,6 @@ namespace AdressBook
             Application.Run(new AddressForm());
         }
         internal const bool debug = true; //global debug var
-        internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
+        internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information: CONCEPT- some way to externally configure it, and some sort of integration that allows both global config and granular (specifc lines change)
     }
 }
