@@ -23,7 +23,7 @@ namespace AdressBook.files
                             //firstname-lastname-email-phone-buisness-notes
                             string line = c.firstname + sep + c.lastname + sep +  //first and last name
                                 c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                                c.notes; //notes
+                                c.notes + sep + c.index; //notes
                             sw.WriteLine(line); //write the information to the line
                         }
                     } //streamwriter
