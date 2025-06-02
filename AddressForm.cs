@@ -163,10 +163,10 @@ namespace AdressBook //major updates needed
             } //the creation and setting code
         } //add contact
 
-        private void btn_close_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit(); //close
-        } //hit closed button
+        } //used exit system
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
