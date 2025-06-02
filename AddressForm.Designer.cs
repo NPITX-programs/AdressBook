@@ -61,6 +61,9 @@
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autosaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -214,7 +217,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.configToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(897, 24);
@@ -348,6 +352,20 @@
             this.col_contNotes.ReadOnly = true;
             this.col_contNotes.Width = 92;
             // 
+            // configToolStripMenuItem
+            // 
+            this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autosaveToolStripMenuItem});
+            this.configToolStripMenuItem.Name = "configToolStripMenuItem";
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.configToolStripMenuItem.Text = "Config";
+            // 
+            // autosaveToolStripMenuItem
+            // 
+            this.autosaveToolStripMenuItem.Name = "autosaveToolStripMenuItem";
+            this.autosaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.autosaveToolStripMenuItem.Text = "Autosave";
+            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,6 +420,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
+        private System.Windows.Forms.ToolStripMenuItem configToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autosaveToolStripMenuItem;
+        private System.Windows.Forms.Timer tmr_con;
     }
 }
 
