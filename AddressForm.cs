@@ -14,7 +14,7 @@ namespace AdressBook //major updates needed
 {
     public partial class AddressForm : Form
     {
-        const bool debug = Program.debug; //toggle debug
+        const bool debug = Program.debug; //debug var
         const char sep = '~'; //seperation character
         public AddressForm()
         {
