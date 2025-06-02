@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
@@ -54,8 +54,6 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autosaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +61,8 @@
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autosaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -221,10 +221,9 @@
             this.configToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.Size = new System.Drawing.Size(897, 24);
             this.menuStrip1.TabIndex = 21;
-            this.menuStrip1.Text = "PrimaryMenueStrip";
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -282,29 +281,15 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // configToolStripMenuItem
-            // 
-            this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autosaveToolStripMenuItem});
-            this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.configToolStripMenuItem.Text = "Config";
-            // 
-            // autosaveToolStripMenuItem
-            // 
-            this.autosaveToolStripMenuItem.Name = "autosaveToolStripMenuItem";
-            this.autosaveToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.autosaveToolStripMenuItem.Text = "Autosave";
-            // 
             // dgv_contacts
             // 
             this.dgv_contacts.AllowUserToAddRows = false;
             this.dgv_contacts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -366,6 +351,20 @@
             this.col_contNotes.Name = "col_contNotes";
             this.col_contNotes.ReadOnly = true;
             this.col_contNotes.Width = 92;
+            // 
+            // configToolStripMenuItem
+            // 
+            this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autosaveToolStripMenuItem});
+            this.configToolStripMenuItem.Name = "configToolStripMenuItem";
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.configToolStripMenuItem.Text = "Config";
+            // 
+            // autosaveToolStripMenuItem
+            // 
+            this.autosaveToolStripMenuItem.Name = "autosaveToolStripMenuItem";
+            this.autosaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.autosaveToolStripMenuItem.Text = "Autosave";
             // 
             // AddressForm
             // 
