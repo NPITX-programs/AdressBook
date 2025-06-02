@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddressForm));
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
@@ -54,6 +55,8 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autosaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +64,7 @@
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -214,7 +218,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.configToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(897, 24);
@@ -276,6 +281,20 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // configToolStripMenuItem
+            // 
+            this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autosaveToolStripMenuItem});
+            this.configToolStripMenuItem.Name = "configToolStripMenuItem";
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.configToolStripMenuItem.Text = "Config";
+            // 
+            // autosaveToolStripMenuItem
+            // 
+            this.autosaveToolStripMenuItem.Name = "autosaveToolStripMenuItem";
+            this.autosaveToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.autosaveToolStripMenuItem.Text = "Autosave";
             // 
             // dgv_contacts
             // 
@@ -356,6 +375,7 @@
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddressForm";
             this.Text = "Primary Form";
@@ -402,6 +422,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
+        private System.Windows.Forms.ToolStripMenuItem configToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autosaveToolStripMenuItem;
+        private System.Windows.Forms.Timer tmr_con;
     }
 }
 
