@@ -63,7 +63,8 @@ namespace AdressBook.files
                                     phone = cont[2], //same
                                     email = cont[3], //same
                                     buisness = Convert.ToBoolean(cont[4]), //same
-                                    notes = cont[5] //same
+                                    notes = cont[5], //same
+                                    index = Program.contacts.Count + 1
                                     
                                 };
                                 Program.contacts.Add(c); //add to list
