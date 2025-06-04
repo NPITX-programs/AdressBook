@@ -56,13 +56,13 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
+            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -314,14 +314,14 @@
             this.col_firName.HeaderText = "First Name";
             this.col_firName.Name = "col_firName";
             this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 76;
+            this.col_firName.Width = 82;
             // 
             // col_lastName
             // 
             this.col_lastName.HeaderText = "Last Name";
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 77;
+            this.col_lastName.Width = 83;
             // 
             // col_EMail
             // 
@@ -342,6 +342,7 @@
             this.col_contType.HeaderText = "Contact Type";
             this.col_contType.Name = "col_contType";
             this.col_contType.ReadOnly = true;
+            this.col_contType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_contType.Width = 69;
             // 
             // col_contNotes
@@ -401,13 +402,13 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_contacts;
+        private System.Windows.Forms.Timer tmr_con;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
-        private System.Windows.Forms.Timer tmr_con;
     }
 }
 
