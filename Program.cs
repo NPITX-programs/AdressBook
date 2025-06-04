@@ -22,4 +22,8 @@ namespace AdressBook
         internal const bool debug = true; //global debug var
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
     }
+    internal static class coreCommands
+    {
+        internal static
+    }
 }
