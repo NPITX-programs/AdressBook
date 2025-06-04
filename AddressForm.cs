@@ -23,6 +23,11 @@ namespace AdressBook //major updates needed
 
         string filepath = string.Empty; //a placeholder blank path
 
+        private void error()
+        {
+            AdressBook.coreCommands.error()
+        }
+
         private string CreatePath(string root, string path, string name, string extension)
         {
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
