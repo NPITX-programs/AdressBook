@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdressBook.files; //this is the namespace for the files that are in the project. This is where the classes are stored
@@ -21,6 +22,7 @@ namespace AdressBook
         }
         internal const bool debug = true; //global debug var
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
+        internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
     }
     internal static class coreCommands
     {
