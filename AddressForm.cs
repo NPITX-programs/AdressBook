@@ -138,6 +138,8 @@ namespace AdressBook //major updates needed
             bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
+            
+
             if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
