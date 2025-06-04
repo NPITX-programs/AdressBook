@@ -24,6 +24,16 @@ namespace AdressBook
     }
     internal static class coreCommands
     {
-        internal static
+        internal static void error(string message, Exception ex = null, bool revealException = false)
+        {
+            string msg = message; //what message to display
+            if (revealException) //put the toggle
+            {
+                msg = msg + ": " + ex.Message; //the message
+            }//a bool to toggle if the exception code should be included in the error message
+            MessageBox.Show(msg); //show the message
+        } //this is for error messages. the text is mandatory, but the
+          //rest isn't necessary. if you don't provide an exception, it won't display one. If you provide an error, it will default to "hide error".
+          // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
     }
 }
