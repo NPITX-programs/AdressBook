@@ -63,6 +63,7 @@
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -296,7 +297,8 @@
             this.col_EMail,
             this.col_phoNum,
             this.col_contType,
-            this.col_contNotes});
+            this.col_contNotes,
+            this.col_contInd});
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
             this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
             this.dgv_contacts.MultiSelect = false;
@@ -342,7 +344,6 @@
             this.col_contType.HeaderText = "Contact Type";
             this.col_contType.Name = "col_contType";
             this.col_contType.ReadOnly = true;
-            this.col_contType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_contType.Width = 69;
             // 
             // col_contNotes
@@ -351,6 +352,13 @@
             this.col_contNotes.Name = "col_contNotes";
             this.col_contNotes.ReadOnly = true;
             this.col_contNotes.Width = 92;
+            // 
+            // col_contInd
+            // 
+            this.col_contInd.HeaderText = "Index";
+            this.col_contInd.Name = "col_contInd";
+            this.col_contInd.ReadOnly = true;
+            this.col_contInd.Width = 58;
             // 
             // AddressForm
             // 
@@ -409,6 +417,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
     }
 }
 
