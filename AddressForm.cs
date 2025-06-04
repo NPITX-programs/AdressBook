@@ -23,9 +23,10 @@ namespace AdressBook //major updates needed
 
         string filepath = string.Empty; //a placeholder blank path
 
-        private void error()
+        private void error(string message, Exception ex = null, bool revealException = false)
         {
-            AdressBook.coreCommands.error()
+            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
+
         }
 
         private string CreatePath(string root, string path, string name, string extension)
