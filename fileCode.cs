@@ -22,7 +22,7 @@ namespace AdressBook.files
                             //csv - comma seperated values
                             //firstname-lastname-email-phone-buisness-notes
                             string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                c.email + sep + c.phone + sep + c.buisness + sep + //contact information
+                                c.phone + sep + c.email + sep + c.buisness + sep + //contact information
                                 c.notes + sep + c.index; //notes
                             sw.WriteLine(line); //write the information to the line
                         }
@@ -62,8 +62,9 @@ namespace AdressBook.files
                                     lastname = cont[1], //same
                                     phone = cont[2], //same
                                     email = cont[3], //same
-                                    notes = cont[5], //same
-                                    buisness = Convert.ToBoolean(cont[4]) //same
+                                    buisness = Convert.ToBoolean(cont[4]), //same
+                                    notes = cont[5] //same
+                                    
                                 };
                                 Program.contacts.Add(c); //add to list
                             }
