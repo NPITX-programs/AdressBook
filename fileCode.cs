@@ -71,7 +71,10 @@ namespace AdressBook.files
                             }
                             else
                             {
-                                MessageBox.Show("error"); //show error
+                                void error(string message, Exception ex = null, bool revealException = false)
+                                {
+                                    AdressBook.coreCommands.error("error: below Max Length");
+                                }
                             }
                         }
                     }
