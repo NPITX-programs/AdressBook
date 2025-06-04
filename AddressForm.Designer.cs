@@ -200,7 +200,7 @@
             this.groupBox2.Controls.Add(this.txt_lastName);
             this.groupBox2.Location = new System.Drawing.Point(12, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 420);
+            this.groupBox2.Size = new System.Drawing.Size(207, 420);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
