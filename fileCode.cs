@@ -21,9 +21,10 @@ namespace AdressBook.files
                         {
                             //csv - comma seperated values
                             //firstname-lastname-email-phone-buisness-notes
+                            string ind = (c.index + 1).ToString();
                             string line = c.firstname + sep + c.lastname + sep +  //first and last name
                                 c.phone + sep + c.email + sep + c.buisness + sep + //contact information
-                                c.notes + sep + c.index; //notes
+                                c.notes + sep + ind; //notes
                             sw.WriteLine(line); //write the information to the line
                         }
                     } //streamwriter
