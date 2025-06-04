@@ -283,7 +283,7 @@
             // 
             this.dgv_contacts.AllowUserToAddRows = false;
             this.dgv_contacts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
