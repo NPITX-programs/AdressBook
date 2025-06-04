@@ -78,7 +78,7 @@ namespace AdressBook //major updates needed
         
         private void updateList(Contact value)
         {
-            dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes); //update the data grid view with the contents of the contact
+            dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact
         } //update list
 
         private void generateList(int total = 0) 
@@ -101,7 +101,7 @@ namespace AdressBook //major updates needed
             }
         } //generate the list, if no input it's assumed to use the entire length of the list
 
-        private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType)
+        private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType, int contInd)
         {
             Contact c = new Contact //make new constact
             {
@@ -110,7 +110,8 @@ namespace AdressBook //major updates needed
                 phone = phoNum, //same
                 email = eMail, //same
                 notes = contNote, //same
-                buisness = contType //same
+                buisness = contType, //same
+                index = contInd, //
             }; //assemble contact
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
@@ -153,7 +154,7 @@ namespace AdressBook //major updates needed
             }
 
             if (valid == true || debug == true) {
-                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType); //create the contact
+                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                 entry = nextEntry(); //get the next entry
                 updateList(entry); //update the list
                 clear(); //clear inputs and set checkbox to false
