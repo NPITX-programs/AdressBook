@@ -200,7 +200,7 @@
             this.groupBox2.Controls.Add(this.txt_lastName);
             this.groupBox2.Location = new System.Drawing.Point(12, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 420);
+            this.groupBox2.Size = new System.Drawing.Size(207, 420);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
@@ -306,6 +306,7 @@
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
             this.dgv_contacts.TabIndex = 18;
+            this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
             // col_firName
@@ -361,6 +362,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddressForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primary Form";
             this.Load += new System.EventHandler(this.Frm_main_Load);
             this.groupBox2.ResumeLayout(false);
