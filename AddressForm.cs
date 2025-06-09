@@ -23,6 +23,12 @@ namespace AdressBook //major updates needed
 
         string filepath = string.Empty; //a placeholder blank path
 
+        private void error(string message, Exception ex = null, bool revealException = false)
+        {
+            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
+
+        } //error system
+
         private string CreatePath(string root, string path, string name, string extension)
         {
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
@@ -33,7 +39,8 @@ namespace AdressBook //major updates needed
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
-            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
+                           //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
+        bool autoSave = false; //default auto-save
 
         private void Frm_main_Load(object sender, EventArgs e)
         {
@@ -132,6 +139,8 @@ namespace AdressBook //major updates needed
             bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
+            
+
             if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
@@ -157,10 +166,11 @@ namespace AdressBook //major updates needed
                 newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                 entry = nextEntry(); //get the next entry
                 updateList(entry); //update the list
+                if (autoSave )
+                {
+                    WriteToFile(); //write to the file
+                } //if the auto-save is on
                 clear(); //clear inputs and set checkbox to false
-                // WriteToFile(); 
-                    //write to file
-                    //disabled for now so it won't auto
             } //the creation and setting code
         } //add contact
 
@@ -223,5 +233,18 @@ namespace AdressBook //major updates needed
             WriteToFile(); //save the file to the most recent path
                 //when you hit save as, the "path" variable is updated, and write to file utilizes that path variable, so using save as on it changes the save target
         } //save
+
+        private void toolStrip_autoSave_Click(object sender, EventArgs e)
+        {
+            bool autoSave = toolStrip_autoSave.Checked;
+            if (autoSave)
+            {
+                toolStrip_autoSave.BackColor = Color.Green;
+            }
+            else
+            {
+                 toolStrip_autoSave.BackColor = Color.Red;
+            }
+        }
     }
 }
