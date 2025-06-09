@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace AdressBook //major updates needed
 {
-    public partial class AddressForm : Form
+    public partial class frm_addressForm : Form
     {
         const bool debug = Program.debug; //this sets the debug system to the global debug variable
         const char sep = '~'; //seperation character
-        public AddressForm()
+        public frm_addressForm()
         {
             InitializeComponent();
         }
@@ -246,6 +246,11 @@ namespace AdressBook //major updates needed
             {
                  toolStrip_autoSave.BackColor = Color.Red;
             }
+        }
+
+        private void Frm_main_reSize(object sender, EventArgs e)
+        {
+            
         }
     }
 }
