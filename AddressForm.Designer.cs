@@ -383,8 +383,8 @@
             this.Name = "frm_addressForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primary Form";
-            this.Load += new System.EventHandler(this.Frm_main_Load);
-            this.Resize += new System.EventHandler(this.Frm_main_reSize);
+            this.Load += new System.EventHandler(this.frm_addressForm_Load);
+            this.Resize += new System.EventHandler(this.frm_addressForm_reSize);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

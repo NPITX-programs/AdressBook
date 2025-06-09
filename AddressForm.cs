@@ -42,7 +42,7 @@ namespace AdressBook //major updates needed
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
 
-        private void Frm_main_Load(object sender, EventArgs e)
+        private void frm_addressForm_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
@@ -248,7 +248,7 @@ namespace AdressBook //major updates needed
             }
         }
 
-        private void Frm_main_reSize(object sender, EventArgs e)
+        private void frm_addressForm_reSize(object sender, EventArgs e)
         {
             
         }
