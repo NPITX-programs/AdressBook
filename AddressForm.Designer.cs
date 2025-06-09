@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddressForm));
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
@@ -56,14 +55,12 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
-            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -201,7 +198,7 @@
             this.groupBox2.Controls.Add(this.txt_lastName);
             this.groupBox2.Location = new System.Drawing.Point(12, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(207, 420);
+            this.groupBox2.Size = new System.Drawing.Size(200, 420);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
@@ -251,8 +248,9 @@
             this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.btn_svAs_Click);
+            this.saveAsToolStripMenuItem.Text = "Save";
+            // 
+            // saveAsToolStripMenuItem1
             // 
             // toolStripMenuItem1
             // 
@@ -278,7 +276,7 @@
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // dgv_contacts
             // 
@@ -297,8 +295,7 @@
             this.col_EMail,
             this.col_phoNum,
             this.col_contType,
-            this.col_contNotes,
-            this.col_contInd});
+            this.col_contNotes});
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
             this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
             this.dgv_contacts.MultiSelect = false;
@@ -308,7 +305,6 @@
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
             this.dgv_contacts.TabIndex = 18;
-            this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
             // col_firName
@@ -316,14 +312,14 @@
             this.col_firName.HeaderText = "First Name";
             this.col_firName.Name = "col_firName";
             this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 82;
+            this.col_firName.Width = 76;
             // 
             // col_lastName
             // 
             this.col_lastName.HeaderText = "Last Name";
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 83;
+            this.col_lastName.Width = 77;
             // 
             // col_EMail
             // 
@@ -353,13 +349,6 @@
             this.col_contNotes.ReadOnly = true;
             this.col_contNotes.Width = 92;
             // 
-            // col_contInd
-            // 
-            this.col_contInd.HeaderText = "Index";
-            this.col_contInd.Name = "col_contInd";
-            this.col_contInd.ReadOnly = true;
-            this.col_contInd.Width = 58;
-            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,10 +357,8 @@
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddressForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primary Form";
             this.Load += new System.EventHandler(this.Frm_main_Load);
             this.groupBox2.ResumeLayout(false);
@@ -410,14 +397,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_contacts;
-        private System.Windows.Forms.Timer tmr_con;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
     }
 }
 
