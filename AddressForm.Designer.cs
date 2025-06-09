@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_phoNum = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_eMail = new System.Windows.Forms.Label();
             this.lbl_conInfo = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -167,14 +167,14 @@
             this.lbl_phoNum.TabIndex = 13;
             this.lbl_phoNum.Text = "Phone Number";
             // 
-            // label4
+            // lbl_eMail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "E-Mail";
+            this.lbl_eMail.AutoSize = true;
+            this.lbl_eMail.Location = new System.Drawing.Point(3, 122);
+            this.lbl_eMail.Name = "lbl_eMail";
+            this.lbl_eMail.Size = new System.Drawing.Size(36, 13);
+            this.lbl_eMail.TabIndex = 14;
+            this.lbl_eMail.Text = "E-Mail";
             // 
             // lbl_conInfo
             // 
@@ -189,7 +189,7 @@
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_firName);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.lbl_eMail);
             this.groupBox2.Controls.Add(this.txt_phoNum);
             this.groupBox2.Controls.Add(this.btn_add);
             this.groupBox2.Controls.Add(this.lbl_phoNum);
@@ -395,7 +395,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_phoNum;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_eMail;
         private System.Windows.Forms.Label lbl_conInfo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
