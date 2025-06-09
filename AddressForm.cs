@@ -27,7 +27,7 @@ namespace AdressBook //major updates needed
         {
             AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
 
-        }
+        } //error system
 
         private string CreatePath(string root, string path, string name, string extension)
         {
