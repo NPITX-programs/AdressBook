@@ -40,7 +40,7 @@ namespace AdressBook //major updates needed
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
-        bool autoSave = false;
+        bool autoSave = false; //default auto-save
 
         private void Frm_main_Load(object sender, EventArgs e)
         {
@@ -166,10 +166,10 @@ namespace AdressBook //major updates needed
                 newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                 entry = nextEntry(); //get the next entry
                 updateList(entry); //update the list
-                if (autoSave)
+                if (autoSave )
                 {
-                    WriteToFile();
-                }
+                    WriteToFile(); //write to the file
+                } //if the auto-save is on
                 clear(); //clear inputs and set checkbox to false
             } //the creation and setting code
         } //add contact
