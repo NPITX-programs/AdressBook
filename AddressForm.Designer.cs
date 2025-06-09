@@ -63,6 +63,7 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -216,7 +217,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.autoSaveToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(897, 24);
@@ -359,6 +361,13 @@
             this.col_contInd.ReadOnly = true;
             this.col_contInd.Width = 58;
             // 
+            // autoSaveToolStripMenuItem
+            // 
+            this.autoSaveToolStripMenuItem.CheckOnClick = true;
+            this.autoSaveToolStripMenuItem.Name = "autoSaveToolStripMenuItem";
+            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.autoSaveToolStripMenuItem.Text = "Auto-Save";
+            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +425,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
+        private System.Windows.Forms.ToolStripMenuItem autoSaveToolStripMenuItem;
     }
 }
 
