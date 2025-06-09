@@ -31,12 +31,12 @@ namespace AdressBook.files
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message); //show error
+                    AdressBook.coreCommands.error(Program.preMadeErrorMsg, ex, true); //show error
                 }
             }
             else
             {
-                MessageBox.Show("file not found"); //show error
+                AdressBook.coreCommands.error("File Not Found"); //show error
             }
         } //the write function
 
@@ -71,7 +71,8 @@ namespace AdressBook.files
                             }
                             else
                             {
-                                MessageBox.Show("error"); //show error
+                             
+                                AdressBook.coreCommands.error("error: below Max Length");
                             }
                         }
                     }

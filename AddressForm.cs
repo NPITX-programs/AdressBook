@@ -23,6 +23,12 @@ namespace AdressBook //major updates needed
 
         string filepath = string.Empty; //a placeholder blank path
 
+        private void error(string message, Exception ex = null, bool revealException = false)
+        {
+            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
+
+        }
+
         private string CreatePath(string root, string path, string name, string extension)
         {
             string finalPath = root + path + @"/" + name + "." + extension; //create the final path
@@ -131,6 +137,8 @@ namespace AdressBook //major updates needed
             string contNote = txt_contNote.Text; //note
             bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
+
+            
 
             if (firstName == string.Empty) //check if no firstname
             {
