@@ -55,6 +55,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip_autoSave = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,6 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autoSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -218,7 +218,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.autoSaveToolStripMenuItem});
+            this.toolStrip_autoSave});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(897, 24);
@@ -280,6 +280,14 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStrip_autoSave
+            // 
+            this.toolStrip_autoSave.CheckOnClick = true;
+            this.toolStrip_autoSave.Name = "toolStrip_autoSave";
+            this.toolStrip_autoSave.Size = new System.Drawing.Size(74, 20);
+            this.toolStrip_autoSave.Text = "Auto-Save";
+            this.toolStrip_autoSave.CheckedChanged += new System.EventHandler(this.toolStrip_autoSave_Click);
             // 
             // dgv_contacts
             // 
@@ -361,13 +369,6 @@
             this.col_contInd.ReadOnly = true;
             this.col_contInd.Width = 58;
             // 
-            // autoSaveToolStripMenuItem
-            // 
-            this.autoSaveToolStripMenuItem.CheckOnClick = true;
-            this.autoSaveToolStripMenuItem.Name = "autoSaveToolStripMenuItem";
-            this.autoSaveToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.autoSaveToolStripMenuItem.Text = "Auto-Save";
-            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,7 +426,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
-        private System.Windows.Forms.ToolStripMenuItem autoSaveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
     }
 }
 
