@@ -38,7 +38,7 @@
             this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_firName = new System.Windows.Forms.Label();
             this.lbl_lastName = new System.Windows.Forms.Label();
             this.lbl_phoNum = new System.Windows.Forms.Label();
             this.lbl_eMail = new System.Windows.Forms.Label();
@@ -140,14 +140,14 @@
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // label1
+            // lbl_firName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "First Name";
+            this.lbl_firName.AutoSize = true;
+            this.lbl_firName.Location = new System.Drawing.Point(9, 16);
+            this.lbl_firName.Name = "lbl_firName";
+            this.lbl_firName.Size = new System.Drawing.Size(57, 13);
+            this.lbl_firName.TabIndex = 11;
+            this.lbl_firName.Text = "First Name";
             // 
             // lbl_lastName
             // 
@@ -187,7 +187,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lbl_firName);
             this.groupBox2.Controls.Add(this.txt_firName);
             this.groupBox2.Controls.Add(this.lbl_eMail);
             this.groupBox2.Controls.Add(this.txt_phoNum);
@@ -392,7 +392,7 @@
         private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_firName;
         private System.Windows.Forms.Label lbl_lastName;
         private System.Windows.Forms.Label lbl_phoNum;
         private System.Windows.Forms.Label lbl_eMail;
