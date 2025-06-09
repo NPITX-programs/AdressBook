@@ -40,7 +40,7 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_phoNum = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_conInfo = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -158,14 +158,14 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Last Name";
             // 
-            // label3
+            // lbl_phoNum
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Phone Number";
+            this.lbl_phoNum.AutoSize = true;
+            this.lbl_phoNum.Location = new System.Drawing.Point(0, 175);
+            this.lbl_phoNum.Name = "lbl_phoNum";
+            this.lbl_phoNum.Size = new System.Drawing.Size(78, 13);
+            this.lbl_phoNum.TabIndex = 13;
+            this.lbl_phoNum.Text = "Phone Number";
             // 
             // label4
             // 
@@ -192,7 +192,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txt_phoNum);
             this.groupBox2.Controls.Add(this.btn_add);
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.lbl_phoNum);
             this.groupBox2.Controls.Add(this.lbl_conInfo);
             this.groupBox2.Controls.Add(this.chk_type);
             this.groupBox2.Controls.Add(this.txt_EMail);
@@ -394,7 +394,7 @@
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_phoNum;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_conInfo;
         private System.Windows.Forms.GroupBox groupBox2;
