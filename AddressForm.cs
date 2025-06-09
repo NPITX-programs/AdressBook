@@ -166,10 +166,11 @@ namespace AdressBook //major updates needed
                 newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                 entry = nextEntry(); //get the next entry
                 updateList(entry); //update the list
+                if (autoSave)
+                {
+                    WriteToFile();
+                }
                 clear(); //clear inputs and set checkbox to false
-                // WriteToFile(); 
-                    //write to file
-                    //disabled for now so it won't auto
             } //the creation and setting code
         } //add contact
 
