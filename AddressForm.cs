@@ -39,7 +39,8 @@ namespace AdressBook //major updates needed
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
-            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
+                           //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
+        bool autoSave = false;
 
         private void Frm_main_Load(object sender, EventArgs e)
         {
@@ -234,7 +235,15 @@ namespace AdressBook //major updates needed
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
         {
-
+            bool autoSave = toolStrip_autoSave.Checked;
+            if (autoSave)
+            {
+                toolStrip_autoSave.BackColor = Color.Green;
+            }
+            else
+            {
+                 toolStrip_autoSave.BackColor = Color.Red;
+            }
         }
     }
 }
