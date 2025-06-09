@@ -42,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_conInfo = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -56,7 +56,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
-            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +63,7 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -176,14 +176,14 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "E-Mail";
             // 
-            // label5
+            // lbl_conInfo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-3, 282);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Contact Information";
+            this.lbl_conInfo.AutoSize = true;
+            this.lbl_conInfo.Location = new System.Drawing.Point(-3, 282);
+            this.lbl_conInfo.Name = "lbl_conInfo";
+            this.lbl_conInfo.Size = new System.Drawing.Size(99, 13);
+            this.lbl_conInfo.TabIndex = 15;
+            this.lbl_conInfo.Text = "Contact Information";
             // 
             // groupBox2
             // 
@@ -193,7 +193,7 @@
             this.groupBox2.Controls.Add(this.txt_phoNum);
             this.groupBox2.Controls.Add(this.btn_add);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.lbl_conInfo);
             this.groupBox2.Controls.Add(this.chk_type);
             this.groupBox2.Controls.Add(this.txt_EMail);
             this.groupBox2.Controls.Add(this.txt_contNote);
@@ -316,14 +316,14 @@
             this.col_firName.HeaderText = "First Name";
             this.col_firName.Name = "col_firName";
             this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 82;
+            this.col_firName.Width = 76;
             // 
             // col_lastName
             // 
             this.col_lastName.HeaderText = "Last Name";
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 83;
+            this.col_lastName.Width = 77;
             // 
             // col_EMail
             // 
@@ -396,7 +396,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_conInfo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
