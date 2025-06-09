@@ -283,7 +283,7 @@
             // 
             // toolStrip_autoSave
             // 
-            this.toolStrip_autoSave.BackColor = System.Drawing.Color.Green;
+            this.toolStrip_autoSave.BackColor = System.Drawing.Color.Red;
             this.toolStrip_autoSave.CheckOnClick = true;
             this.toolStrip_autoSave.Name = "toolStrip_autoSave";
             this.toolStrip_autoSave.Size = new System.Drawing.Size(74, 20);
