@@ -38,11 +38,11 @@
             this.txt_phoNum = new System.Windows.Forms.MaskedTextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
-            this.lbl_firName = new System.Windows.Forms.Label();
-            this.lbl_lastName = new System.Windows.Forms.Label();
-            this.lbl_phoNum = new System.Windows.Forms.Label();
-            this.lbl_eMail = new System.Windows.Forms.Label();
-            this.lbl_conInfo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -64,7 +64,6 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tmr_con = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -141,64 +140,64 @@
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // lbl_firName
+            // label1
             // 
-            this.lbl_firName.AutoSize = true;
-            this.lbl_firName.Location = new System.Drawing.Point(9, 16);
-            this.lbl_firName.Name = "lbl_firName";
-            this.lbl_firName.Size = new System.Drawing.Size(57, 13);
-            this.lbl_firName.TabIndex = 11;
-            this.lbl_firName.Text = "First Name";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "First Name";
             // 
-            // lbl_lastName
+            // label2
             // 
-            this.lbl_lastName.AutoSize = true;
-            this.lbl_lastName.Location = new System.Drawing.Point(3, 68);
-            this.lbl_lastName.Name = "lbl_lastName";
-            this.lbl_lastName.Size = new System.Drawing.Size(58, 13);
-            this.lbl_lastName.TabIndex = 12;
-            this.lbl_lastName.Text = "Last Name";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Last Name";
             // 
-            // lbl_phoNum
+            // label3
             // 
-            this.lbl_phoNum.AutoSize = true;
-            this.lbl_phoNum.Location = new System.Drawing.Point(0, 175);
-            this.lbl_phoNum.Name = "lbl_phoNum";
-            this.lbl_phoNum.Size = new System.Drawing.Size(78, 13);
-            this.lbl_phoNum.TabIndex = 13;
-            this.lbl_phoNum.Text = "Phone Number";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(0, 175);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Phone Number";
             // 
-            // lbl_eMail
+            // label4
             // 
-            this.lbl_eMail.AutoSize = true;
-            this.lbl_eMail.Location = new System.Drawing.Point(3, 122);
-            this.lbl_eMail.Name = "lbl_eMail";
-            this.lbl_eMail.Size = new System.Drawing.Size(36, 13);
-            this.lbl_eMail.TabIndex = 14;
-            this.lbl_eMail.Text = "E-Mail";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "E-Mail";
             // 
-            // lbl_conInfo
+            // label5
             // 
-            this.lbl_conInfo.AutoSize = true;
-            this.lbl_conInfo.Location = new System.Drawing.Point(-3, 282);
-            this.lbl_conInfo.Name = "lbl_conInfo";
-            this.lbl_conInfo.Size = new System.Drawing.Size(99, 13);
-            this.lbl_conInfo.TabIndex = 15;
-            this.lbl_conInfo.Text = "Contact Information";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(-3, 282);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Contact Information";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lbl_firName);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_firName);
-            this.groupBox2.Controls.Add(this.lbl_eMail);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txt_phoNum);
             this.groupBox2.Controls.Add(this.btn_add);
-            this.groupBox2.Controls.Add(this.lbl_phoNum);
-            this.groupBox2.Controls.Add(this.lbl_conInfo);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.chk_type);
             this.groupBox2.Controls.Add(this.txt_EMail);
             this.groupBox2.Controls.Add(this.txt_contNote);
-            this.groupBox2.Controls.Add(this.lbl_lastName);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_lastName);
             this.groupBox2.Location = new System.Drawing.Point(12, 28);
             this.groupBox2.Name = "groupBox2";
@@ -393,11 +392,11 @@
         private System.Windows.Forms.MaskedTextBox txt_phoNum;
         private System.Windows.Forms.TextBox txt_lastName;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Label lbl_firName;
-        private System.Windows.Forms.Label lbl_lastName;
-        private System.Windows.Forms.Label lbl_phoNum;
-        private System.Windows.Forms.Label lbl_eMail;
-        private System.Windows.Forms.Label lbl_conInfo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
