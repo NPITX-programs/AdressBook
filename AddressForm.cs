@@ -170,7 +170,8 @@ namespace AdressBook //major updates needed
                 if (autoSave )
                 {
                     WriteToFile(); //write to the file
-                } //if the auto-save is on
+                    error("test");
+                } //if the auto-save is on, save
                 clear(); //clear inputs and set checkbox to false
             } //the creation and setting code
         } //add contact
@@ -237,8 +238,9 @@ namespace AdressBook //major updates needed
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
         {
-            bool autoSave = toolStrip_autoSave.Checked;
-            if (autoSave)
+            autoSave = toolStrip_autoSave.Checked;
+            bool auto_save = autoSave;
+            if (auto_save )
             {
                 toolStrip_autoSave.BackColor = Color.Green;
             }
