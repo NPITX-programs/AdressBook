@@ -50,7 +50,7 @@ namespace AdressBook //major updates needed
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
-            saveAsToolStripMenuItem.BackColor = Color.Red;
+            toolStrip_autoSave.BackColor = Color.Red;
         } //when form loads
         int ind = 0; //index for the current contact
 
