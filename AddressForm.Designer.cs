@@ -310,7 +310,7 @@
             this.col_contNotes,
             this.col_contInd});
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(349, 24);
+            this.dgv_contacts.Location = new System.Drawing.Point(269, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
@@ -318,41 +318,44 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(548, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(628, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
             // col_firName
             // 
-            this.col_firName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.col_firName.HeaderText = "First Name";
+            this.col_firName.MinimumWidth = 100;
             this.col_firName.Name = "col_firName";
             this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 82;
             // 
             // col_lastName
             // 
-            this.col_lastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.col_lastName.HeaderText = "Last Name";
+            this.col_lastName.MinimumWidth = 95;
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 83;
+            this.col_lastName.Width = 95;
             // 
             // col_EMail
             // 
-            this.col_EMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.col_EMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.col_EMail.HeaderText = "E-Mail";
+            this.col_EMail.MinimumWidth = 75;
             this.col_EMail.Name = "col_EMail";
             this.col_EMail.ReadOnly = true;
-            this.col_EMail.Width = 61;
+            this.col_EMail.Width = 75;
             // 
             // col_phoNum
             // 
+            this.col_phoNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.col_phoNum.HeaderText = "Phone Number";
+            this.col_phoNum.MinimumWidth = 75;
             this.col_phoNum.Name = "col_phoNum";
             this.col_phoNum.ReadOnly = true;
-            this.col_phoNum.Width = 81;
+            this.col_phoNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_phoNum.Width = 75;
             // 
             // col_contType
             // 
@@ -363,10 +366,10 @@
             // 
             // col_contNotes
             // 
-            this.col_contNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_contNotes.HeaderText = "Contact Notes";
             this.col_contNotes.Name = "col_contNotes";
             this.col_contNotes.ReadOnly = true;
+            this.col_contNotes.Width = 76;
             // 
             // col_contInd
             // 
