@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_addressForm));
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
@@ -309,14 +310,27 @@
             this.col_contType,
             this.col_contNotes,
             this.col_contInd});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_contacts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
             this.dgv_contacts.Location = new System.Drawing.Point(269, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_contacts.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_contacts.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_contacts.RowTemplate.Height = 25;
             this.dgv_contacts.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -370,7 +384,7 @@
             this.col_contType.Name = "col_contType";
             this.col_contType.ReadOnly = true;
             this.col_contType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.col_contType.Width = 69;
+            this.col_contType.Width = 75;
             // 
             // col_contNotes
             // 
