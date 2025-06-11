@@ -45,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -75,7 +74,7 @@
             // chk_type
             // 
             this.chk_type.AutoSize = true;
-            this.chk_type.Location = new System.Drawing.Point(0, 233);
+            this.chk_type.Location = new System.Drawing.Point(10, 233);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 5;
@@ -86,7 +85,7 @@
             // 
             // txt_firName
             // 
-            this.txt_firName.Location = new System.Drawing.Point(6, 33);
+            this.txt_firName.Location = new System.Drawing.Point(16, 33);
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
             this.txt_firName.TabIndex = 1;
@@ -94,7 +93,7 @@
             // 
             // txt_EMail
             // 
-            this.txt_EMail.Location = new System.Drawing.Point(0, 139);
+            this.txt_EMail.Location = new System.Drawing.Point(10, 139);
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 3;
@@ -103,7 +102,7 @@
             // txt_contNote
             // 
             this.txt_contNote.AcceptsReturn = true;
-            this.txt_contNote.Location = new System.Drawing.Point(0, 299);
+            this.txt_contNote.Location = new System.Drawing.Point(10, 299);
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(188, 20);
             this.txt_contNote.TabIndex = 6;
@@ -113,7 +112,7 @@
             // txt_phoNum
             // 
             this.txt_phoNum.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.txt_phoNum.Location = new System.Drawing.Point(0, 192);
+            this.txt_phoNum.Location = new System.Drawing.Point(10, 192);
             this.txt_phoNum.Mask = "(999) 000-0000";
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
@@ -123,7 +122,7 @@
             // 
             // txt_lastName
             // 
-            this.txt_lastName.Location = new System.Drawing.Point(6, 85);
+            this.txt_lastName.Location = new System.Drawing.Point(16, 85);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 2;
@@ -145,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 17);
+            this.label1.Location = new System.Drawing.Point(19, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 11;
@@ -154,7 +153,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 69);
+            this.label2.Location = new System.Drawing.Point(13, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 12;
@@ -163,7 +162,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 176);
+            this.label3.Location = new System.Drawing.Point(10, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 13;
@@ -172,7 +171,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 123);
+            this.label4.Location = new System.Drawing.Point(13, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 14;
@@ -181,19 +180,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-3, 283);
+            this.label5.Location = new System.Drawing.Point(7, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Contact Information";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(12, 28);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(207, 420);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
             // 
             // saveFileDialog1
             // 
@@ -404,9 +395,9 @@
             this.panel1.Controls.Add(this.chk_type);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(372, 34);
+            this.panel1.Location = new System.Drawing.Point(352, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 399);
+            this.panel1.Size = new System.Drawing.Size(240, 399);
             this.panel1.TabIndex = 22;
             // 
             // frm_addressForm
@@ -415,7 +406,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 450);
             this.Controls.Add(this.dgv_contacts);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -448,7 +438,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
