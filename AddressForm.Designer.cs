@@ -299,7 +299,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_firName,
@@ -310,13 +310,13 @@
             this.col_contNotes,
             this.col_contInd});
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(356, 24);
+            this.dgv_contacts.Location = new System.Drawing.Point(406, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(541, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(491, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
@@ -326,49 +326,42 @@
             this.col_firName.HeaderText = "First Name";
             this.col_firName.Name = "col_firName";
             this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 76;
             // 
             // col_lastName
             // 
             this.col_lastName.HeaderText = "Last Name";
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 77;
             // 
             // col_EMail
             // 
             this.col_EMail.HeaderText = "E-Mail";
             this.col_EMail.Name = "col_EMail";
             this.col_EMail.ReadOnly = true;
-            this.col_EMail.Width = 61;
             // 
             // col_phoNum
             // 
             this.col_phoNum.HeaderText = "Phone Number";
             this.col_phoNum.Name = "col_phoNum";
             this.col_phoNum.ReadOnly = true;
-            this.col_phoNum.Width = 95;
             // 
             // col_contType
             // 
             this.col_contType.HeaderText = "Contact Type";
             this.col_contType.Name = "col_contType";
             this.col_contType.ReadOnly = true;
-            this.col_contType.Width = 69;
             // 
             // col_contNotes
             // 
             this.col_contNotes.HeaderText = "Contact Notes";
             this.col_contNotes.Name = "col_contNotes";
             this.col_contNotes.ReadOnly = true;
-            this.col_contNotes.Width = 92;
             // 
             // col_contInd
             // 
             this.col_contInd.HeaderText = "Index";
             this.col_contInd.Name = "col_contInd";
             this.col_contInd.ReadOnly = true;
-            this.col_contInd.Width = 58;
             // 
             // frm_addressForm
             // 
