@@ -317,6 +317,8 @@
             this.dgv_contacts.RowHeadersVisible = false;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_contacts.RowTemplate.Height = 25;
+            this.dgv_contacts.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_contacts.Size = new System.Drawing.Size(628, 426);
             this.dgv_contacts.TabIndex = 18;
