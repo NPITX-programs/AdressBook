@@ -325,6 +325,8 @@
             // 
             // col_firName
             // 
+            this.col_firName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_firName.FillWeight = 10F;
             this.col_firName.HeaderText = "First Name";
             this.col_firName.MinimumWidth = 100;
             this.col_firName.Name = "col_firName";
@@ -332,11 +334,12 @@
             // 
             // col_lastName
             // 
+            this.col_lastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_lastName.FillWeight = 10F;
             this.col_lastName.HeaderText = "Last Name";
-            this.col_lastName.MinimumWidth = 95;
+            this.col_lastName.MinimumWidth = 100;
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 95;
             // 
             // col_EMail
             // 
@@ -345,6 +348,7 @@
             this.col_EMail.MinimumWidth = 75;
             this.col_EMail.Name = "col_EMail";
             this.col_EMail.ReadOnly = true;
+            this.col_EMail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_EMail.Width = 75;
             // 
             // col_phoNum
@@ -359,17 +363,21 @@
             // 
             // col_contType
             // 
+            this.col_contType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_contType.HeaderText = "Contact Type";
             this.col_contType.Name = "col_contType";
             this.col_contType.ReadOnly = true;
-            this.col_contType.Width = 81;
+            this.col_contType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_contType.Width = 69;
             // 
             // col_contNotes
             // 
+            this.col_contNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_contNotes.FillWeight = 90F;
             this.col_contNotes.HeaderText = "Contact Notes";
+            this.col_contNotes.MinimumWidth = 100;
             this.col_contNotes.Name = "col_contNotes";
             this.col_contNotes.ReadOnly = true;
-            this.col_contNotes.Width = 76;
             // 
             // col_contInd
             // 
