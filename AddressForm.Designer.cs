@@ -64,7 +64,7 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.spl_reSizeDgv = new System.Windows.Forms.Splitter();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -326,14 +326,14 @@
             this.col_firName.HeaderText = "First Name";
             this.col_firName.Name = "col_firName";
             this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 82;
+            this.col_firName.Width = 76;
             // 
             // col_lastName
             // 
             this.col_lastName.HeaderText = "Last Name";
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 83;
+            this.col_lastName.Width = 77;
             // 
             // col_EMail
             // 
@@ -370,21 +370,21 @@
             this.col_contInd.ReadOnly = true;
             this.col_contInd.Width = 58;
             // 
-            // splitter1
+            // spl_reSizeDgv
             // 
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(824, 24);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(73, 426);
-            this.splitter1.TabIndex = 22;
-            this.splitter1.TabStop = false;
+            this.spl_reSizeDgv.Dock = System.Windows.Forms.DockStyle.Right;
+            this.spl_reSizeDgv.Location = new System.Drawing.Point(672, 24);
+            this.spl_reSizeDgv.Name = "spl_reSizeDgv";
+            this.spl_reSizeDgv.Size = new System.Drawing.Size(225, 426);
+            this.spl_reSizeDgv.TabIndex = 22;
+            this.spl_reSizeDgv.TabStop = false;
             // 
             // frm_addressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 450);
-            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.spl_reSizeDgv);
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
@@ -439,7 +439,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
         private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
-        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Splitter spl_reSizeDgv;
     }
 }
 
