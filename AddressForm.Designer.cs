@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridView dgv_contacts;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_addressForm));
             this.chk_type = new System.Windows.Forms.CheckBox();
@@ -57,6 +56,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_autoSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgv_contacts = new System.Windows.Forms.DataGridView();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,11 +64,9 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spl_reSizeDgv = new System.Windows.Forms.Splitter();
-            dgv_contacts = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(dgv_contacts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
             this.SuspendLayout();
             // 
             // chk_type
@@ -294,17 +292,16 @@
             // 
             // dgv_contacts
             // 
-            dgv_contacts.AllowUserToAddRows = false;
-            dgv_contacts.AllowUserToDeleteRows = false;
+            this.dgv_contacts.AllowUserToAddRows = false;
+            this.dgv_contacts.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgv_contacts.Anchor = System.Windows.Forms.AnchorStyles.None;
-            dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_firName,
             this.col_lastName,
             this.col_EMail,
@@ -312,16 +309,17 @@
             this.col_contType,
             this.col_contNotes,
             this.col_contInd});
-            dgv_contacts.Location = new System.Drawing.Point(510, 24);
-            dgv_contacts.MultiSelect = false;
-            dgv_contacts.Name = "dgv_contacts";
-            dgv_contacts.ReadOnly = true;
-            dgv_contacts.RowHeadersVisible = false;
-            dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgv_contacts.Size = new System.Drawing.Size(387, 426);
-            dgv_contacts.TabIndex = 18;
-            dgv_contacts.TabStop = false;
-            dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
+            this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
+            this.dgv_contacts.MultiSelect = false;
+            this.dgv_contacts.Name = "dgv_contacts";
+            this.dgv_contacts.ReadOnly = true;
+            this.dgv_contacts.RowHeadersVisible = false;
+            this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
+            this.dgv_contacts.TabIndex = 18;
+            this.dgv_contacts.TabStop = false;
+            this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
             // col_firName
             // 
@@ -372,22 +370,12 @@
             this.col_contInd.ReadOnly = true;
             this.col_contInd.Width = 58;
             // 
-            // spl_reSizeDgv
-            // 
-            this.spl_reSizeDgv.Dock = System.Windows.Forms.DockStyle.Right;
-            this.spl_reSizeDgv.Location = new System.Drawing.Point(491, 24);
-            this.spl_reSizeDgv.Name = "spl_reSizeDgv";
-            this.spl_reSizeDgv.Size = new System.Drawing.Size(406, 426);
-            this.spl_reSizeDgv.TabIndex = 22;
-            this.spl_reSizeDgv.TabStop = false;
-            // 
             // frm_addressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 450);
-            this.Controls.Add(dgv_contacts);
-            this.Controls.Add(this.spl_reSizeDgv);
+            this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -401,7 +389,7 @@
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(dgv_contacts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,6 +420,7 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgv_contacts;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
@@ -440,7 +429,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
         private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
-        private System.Windows.Forms.Splitter spl_reSizeDgv;
     }
 }
 
