@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_addressForm));
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
@@ -299,7 +301,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_firName,
@@ -309,66 +310,97 @@
             this.col_contType,
             this.col_contNotes,
             this.col_contInd});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_contacts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
+            this.dgv_contacts.Location = new System.Drawing.Point(269, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_contacts.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_contacts.RowTemplate.Height = 25;
+            this.dgv_contacts.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(628, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
             // col_firName
             // 
+            this.col_firName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_firName.FillWeight = 10F;
             this.col_firName.HeaderText = "First Name";
+            this.col_firName.MinimumWidth = 100;
             this.col_firName.Name = "col_firName";
             this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 76;
             // 
             // col_lastName
             // 
+            this.col_lastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_lastName.FillWeight = 10F;
             this.col_lastName.HeaderText = "Last Name";
+            this.col_lastName.MinimumWidth = 100;
             this.col_lastName.Name = "col_lastName";
             this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 77;
             // 
             // col_EMail
             // 
+            this.col_EMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.col_EMail.HeaderText = "E-Mail";
+            this.col_EMail.MinimumWidth = 75;
             this.col_EMail.Name = "col_EMail";
             this.col_EMail.ReadOnly = true;
-            this.col_EMail.Width = 61;
+            this.col_EMail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_EMail.Width = 75;
             // 
             // col_phoNum
             // 
+            this.col_phoNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.col_phoNum.HeaderText = "Phone Number";
+            this.col_phoNum.MinimumWidth = 75;
             this.col_phoNum.Name = "col_phoNum";
             this.col_phoNum.ReadOnly = true;
-            this.col_phoNum.Width = 95;
+            this.col_phoNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_phoNum.Width = 75;
             // 
             // col_contType
             // 
+            this.col_contType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_contType.HeaderText = "Contact Type";
             this.col_contType.Name = "col_contType";
             this.col_contType.ReadOnly = true;
-            this.col_contType.Width = 69;
+            this.col_contType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_contType.Width = 75;
             // 
             // col_contNotes
             // 
+            this.col_contNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_contNotes.FillWeight = 90F;
             this.col_contNotes.HeaderText = "Contact Notes";
+            this.col_contNotes.MinimumWidth = 100;
             this.col_contNotes.Name = "col_contNotes";
             this.col_contNotes.ReadOnly = true;
-            this.col_contNotes.Width = 92;
             // 
             // col_contInd
             // 
             this.col_contInd.HeaderText = "Index";
             this.col_contInd.Name = "col_contInd";
             this.col_contInd.ReadOnly = true;
-            this.col_contInd.Width = 58;
+            this.col_contInd.Width = 81;
             // 
             // frm_addressForm
             // 
@@ -421,6 +453,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_contacts;
+        private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
@@ -428,7 +461,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
-        private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
     }
 }
 

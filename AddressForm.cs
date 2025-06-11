@@ -18,7 +18,7 @@ namespace AdressBook //major updates needed
         const char sep = '~'; //seperation character
         public frm_addressForm()
         {
-            InitializeComponent(); //initialize
+            InitializeComponent();
         }
 
         string filepath = string.Empty; //a placeholder blank path
@@ -41,6 +41,7 @@ namespace AdressBook //major updates needed
         const int min = 6; //minimum total values in an entry
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
+        int distFromEdge = 0;
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
@@ -51,6 +52,10 @@ namespace AdressBook //major updates needed
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
             toolStrip_autoSave.BackColor = Color.Red;
+
+            int tblEdge = this.dgv_contacts.Width; 
+            int formWidth = this.ClientSize.Width;
+            distFromEdge = formWidth - tblEdge;
         } //when form loads
         int ind = 0; //index for the current contact
 
@@ -170,7 +175,8 @@ namespace AdressBook //major updates needed
                 if (autoSave )
                 {
                     WriteToFile(); //write to the file
-                } //if the auto-save is on
+                    error("test");
+                } //if the auto-save is on, save
                 clear(); //clear inputs and set checkbox to false
             } //the creation and setting code
         } //add contact
@@ -237,8 +243,9 @@ namespace AdressBook //major updates needed
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
         {
-            bool autoSave = toolStrip_autoSave.Checked;
-            if (autoSave)
+            autoSave = toolStrip_autoSave.Checked;
+            bool auto_save = autoSave;
+            if (auto_save )
             {
                 toolStrip_autoSave.BackColor = Color.Green;
             }
@@ -250,7 +257,9 @@ namespace AdressBook //major updates needed
 
         private void frm_addressForm_reSize(object sender, EventArgs e) //size table
         {
-            
+            int frmWidth = this.ClientSize.Width; //get the new form width
+            int tblWidth = frmWidth - distFromEdge; //subtract the distance from edge
+            dgv_contacts.Width = tblWidth; //set the width of the table
         }
     }
 }
