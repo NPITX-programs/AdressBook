@@ -248,7 +248,7 @@ namespace AdressBook //major updates needed
             }
         }
 
-        private void frm_addressForm_reSize(object sender, EventArgs e)
+        private void frm_addressForm_reSize(object sender, EventArgs e) //resize table to preset ratio
         {
             
         }
