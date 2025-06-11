@@ -1,6 +1,6 @@
 ﻿namespace AdressBook
 {
-    partial class AddressForm
+    partial class frm_addressForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddressForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_addressForm));
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
@@ -283,7 +283,7 @@
             // 
             // toolStrip_autoSave
             // 
-            this.toolStrip_autoSave.BackColor = System.Drawing.Color.Green;
+            this.toolStrip_autoSave.BackColor = System.Drawing.Color.Red;
             this.toolStrip_autoSave.CheckOnClick = true;
             this.toolStrip_autoSave.Name = "toolStrip_autoSave";
             this.toolStrip_autoSave.Size = new System.Drawing.Size(74, 20);
@@ -370,7 +370,7 @@
             this.col_contInd.ReadOnly = true;
             this.col_contInd.Width = 58;
             // 
-            // AddressForm
+            // frm_addressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -380,10 +380,11 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AddressForm";
+            this.Name = "frm_addressForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primary Form";
-            this.Load += new System.EventHandler(this.Frm_main_Load);
+            this.Load += new System.EventHandler(this.frm_addressForm_Load);
+            this.Resize += new System.EventHandler(this.frm_addressForm_reSize);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
