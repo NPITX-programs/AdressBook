@@ -175,7 +175,6 @@ namespace AdressBook //major updates needed
                 if (autoSave )
                 {
                     WriteToFile(); //write to the file
-                    error("test");
                 } //if the auto-save is on, save
                 clear(); //clear inputs and set checkbox to false
             } //the creation and setting code
