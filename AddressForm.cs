@@ -88,6 +88,7 @@ namespace AdressBook //major updates needed
         {
             dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact
         } //update list
+            //list location
 
         private void generateList(int total = 0) 
         {
