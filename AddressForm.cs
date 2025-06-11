@@ -41,6 +41,7 @@ namespace AdressBook //major updates needed
         const int min = 6; //minimum total values in an entry
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
+        int distFromEdge = 0;
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
@@ -51,6 +52,10 @@ namespace AdressBook //major updates needed
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
             toolStrip_autoSave.BackColor = Color.Red;
+
+            int tblEdge = this.dgv_contacts.Width; 
+            int formWidth = this.ClientSize.Width;
+            distFromEdge = formWidth - tblEdge;
         } //when form loads
         int ind = 0; //index for the current contact
 
