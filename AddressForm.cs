@@ -145,25 +145,25 @@ namespace AdressBook //major updates needed
             bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
-            
+            //find errors
 
             if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
             }
-            else if (lastName == string.Empty) //check if no lastname
+            if (lastName == string.Empty) //check if no lastname
             {
                 valid = false; //invalid
             }
-            else if (phoNum == string.Empty) //check if no phonenumber
+            if (phoNum == string.Empty) //check if no phonenumber
             {
                 valid = false; //invalid
             }
-            else if (eMail == string.Empty) //check if no e-mail
+            if (eMail == string.Empty) //check if no e-mail
             {
                 valid = false; //invalid
             }
-            else if (contNote == string.Empty) //check if no note
+            if (contNote == string.Empty) //check if no note
             {
                 valid = false; //invalid
             }

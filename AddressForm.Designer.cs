@@ -103,9 +103,8 @@
             // 
             this.txt_contNote.AcceptsReturn = true;
             this.txt_contNote.Location = new System.Drawing.Point(0, 298);
-            this.txt_contNote.Multiline = true;
             this.txt_contNote.Name = "txt_contNote";
-            this.txt_contNote.Size = new System.Drawing.Size(188, 122);
+            this.txt_contNote.Size = new System.Drawing.Size(188, 20);
             this.txt_contNote.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txt_contNote, "Please input in whatever information about the contact\r\nmust be at least 1 charac" +
         "ter");
@@ -320,7 +319,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(269, 24);
+            this.dgv_contacts.Location = new System.Drawing.Point(676, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
@@ -334,7 +333,7 @@
             this.dgv_contacts.RowTemplate.Height = 25;
             this.dgv_contacts.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(628, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(221, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
