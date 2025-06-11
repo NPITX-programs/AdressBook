@@ -257,7 +257,9 @@ namespace AdressBook //major updates needed
 
         private void frm_addressForm_reSize(object sender, EventArgs e)
         {
-            
+            int frmWidth = this.ClientSize.Width;
+            int tblWidth = frmWidth - distFromEdge;
+            dgv_contacts.Width = tblWidth;
         }
     }
 }
