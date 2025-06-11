@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace AdressBook //major updates needed
 {
-    public partial class AddressForm : Form
+    public partial class frm_addressForm : Form
     {
         const bool debug = Program.debug; //this sets the debug system to the global debug variable
         const char sep = '~'; //seperation character
-        public AddressForm()
+        public frm_addressForm()
         {
-            InitializeComponent();
+            InitializeComponent(); //initialize
         }
 
         string filepath = string.Empty; //a placeholder blank path
@@ -42,7 +42,7 @@ namespace AdressBook //major updates needed
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
 
-        private void Frm_main_Load(object sender, EventArgs e)
+        private void frm_addressForm_Load(object sender, EventArgs e)
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
@@ -50,6 +50,7 @@ namespace AdressBook //major updates needed
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
+            toolStrip_autoSave.BackColor = Color.Red;
         } //when form loads
         int ind = 0; //index for the current contact
 
@@ -245,6 +246,11 @@ namespace AdressBook //major updates needed
             {
                  toolStrip_autoSave.BackColor = Color.Red;
             }
+        }
+
+        private void frm_addressForm_reSize(object sender, EventArgs e)
+        {
+            
         }
     }
 }
