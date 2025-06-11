@@ -18,7 +18,7 @@ namespace AdressBook //major updates needed
         const char sep = '~'; //seperation character
         public AddressForm()
         {
-            InitializeComponent();
+            InitializeComponent(); //initialize
         }
 
         string filepath = string.Empty; //a placeholder blank path
