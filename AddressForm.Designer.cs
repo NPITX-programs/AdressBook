@@ -130,7 +130,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(369, 51);
+            this.btn_add.Location = new System.Drawing.Point(129, 3);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
@@ -386,6 +386,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_contNote);
             this.panel1.Controls.Add(this.txt_firName);
+            this.panel1.Controls.Add(this.btn_add);
             this.panel1.Controls.Add(this.txt_lastName);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -407,7 +408,6 @@
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_add);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_addressForm";
