@@ -300,6 +300,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_contacts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -310,13 +311,13 @@
             this.col_contType,
             this.col_contNotes,
             this.col_contInd});
-            this.dgv_contacts.Location = new System.Drawing.Point(294, 166);
+            this.dgv_contacts.Location = new System.Drawing.Point(510, 28);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(322, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(387, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
@@ -373,9 +374,9 @@
             // spl_reSizeDgv
             // 
             this.spl_reSizeDgv.Dock = System.Windows.Forms.DockStyle.Right;
-            this.spl_reSizeDgv.Location = new System.Drawing.Point(672, 24);
+            this.spl_reSizeDgv.Location = new System.Drawing.Point(491, 24);
             this.spl_reSizeDgv.Name = "spl_reSizeDgv";
-            this.spl_reSizeDgv.Size = new System.Drawing.Size(225, 426);
+            this.spl_reSizeDgv.Size = new System.Drawing.Size(406, 426);
             this.spl_reSizeDgv.TabIndex = 22;
             this.spl_reSizeDgv.TabStop = false;
             // 
@@ -384,8 +385,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 450);
-            this.Controls.Add(this.spl_reSizeDgv);
             this.Controls.Add(this.dgv_contacts);
+            this.Controls.Add(this.spl_reSizeDgv);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
