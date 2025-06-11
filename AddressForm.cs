@@ -246,12 +246,12 @@ namespace AdressBook //major updates needed
             bool auto_save = autoSave;
             if (auto_save )
             {
-                toolStrip_autoSave.BackColor = Color.Green;
-            }
+                toolStrip_autoSave.BackColor = Color.Green; //set to green
+            } //toggle on
             else
             {
-                 toolStrip_autoSave.BackColor = Color.Red;
-            }
+                 toolStrip_autoSave.BackColor = Color.Red; //set to red
+            } //toggle off
         }
 
         private void frm_addressForm_reSize(object sender, EventArgs e) //size table
