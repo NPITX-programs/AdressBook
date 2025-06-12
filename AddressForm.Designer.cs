@@ -58,7 +58,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_autoSave = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +65,10 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnl_control = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnl_control.SuspendLayout();
             this.SuspendLayout();
             // 
             // chk_type
@@ -318,25 +318,6 @@
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txt_contNote);
-            this.panel1.Controls.Add(this.txt_firName);
-            this.panel1.Controls.Add(this.btn_add);
-            this.panel1.Controls.Add(this.txt_lastName);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_phoNum);
-            this.panel1.Controls.Add(this.txt_EMail);
-            this.panel1.Controls.Add(this.chk_type);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 335);
-            this.panel1.TabIndex = 22;
-            // 
             // col_firName
             // 
             this.col_firName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -403,6 +384,25 @@
             this.col_contInd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.col_contInd.Width = 81;
             // 
+            // pnl_control
+            // 
+            this.pnl_control.Controls.Add(this.label1);
+            this.pnl_control.Controls.Add(this.txt_contNote);
+            this.pnl_control.Controls.Add(this.txt_firName);
+            this.pnl_control.Controls.Add(this.btn_add);
+            this.pnl_control.Controls.Add(this.txt_lastName);
+            this.pnl_control.Controls.Add(this.label4);
+            this.pnl_control.Controls.Add(this.label2);
+            this.pnl_control.Controls.Add(this.txt_phoNum);
+            this.pnl_control.Controls.Add(this.txt_EMail);
+            this.pnl_control.Controls.Add(this.chk_type);
+            this.pnl_control.Controls.Add(this.label3);
+            this.pnl_control.Controls.Add(this.label5);
+            this.pnl_control.Location = new System.Drawing.Point(0, 27);
+            this.pnl_control.Name = "pnl_control";
+            this.pnl_control.Size = new System.Drawing.Size(207, 335);
+            this.pnl_control.TabIndex = 22;
+            // 
             // frm_addressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +410,7 @@
             this.ClientSize = new System.Drawing.Size(897, 450);
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_control);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_addressForm";
@@ -421,8 +421,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_control.ResumeLayout(false);
+            this.pnl_control.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +454,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_contacts;
         private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_control;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
