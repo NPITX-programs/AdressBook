@@ -222,7 +222,22 @@ namespace AdressBook //major updates needed
                 readFromFile(); //read from file
             }
         } //open
-
+        private Contact selectContact(int index)
+        {
+            try
+            {
+                foreach (var c in Program.contacts)
+                {
+                    if (c.index == index) {
+                        return c;
+                    }
+                }
+            } catch (Exception ex) //get exception
+            {
+                error("Issue Reading Table", ex); //show error
+                return;
+            } //check for issue with repeat
+        }
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int edInde = 0;
@@ -232,30 +247,9 @@ namespace AdressBook //major updates needed
                 return;
             } //make sure there is something selected
             var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
-            try
-            {
-                foreach (var c in Program.contacts)
-                {
-                    string indText = row.Cells[6].Value.ToString();
+            string indText = row.Cells[6].Value.ToString();
+            selectContact( )
 
-                    if (c.index == int.Parse(indText))
-                    {
-                        txt_firName.Text = c.firstname; //put first name in text box
-                        txt_lastName.Text = c.lastname; //put last name in text box
-                        txt_EMail.Text = c.email; //put e-mail in text box
-                        txt_phoNum.Text = c.phone; //put phone number in text box
-                        chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
-                        txt_contNote.Text = c.notes; //put notes in text box
-                        edInde = c.index;
-                        return;
-                    } //see if contact matches index, allowing for one check even if multiple entries that are nearly identical
-                } //find the correct class
-            }
-            catch (Exception ex) //get exception
-            {
-                error("Issue Reading Table", ex); //show error
-                return;
-            } //check for issue with repeat
             editInd = edInde;
             editMode = true;
             btn_add.Text = "Edit Entry";
