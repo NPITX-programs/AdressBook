@@ -212,12 +212,15 @@ namespace AdressBook //major updates needed
 
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int index = 0;
             //check if somethings selected
             if (dgv_contacts.CurrentRow != null) {
                 var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
                 foreach(var c in Program.contacts)
                 {
-                    if(c.index == row.Cells)
+                    string indText = row.Cells[1].Value.ToString();
+                    
+                    if (c.index == int.Parse(indText))
                     {
                         txt_firName.Text = c.firstname; //put first name in text box
                         txt_lastName.Text = c.lastname; //put last name in text box
@@ -225,6 +228,7 @@ namespace AdressBook //major updates needed
                         txt_phoNum.Text = c.phone; //put phone number in text box
                         chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
                         txt_contNote.Text = c.notes; //put notes in text box
+                        index = c.index;
                     } //see if contact matches conditions.
                         //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
                         //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
