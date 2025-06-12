@@ -224,23 +224,31 @@ namespace AdressBook //major updates needed
         } //open
         private Contact selectContact(int index)
         {
+            int leng = Program.contacts.Count;
+            int check = 0;
             try
             {
                 foreach (var c in Program.contacts)
                 {
+                    check = check + 1;
                     if (c.index == index) {
                         return c;
+                    } else if(check == leng)
+                    {
+                        return null;
                     }
                 }
             } catch (Exception ex) //get exception
             {
                 error("Issue Reading Table", ex); //show error
-                return;
+                return null;
             } //check for issue with repeat
+            return null;
         }
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int edInde = 0;
+            Contact select = null;
             //check if somethings selected
             if (dgv_contacts.CurrentRow == null)
             {
@@ -248,7 +256,7 @@ namespace AdressBook //major updates needed
             } //make sure there is something selected
             var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
             string indText = row.Cells[6].Value.ToString();
-            selectContact( )
+            select = selectContact(int.Parse(indText));
 
             editInd = edInde;
             editMode = true;
