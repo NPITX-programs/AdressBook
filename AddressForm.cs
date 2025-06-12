@@ -217,32 +217,34 @@ namespace AdressBook //major updates needed
         {
             int index = 0;
             //check if somethings selected
-            if (dgv_contacts.CurrentRow != null) {
-                var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
-                try
-                {
-                    foreach (var c in Program.contacts)
-                    {
-                        string indText = row.Cells[6].Value.ToString();
-
-                        if (c.index == int.Parse(indText))
-                        {
-                            txt_firName.Text = c.firstname; //put first name in text box
-                            txt_lastName.Text = c.lastname; //put last name in text box
-                            txt_EMail.Text = c.email; //put e-mail in text box
-                            txt_phoNum.Text = c.phone; //put phone number in text box
-                            chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
-                            txt_contNote.Text = c.notes; //put notes in text box
-                            index = c.index;
-                            return;
-                        } //see if contact matches index, allowing for one check even if multiple entries that are nearly identical
-                    } //find the correct class
-                }
-                catch (Exception ex) //get exception
-                {
-                    error("Issue Reading Table", ex); //show error
-                } //check for issue with repeat
+            if (dgv_contacts.CurrentRow == null)
+            {
+                return;
             } //make sure there is something selected
+            var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
+            try
+            {
+                foreach (var c in Program.contacts)
+                {
+                    string indText = row.Cells[6].Value.ToString();
+
+                    if (c.index == int.Parse(indText))
+                    {
+                        txt_firName.Text = c.firstname; //put first name in text box
+                        txt_lastName.Text = c.lastname; //put last name in text box
+                        txt_EMail.Text = c.email; //put e-mail in text box
+                        txt_phoNum.Text = c.phone; //put phone number in text box
+                        chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
+                        txt_contNote.Text = c.notes; //put notes in text box
+                        index = c.index;
+                        return;
+                    } //see if contact matches index, allowing for one check even if multiple entries that are nearly identical
+                } //find the correct class
+            }
+            catch (Exception ex) //get exception
+            {
+                error("Issue Reading Table", ex); //show error
+            } //check for issue with repeat
         } //populate text boxes with the content of the selected row
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
