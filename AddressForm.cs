@@ -176,8 +176,14 @@ namespace AdressBook //major updates needed
             if (editMode)
             {
                 if (valid == true || debug == true) {
-                
-                }
+                    Contact edit = selectContact(editInd);
+                    edit.firstname = firstName;
+                    edit.lastname = lastName;
+                    edit.phone = phoNum;
+                    edit.email = eMail;
+                    edit.notes = contNote;
+                    edit.buisness = contType;
+                } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
                 {
