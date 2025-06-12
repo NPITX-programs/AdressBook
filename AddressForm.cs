@@ -221,7 +221,6 @@ namespace AdressBook //major updates needed
                 var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
                 try
                 {
-
                     foreach (var c in Program.contacts)
                     {
                         string indText = row.Cells[6].Value.ToString();
@@ -236,9 +235,7 @@ namespace AdressBook //major updates needed
                             txt_contNote.Text = c.notes; //put notes in text box
                             index = c.index;
                             return;
-                        } //see if contact matches conditions.
-                          //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
-                          //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
+                        } //see if contact matches index, allowing for one check even if multiple entries that are nearly identical
                     } //find the correct class
                 }
                 catch (Exception ex) //get exception
