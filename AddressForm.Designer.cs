@@ -64,6 +64,8 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
@@ -310,13 +312,13 @@
             this.col_contNotes,
             this.col_contInd});
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
+            this.dgv_contacts.Location = new System.Drawing.Point(699, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(198, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
@@ -370,11 +372,32 @@
             this.col_contInd.ReadOnly = true;
             this.col_contInd.Width = 58;
             // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(585, 44);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_clear.TabIndex = 22;
+            this.btn_clear.Text = "Clear";
+            this.toolTip1.SetToolTip(this.btn_clear, "Clear Input");
+            this.btn_clear.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(585, 85);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frm_addressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
@@ -429,6 +452,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
         private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
+        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.Button button2;
     }
 }
 
