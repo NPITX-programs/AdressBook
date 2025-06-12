@@ -241,10 +241,10 @@ namespace AdressBook //major updates needed
                           //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
                     } //find the correct class
                 }
-                catch (Exception ex)
+                catch (Exception ex) //get exception
                 {
-                    error("Issue Reading Table", ex);
-                }
+                    error("Issue Reading Table", ex); //show error
+                } //check for issue with repeat
             } //make sure there is something selected
         } //populate text boxes with the content of the selected row
 
