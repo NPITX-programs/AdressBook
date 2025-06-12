@@ -38,6 +38,7 @@ namespace AdressBook //major updates needed
 
         int editInd = 0;
         bool editMode = false;
+        string btnAddTex = string.Empty;
 
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
@@ -59,6 +60,7 @@ namespace AdressBook //major updates needed
             int tblEdge = this.dgv_contacts.Width; 
             int formWidth = this.ClientSize.Width;
             distFromEdge = formWidth - tblEdge;
+            btnAddTex = btn_add.Text;
         } //when form loads
         int ind = 0; //index for the current contact
 
