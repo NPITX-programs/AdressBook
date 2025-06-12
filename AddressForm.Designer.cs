@@ -58,7 +58,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_autoSave = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +65,7 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
             this.panel1.SuspendLayout();
@@ -269,6 +269,7 @@
             this.toolStrip_autoSave.Name = "toolStrip_autoSave";
             this.toolStrip_autoSave.Size = new System.Drawing.Size(74, 20);
             this.toolStrip_autoSave.Text = "Auto-Save";
+            this.toolStrip_autoSave.ToolTipText = "Toggle Autosave";
             this.toolStrip_autoSave.CheckedChanged += new System.EventHandler(this.toolStrip_autoSave_Click);
             // 
             // dgv_contacts
@@ -317,25 +318,6 @@
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txt_contNote);
-            this.panel1.Controls.Add(this.txt_firName);
-            this.panel1.Controls.Add(this.btn_add);
-            this.panel1.Controls.Add(this.txt_lastName);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_phoNum);
-            this.panel1.Controls.Add(this.txt_EMail);
-            this.panel1.Controls.Add(this.chk_type);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 335);
-            this.panel1.TabIndex = 22;
             // 
             // col_firName
             // 
@@ -402,6 +384,25 @@
             this.col_contInd.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_contInd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.col_contInd.Width = 81;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txt_contNote);
+            this.panel1.Controls.Add(this.txt_firName);
+            this.panel1.Controls.Add(this.btn_add);
+            this.panel1.Controls.Add(this.txt_lastName);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txt_phoNum);
+            this.panel1.Controls.Add(this.txt_EMail);
+            this.panel1.Controls.Add(this.chk_type);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(207, 335);
+            this.panel1.TabIndex = 22;
             // 
             // frm_addressForm
             // 
