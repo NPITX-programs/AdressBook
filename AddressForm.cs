@@ -218,7 +218,7 @@ namespace AdressBook //major updates needed
                 var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
                 foreach(var c in Program.contacts)
                 {
-                    string indText = row.Cells[7].Value.ToString();
+                    string indText = row.Cells[6].Value.ToString();
                     
                     if (c.index == int.Parse(indText))
                     {
