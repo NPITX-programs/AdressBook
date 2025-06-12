@@ -66,6 +66,7 @@
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_editEntry = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
             this.panel1.SuspendLayout();
@@ -387,6 +388,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_editEntry);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_contNote);
             this.panel1.Controls.Add(this.txt_firName);
@@ -403,6 +405,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(207, 335);
             this.panel1.TabIndex = 22;
+            // 
+            // btn_editEntry
+            // 
+            this.btn_editEntry.Location = new System.Drawing.Point(129, 51);
+            this.btn_editEntry.Name = "btn_editEntry";
+            this.btn_editEntry.Size = new System.Drawing.Size(75, 23);
+            this.btn_editEntry.TabIndex = 16;
+            this.btn_editEntry.Text = "Edit Entry";
+            this.btn_editEntry.UseVisualStyleBackColor = true;
             // 
             // frm_addressForm
             // 
@@ -463,6 +474,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
+        private System.Windows.Forms.Button btn_editEntry;
     }
 }
 
