@@ -269,6 +269,7 @@
             this.toolStrip_autoSave.Name = "toolStrip_autoSave";
             this.toolStrip_autoSave.Size = new System.Drawing.Size(74, 20);
             this.toolStrip_autoSave.Text = "Auto-Save";
+            this.toolStrip_autoSave.ToolTipText = "Toggle Autosave";
             this.toolStrip_autoSave.CheckedChanged += new System.EventHandler(this.toolStrip_autoSave_Click);
             // 
             // dgv_contacts
