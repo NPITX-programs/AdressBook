@@ -218,7 +218,7 @@ namespace AdressBook //major updates needed
                 var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
                 foreach(var c in Program.contacts)
                 {
-                    string indText = row.Cells[1].Value.ToString();
+                    string indText = row.Cells[7].Value.ToString();
                     
                     if (c.index == int.Parse(indText))
                     {
@@ -229,6 +229,7 @@ namespace AdressBook //major updates needed
                         chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
                         txt_contNote.Text = c.notes; //put notes in text box
                         index = c.index;
+                        return;
                     } //see if contact matches conditions.
                         //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
                         //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
