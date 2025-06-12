@@ -248,6 +248,7 @@ namespace AdressBook //major updates needed
             } //check for issue with repeat
             editInd = edInde;
             editMode = true;
+            btn_add.Text = "Edit Entry";
         } //populate text boxes with the content of the selected row
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -282,6 +283,7 @@ namespace AdressBook //major updates needed
             clear();
             editMode = false;
             editInd = 0;
+            btn_add.Text = "Add Entry";
         }
     }
 }
