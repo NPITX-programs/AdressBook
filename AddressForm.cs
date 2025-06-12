@@ -36,7 +36,7 @@ namespace AdressBook //major updates needed
             return finalPath; //output said path
         } //create the final directory path
 
-        int currentIndex = 0;
+        int editInd = 0;
         bool editMode = false;
 
         const string name1 = "store"; //name of file
@@ -215,7 +215,7 @@ namespace AdressBook //major updates needed
 
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = 0;
+            int edInde = 0;
             //check if somethings selected
             if (dgv_contacts.CurrentRow == null)
             {
@@ -236,7 +236,7 @@ namespace AdressBook //major updates needed
                         txt_phoNum.Text = c.phone; //put phone number in text box
                         chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
                         txt_contNote.Text = c.notes; //put notes in text box
-                        index = c.index;
+                        edInde = c.index;
                         return;
                     } //see if contact matches index, allowing for one check even if multiple entries that are nearly identical
                 } //find the correct class
@@ -244,7 +244,10 @@ namespace AdressBook //major updates needed
             catch (Exception ex) //get exception
             {
                 error("Issue Reading Table", ex); //show error
+                return;
             } //check for issue with repeat
+            editInd = edInde;
+            editMode = true;
         } //populate text boxes with the content of the selected row
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
