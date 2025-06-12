@@ -65,10 +65,12 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnl_control = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_editEntry = new System.Windows.Forms.Button();
+            this.btn_clearEntry = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
-            this.pnl_control.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chk_type
@@ -269,6 +271,7 @@
             this.toolStrip_autoSave.Name = "toolStrip_autoSave";
             this.toolStrip_autoSave.Size = new System.Drawing.Size(74, 20);
             this.toolStrip_autoSave.Text = "Auto-Save";
+            this.toolStrip_autoSave.ToolTipText = "Toggle Autosave";
             this.toolStrip_autoSave.CheckedChanged += new System.EventHandler(this.toolStrip_autoSave_Click);
             // 
             // dgv_contacts
@@ -384,24 +387,44 @@
             this.col_contInd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.col_contInd.Width = 81;
             // 
-            // pnl_control
+            // panel1
             // 
-            this.pnl_control.Controls.Add(this.label1);
-            this.pnl_control.Controls.Add(this.txt_contNote);
-            this.pnl_control.Controls.Add(this.txt_firName);
-            this.pnl_control.Controls.Add(this.btn_add);
-            this.pnl_control.Controls.Add(this.txt_lastName);
-            this.pnl_control.Controls.Add(this.label4);
-            this.pnl_control.Controls.Add(this.label2);
-            this.pnl_control.Controls.Add(this.txt_phoNum);
-            this.pnl_control.Controls.Add(this.txt_EMail);
-            this.pnl_control.Controls.Add(this.chk_type);
-            this.pnl_control.Controls.Add(this.label3);
-            this.pnl_control.Controls.Add(this.label5);
-            this.pnl_control.Location = new System.Drawing.Point(0, 27);
-            this.pnl_control.Name = "pnl_control";
-            this.pnl_control.Size = new System.Drawing.Size(207, 335);
-            this.pnl_control.TabIndex = 22;
+            this.panel1.Controls.Add(this.btn_clearEntry);
+            this.panel1.Controls.Add(this.btn_editEntry);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txt_contNote);
+            this.panel1.Controls.Add(this.txt_firName);
+            this.panel1.Controls.Add(this.btn_add);
+            this.panel1.Controls.Add(this.txt_lastName);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txt_phoNum);
+            this.panel1.Controls.Add(this.txt_EMail);
+            this.panel1.Controls.Add(this.chk_type);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(207, 335);
+            this.panel1.TabIndex = 22;
+            // 
+            // btn_editEntry
+            // 
+            this.btn_editEntry.Location = new System.Drawing.Point(129, 51);
+            this.btn_editEntry.Name = "btn_editEntry";
+            this.btn_editEntry.Size = new System.Drawing.Size(75, 23);
+            this.btn_editEntry.TabIndex = 16;
+            this.btn_editEntry.Text = "Edit Entry";
+            this.btn_editEntry.UseVisualStyleBackColor = true;
+            // 
+            // btn_clearEntry
+            // 
+            this.btn_clearEntry.Location = new System.Drawing.Point(129, 98);
+            this.btn_clearEntry.Name = "btn_clearEntry";
+            this.btn_clearEntry.Size = new System.Drawing.Size(75, 23);
+            this.btn_clearEntry.TabIndex = 17;
+            this.btn_clearEntry.Text = "Clear Entry";
+            this.btn_clearEntry.UseVisualStyleBackColor = true;
             // 
             // frm_addressForm
             // 
@@ -410,7 +433,7 @@
             this.ClientSize = new System.Drawing.Size(897, 450);
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnl_control);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_addressForm";
@@ -421,8 +444,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).EndInit();
-            this.pnl_control.ResumeLayout(false);
-            this.pnl_control.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +477,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_contacts;
         private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
-        private System.Windows.Forms.Panel pnl_control;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
@@ -462,6 +485,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
+        private System.Windows.Forms.Button btn_editEntry;
+        private System.Windows.Forms.Button btn_clearEntry;
     }
 }
 
