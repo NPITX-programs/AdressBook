@@ -415,6 +415,7 @@
             this.btn_clearEntry.Size = new System.Drawing.Size(75, 23);
             this.btn_clearEntry.TabIndex = 17;
             this.btn_clearEntry.Text = "Clear Entry";
+            this.toolTip1.SetToolTip(this.btn_clearEntry, "Clear the Entry");
             this.btn_clearEntry.UseVisualStyleBackColor = true;
             this.btn_clearEntry.Click += new System.EventHandler(this.btn_clearEntry_Click);
             // 
