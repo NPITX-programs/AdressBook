@@ -217,9 +217,7 @@ namespace AdressBook //major updates needed
                 var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
                 foreach(var c in Program.contacts)
                 {
-                    if(c.firstname == row.Cells[0].Value.ToString() //first name match?
-                        && c.lastname == row.Cells[1].Value.ToString() //last name match?
-                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value)) //buisness contact?
+                    if(c.index == e.RowIndex)
                     {
                         txt_firName.Text = c.firstname; //put first name in text box
                         txt_lastName.Text = c.lastname; //put last name in text box
