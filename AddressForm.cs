@@ -276,5 +276,12 @@ namespace AdressBook //major updates needed
             int tblWidth = frmWidth - distFromEdge; //subtract the distance from edge
             dgv_contacts.Width = tblWidth; //set the width of the table
         }
+
+        private void btn_clearEntry_Click(object sender, EventArgs e)
+        {
+            clear();
+            editMode = false;
+            editInd = 0;
+        }
     }
 }

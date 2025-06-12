@@ -66,8 +66,8 @@
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_editEntry = new System.Windows.Forms.Button();
             this.btn_clearEntry = new System.Windows.Forms.Button();
+            this.btn_editEntry = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
             this.panel1.SuspendLayout();
@@ -408,15 +408,6 @@
             this.panel1.Size = new System.Drawing.Size(207, 335);
             this.panel1.TabIndex = 22;
             // 
-            // btn_editEntry
-            // 
-            this.btn_editEntry.Location = new System.Drawing.Point(129, 51);
-            this.btn_editEntry.Name = "btn_editEntry";
-            this.btn_editEntry.Size = new System.Drawing.Size(75, 23);
-            this.btn_editEntry.TabIndex = 16;
-            this.btn_editEntry.Text = "Edit Entry";
-            this.btn_editEntry.UseVisualStyleBackColor = true;
-            // 
             // btn_clearEntry
             // 
             this.btn_clearEntry.Location = new System.Drawing.Point(129, 98);
@@ -425,6 +416,16 @@
             this.btn_clearEntry.TabIndex = 17;
             this.btn_clearEntry.Text = "Clear Entry";
             this.btn_clearEntry.UseVisualStyleBackColor = true;
+            this.btn_clearEntry.Click += new System.EventHandler(this.btn_clearEntry_Click);
+            // 
+            // btn_editEntry
+            // 
+            this.btn_editEntry.Location = new System.Drawing.Point(129, 51);
+            this.btn_editEntry.Name = "btn_editEntry";
+            this.btn_editEntry.Size = new System.Drawing.Size(75, 23);
+            this.btn_editEntry.TabIndex = 16;
+            this.btn_editEntry.Text = "Edit Entry";
+            this.btn_editEntry.UseVisualStyleBackColor = true;
             // 
             // frm_addressForm
             // 
