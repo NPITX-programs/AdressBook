@@ -58,7 +58,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_autoSave = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_EMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +65,7 @@
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
             this.panel1.SuspendLayout();
@@ -302,7 +300,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(699, 24);
+            this.dgv_contacts.Location = new System.Drawing.Point(313, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
             this.dgv_contacts.ReadOnly = true;
@@ -316,29 +314,10 @@
             this.dgv_contacts.RowTemplate.Height = 25;
             this.dgv_contacts.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(198, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(584, 426);
             this.dgv_contacts.TabIndex = 18;
             this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txt_contNote);
-            this.panel1.Controls.Add(this.txt_firName);
-            this.panel1.Controls.Add(this.btn_add);
-            this.panel1.Controls.Add(this.txt_lastName);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_phoNum);
-            this.panel1.Controls.Add(this.txt_EMail);
-            this.panel1.Controls.Add(this.chk_type);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 335);
-            this.panel1.TabIndex = 22;
             // 
             // col_firName
             // 
@@ -406,32 +385,30 @@
             this.col_contInd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.col_contInd.Width = 81;
             // 
-            // btn_clear
+            // panel1
             // 
-            this.btn_clear.Location = new System.Drawing.Point(585, 44);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_clear.TabIndex = 22;
-            this.btn_clear.Text = "Clear";
-            this.toolTip1.SetToolTip(this.btn_clear, "Clear Input");
-            this.btn_clear.UseVisualStyleBackColor = true;
-            // 
-            // btn_edit
-            // 
-            this.btn_edit.Location = new System.Drawing.Point(585, 85);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(75, 23);
-            this.btn_edit.TabIndex = 23;
-            this.btn_edit.Text = "Edit";
-            this.btn_edit.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txt_contNote);
+            this.panel1.Controls.Add(this.txt_firName);
+            this.panel1.Controls.Add(this.btn_add);
+            this.panel1.Controls.Add(this.txt_lastName);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txt_phoNum);
+            this.panel1.Controls.Add(this.txt_EMail);
+            this.panel1.Controls.Add(this.chk_type);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(207, 335);
+            this.panel1.TabIndex = 22;
             // 
             // frm_addressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 450);
-            this.Controls.Add(this.btn_edit);
-            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.dgv_contacts);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
@@ -486,9 +463,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
-        private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
-        private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.Button btn_edit;
     }
 }
 
