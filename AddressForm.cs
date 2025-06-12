@@ -36,6 +36,9 @@ namespace AdressBook //major updates needed
             return finalPath; //output said path
         } //create the final directory path
 
+        int editInd = 0;
+        bool editMode = false;
+
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
@@ -212,14 +215,20 @@ namespace AdressBook //major updates needed
 
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int edInde = 0;
             //check if somethings selected
-            if (dgv_contacts.CurrentRow != null) {
-                var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
-                foreach(var c in Program.contacts)
+            if (dgv_contacts.CurrentRow == null)
+            {
+                return;
+            } //make sure there is something selected
+            var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
+            try
+            {
+                foreach (var c in Program.contacts)
                 {
-                    if(c.firstname == row.Cells[0].Value.ToString() //first name match?
-                        && c.lastname == row.Cells[1].Value.ToString() //last name match?
-                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value)) //buisness contact?
+                    string indText = row.Cells[6].Value.ToString();
+
+                    if (c.index == int.Parse(indText))
                     {
                         txt_firName.Text = c.firstname; //put first name in text box
                         txt_lastName.Text = c.lastname; //put last name in text box
@@ -227,11 +236,18 @@ namespace AdressBook //major updates needed
                         txt_phoNum.Text = c.phone; //put phone number in text box
                         chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
                         txt_contNote.Text = c.notes; //put notes in text box
-                    } //see if contact matches conditions.
-                        //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
-                        //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
+                        edInde = c.index;
+                        return;
+                    } //see if contact matches index, allowing for one check even if multiple entries that are nearly identical
                 } //find the correct class
-            } //make sure there is something selected
+            }
+            catch (Exception ex) //get exception
+            {
+                error("Issue Reading Table", ex); //show error
+                return;
+            } //check for issue with repeat
+            editInd = edInde;
+            editMode = true;
         } //populate text boxes with the content of the selected row
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
