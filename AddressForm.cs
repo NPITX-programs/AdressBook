@@ -173,16 +173,24 @@ namespace AdressBook //major updates needed
                 valid = false; //invalid
             }
 
-            if (valid == true || debug == true) {
-                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
-                entry = nextEntry(); //get the next entry
-                updateList(entry); //update the list
-                if (autoSave )
+            if (editMode)
+            {
+                if (valid == true || debug == true) {
+                
+                }
+            } else if (editMode == false) {
+                if (valid == true || debug == true)
                 {
-                    WriteToFile(); //write to the file
-                } //if the auto-save is on, save
-                clear(); //clear inputs and set checkbox to false
-            } //the creation and setting code
+                    newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
+                    entry = nextEntry(); //get the next entry
+                    updateList(entry); //update the list
+                    if (autoSave)
+                    {
+                        WriteToFile(); //write to the file
+                    } //if the auto-save is on, save
+                    clear(); //clear inputs and set checkbox to false
+                } //the creation and setting code
+            }
         } //add contact
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -285,7 +293,7 @@ namespace AdressBook //major updates needed
             clear();
             editMode = false;
             editInd = 0;
-            btn_add.Text = "Add Entry";
+            btn_add.Text = btnAddTex;
         }
     }
 }
