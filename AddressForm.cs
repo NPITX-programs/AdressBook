@@ -36,6 +36,9 @@ namespace AdressBook //major updates needed
             return finalPath; //output said path
         } //create the final directory path
 
+        int currentIndex = 0;
+        bool editMode = false;
+
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
@@ -216,24 +219,32 @@ namespace AdressBook //major updates needed
             //check if somethings selected
             if (dgv_contacts.CurrentRow != null) {
                 var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
-                foreach(var c in Program.contacts)
+                try
                 {
-                    string indText = row.Cells[6].Value.ToString();
-                    
-                    if (c.index == int.Parse(indText))
+
+                    foreach (var c in Program.contacts)
                     {
-                        txt_firName.Text = c.firstname; //put first name in text box
-                        txt_lastName.Text = c.lastname; //put last name in text box
-                        txt_EMail.Text = c.email; //put e-mail in text box
-                        txt_phoNum.Text = c.phone; //put phone number in text box
-                        chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
-                        txt_contNote.Text = c.notes; //put notes in text box
-                        index = c.index;
-                        return;
-                    } //see if contact matches conditions.
-                        //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
-                        //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
-                } //find the correct class
+                        string indText = row.Cells[6].Value.ToString();
+
+                        if (c.index == int.Parse(indText))
+                        {
+                            txt_firName.Text = c.firstname; //put first name in text box
+                            txt_lastName.Text = c.lastname; //put last name in text box
+                            txt_EMail.Text = c.email; //put e-mail in text box
+                            txt_phoNum.Text = c.phone; //put phone number in text box
+                            chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
+                            txt_contNote.Text = c.notes; //put notes in text box
+                            index = c.index;
+                            return;
+                        } //see if contact matches conditions.
+                          //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
+                          //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
+                    } //find the correct class
+                }
+                catch (Exception ex)
+                {
+                    error("Issue Reading Table", ex);
+                }
             } //make sure there is something selected
         } //populate text boxes with the content of the selected row
 
