@@ -187,7 +187,6 @@ namespace AdressBook //major updates needed
                     {
                         WriteToFile(); //save
                     } //autosave
-                    var rowToUpdate = dgv_contacts.Select.(ind)
 
                 } 
             } else if (editMode == false) {
