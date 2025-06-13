@@ -240,11 +240,11 @@ namespace AdressBook //major updates needed
             bool autoSave = toolStrip_autoSave.Checked;
             if (autoSave)
             {
-                toolStrip_autoSave.BackColor = Color.Green;
+                toolStrip_autoSave.BackColor = Color.Green; //set to green (on)
             }
             else
             {
-                 toolStrip_autoSave.BackColor = Color.Red;
+                 toolStrip_autoSave.BackColor = Color.Red; //set to red (off)
             }
         }
 
