@@ -21,21 +21,22 @@ namespace AdressBook.files
                         {
                             //csv - comma seperated values
                             //firstname-lastname-email-phone-buisness-notes
+                            string ind = (c.index + 1).ToString();
                             string line = c.firstname + sep + c.lastname + sep +  //first and last name
-                                c.email + sep + c.phone + sep + c.buisness + sep + //contact information
-                                c.notes; //notes
+                                c.phone + sep + c.email + sep + c.buisness + sep + //contact information
+                                c.notes + sep + ind; //notes
                             sw.WriteLine(line); //write the information to the line
                         }
                     } //streamwriter
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message); //show error
+                    AdressBook.coreCommands.error(Program.preMadeErrorMsg, ex, true); //show error
                 }
             }
             else
             {
-                MessageBox.Show("file not found"); //show error
+                AdressBook.coreCommands.error("File Not Found"); //show error
             }
         } //the write function
 
@@ -62,14 +63,16 @@ namespace AdressBook.files
                                     lastname = cont[1], //same
                                     phone = cont[2], //same
                                     email = cont[3], //same
+                                    buisness = Convert.ToBoolean(cont[4]), //same
                                     notes = cont[5], //same
-                                    buisness = Convert.ToBoolean(cont[4]) //same
+                                    index = Convert.ToInt32(cont[6]) - 1 //more of the same             
                                 };
                                 Program.contacts.Add(c); //add to list
                             }
                             else
                             {
-                                MessageBox.Show("error"); //show error
+                             
+                                AdressBook.coreCommands.error("error: below Max Length");
                             }
                         }
                     }
@@ -86,5 +89,5 @@ namespace AdressBook.files
 
             }
         }
-    }
+    } //the code for files
 }
