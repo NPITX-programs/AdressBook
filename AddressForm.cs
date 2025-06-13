@@ -183,6 +183,12 @@ namespace AdressBook //major updates needed
                     edit.email = eMail;
                     edit.notes = contNote;
                     edit.buisness = contType;
+                    if (autoSave)
+                    {
+                        WriteToFile(); //save
+                    } //autosave
+                    var rowToUpdate = dgv_contacts.Select.(ind)
+
                 } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
