@@ -315,7 +315,6 @@
             this.dgv_contacts.Location = new System.Drawing.Point(313, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
-            this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
@@ -358,7 +357,6 @@
             this.col_firName.HeaderText = "First Name";
             this.col_firName.MinimumWidth = 100;
             this.col_firName.Name = "col_firName";
-            this.col_firName.ReadOnly = true;
             // 
             // col_lastName
             // 
@@ -367,7 +365,6 @@
             this.col_lastName.HeaderText = "Last Name";
             this.col_lastName.MinimumWidth = 100;
             this.col_lastName.Name = "col_lastName";
-            this.col_lastName.ReadOnly = true;
             // 
             // col_EMail
             // 
@@ -375,7 +372,6 @@
             this.col_EMail.HeaderText = "E-Mail";
             this.col_EMail.MinimumWidth = 75;
             this.col_EMail.Name = "col_EMail";
-            this.col_EMail.ReadOnly = true;
             this.col_EMail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_EMail.Width = 75;
             // 
@@ -385,7 +381,6 @@
             this.col_phoNum.HeaderText = "Phone Number";
             this.col_phoNum.MinimumWidth = 75;
             this.col_phoNum.Name = "col_phoNum";
-            this.col_phoNum.ReadOnly = true;
             this.col_phoNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_phoNum.Width = 75;
             // 
@@ -394,7 +389,6 @@
             this.col_contType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_contType.HeaderText = "Contact Type";
             this.col_contType.Name = "col_contType";
-            this.col_contType.ReadOnly = true;
             this.col_contType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_contType.Width = 75;
             // 
@@ -405,14 +399,12 @@
             this.col_contNotes.HeaderText = "Contact Notes";
             this.col_contNotes.MinimumWidth = 100;
             this.col_contNotes.Name = "col_contNotes";
-            this.col_contNotes.ReadOnly = true;
             // 
             // col_contInd
             // 
             this.col_contInd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.col_contInd.HeaderText = "Index";
             this.col_contInd.Name = "col_contInd";
-            this.col_contInd.ReadOnly = true;
             this.col_contInd.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.col_contInd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.col_contInd.Visible = false;
