@@ -166,7 +166,7 @@ namespace AdressBook //major updates needed
         {
             var errorText = error;
             if (clear) {
-                error = "";
+                errorText = "";
             }
             errorProvider1.SetError(input, errorText);
         }
@@ -187,7 +187,7 @@ namespace AdressBook //major updates needed
             #endregion //simplified variables for the content of the contact
 
             //find errors (put some sort of warning system)
-            errorProvider1.Clear(); //clear before checking, that way there are
+
             if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid 
