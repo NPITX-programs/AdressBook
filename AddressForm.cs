@@ -210,6 +210,7 @@ namespace AdressBook //major updates needed
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     clear();
                     //clear and deselect row
+                    dgv_contacts.ClearSelection();
                 } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
