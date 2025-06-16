@@ -186,7 +186,7 @@ namespace AdressBook //major updates needed
             if (lastName == string.Empty) //check if no lastname
             {
                 valid = false; //invalid
-                errorProvider.SetError(txt_firName, "no input");
+                errorProvider.SetError(txt_lastName, "no input");
             }
             if (phoNum == string.Empty) //check if no phonenumber
             {
@@ -235,8 +235,6 @@ namespace AdressBook //major updates needed
                 } //the creation and setting code
             }
         } //add contact
-
-        private readonly ErrorProvider errorProvider = new ErrorProvider();
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
