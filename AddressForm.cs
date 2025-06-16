@@ -132,7 +132,8 @@ namespace AdressBook //major updates needed
             if(total == 0)
             {
                 val = Program.contacts.Count; //set total to be the length of the list
-            } else
+            } 
+            else
             {
                 val = total; //set total to the input value
             }
@@ -192,7 +193,8 @@ namespace AdressBook //major updates needed
                 valid = false; //invalid
                 errorIcon(txt_firName, "No Input");
             } 
-            else {
+            else 
+            {
                 errorIcon(txt_firName, "No Input", true);
             }
             
@@ -210,7 +212,8 @@ namespace AdressBook //major updates needed
             {
                 valid = false; //invalid
                 errorIcon(txt_phoNum, "No Input");
-            } else
+            } 
+            else
             {
                 errorIcon(txt_phoNum, "No Input", true);
             }
@@ -219,9 +222,10 @@ namespace AdressBook //major updates needed
             {
                 valid = false; //invalid
                 errorIcon(txt_EMail, "No Input");
-            } else
+            } 
+            else
             {
-                errorIcon(txt_EMail, "No Input", true);
+                errorIcon(txt_EMail, "No Input", true)
             }
             
             if (contNote == string.Empty) //check if no note
