@@ -80,6 +80,10 @@ namespace AdressBook //major updates needed
          
         private void clear()
         {
+            if (dgv_contacts.CurrentRow != null)
+            {
+                dgv_contacts.ClearSelection();
+            }
             txt_firName.Text = string.Empty; //empty first name
             txt_lastName.Text = string.Empty; //empty last name
             txt_phoNum.Text = string.Empty; //empty phone number
@@ -198,20 +202,21 @@ namespace AdressBook //major updates needed
             if (editMode)
             {
                 if (valid == true || debug == true) {
-                    Contact edit = selectContact(editInd); //get the contact that needs to be edited
-                    edit.firstname = firstName; //edit first name
-                    edit.lastname = lastName; //edit last name
-                    edit.phone = phoNum; //edit phone number
-                    edit.email = eMail; //edit email
-                    edit.notes = contNote; //edit note
-                    edit.buisness = contType; //edit contact type
+                    Contact edit = selectContact(editInd);
+                    edit.firstname = firstName;
+                    edit.lastname = lastName;
+                    edit.phone = phoNum;
+                    edit.email = eMail;
+                    edit.notes = contNote;
+                    edit.buisness = contType;
                     if (autoSave)
                     {
                         WriteToFile(); //save
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
-                    dgv_contacts.ClearSelection();
-                    clear(); //clear entry
+                    clear();
+                    btn_add.Text = btnAddTex;
+                    //clear and deselect row
                     
                 } 
             } else if (editMode == false) {
