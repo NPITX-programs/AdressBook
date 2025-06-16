@@ -190,7 +190,7 @@ namespace AdressBook //major updates needed
             errorProvider1.Clear(); //clear before checking, that way there are
             if (firstName == string.Empty) //check if no firstname
             {
-                valid = false; //invalid
+                valid = false; //invalid 
                 errorIcon(txt_firName, "No Input");
             } 
             else 
