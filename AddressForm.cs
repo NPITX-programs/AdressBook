@@ -338,11 +338,11 @@ namespace AdressBook //major updates needed
             //check if somethings selected
             if (dgv_contacts.CurrentRow == null)
             {
-                return;
+                return; //output nothing
             } //make sure there is something selected
             var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
-            string indText = row.Cells[6].Value.ToString();
-            c = selectContact(int.Parse(indText));
+            string indText = row.Cells[6].Value.ToString(); //get the index value from what was clicked
+            c = selectContact(int.Parse(indText)); //find the correct contact
             if (c != null) {
                 txt_firName.Text = c.firstname; //put first name in text box
                 txt_lastName.Text = c.lastname; //put last name in text box
@@ -350,11 +350,11 @@ namespace AdressBook //major updates needed
                 txt_phoNum.Text = c.phone; //put phone number in text box
                 chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
                 txt_contNote.Text = c.notes; //put notes in text box
-                edInde = c.index;
-            }
-            editInd = edInde;
-            editMode = true;
-            btn_add.Text = "Edit Entry";
+                edInde = c.index; //set the index variable to the contacts index variable
+            } //check if it exists
+            editInd = edInde; //set the global editInd to the determined edit index
+            editMode = true; //turn edit mode on
+            btn_add.Text = "Edit Entry"; //change button text
         } //populate text boxes with the content of the selected row
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
