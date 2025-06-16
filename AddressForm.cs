@@ -386,10 +386,10 @@ namespace AdressBook //major updates needed
 
         private void btn_clearEntry_Click(object sender, EventArgs e)
         {
-            clear();
-            editMode = false;
-            editInd = 0;
-            btn_add.Text = btnAddTex;
-        }
+            clear(); //clear entry
+            editMode = false; //disable edit mode
+            editInd = 0; //set edit index to 0
+            btn_add.Text = btnAddTex; //set button back to original text
+        } //clear entry
     }
 }
