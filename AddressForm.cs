@@ -377,12 +377,12 @@ namespace AdressBook //major updates needed
             } //toggle off
         } //toggle auto-save
 
-        private void frm_addressForm_reSize(object sender, EventArgs e) //size table
+        private void frm_addressForm_reSize(object sender, EventArgs e)
         {
             int frmWidth = this.ClientSize.Width; //get the new form width
             int tblWidth = frmWidth - distFromEdge; //subtract the distance from edge
             dgv_contacts.Width = tblWidth; //set the width of the table
-        }
+        }  //size data grid view
 
         private void btn_clearEntry_Click(object sender, EventArgs e)
         {
