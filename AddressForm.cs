@@ -80,6 +80,10 @@ namespace AdressBook //major updates needed
          
         private void clear()
         {
+            if (dgv_contacts.CurrentRow != null)
+            {
+                dgv_contacts.ClearSelection();
+            }
             txt_firName.Text = string.Empty; //empty first name
             txt_lastName.Text = string.Empty; //empty last name
             txt_phoNum.Text = string.Empty; //empty phone number
@@ -210,7 +214,6 @@ namespace AdressBook //major updates needed
                         WriteToFile(); //save
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
-                    dgv_contacts.ClearSelection();
                     clear();
                     btn_add.Text = btnAddTex;
                     //clear and deselect row
