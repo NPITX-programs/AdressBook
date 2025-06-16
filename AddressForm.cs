@@ -99,7 +99,7 @@ namespace AdressBook //major updates needed
             var currentRow = dgv_contacts.CurrentRow;
             if ( editMode )
             {
-                if(currentRow != null)
+                if(currentRow == null)
                 {
                     editMode = false; //set edit to false
                 } //turns edit mode off if there is no selected row. That means it will add the entry
@@ -109,7 +109,12 @@ namespace AdressBook //major updates needed
                 dgv_contacts.Rows.Add(value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact
             } else
             {
-                currentRow.Cells["First Name"].Value = value.firstname;
+                currentRow.Cells[0].Value = value.firstname;
+                currentRow.Cells[1].Value = value.lastname;
+                currentRow.Cells[2].Value = value.email;
+                currentRow.Cells[3].Value = value.phone;
+                currentRow.Cells[4].Value = value.buisness;
+                currentRow.Cells[5].Value = value.notes;
             }
             
         } //update list
