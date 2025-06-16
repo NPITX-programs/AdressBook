@@ -308,27 +308,29 @@ namespace AdressBook //major updates needed
         } //open
         private Contact selectContact(int index)
         {
-            int leng = Program.contacts.Count;
-            int check = 0;
+            int leng = Program.contacts.Count; //find the length
+            int check = 0; //make a temporary variable
             try
             {
                 foreach (var c in Program.contacts)
                 {
-                    check = check + 1;
+                    check = check + 1; //add one to check
                     if (c.index == index) {
-                        return c;
-                    } else if(check == leng)
+                        return c; //if the indexes are the same, output that contact
+                    } //check if selected index
+                    else if(check == leng)
                     {
-                        return null;
-                    }
-                }
-            } catch (Exception ex) //get exception
+                        return null; //if check and length are the same, there is nothing left, so retun null
+                    } //check if last item
+                } //find the contact at the index
+            } 
+            catch (Exception ex) //get exception
             {
                 error("Issue Reading Table", ex); //show error
-                return null;
+                return null; //output null
             } //check for issue with repeat
             return null;
-        }
+        } //get the selected contact
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int edInde = 0;
