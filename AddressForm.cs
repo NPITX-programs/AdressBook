@@ -18,7 +18,7 @@ namespace AdressBook //major updates needed
         const char sep = '~'; //seperation character
         public frm_addressForm()
         {
-            InitializeComponent(); //initialize
+            InitializeComponent();
         }
 
         string filepath = string.Empty; //a placeholder blank path
@@ -36,11 +36,16 @@ namespace AdressBook //major updates needed
             return finalPath; //output said path
         } //create the final directory path
 
+        int editInd = 0;
+        bool editMode = false;
+        string btnAddTex = string.Empty;
+
         const string name1 = "store"; //name of file
         const string exten1 = "con"; //extension of file
         const int min = 6; //minimum total values in an entry
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
+        int distFromEdge = 0;
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
@@ -51,6 +56,11 @@ namespace AdressBook //major updates needed
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
             toolStrip_autoSave.BackColor = Color.Red;
+
+            int tblEdge = this.dgv_contacts.Width; 
+            int formWidth = this.ClientSize.Width;
+            distFromEdge = formWidth - tblEdge;
+            btnAddTex = btn_add.Text;
         } //when form loads
         int ind = 0; //index for the current contact
 
@@ -140,39 +150,58 @@ namespace AdressBook //major updates needed
             bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
-            
+            //find errors
 
             if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
             }
-            else if (lastName == string.Empty) //check if no lastname
+            if (lastName == string.Empty) //check if no lastname
             {
                 valid = false; //invalid
             }
-            else if (phoNum == string.Empty) //check if no phonenumber
+            if (phoNum == string.Empty) //check if no phonenumber
             {
                 valid = false; //invalid
             }
-            else if (eMail == string.Empty) //check if no e-mail
+            if (eMail == string.Empty) //check if no e-mail
             {
                 valid = false; //invalid
             }
-            else if (contNote == string.Empty) //check if no note
+            if (contNote == string.Empty) //check if no note
             {
                 valid = false; //invalid
             }
 
-            if (valid == true || debug == true) {
-                newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
-                entry = nextEntry(); //get the next entry
-                updateList(entry); //update the list
-                if (autoSave )
+            if (editMode)
+            {
+                if (valid == true || debug == true) {
+                    Contact edit = selectContact(editInd);
+                    edit.firstname = firstName;
+                    edit.lastname = lastName;
+                    edit.phone = phoNum;
+                    edit.email = eMail;
+                    edit.notes = contNote;
+                    edit.buisness = contType;
+                    if (autoSave)
+                    {
+                        WriteToFile(); //save
+                    } //autosave
+
+                } 
+            } else if (editMode == false) {
+                if (valid == true || debug == true)
                 {
-                    WriteToFile(); //write to the file
-                } //if the auto-save is on
-                clear(); //clear inputs and set checkbox to false
-            } //the creation and setting code
+                    newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
+                    entry = nextEntry(); //get the next entry
+                    updateList(entry); //update the list
+                    if (autoSave)
+                    {
+                        WriteToFile(); //write to the file
+                    } //if the auto-save is on, save
+                    clear(); //clear inputs and set checkbox to false
+                } //the creation and setting code
+            }
         } //add contact
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,29 +233,53 @@ namespace AdressBook //major updates needed
                 readFromFile(); //read from file
             }
         } //open
-
+        private Contact selectContact(int index)
+        {
+            int leng = Program.contacts.Count;
+            int check = 0;
+            try
+            {
+                foreach (var c in Program.contacts)
+                {
+                    check = check + 1;
+                    if (c.index == index) {
+                        return c;
+                    } else if(check == leng)
+                    {
+                        return null;
+                    }
+                }
+            } catch (Exception ex) //get exception
+            {
+                error("Issue Reading Table", ex); //show error
+                return null;
+            } //check for issue with repeat
+            return null;
+        }
         private void dgv_contacts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int edInde = 0;
+            Contact c = null;
             //check if somethings selected
-            if (dgv_contacts.CurrentRow != null) {
-                var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
-                foreach(var c in Program.contacts)
-                {
-                    if(c.firstname == row.Cells[0].Value.ToString() //first name match?
-                        && c.lastname == row.Cells[1].Value.ToString() //last name match?
-                        && c.buisness == Convert.ToBoolean(row.Cells[4].Value)) //buisness contact?
-                    {
-                        txt_firName.Text = c.firstname; //put first name in text box
-                        txt_lastName.Text = c.lastname; //put last name in text box
-                        txt_EMail.Text = c.email; //put e-mail in text box
-                        txt_phoNum.Text = c.phone; //put phone number in text box
-                        chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
-                        txt_contNote.Text = c.notes; //put notes in text box
-                    } //see if contact matches conditions.
-                        //the first two are so, even if the table is re-ordered via filtersre-ordered, the correct name is chosen.
-                        //The buisness is so if you have multiple for one person, (say, one for buisness, one for personal), it populates the one you selected
-                } //find the correct class
+            if (dgv_contacts.CurrentRow == null)
+            {
+                return;
             } //make sure there is something selected
+            var row = dgv_contacts.CurrentRow; //set a variable to the contents of the current row
+            string indText = row.Cells[6].Value.ToString();
+            c = selectContact(int.Parse(indText));
+            if (c != null) {
+                txt_firName.Text = c.firstname; //put first name in text box
+                txt_lastName.Text = c.lastname; //put last name in text box
+                txt_EMail.Text = c.email; //put e-mail in text box
+                txt_phoNum.Text = c.phone; //put phone number in text box
+                chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
+                txt_contNote.Text = c.notes; //put notes in text box
+                edInde = c.index;
+            }
+            editInd = edInde;
+            editMode = true;
+            btn_add.Text = "Edit Entry";
         } //populate text boxes with the content of the selected row
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -237,20 +290,31 @@ namespace AdressBook //major updates needed
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
         {
-            bool autoSave = toolStrip_autoSave.Checked;
-            if (autoSave)
+            autoSave = toolStrip_autoSave.Checked;
+            bool auto_save = autoSave;
+            if (auto_save )
             {
-                toolStrip_autoSave.BackColor = Color.Green; //set to green (on)
-            }
+                toolStrip_autoSave.BackColor = Color.Green; //set to green
+            } //toggle on
             else
             {
-                 toolStrip_autoSave.BackColor = Color.Red; //set to red (off)
-            }
+                 toolStrip_autoSave.BackColor = Color.Red; //set to red
+            } //toggle off
         }
 
-        private void frm_addressForm_reSize(object sender, EventArgs e) //resize table to preset ratio
+        private void frm_addressForm_reSize(object sender, EventArgs e) //size table
         {
-            
+            int frmWidth = this.ClientSize.Width; //get the new form width
+            int tblWidth = frmWidth - distFromEdge; //subtract the distance from edge
+            dgv_contacts.Width = tblWidth; //set the width of the table
+        }
+
+        private void btn_clearEntry_Click(object sender, EventArgs e)
+        {
+            clear();
+            editMode = false;
+            editInd = 0;
+            btn_add.Text = btnAddTex;
         }
     }
 }
