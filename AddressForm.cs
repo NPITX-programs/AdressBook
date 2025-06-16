@@ -94,9 +94,29 @@ namespace AdressBook //major updates needed
             return curr; //output that value 
         } //gets the final entry in the list of contacts, which is the one that was just made (and thus the one that should be added)
         
-        private void updateList(Contact value)
+        private void updateList(Contact value, bool editMode = false )
         {
-            dgv_contacts.Rows.Add( value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact
+            var currentRow = dgv_contacts.CurrentRow;
+            if ( editMode )
+            {
+                if(currentRow == null)
+                {
+                    editMode = false; //set edit to false
+                } //turns edit mode off if there is no selected row. That means it will add the entry
+            } //checks if there is anything within the current row
+            if (editMode == false)
+            {
+                dgv_contacts.Rows.Add(value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact
+            } else
+            {
+                currentRow.Cells[0].Value = value.firstname;
+                currentRow.Cells[1].Value = value.lastname;
+                currentRow.Cells[2].Value = value.email;
+                currentRow.Cells[3].Value = value.phone;
+                currentRow.Cells[4].Value = value.buisness;
+                currentRow.Cells[5].Value = value.notes;
+            }
+            
         } //update list
 
         private void generateList(int total = 0) 
@@ -187,7 +207,7 @@ namespace AdressBook //major updates needed
                     {
                         WriteToFile(); //save
                     } //autosave
-                    //clear and deselect row
+                    updateList(edit, editMode);
                 } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
