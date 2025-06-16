@@ -1,6 +1,6 @@
 ﻿namespace AdressBook
 {
-    partial class AddressForm
+    partial class frm_addressForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_addressForm));
             this.chk_type = new System.Windows.Forms.CheckBox();
             this.txt_firName = new System.Windows.Forms.TextBox();
             this.txt_EMail = new System.Windows.Forms.TextBox();
@@ -42,8 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_clearEntry = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -54,6 +57,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip_autoSave = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_contacts = new System.Windows.Forms.DataGridView();
             this.col_firName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,15 +65,19 @@
             this.col_phoNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_contType = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_contNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2.SuspendLayout();
+            this.col_contInd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // chk_type
             // 
             this.chk_type.AutoSize = true;
-            this.chk_type.Location = new System.Drawing.Point(0, 232);
+            this.chk_type.Location = new System.Drawing.Point(10, 233);
             this.chk_type.Name = "chk_type";
             this.chk_type.Size = new System.Drawing.Size(90, 17);
             this.chk_type.TabIndex = 5;
@@ -80,7 +88,7 @@
             // 
             // txt_firName
             // 
-            this.txt_firName.Location = new System.Drawing.Point(6, 32);
+            this.txt_firName.Location = new System.Drawing.Point(16, 33);
             this.txt_firName.Name = "txt_firName";
             this.txt_firName.Size = new System.Drawing.Size(100, 20);
             this.txt_firName.TabIndex = 1;
@@ -88,7 +96,7 @@
             // 
             // txt_EMail
             // 
-            this.txt_EMail.Location = new System.Drawing.Point(0, 138);
+            this.txt_EMail.Location = new System.Drawing.Point(10, 139);
             this.txt_EMail.Name = "txt_EMail";
             this.txt_EMail.Size = new System.Drawing.Size(100, 20);
             this.txt_EMail.TabIndex = 3;
@@ -97,10 +105,9 @@
             // txt_contNote
             // 
             this.txt_contNote.AcceptsReturn = true;
-            this.txt_contNote.Location = new System.Drawing.Point(0, 298);
-            this.txt_contNote.Multiline = true;
+            this.txt_contNote.Location = new System.Drawing.Point(10, 299);
             this.txt_contNote.Name = "txt_contNote";
-            this.txt_contNote.Size = new System.Drawing.Size(188, 122);
+            this.txt_contNote.Size = new System.Drawing.Size(188, 20);
             this.txt_contNote.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txt_contNote, "Please input in whatever information about the contact\r\nmust be at least 1 charac" +
         "ter");
@@ -108,7 +115,7 @@
             // txt_phoNum
             // 
             this.txt_phoNum.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.txt_phoNum.Location = new System.Drawing.Point(0, 191);
+            this.txt_phoNum.Location = new System.Drawing.Point(10, 192);
             this.txt_phoNum.Mask = "(999) 000-0000";
             this.txt_phoNum.Name = "txt_phoNum";
             this.txt_phoNum.Size = new System.Drawing.Size(100, 20);
@@ -118,7 +125,7 @@
             // 
             // txt_lastName
             // 
-            this.txt_lastName.Location = new System.Drawing.Point(6, 84);
+            this.txt_lastName.Location = new System.Drawing.Point(16, 85);
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(100, 20);
             this.txt_lastName.TabIndex = 2;
@@ -126,7 +133,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(125, 6);
+            this.btn_add.Location = new System.Drawing.Point(129, 3);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 8;
@@ -140,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Location = new System.Drawing.Point(19, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 11;
@@ -149,7 +156,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 68);
+            this.label2.Location = new System.Drawing.Point(13, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 12;
@@ -158,7 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 175);
+            this.label3.Location = new System.Drawing.Point(10, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 13;
@@ -167,7 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 122);
+            this.label4.Location = new System.Drawing.Point(13, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 14;
@@ -176,31 +183,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-3, 282);
+            this.label5.Location = new System.Drawing.Point(7, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Contact Information";
             // 
-            // groupBox2
+            // btn_clearEntry
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txt_firName);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txt_phoNum);
-            this.groupBox2.Controls.Add(this.btn_add);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.chk_type);
-            this.groupBox2.Controls.Add(this.txt_EMail);
-            this.groupBox2.Controls.Add(this.txt_contNote);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txt_lastName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 28);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 420);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
+            this.btn_clearEntry.Location = new System.Drawing.Point(129, 98);
+            this.btn_clearEntry.Name = "btn_clearEntry";
+            this.btn_clearEntry.Size = new System.Drawing.Size(75, 23);
+            this.btn_clearEntry.TabIndex = 17;
+            this.btn_clearEntry.Text = "Clear Entry";
+            this.toolTip1.SetToolTip(this.btn_clearEntry, "Clear the Entry");
+            this.btn_clearEntry.UseVisualStyleBackColor = true;
+            this.btn_clearEntry.Click += new System.EventHandler(this.btn_clearEntry_Click);
             // 
             // saveFileDialog1
             // 
@@ -214,7 +212,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.toolStrip_autoSave});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(897, 24);
@@ -275,7 +274,17 @@
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.btn_close_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStrip_autoSave
+            // 
+            this.toolStrip_autoSave.BackColor = System.Drawing.Color.Red;
+            this.toolStrip_autoSave.CheckOnClick = true;
+            this.toolStrip_autoSave.Name = "toolStrip_autoSave";
+            this.toolStrip_autoSave.Size = new System.Drawing.Size(74, 20);
+            this.toolStrip_autoSave.Text = "Auto-Save";
+            this.toolStrip_autoSave.ToolTipText = "Toggle Autosave";
+            this.toolStrip_autoSave.CheckedChanged += new System.EventHandler(this.toolStrip_autoSave_Click);
             // 
             // dgv_contacts
             // 
@@ -286,7 +295,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_contacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_contacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_firName,
@@ -294,77 +302,141 @@
             this.col_EMail,
             this.col_phoNum,
             this.col_contType,
-            this.col_contNotes});
+            this.col_contNotes,
+            this.col_contInd});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_contacts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_contacts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_contacts.Location = new System.Drawing.Point(225, 24);
+            this.dgv_contacts.Location = new System.Drawing.Point(313, 24);
             this.dgv_contacts.MultiSelect = false;
             this.dgv_contacts.Name = "dgv_contacts";
-            this.dgv_contacts.ReadOnly = true;
             this.dgv_contacts.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_contacts.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_contacts.RowTemplate.Height = 25;
+            this.dgv_contacts.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_contacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_contacts.Size = new System.Drawing.Size(672, 426);
+            this.dgv_contacts.Size = new System.Drawing.Size(584, 426);
             this.dgv_contacts.TabIndex = 18;
+            this.dgv_contacts.TabStop = false;
             this.dgv_contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contacts_CellClick);
             // 
             // col_firName
             // 
+            this.col_firName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_firName.FillWeight = 10F;
             this.col_firName.HeaderText = "First Name";
+            this.col_firName.MinimumWidth = 100;
             this.col_firName.Name = "col_firName";
-            this.col_firName.ReadOnly = true;
-            this.col_firName.Width = 76;
             // 
             // col_lastName
             // 
+            this.col_lastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_lastName.FillWeight = 10F;
             this.col_lastName.HeaderText = "Last Name";
+            this.col_lastName.MinimumWidth = 100;
             this.col_lastName.Name = "col_lastName";
-            this.col_lastName.ReadOnly = true;
-            this.col_lastName.Width = 77;
             // 
             // col_EMail
             // 
+            this.col_EMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.col_EMail.HeaderText = "E-Mail";
+            this.col_EMail.MinimumWidth = 75;
             this.col_EMail.Name = "col_EMail";
-            this.col_EMail.ReadOnly = true;
-            this.col_EMail.Width = 61;
+            this.col_EMail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_EMail.Width = 75;
             // 
             // col_phoNum
             // 
+            this.col_phoNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.col_phoNum.HeaderText = "Phone Number";
+            this.col_phoNum.MinimumWidth = 75;
             this.col_phoNum.Name = "col_phoNum";
-            this.col_phoNum.ReadOnly = true;
-            this.col_phoNum.Width = 95;
+            this.col_phoNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_phoNum.Width = 75;
             // 
             // col_contType
             // 
+            this.col_contType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.col_contType.HeaderText = "Contact Type";
             this.col_contType.Name = "col_contType";
-            this.col_contType.ReadOnly = true;
-            this.col_contType.Width = 69;
+            this.col_contType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_contType.Width = 75;
             // 
             // col_contNotes
             // 
+            this.col_contNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_contNotes.FillWeight = 90F;
             this.col_contNotes.HeaderText = "Contact Notes";
+            this.col_contNotes.MinimumWidth = 100;
             this.col_contNotes.Name = "col_contNotes";
-            this.col_contNotes.ReadOnly = true;
-            this.col_contNotes.Width = 92;
             // 
-            // AddressForm
+            // col_contInd
+            // 
+            this.col_contInd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.col_contInd.HeaderText = "Index";
+            this.col_contInd.Name = "col_contInd";
+            this.col_contInd.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col_contInd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.col_contInd.Visible = false;
+            this.col_contInd.Width = 81;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_clearEntry);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txt_contNote);
+            this.panel1.Controls.Add(this.txt_firName);
+            this.panel1.Controls.Add(this.btn_add);
+            this.panel1.Controls.Add(this.txt_lastName);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txt_phoNum);
+            this.panel1.Controls.Add(this.txt_EMail);
+            this.panel1.Controls.Add(this.chk_type);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(227, 335);
+            this.panel1.TabIndex = 22;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // frm_addressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 450);
             this.Controls.Add(this.dgv_contacts);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AddressForm";
+            this.Name = "frm_addressForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primary Form";
-            this.Load += new System.EventHandler(this.Frm_main_Load);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Load += new System.EventHandler(this.frm_addressForm_Load);
+            this.Resize += new System.EventHandler(this.frm_addressForm_reSize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contacts)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +455,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -396,12 +467,17 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_contacts;
+        private System.Windows.Forms.ToolStripMenuItem toolStrip_autoSave;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_clearEntry;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_firName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_phoNum;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_contType;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_contNotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_contInd;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
