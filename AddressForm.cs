@@ -53,7 +53,7 @@ namespace AdressBook //major updates needed
 
             readFromFile(); //read from the file
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
-            dgv_contacts.ClearSelection();
+            dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
@@ -82,8 +82,8 @@ namespace AdressBook //major updates needed
         {
             if (dgv_contacts.CurrentRow != null)
             {
-                dgv_contacts.ClearSelection();
-            }
+                dgv_contacts.ClearSelection(); //deselect row
+            } //if a row is selected (which therefore means it was editing an entry), deselect all rows
             txt_firName.Text = string.Empty; //empty first name
             txt_lastName.Text = string.Empty; //empty last name
             txt_phoNum.Text = string.Empty; //empty phone number
