@@ -189,73 +189,73 @@ namespace AdressBook //major updates needed
 
             //find errors (put some sort of warning system)
 
-            if (firstName == string.Empty) //check if no firstname
+            if (firstName == string.Empty)
             {
                 valid = false; //invalid 
-                errorIcon(txt_firName, "No Input");
-            } 
+                errorIcon(txt_firName, "No Input"); //display error
+            } //check if no firstname
             else 
             {
-                errorIcon(txt_firName, "No Input", true);
-            }
+                errorIcon(txt_firName, "No Input", true); //clear error
+            } //clear any errors from previous checks
             
-            if (lastName == string.Empty) //check if no lastname
+            if (lastName == string.Empty) 
             {
                 valid = false; //invalid
-                errorIcon(txt_lastName, "No Input");
-            }
+                errorIcon(txt_lastName, "No Input"); //display error
+            } //check if no lastname
             else
             {
-                errorIcon(txt_lastName, "No Input", true);
-            }
+                errorIcon(txt_lastName, "No Input", true); //clear error
+            } //clear any errors from previous checks
 
-            if (phoNum == string.Empty) //check if no phonenumber
+            if (phoNum == string.Empty) 
             {
                 valid = false; //invalid
-                errorIcon(txt_phoNum, "No Input");
-            } 
+                errorIcon(txt_phoNum, "No Input"); //display error
+            } //check if no phonenumber
             else
             {
-                errorIcon(txt_phoNum, "No Input", true);
-            }
-            
-            if (eMail == string.Empty) //check if no e-mail
+                errorIcon(txt_phoNum, "No Input", true); //clear error
+            } //clear any errors from previous checks
+
+            if (eMail == string.Empty)
             {
                 valid = false; //invalid
-                errorIcon(txt_EMail, "No Input");
-            } 
+                errorIcon(txt_EMail, "No Input"); //display error
+            }  //check if no e-mail
             else
             {
-                errorIcon(txt_EMail, "No Input", true);
-            }
-            
-            if (contNote == string.Empty) //check if no note
+                errorIcon(txt_EMail, "No Input", true); //clear error
+            } //clear any errors from previous checks
+
+            if (contNote == string.Empty)
             {
                 valid = false; //invalid
-                errorIcon(txt_contNote, "No Input");
-            }
+                errorIcon(txt_contNote, "No Input"); //display error
+            } //check if no note
             else {
-                errorIcon(txt_contNote, "No Input", true);
-            }
+                errorIcon(txt_contNote, "No Input", true); //clear error
+            } //clear any errors from previous checks
 
             if (editMode)
             {
                 if (valid == true || debug == true)
                 {
-                    Contact edit = selectContact(editInd);
-                    edit.firstname = firstName;
-                    edit.lastname = lastName;
-                    edit.phone = phoNum;
-                    edit.email = eMail;
-                    edit.notes = contNote;
-                    edit.buisness = contType;
+                    Contact edit = selectContact(editInd); //find the contact related to the selected row
+                    edit.firstname = firstName; //set the first name to the new first name
+                    edit.lastname = lastName; //set the last name to the new last name
+                    edit.phone = phoNum; //set the phone to the new phone
+                    edit.email = eMail; //set the email to the new e-mail
+                    edit.notes = contNote; //set the contact note to the new note
+                    edit.buisness = contType; //set the contact type to the new value
                     if (autoSave)
                     {
                         WriteToFile(); //save
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
-                    clear();
-                    btn_add.Text = btnAddTex;
+                    clear(); //clear entry and deselect row
+                    btn_add.Text = btnAddTex; //set the button to have it's original text
                     //clear and deselect row
 
                 }
