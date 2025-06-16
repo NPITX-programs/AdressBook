@@ -279,7 +279,7 @@ namespace AdressBook //major updates needed
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit(); //close
-        } //used exit system
+        } //exit system
 
         private void btn_svAs_Click(object sender, EventArgs e)
         {
