@@ -14,5 +14,6 @@ namespace AdressBook
         internal string phone; //phone number
         internal bool buisness; //buisness
         internal string notes; //notes about contact
+        internal int index; //the index of the entry
     }
 }
