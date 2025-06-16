@@ -202,7 +202,7 @@ namespace AdressBook //major updates needed
                     {
                         WriteToFile(); //save
                     } //autosave
-
+                    updateList(edit, editMode);
                 } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
