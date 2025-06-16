@@ -212,6 +212,7 @@ namespace AdressBook //major updates needed
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     dgv_contacts.ClearSelection();
                     clear();
+                    btn_add.Text = btnAddTex;
                     //clear and deselect row
                     
                 } 
