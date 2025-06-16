@@ -104,12 +104,12 @@ namespace AdressBook //major updates needed
                     editMode = false; //set edit to false
                 } //turns edit mode off if there is no selected row. That means it will add the entry
             } //checks if there is anything within the current row
-            if (editMode = false)
+            if (editMode == false)
             {
                 dgv_contacts.Rows.Add(value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact
             } else
             {
-                currentRow.Cells[].Value = value.firstname;
+                currentRow.Cells["First Name"].Value = value.firstname;
             }
             
         } //update list
