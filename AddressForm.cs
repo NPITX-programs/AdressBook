@@ -197,19 +197,19 @@ namespace AdressBook //major updates needed
             {
                 if (valid == true || debug == true) {
                     Contact edit = selectContact(editInd);
-                    edit.firstname = firstName;
-                    edit.lastname = lastName;
-                    edit.phone = phoNum;
-                    edit.email = eMail;
-                    edit.notes = contNote;
-                    edit.buisness = contType;
+                    edit.firstname = firstName; //edit first name
+                    edit.lastname = lastName; //edit last name
+                    edit.phone = phoNum; //edit phone number
+                    edit.email = eMail; //edit email
+                    edit.notes = contNote; //edit note
+                    edit.buisness = contType; //edit contact type
                     if (autoSave)
                     {
                         WriteToFile(); //save
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     clear(); //clear entry
-                    //clear and deselect row
+                    
                 } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
