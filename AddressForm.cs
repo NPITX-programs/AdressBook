@@ -256,11 +256,11 @@ namespace AdressBook //major updates needed
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     clear(); //clear entry and deselect row
                     btn_add.Text = btnAddTex; //set the button to have it's original text
-                    editInd = 0;
+                    editInd = 0; //set index to 0
                     //clear and deselect row
 
-                }
-            }
+                } //check valid
+            } //edit
             else if (editMode == false)
             {
                 if (valid == true || debug == true)
@@ -274,7 +274,7 @@ namespace AdressBook //major updates needed
                     } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
-            }
+            } //if it isn't edit
         } //add contact
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
