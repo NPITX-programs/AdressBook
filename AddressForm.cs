@@ -102,7 +102,7 @@ namespace AdressBook //major updates needed
         
         private void updateList(Contact value, bool editMode = false )
         {
-            var currentRow = dgv_contacts.CurrentRow;
+            var currentRow = dgv_contacts.CurrentRow; //get current row
             if ( editMode )
             {
                 if(currentRow == null)
@@ -112,16 +112,17 @@ namespace AdressBook //major updates needed
             } //checks if there is anything within the current row
             if (editMode == false)
             {
-                dgv_contacts.Rows.Add(value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact
-            } else
+                dgv_contacts.Rows.Add(value.firstname, value.lastname, value.email, value.phone, value.buisness, value.notes, value.index); //update the data grid view with the contents of the contact as a new row
+            } //if nothing selected, add new row
+            else
             {
-                currentRow.Cells[0].Value = value.firstname;
-                currentRow.Cells[1].Value = value.lastname;
-                currentRow.Cells[2].Value = value.email;
-                currentRow.Cells[3].Value = value.phone;
-                currentRow.Cells[4].Value = value.buisness;
-                currentRow.Cells[5].Value = value.notes;
-            }
+                currentRow.Cells[0].Value = value.firstname; //set the contents of the selected row
+                currentRow.Cells[1].Value = value.lastname; //set the contents of the selected row
+                currentRow.Cells[2].Value = value.email; //set the contents of the selected row
+                currentRow.Cells[3].Value = value.phone; //set the contents of the selected row
+                currentRow.Cells[4].Value = value.buisness; //set the contents of the selected row
+                currentRow.Cells[5].Value = value.notes; //set the contents of the selected row
+            } //edit selected row
             
         } //update list
 
