@@ -150,7 +150,7 @@ namespace AdressBook //major updates needed
             bool contType = chk_type.Checked; //if checked
             #endregion //simplified variables for the content of the contact
 
-            //find errors
+            //find errors (put some sort of warning system)
 
             if (firstName == string.Empty) //check if no firstname
             {
