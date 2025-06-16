@@ -187,7 +187,7 @@ namespace AdressBook //major updates needed
                     {
                         WriteToFile(); //save
                     } //autosave
-
+                    //clear and deselect row
                 } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
