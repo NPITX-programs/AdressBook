@@ -221,7 +221,7 @@ namespace AdressBook //major updates needed
                 errorIcon(txt_EMail, "No Input");
             } else
             {
-                errorIcon(txt_EMail, "No Input", true);
+                errorIcon(txt_EMail, "No Input", true); //issue
             }
             
             if (contNote == string.Empty) //check if no note
