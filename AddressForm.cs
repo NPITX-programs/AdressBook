@@ -208,7 +208,7 @@ namespace AdressBook //major updates needed
                         WriteToFile(); //save
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
-                    clear();
+                    clear(); //clear entry
                     //clear and deselect row
                 } 
             } else if (editMode == false) {
