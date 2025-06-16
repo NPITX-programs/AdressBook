@@ -365,8 +365,8 @@ namespace AdressBook //major updates needed
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
         {
-            autoSave = toolStrip_autoSave.Checked;
-            bool auto_save = autoSave;
+            autoSave = toolStrip_autoSave.Checked; //set external variable to what is toggled
+            bool auto_save = autoSave; //internal variable to external variable
             if (auto_save )
             {
                 toolStrip_autoSave.BackColor = Color.Green; //set to green
@@ -375,7 +375,7 @@ namespace AdressBook //major updates needed
             {
                  toolStrip_autoSave.BackColor = Color.Red; //set to red
             } //toggle off
-        }
+        } //toggle auto-save
 
         private void frm_addressForm_reSize(object sender, EventArgs e) //size table
         {
