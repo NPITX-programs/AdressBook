@@ -53,6 +53,7 @@ namespace AdressBook //major updates needed
 
             readFromFile(); //read from the file
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
+            dgv_contacts.ClearSelection();
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
             saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
             toolStrip_autoSave.BackColor = Color.Red;
@@ -61,6 +62,7 @@ namespace AdressBook //major updates needed
             int formWidth = this.ClientSize.Width;
             distFromEdge = formWidth - tblEdge;
             btnAddTex = btn_add.Text;
+
         } //when form loads
         int ind = 0; //index for the current contact
 
@@ -78,6 +80,10 @@ namespace AdressBook //major updates needed
          
         private void clear()
         {
+            if (dgv_contacts.CurrentRow != null)
+            {
+                dgv_contacts.ClearSelection();
+            }
             txt_firName.Text = string.Empty; //empty first name
             txt_lastName.Text = string.Empty; //empty last name
             txt_phoNum.Text = string.Empty; //empty phone number
@@ -207,7 +213,11 @@ namespace AdressBook //major updates needed
                     {
                         WriteToFile(); //save
                     } //autosave
-                    updateList(edit, editMode);
+                    updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
+                    clear();
+                    btn_add.Text = btnAddTex;
+                    //clear and deselect row
+                    
                 } 
             } else if (editMode == false) {
                 if (valid == true || debug == true)
