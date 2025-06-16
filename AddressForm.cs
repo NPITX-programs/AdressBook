@@ -255,6 +255,7 @@ namespace AdressBook //major updates needed
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     clear();
                     btn_add.Text = btnAddTex;
+                    editInd = 0;
                     //clear and deselect row
 
                 }
