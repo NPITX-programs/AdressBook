@@ -198,7 +198,7 @@ namespace AdressBook //major updates needed
             if (editMode)
             {
                 if (valid == true || debug == true) {
-                    Contact edit = selectContact(editInd);
+                    Contact edit = selectContact(editInd); //get the contact that needs to be edited
                     edit.firstname = firstName; //edit first name
                     edit.lastname = lastName; //edit last name
                     edit.phone = phoNum; //edit phone number
