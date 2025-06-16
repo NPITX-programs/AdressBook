@@ -133,18 +133,18 @@ namespace AdressBook //major updates needed
             if(total == 0)
             {
                 val = Program.contacts.Count; //set total to be the length of the list
-            } 
+            } //if the input is 0
             else
             {
                 val = total; //set total to the input value
-            }
+            } //if the input is a value, use it
             total = val; //set the total to val. as val was set to total, it's the same, unless it was set to 0
                          //if the "total" was 0, then it will be set to the length of the list
             for (int count = 0; count < total; count++)
             {
                 updateList(Program.contacts[ind]); //update the list
                 ind++; //increase index by one (apparently count doesn't increase)
-            }
+            } //repeat to add all the stuff to the list
         } //generate the list, if no input it's assumed to use the entire length of the list
 
         private Contact createCont(string firstName, string lastName, string phoNum, string eMail, string contNote, bool contType, int contInd)
