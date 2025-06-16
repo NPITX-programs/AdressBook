@@ -161,6 +161,15 @@ namespace AdressBook //major updates needed
             return c; //output the new contact
         } //creates the class for the current input
 
+        private void errorIcon(Control input, string error, bool clear = false)
+        {
+            var errorText = error;
+            if (clear) {
+                error = "";
+            }
+            errorProvider1.SetError(input, errorText);
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             bool valid = true; //default to valid
@@ -181,29 +190,53 @@ namespace AdressBook //major updates needed
             if (firstName == string.Empty) //check if no firstname
             {
                 valid = false; //invalid
-                errorProvider1.SetError(txt_firName, "no input");
+                errorIcon(txt_firName, "No Input");
+            } 
+            else {
+                errorIcon(txt_firName, "No Input", true);
             }
+            
             if (lastName == string.Empty) //check if no lastname
             {
                 valid = false; //invalid
-                errorProvider.SetError(txt_lastName, "no input");
+                errorIcon(txt_lastName, "No Input");
             }
+            else
+            {
+                errorIcon(txt_lastName, "No Input", true);
+            }
+
             if (phoNum == string.Empty) //check if no phonenumber
             {
                 valid = false; //invalid
+                errorIcon(txt_phoNum, "No Input");
+            } else
+            {
+                errorIcon(txt_phoNum, "No Input", true);
             }
+            
             if (eMail == string.Empty) //check if no e-mail
             {
                 valid = false; //invalid
+                errorIcon(txt_EMail, "No Input");
+            } else
+            {
+                errorIcon(txt_EMail, "No Input", true);
             }
+            
             if (contNote == string.Empty) //check if no note
             {
                 valid = false; //invalid
+                errorIcon(txt_contNote, "No Input");
+            }
+            else {
+                errorIcon(txt_contNote, "No Input", true);
             }
 
             if (editMode)
             {
-                if (valid == true || debug == true) {
+                if (valid == true || debug == true)
+                {
                     Contact edit = selectContact(editInd);
                     edit.firstname = firstName;
                     edit.lastname = lastName;
@@ -219,9 +252,11 @@ namespace AdressBook //major updates needed
                     clear();
                     btn_add.Text = btnAddTex;
                     //clear and deselect row
-                    
-                } 
-            } else if (editMode == false) {
+
+                }
+            }
+            else if (editMode == false)
+            {
                 if (valid == true || debug == true)
                 {
                     newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
