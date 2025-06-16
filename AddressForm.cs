@@ -166,7 +166,7 @@ namespace AdressBook //major updates needed
         {
             var errorText = error;
             if (clear) {
-                error = "";
+                errorText = "";
             }
             errorProvider1.SetError(input, errorText);
         }
