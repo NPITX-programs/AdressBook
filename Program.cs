@@ -20,6 +20,8 @@ namespace AdressBook
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_addressForm());
         }
+        internal const bool debug = true; //global debug var
+        internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information: CONCEPT- some way to externally configure it, and some sort of integration that allows both global config and granular (specifc lines change)
         internal const bool debug = true; //global var to controll default for debugs
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";

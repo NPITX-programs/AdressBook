@@ -14,7 +14,7 @@ namespace AdressBook //major updates needed
 {
     public partial class frm_addressForm : Form
     {
-        const bool debug = Program.debug; //this sets the debug system to the global debug variable
+        const bool debug = Program.debug; //this sets the debug system to the global debug variable: CONCEPT- add in a method to switch between useing global (meaning it will use the global var) or non-global (meaning this part can be controlled independently)
         const char sep = '~'; //seperation character
         public frm_addressForm()
         {
