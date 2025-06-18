@@ -1,0 +1,8 @@
+the original generate list used the length of the file
+however, the new read method gets the entire file at once
+
+few options;
+	-use a similar system to the old one. with modifications, fully integrate
+	-re-design next entry for alternate use, and integrate that one which factors in changes
+	-put a system like the old one directly into the loop
+	-redesign to not need indicies, or at least the indicies as they are now
