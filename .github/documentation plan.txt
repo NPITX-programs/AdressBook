@@ -1,5 +1,0 @@
-replace the flowchart with a combination of;
-	detailed explanations
-	the code comments
-	flowcharts
-	design docs
