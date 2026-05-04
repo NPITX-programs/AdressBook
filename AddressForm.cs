@@ -41,7 +41,7 @@ namespace AdressBook //major updates needed
         string btnAddTex = string.Empty; //placeholder button text
 
         const string name1 = "store"; //name of file
-        const string exten1 = "con"; //extension of file
+        const string exten1 = "csv"; //extension of file
         const int min = 6; //minimum total values in an entry
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
