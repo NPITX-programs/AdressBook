@@ -1,0 +1,5 @@
+concept:
+make the clear system more modular and robust. possible methods include:
+	-use a loop to detect the parts that are the class, and clear them
+	-use a method with a text box input
+	-locate all text boxes in a field (perhaps the input group box), and use a loop to iterate through them
