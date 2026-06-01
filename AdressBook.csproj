@@ -90,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\Format.txt" />
-    <Content Include="Database\SQLQuery1.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
