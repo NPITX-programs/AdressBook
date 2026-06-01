@@ -1,0 +1,8 @@
+ideas to improve exit:
+	a confirm system.
+		Perhaps if unsaved, ask if save is wanted
+	better UI access
+
+interesting format?
+something dynamic?
+timer-based?
