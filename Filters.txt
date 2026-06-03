@@ -1,1 +1,4 @@
 SELECT fields FROM table
+to filter, add
+WHERE
+For instance, ContactID > 10, making contact ID need to be above 10
