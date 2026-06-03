@@ -7,3 +7,4 @@ AND "condition"
 parenthases use to check multiple things in groups
 for things that are general things:
 use LIKE: so;
+WHERE field LIKE condition
