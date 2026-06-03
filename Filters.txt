@@ -5,3 +5,5 @@ For instance, ContactID > 10, making contact ID need to be above 10
 for multiple, and
 AND "condition"
 parenthases use to check multiple things in groups
+for things that are general things:
+use LIKE: so;
