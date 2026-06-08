@@ -3,6 +3,7 @@ for precise:
 to filter, add
 WHERE
 For instance, ContactID > 10, making contact ID need to be above 10
+not equal to: !=
 greater than or equal >=
 AND "condition"
 parenthases use to check multiple things in groups
