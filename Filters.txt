@@ -5,6 +5,8 @@ WHERE
 For instance, ContactID > 10, making contact ID need to be above 10
 not equal to: !=
 greater than or equal >=
+less than or equal <=
+for multiple, use "AND" (use "or" for, well, or)
 AND "condition"
 parenthases use to check multiple things in groups
 for things that are general things:
