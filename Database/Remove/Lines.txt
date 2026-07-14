@@ -1,6 +1,6 @@
 --delete
 DELETE FROM Contacts
-where FirstName = ''
+where FirstName = 'Raymond'
 
 -- view
 Select * From Contacts
