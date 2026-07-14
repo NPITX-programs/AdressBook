@@ -1,3 +1,5 @@
 --delete
+DELETE FROM Contacts
 
 -- view
+Select * From Contacts
