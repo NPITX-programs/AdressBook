@@ -1,3 +1,12 @@
+Remove 1: 
+--delete
+DELETE FROM Contacts
+where FirstName = 'John'
+
+-- view
+Select * From Contacts
+__________________________________________________
+Remove 2:
 --delete
 DELETE FROM Contacts
 where FirstName = 'Raymond'
