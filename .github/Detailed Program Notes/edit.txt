@@ -1,0 +1,1 @@
+if row selected, change add to edit, and allow canceling
