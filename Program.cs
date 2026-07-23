@@ -58,6 +58,11 @@ namespace AdressBook
                 _conn.Open();
 
                 _reader = _cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+
+                }
             }
             finally { }
         }
