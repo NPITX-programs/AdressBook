@@ -35,7 +35,7 @@ namespace AdressBook
         static SqlConnection _conn;
 
         //instructions to the DB that allow for SQL code
-        static SqlCommand _command;
+        static SqlCommand _cmd;
 
         //Allows to unpack records when a SELECT query is used
         static SqlDataReader _reader;
