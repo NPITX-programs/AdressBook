@@ -39,6 +39,8 @@ namespace AdressBook
 
         //Allows to unpack records when a SELECT query is used
         static SqlDataReader _reader;
+
+        //these are for classes that will be 
         #endregion
     }
     internal static class coreCommands
