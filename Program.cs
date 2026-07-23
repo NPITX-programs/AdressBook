@@ -53,6 +53,9 @@ namespace AdressBook
             {
                 _conn = new SqlConnection(conString);
                 _cmd = new SqlCommand(sqlString, _conn);
+
+                //open the connection to allow "travel" to and from DB
+                _conn.Open();
             }
         }
     #endregion
