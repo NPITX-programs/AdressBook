@@ -56,7 +56,10 @@ namespace AdressBook
 
                 //open the connection to allow "travel" to and from DB
                 _conn.Open();
+
+                _reader = _cmd.ExecuteReader();
             }
+            finally { }
         }
     #endregion
 }
