@@ -29,7 +29,7 @@ namespace AdressBook
         //SQL COMMAND DEFINITIONS
         #region SQL
         //blueprint on how to create the connection
-        static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True;Trust Server Certificate=True";
+        static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
 
         //physical connection to the Database that we can open/close
         static SqlConnection _conn;
