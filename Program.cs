@@ -25,6 +25,21 @@ namespace AdressBook
         internal const bool debug = true; //global var to controll default for debugs
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
+
+        //SQL COMMAND DEFINITIONS
+        #region SQL
+        //blueprint on how to create the connection
+        static string conString = 
+
+        //physical connection to the Database that we can open/close
+        static SqlConnection _conn;
+
+        //instructions to the DB that allow for SQL code
+        static SqlCommand _command;
+
+        //Allows to unpack records when a SELECT query is used
+        static SqlDataReader _reader;
+        #endregion
     }
     internal static class coreCommands
     {

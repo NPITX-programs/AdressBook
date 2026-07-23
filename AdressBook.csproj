@@ -60,9 +60,7 @@
     </Compile>
     <Compile Include="Contact.cs" />
     <Compile Include="fileCode.cs" />
-    <Compile Include="..\..\Advanced Appdev\AdressBook-DatabasePractice\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.cs</DependentUpon>
