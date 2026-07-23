@@ -91,12 +91,12 @@ namespace AdressBook.files
         }
     } //the code for files
 
-    internal static class sqlServer
+    /* internal static class sqlServer
     {
         //name of table: Contacts
         internal static void getContacts()
         {
 
         }
-    }
+    } */
 }

@@ -35,14 +35,39 @@ namespace AdressBook
         static SqlConnection _conn;
 
         //instructions to the DB that allow for SQL code
-        static SqlCommand _command;
+        static SqlCommand _cmd;
 
         //Allows to unpack records when a SELECT query is used
         static SqlDataReader _reader;
 
         //these are for classes that will be 
         #endregion
-    }
+
+        //clases
+        #region classes
+        //name of table: Contacts
+        internal static void getContacts()
+        {
+            string sqlString = "SELECT * FROM Contacts";
+            try
+            {
+                _conn = new SqlConnection(conString);
+                _cmd = new SqlCommand(sqlString, _conn);
+
+                //open the connection to allow "travel" to and from DB
+                _conn.Open();
+
+                _reader = _cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+
+                }
+            }
+            finally { }
+        }
+    #endregion
+}
     internal static class coreCommands
     {
         internal static void error(string message, Exception ex = null, bool revealException = false)
