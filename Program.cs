@@ -80,7 +80,15 @@ namespace AdressBook
                 }
                 _conn.Close(); //close the connection for security
             }
-            finally { }
+            catch ( Exception ex )
+            {
+                MessageBox.Show("Error ocured when attempting to retrieve from dbo.contacts" + ex.Message);
+                if(_conn.State != ConnectionState.Closed)
+                {
+                    _conn.Close(); //close the connection for security
+                }
+            }
+            
         }
     #endregion
 }
