@@ -75,6 +75,8 @@ namespace AdressBook
                     {
                         c.notes = string.Empty;
                     }
+
+                    contacts.Add(c);
                 }
             }
             finally { }
