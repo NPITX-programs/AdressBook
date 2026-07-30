@@ -71,6 +71,9 @@ namespace AdressBook
                     if(_reader.GetValue(6) != DBNull.Value)
                     {
                         c.notes = _reader.GetString(6);
+                    } else
+                    {
+                        c.notes = string.Empty;
                     }
                 }
             }
