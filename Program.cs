@@ -67,8 +67,11 @@ namespace AdressBook
                     c.lastname = _reader.GetString(2);
                     c.phone = _reader.GetString(3);
                     c.email = _reader.GetString(4);
-                    
-                    c.
+                    c.buisness = _reader.GetBoolean(5);
+                    if(_reader.GetValue(6) != DBNull.Value)
+                    {
+                        c.notes = _reader.GetString(6);
+                    }
                 }
             }
             finally { }
