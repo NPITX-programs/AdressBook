@@ -61,7 +61,13 @@ namespace AdressBook
 
                 while (_reader.Read())
                 {
-
+                    Contact c = new Contact();
+                    c.index = Convert.ToInt32(_reader.GetValue(0));
+                    c.firstname = _reader.GetString(1);
+                    c.lastname = _reader.GetString(2);
+                    c.email = _reader.GetString(3);
+                    c.phone = _reader.GetString(4);
+                    c.
                 }
             }
             finally { }
