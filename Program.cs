@@ -78,6 +78,7 @@ namespace AdressBook
 
                     contacts.Add(c);
                 }
+                _conn.Close(); //close the connection for security
             }
             finally { }
         }
