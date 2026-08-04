@@ -109,6 +109,12 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@emal", email);
                 _cmd.Parameters.AddWithValue("@buisness", buisness);
                 _cmd.Parameters.AddWithValue("@notes", notes);
+
+                _conn.Open();
+
+                id = (int)_cmd.ExecuteScalar(); //adds record into DB, returns identity which is stored in ID
+
+                _conn.Close();
             }
             catch (Exception ex)
             {
