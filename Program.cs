@@ -99,7 +99,16 @@ namespace AdressBook
 
             try
             {
-                _conn = new SqlConnection(sqlString);
+                _conn = new SqlConnection(conString);
+                _cmd = new SqlCommand(sqlString, _conn);
+
+                _cmd.Parameters.Add("@firstname", SqlDbType.VarChar);
+                _cmd.Parameters["@firstname"].Value = firstname;
+                _cmd.Parameters.AddWithValue("@lastname", lastname);
+                _cmd.Parameters.AddWithValue("@phone", phone);
+                _cmd.Parameters.AddWithValue("@emal", email);
+                _cmd.Parameters.AddWithValue("@buisness", buisness);
+                _cmd.Parameters.AddWithValue("@notes", notes);
             }
             catch (Exception ex)
             {
