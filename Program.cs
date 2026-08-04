@@ -92,7 +92,12 @@ namespace AdressBook
         } //get contacts
         internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes)
         {
+            int id = 0;
+            
+            string sqlString = "INSERT INTO Contacts (FirstName, LastName, PhoneNum, EMail, Type, Notes) " +
+                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes);
 
+                return id;
         }
     #endregion
 }
