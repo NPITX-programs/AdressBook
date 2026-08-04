@@ -95,7 +95,7 @@ namespace AdressBook
             int id = 0;
             
             string sqlString = "INSERT INTO Contacts (FirstName, LastName, PhoneNum, EMail, Type, Notes) " +
-                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes);
+                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes); SELECT SCOPE_IDENTITY()"
 
                 return id;
         }
