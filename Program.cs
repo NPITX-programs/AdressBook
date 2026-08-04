@@ -89,7 +89,7 @@ namespace AdressBook
                 }
             }
             
-        }
+        } //get contacts
     #endregion
 }
     internal static class coreCommands
