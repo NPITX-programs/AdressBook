@@ -90,6 +90,10 @@ namespace AdressBook
             }
             
         } //get contacts
+        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes)
+        {
+
+        }
     #endregion
 }
     internal static class coreCommands
