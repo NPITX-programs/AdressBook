@@ -93,11 +93,23 @@ namespace AdressBook
         internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes)
         {
             int id = 0;
-            
-            string sqlString = "INSERT INTO Contacts (FirstName, LastName, PhoneNum, EMail, Type, Notes) " +
-                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes); SELECT SCOPE_IDENTITY()"
 
-                return id;
+            string sqlString = "INSERT INTO Contacts (FirstName, LastName, PhoneNum, EMail, Type, Notes) " +
+                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes); SELECT SCOPE_IDENTITY();";
+
+            try
+            {
+                _conn = new SqlConnection(sqlString);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ocured when attempting to add to dbo.contacts" + ex.Message);
+                if (_conn.State != ConnectionState.Closed)
+                {
+                    _conn.Close(); //close the connection for security
+                }
+            }
+            return id;
         }
     #endregion
 }
