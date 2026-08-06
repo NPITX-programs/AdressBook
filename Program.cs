@@ -5,6 +5,8 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdressBook.files; //this is the namespace for the files that are in the project. This is where the classes are stored
+using System.Data.SqlClient;
+using System.Data;
 
 namespace AdressBook
 {
@@ -23,7 +25,109 @@ namespace AdressBook
         internal const bool debug = true; //global var to controll default for debugs
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
-    }
+
+        //SQL COMMAND DEFINITIONS
+        #region SQL
+        //blueprint on how to create the connection
+        static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
+
+        //physical connection to the Database that we can open/close
+        static SqlConnection _conn;
+
+        //instructions to the DB that allow for SQL code
+        static SqlCommand _cmd;
+
+        //Allows to unpack records when a SELECT query is used
+        static SqlDataReader _reader;
+
+        //these are for classes that will be 
+        #endregion
+
+        //clases
+        #region classes
+        //name of table: Contacts
+        internal static void getContacts()
+        {
+            string sqlString = "SELECT * FROM Contacts";
+            try
+            {
+                _conn = new SqlConnection(conString);
+                _cmd = new SqlCommand(sqlString, _conn);
+
+                //open the connection to allow "travel" to and from DB
+                _conn.Open();
+
+                _reader = _cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+                    Contact c = new Contact();
+                    c.index = Convert.ToInt32(_reader.GetValue(0));
+                    c.firstname = _reader.GetString(1);
+                    c.lastname = _reader.GetString(2);
+                    c.phone = _reader.GetString(3);
+                    c.email = _reader.GetString(4);
+                    c.buisness = _reader.GetBoolean(5);
+                    if(_reader.GetValue(6) != DBNull.Value)
+                    {
+                        c.notes = _reader.GetString(6);
+                    } else
+                    {
+                        c.notes = string.Empty;
+                    }
+
+                    contacts.Add(c);
+                }
+                _conn.Close(); //close the connection for security
+            }
+            catch ( Exception ex )
+            {
+                MessageBox.Show("Error ocured when attempting to retrieve from dbo.contacts" + ex.Message);
+                if(_conn.State != ConnectionState.Closed)
+                {
+                    _conn.Close(); //close the connection for security
+                }
+            }
+            
+        } //get contacts
+        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes)
+        {
+            int id = 0;
+
+            string sqlString = "INSERT INTO Contacts (FirstName, LastName, PhoneNum, EMail, Type, Notes) " +
+                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes); SELECT SCOPE_IDENTITY();";
+
+            try
+            {
+                _conn = new SqlConnection(conString);
+                _cmd = new SqlCommand(sqlString, _conn);
+
+                _cmd.Parameters.Add("@firstname", SqlDbType.VarChar);
+                _cmd.Parameters["@firstname"].Value = firstname;
+                _cmd.Parameters.AddWithValue("@lastname", lastname);
+                _cmd.Parameters.AddWithValue("@phone", phone);
+                _cmd.Parameters.AddWithValue("@emal", email);
+                _cmd.Parameters.AddWithValue("@buisness", buisness);
+                _cmd.Parameters.AddWithValue("@notes", notes);
+
+                _conn.Open();
+
+                id = (int)_cmd.ExecuteScalar(); //adds record into DB, returns identity which is stored in ID
+
+                _conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ocured when attempting to add to dbo.contacts" + ex.Message);
+                if (_conn.State != ConnectionState.Closed)
+                {
+                    _conn.Close(); //close the connection for security
+                }
+            }
+            return id;
+        }
+    #endregion
+}
     internal static class coreCommands
     {
         internal static void error(string message, Exception ex = null, bool revealException = false)
