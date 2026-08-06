@@ -89,6 +89,42 @@ namespace AdressBook
                 }
             }
             
+        } //get contacts
+        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes)
+        {
+            int id = 0;
+
+            string sqlString = "INSERT INTO Contacts (FirstName, LastName, PhoneNum, EMail, Type, Notes) " +
+                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes); SELECT SCOPE_IDENTITY();";
+
+            try
+            {
+                _conn = new SqlConnection(conString);
+                _cmd = new SqlCommand(sqlString, _conn);
+
+                _cmd.Parameters.Add("@firstname", SqlDbType.VarChar);
+                _cmd.Parameters["@firstname"].Value = firstname;
+                _cmd.Parameters.AddWithValue("@lastname", lastname);
+                _cmd.Parameters.AddWithValue("@phone", phone);
+                _cmd.Parameters.AddWithValue("@emal", email);
+                _cmd.Parameters.AddWithValue("@buisness", buisness);
+                _cmd.Parameters.AddWithValue("@notes", notes);
+
+                _conn.Open();
+
+                id = (int)_cmd.ExecuteScalar(); //adds record into DB, returns identity which is stored in ID
+
+                _conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ocured when attempting to add to dbo.contacts" + ex.Message);
+                if (_conn.State != ConnectionState.Closed)
+                {
+                    _conn.Close(); //close the connection for security
+                }
+            }
+            return id;
         }
     #endregion
 }
