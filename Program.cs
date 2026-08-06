@@ -127,6 +127,12 @@ namespace AdressBook
             }
             return id; //output the ID
         }
+
+        //edit
+        internal static void editContacts()
+        {
+
+        }
     #endregion
 }
     internal static class coreCommands
