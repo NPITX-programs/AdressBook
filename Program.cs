@@ -90,16 +90,17 @@ namespace AdressBook
             }
             
         } //get contacts
-        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes)
+
+        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes) //add contents
         {
-            int id = 0;
+            int id = 0; //set ID to 0 (that way, if a 0 appears elsewhere, we know something is off)
 
             string sqlString = "INSERT INTO Contacts (FirstName, LastName, PhoneNum, EMail, Type, Notes) " +
-                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes); SELECT SCOPE_IDENTITY();";
+                "VALUES(@firstname, @lastname, @phone, @email, @buisness, @notes); SELECT SCOPE_IDENTITY();"; //string of query
 
-            try
+            try //attempt
             {
-                _conn = new SqlConnection(conString);
+                _conn = new SqlConnection(conString); 
                 _cmd = new SqlCommand(sqlString, _conn);
 
                 _cmd.Parameters.Add("@firstname", SqlDbType.VarChar);
