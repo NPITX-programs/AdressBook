@@ -100,15 +100,15 @@ namespace AdressBook
 
             try //attempt
             {
-                _conn = new SqlConnection(conString); 
-                _cmd = new SqlCommand(sqlString, _conn);
+                _conn = new SqlConnection(conString); //connect command
+                _cmd = new SqlCommand(sqlString, _conn); //connect
 
-                _cmd.Parameters.Add("@firstname", SqlDbType.VarChar);
-                _cmd.Parameters["@firstname"].Value = firstname;
-                _cmd.Parameters.AddWithValue("@lastname", lastname);
-                _cmd.Parameters.AddWithValue("@phone", phone);
-                _cmd.Parameters.AddWithValue("@emal", email);
-                _cmd.Parameters.AddWithValue("@buisness", buisness);
+                _cmd.Parameters.Add("@firstname", SqlDbType.VarChar); //set first paramater to input value
+                _cmd.Parameters["@firstname"].Value = firstname; //set second paramater to input value
+                _cmd.Parameters.AddWithValue("@lastname", lastname); //set third paramater to input value
+                _cmd.Parameters.AddWithValue("@phone", phone); //set fourth paramater to input value
+                _cmd.Parameters.AddWithValue("@emal", email); //set fifth paramater to input value
+                _cmd.Parameters.AddWithValue("@buisness", buisness); //set sixth paramater
                 _cmd.Parameters.AddWithValue("@notes", notes);
 
                 _conn.Open();
