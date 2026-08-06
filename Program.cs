@@ -111,21 +111,21 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@buisness", buisness); //set sixth paramater
                 _cmd.Parameters.AddWithValue("@notes", notes);
 
-                _conn.Open();
+                _conn.Open(); //open connection
 
                 id = (int)_cmd.ExecuteScalar(); //adds record into DB, returns identity which is stored in ID
 
-                _conn.Close();
+                _conn.Close(); //close id
             }
-            catch (Exception ex)
+            catch (Exception ex) //warn if er ror
             {
-                MessageBox.Show("Error ocured when attempting to add to dbo.contacts" + ex.Message);
+                MessageBox.Show("Error ocured when attempting to add to dbo.contacts" + ex.Message); //output the error and what was done when it happened
                 if (_conn.State != ConnectionState.Closed)
                 {
                     _conn.Close(); //close the connection for security
                 }
             }
-            return id;
+            return id; //output the ID
         }
     #endregion
 }
