@@ -59,30 +59,30 @@ namespace AdressBook
 
                 _reader = _cmd.ExecuteReader();
 
-                while (_reader.Read())
+                while (_reader.Read()) //if it can read, continue
                 {
-                    Contact c = new Contact();
-                    c.index = Convert.ToInt32(_reader.GetValue(0));
-                    c.firstname = _reader.GetString(1);
-                    c.lastname = _reader.GetString(2);
-                    c.phone = _reader.GetString(3);
-                    c.email = _reader.GetString(4);
-                    c.buisness = _reader.GetBoolean(5);
-                    if(_reader.GetValue(6) != DBNull.Value)
+                    Contact c = new Contact(); //make contact
+                    c.index = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
+                    c.firstname = _reader.GetString(1); //get the first name, store it in firstname
+                    c.lastname = _reader.GetString(2); //get the last name, st ore it in lastname
+                    c.phone = _reader.GetString(3); //get the phone number, store it in phone number
+                    c.email = _reader.GetString(4); //get the e-mail, store it in e-mail
+                    c.buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
+                    if(_reader.GetValue(6) != DBNull.Value) //check for notes
                     {
-                        c.notes = _reader.GetString(6);
+                        c.notes = _reader.GetString(6); //if notes, put notes in notes
                     } else
                     {
-                        c.notes = string.Empty;
+                        c.notes = string.Empty; //if no notes, put empty string in notes
                     }
 
-                    contacts.Add(c);
+                    contacts.Add(c); //add the class into the list
                 }
                 _conn.Close(); //close the connection for security
             }
-            catch ( Exception ex )
+            catch ( Exception ex ) //check for error
             {
-                MessageBox.Show("Error ocured when attempting to retrieve from dbo.contacts" + ex.Message);
+                MessageBox.Show("Error ocured when attempting to retrieve from dbo.contacts" + ex.Message); //if error, say what operation it was (in this case, read), then show error
                 if(_conn.State != ConnectionState.Closed)
                 {
                     _conn.Close(); //close the connection for security
