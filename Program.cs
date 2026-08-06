@@ -103,13 +103,13 @@ namespace AdressBook
                 _conn = new SqlConnection(conString); //connect command
                 _cmd = new SqlCommand(sqlString, _conn); //connect
 
-                _cmd.Parameters.Add("@firstname", SqlDbType.VarChar); //set first paramater to input value
-                _cmd.Parameters["@firstname"].Value = firstname; //set second paramater to input value
+                _cmd.Parameters.Add("@firstname", SqlDbType.VarChar); //prepare to set first paramater to input value
+                _cmd.Parameters["@firstname"].Value = firstname; //set first paramater to input value
                 _cmd.Parameters.AddWithValue("@lastname", lastname); //set third paramater to input value
-                _cmd.Parameters.AddWithValue("@phone", phone); //set fourth paramater to input value
-                _cmd.Parameters.AddWithValue("@emal", email); //set fifth paramater to input value
-                _cmd.Parameters.AddWithValue("@buisness", buisness); //set sixth paramater
-                _cmd.Parameters.AddWithValue("@notes", notes);
+                _cmd.Parameters.AddWithValue("@phone", phone); //set third paramater to input value
+                _cmd.Parameters.AddWithValue("@emal", email); //set fourth paramater to input value
+                _cmd.Parameters.AddWithValue("@buisness", buisness); //set fifth paramater to input value
+                _cmd.Parameters.AddWithValue("@notes", notes); //set sixth paramater
 
                 _conn.Open(); //open connection
 
@@ -117,7 +117,7 @@ namespace AdressBook
 
                 _conn.Close(); //close id
             }
-            catch (Exception ex) //warn if er ror
+            catch (Exception ex) //warn if error
             {
                 MessageBox.Show("Error ocured when attempting to add to dbo.contacts" + ex.Message); //output the error and what was done when it happened
                 if (_conn.State != ConnectionState.Closed)
