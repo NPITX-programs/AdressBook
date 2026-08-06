@@ -1,0 +1,1 @@
+severed out 2 commits (basically reset the branch to a previous commit, then amended the commit to change the commit. By force-pushing without pulling, the other commits where "shifted" to the side, severed from this branch
