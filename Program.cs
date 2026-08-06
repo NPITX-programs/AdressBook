@@ -48,11 +48,11 @@ namespace AdressBook
         //name of table: Contacts
         internal static void getContacts()
         {
-            string sqlString = "SELECT * FROM Contacts";
+            string sqlString = "SELECT * FROM Contacts"; //query string
             try
             {
-                _conn = new SqlConnection(conString);
-                _cmd = new SqlCommand(sqlString, _conn);
+                _conn = new SqlConnection(conString); //open connection
+                _cmd = new SqlCommand(sqlString, _conn); //create command
 
                 //open the connection to allow "travel" to and from DB
                 _conn.Open();
