@@ -127,6 +127,38 @@ namespace AdressBook
             }
             return id; //output the ID
         }
+
+        internal static void editContacts(int id, string firstname, string lastname, string phone, string email, bool buisness, string notes)
+        {
+            string sqlString = "UPDATE Contacts FirstName = @firstname, LastName = @lastname, PhoneNum = @phone, EMmail = @email, " +
+                "Type = @buisness, Notes = @notes WHERE ContactID = @id";
+            try
+            {
+                _conn = new SqlConnection(conString);
+                _cmd = new SqlCommand(sqlString, _conn);
+
+                _cmd.Parameters.AddWithValue("@id", id);
+                _cmd.Parameters.AddWithValue("@firstname", firstname);
+                _cmd.Parameters.AddWithValue("@lastname", lastname);
+                _cmd.Parameters.AddWithValue("@phone", phone);
+                _cmd.Parameters.AddWithValue("@email", email);
+                _cmd.Parameters.AddWithValue("@buisness", buisness);
+                _cmd.Parameters.AddWithValue("@notes", notes);
+
+                _conn.Open();
+                _cmd.ExecuteNonQuery();
+
+                _conn.Close();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message);
+                if (_conn.State != ConnectionState.Closed) {
+                    _conn.Close(); 
+                }
+            }
+
+        } //edit contacts
     #endregion
 }
     internal static class coreCommands
