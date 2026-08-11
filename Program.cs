@@ -143,7 +143,7 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@phone", phone);
                 _cmd.Parameters.AddWithValue("@email", email);
                 _cmd.Parameters.AddWithValue("@buisness", buisness);
-
+                _cmd.Parameters.AddWithValue("@notes", notes);
             }
             catch (Exception ex) 
             {
