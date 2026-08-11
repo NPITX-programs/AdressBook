@@ -137,7 +137,6 @@ namespace AdressBook
                 _conn = new SqlConnection(conString); //connect
                 _cmd = new SqlCommand(sqlString, _conn); //create command utilizing connection
 
-
                 _cmd.Parameters.AddWithValue("@id", id); //use the method's ID input as the were
                 _cmd.Parameters.AddWithValue("@firstname", firstname); //set firstname to be firstname, thust setting the entry to this new  value
                 _cmd.Parameters.AddWithValue("@lastname", lastname); //same but with lastname
