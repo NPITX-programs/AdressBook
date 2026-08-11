@@ -128,13 +128,12 @@ namespace AdressBook
             return id; //output the ID
         }
 
-        //edit
         internal static void editContacts(int id, string firstname, string lastname, string phone, string email, bool buisness, string notes)
         {
             string sqlString = "UPDATE Contacts FirstName = @firstname, LastName = @lastname, PhoneNum = @phone, EMmail = @email, " +
-                "Type = @buisness, Notes = @notes WHERE ContactID = @id"
+                "Type = @buisness, Notes = @notes WHERE ContactID = @id";
 
-        }
+        } //edit contacts
     #endregion
 }
     internal static class coreCommands
