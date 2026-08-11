@@ -136,9 +136,10 @@ namespace AdressBook
             {
 
             }
-            catch
+            catch (Exception ex) 
             {
-
+                MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message);
+                
             }
 
         } //edit contacts
