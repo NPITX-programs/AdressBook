@@ -135,10 +135,9 @@ namespace AdressBook
             try
             {
                 _conn = new SqlConnection(conString);
-                _cmd = new SqlCommand(sqlString, _conn)
+                _cmd = new SqlCommand(sqlString, _conn);
 
                 _cmd.Parameters.AddWithValue("@id", id);
-                _c
             }
             catch (Exception ex) 
             {
