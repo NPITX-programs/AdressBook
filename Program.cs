@@ -129,7 +129,7 @@ namespace AdressBook
         }
 
         //edit
-        internal static void editContacts()
+        internal static void editContacts(int id, string firstname, string lastname, string phone, string email, bool buisness, string notes)
         {
 
         }
