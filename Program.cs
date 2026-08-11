@@ -131,7 +131,7 @@ namespace AdressBook
         internal static void editContacts(int id, string firstname, string lastname, string phone, string email, bool buisness, string notes)
         {
             string sqlString = "UPDATE Contacts FirstName = @firstname, LastName = @lastname, PhoneNum = @phone, EMmail = @email, " +
-                "Type = @buisness, Notes = @notes WHERE ContactID = @id";
+                "Type = @buisness, Notes = @notes WHERE ContactID = @id"; //the string with configurable inputs
             try
             {
                 _conn = new SqlConnection(conString);
