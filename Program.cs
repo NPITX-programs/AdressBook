@@ -131,7 +131,8 @@ namespace AdressBook
         //edit
         internal static void editContacts(int id, string firstname, string lastname, string phone, string email, bool buisness, string notes)
         {
-            string sqlString = "Update Contacts SET FirstName = @"
+            string sqlString = "UPDATE Contacts FirstName = @firstname, LastName = @lastname, " +
+                "PhoneNum = @phone, EMmail = @email, Type = @buisness, Notes = @notes," + 
         }
     #endregion
 }
