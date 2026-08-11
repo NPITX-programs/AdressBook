@@ -144,6 +144,8 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@email", email);
                 _cmd.Parameters.AddWithValue("@buisness", buisness);
                 _cmd.Parameters.AddWithValue("@notes", notes);
+
+                _conn.Open();
             }
             catch (Exception ex) 
             {
