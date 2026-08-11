@@ -140,6 +140,7 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@id", id);
                 _cmd.Parameters.AddWithValue("@firstname", firstname);
                 _cmd.Parameters.AddWithValue("@lastname", lastname);
+                _cmd.Parameters.AddWithValue("@phone", phone);
 
             }
             catch (Exception ex) 
