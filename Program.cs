@@ -134,8 +134,8 @@ namespace AdressBook
                 "Type = @buisness, Notes = @notes WHERE ContactID = @id"; //the string with configurable inputs
             try
             {
-                _conn = new SqlConnection(conString);
-                _cmd = new SqlCommand(sqlString, _conn);
+                _conn = new SqlConnection(conString); //connect
+                _cmd = new SqlCommand(sqlString, _conn); //create command utilizing connection
 
                 _cmd.Parameters.AddWithValue("@id", id);
                 _cmd.Parameters.AddWithValue("@firstname", firstname);
@@ -145,10 +145,10 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@buisness", buisness);
                 _cmd.Parameters.AddWithValue("@notes", notes);
 
-                _conn.Open();
-                _cmd.ExecuteNonQuery();
 
-                _conn.Close();
+                _conn.Open(); //open the connection
+                _cmd.ExecuteNonQuery(); //run the query
+                _conn.Close(); //close connection
             }
             catch (Exception ex) 
             {
