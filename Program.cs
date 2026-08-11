@@ -147,6 +147,8 @@ namespace AdressBook
 
                 _conn.Open();
                 _cmd.ExecuteNonQuery();
+
+                _conn.Close();
             }
             catch (Exception ex) 
             {
