@@ -139,7 +139,7 @@ namespace AdressBook
             catch (Exception ex) 
             {
                 MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message);
-                
+                if (_conn.State != ConnectionState.Closed) { _conn.Close(); }
             }
 
         } //edit contacts
