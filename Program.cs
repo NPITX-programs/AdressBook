@@ -146,6 +146,7 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@notes", notes);
 
                 _conn.Open();
+                _cmd.ExecuteNonQuery();
             }
             catch (Exception ex) 
             {
