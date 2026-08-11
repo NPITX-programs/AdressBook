@@ -151,7 +151,6 @@ namespace AdressBook
 
                 _conn.Close(); //close connection
             }
-            {
             catch (Exception ex) { //if an error
                 MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message); //say what error is
                 if (_conn.State != ConnectionState.Closed) {
