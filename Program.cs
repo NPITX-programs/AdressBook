@@ -147,6 +147,7 @@ namespace AdressBook
 
                 _conn.Open(); //open the connection
                 _cmd.ExecuteNonQuery(); //run the query
+                    //note: outputs a (probally int) that refers to what row got edited (or -1 if error)
                 _conn.Close(); //close connection
             }
             catch (Exception ex) 
