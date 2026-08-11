@@ -137,7 +137,6 @@ namespace AdressBook
                 _conn = new SqlConnection(conString); //connect
                 _cmd = new SqlCommand(sqlString, _conn); //create command utilizing connection
 
-                _cmd.Parameters.AddWithValue("@buisness", buisness);
                 _cmd.Parameters.AddWithValue("@notes", notes);
 
                 _cmd.Parameters.AddWithValue("@id", id); //use the method's ID input as the were
@@ -145,6 +144,7 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@lastname", lastname); //same but with lastname
                 _cmd.Parameters.AddWithValue("@phone", phone); //same but with phone
                 _cmd.Parameters.AddWithValue("@email", email); //same but with email
+                _cmd.Parameters.AddWithValue("@buisness", buisness); //same but with buisness
 
                 _conn.Open(); //open the connection
                 _cmd.ExecuteNonQuery(); //run the query
