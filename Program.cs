@@ -131,31 +131,32 @@ namespace AdressBook
         internal static void editContacts(int id, string firstname, string lastname, string phone, string email, bool buisness, string notes)
         {
             string sqlString = "UPDATE Contacts FirstName = @firstname, LastName = @lastname, PhoneNum = @phone, EMmail = @email, " +
-                "Type = @buisness, Notes = @notes WHERE ContactID = @id";
+                "Type = @buisness, Notes = @notes WHERE ContactID = @id"; //the string with configurable inputs
             try
             {
-                _conn = new SqlConnection(conString);
-                _cmd = new SqlCommand(sqlString, _conn);
+                _conn = new SqlConnection(conString); //connect
+                _cmd = new SqlCommand(sqlString, _conn); //create command utilizing connection
 
-                _cmd.Parameters.AddWithValue("@id", id);
-                _cmd.Parameters.AddWithValue("@firstname", firstname);
-                _cmd.Parameters.AddWithValue("@lastname", lastname);
-                _cmd.Parameters.AddWithValue("@phone", phone);
-                _cmd.Parameters.AddWithValue("@email", email);
-                _cmd.Parameters.AddWithValue("@buisness", buisness);
-                _cmd.Parameters.AddWithValue("@notes", notes);
+                _cmd.Parameters.AddWithValue("@id", id); //use the method's ID input as the were
+                _cmd.Parameters.AddWithValue("@firstname", firstname); //set firstname to be firstname, thust setting the entry to this new  value
+                _cmd.Parameters.AddWithValue("@lastname", lastname); //same but with lastname
+                _cmd.Parameters.AddWithValue("@phone", phone); //same but with phone
+                _cmd.Parameters.AddWithValue("@email", email); //same but with email
+                _cmd.Parameters.AddWithValue("@buisness", buisness); //same but with buisness
+                _cmd.Parameters.AddWithValue("@notes", notes); //same but with notes
 
-                _conn.Open();
-                _cmd.ExecuteNonQuery();
+                _conn.Open(); //open the connection
+                _cmd.ExecuteNonQuery(); //run the query
+                    //note: outputs a (probally int) that refers to what row got edited (or -1 if error)
 
-                _conn.Close();
+                _conn.Close(); //close connection
             }
-            catch (Exception ex) 
-            {
-                MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message);
+            catch (Exception ex) //if an error
+            { 
+                MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message); //say what error is
                 if (_conn.State != ConnectionState.Closed) {
-                    _conn.Close(); 
-                }
+                    _conn.Close(); //close
+                } //if connection open, close it
             }
 
         } //edit contacts
