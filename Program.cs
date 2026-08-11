@@ -132,6 +132,14 @@ namespace AdressBook
         {
             string sqlString = "UPDATE Contacts FirstName = @firstname, LastName = @lastname, PhoneNum = @phone, EMmail = @email, " +
                 "Type = @buisness, Notes = @notes WHERE ContactID = @id";
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
 
         } //edit contacts
     #endregion
