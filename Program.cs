@@ -138,6 +138,8 @@ namespace AdressBook
                 _cmd = new SqlCommand(sqlString, _conn);
 
                 _cmd.Parameters.AddWithValue("@id", id);
+                _cmd.Parameters.AddWithValue("@firstname", firstname);
+
             }
             catch (Exception ex) 
             {
