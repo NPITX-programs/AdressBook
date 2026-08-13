@@ -163,6 +163,7 @@ namespace AdressBook
 
         internal static void deleteContact(int id)
         {
+            string sqlString = "DELETE FROM Contacts WHERE ContactID = @id";
 
         }
     #endregion
