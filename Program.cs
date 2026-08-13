@@ -164,8 +164,15 @@ namespace AdressBook
         internal static void deleteContact(int id)
         {
             string sqlString = "DELETE FROM Contacts WHERE ContactID = @id";
-
-                MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message);
+            try {
+            
+            } catch (Exception ex) {
+                MessageBox.Show("Error Occured when attempting to delete from contents: " + ex.Message);
+                if (_conn.State != ConnectionState.Closed)
+                {
+                    _conn.Close(); 
+                } 
+            }
         }
     #endregion
 }
