@@ -165,9 +165,9 @@ namespace AdressBook
         {
             string sqlString = "DELETE FROM Contacts WHERE ContactID = @id"; //the command that will be executed
             try {
-                _conn = new SqlConnection(conString);
                 _cmd = new SqlCommand(sqlString, _conn);
                 _cmd.Parameters.AddWithValue("@id", id);
+                _conn = new SqlConnection(conString); //command to connect
 
                 _conn.Open();
                 _cmd.ExecuteNonQuery();
