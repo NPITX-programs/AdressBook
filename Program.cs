@@ -180,8 +180,9 @@ namespace AdressBook
                 } 
             }
         }
-    #endregion
-}
+        #endregion
+        #endregion
+    }
     internal static class coreCommands
     {
         internal static void error(string message, Exception ex = null, bool revealException = false)
