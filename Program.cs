@@ -25,9 +25,9 @@ namespace AdressBook
         internal const bool debug = true; //global var to controll default for debugs
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
-
+        #region SQL Code
         //SQL COMMAND DEFINITIONS
-        #region SQL
+        #region SQL Constants
         //blueprint on how to create the connection
         static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
 
@@ -41,10 +41,10 @@ namespace AdressBook
         static SqlDataReader _reader;
 
         //these are for classes that will be 
-        #endregion
+        #endregion //sql constants
 
         //clases
-        #region classes
+        #region Database Code
         //name of table: Contacts
         internal static void getContacts()
         {
@@ -160,8 +160,9 @@ namespace AdressBook
             }
 
         } //edit contacts
-    #endregion
-}
+        #endregion
+        #endregion
+    }
     internal static class coreCommands
     {
         internal static void error(string message, Exception ex = null, bool revealException = false)
