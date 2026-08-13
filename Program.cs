@@ -180,7 +180,7 @@ namespace AdressBook
                     _conn.Close(); //close connection
                 } //if it's open, close for security
             }
-        }
+        } //delete a contact
     #endregion
 }
     internal static class coreCommands
