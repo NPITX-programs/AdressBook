@@ -165,6 +165,7 @@ namespace AdressBook
         {
             string sqlString = "DELETE FROM Contacts WHERE ContactID = @id";
 
+                MessageBox.Show("Error Occured when attempting to edit Contents: " + ex.Message);
         }
     #endregion
 }
