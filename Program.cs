@@ -174,6 +174,7 @@ namespace AdressBook
                 _cmd.ExecuteNonQuery(); //execute query
                 _conn.Close(); //close connection
             } catch (Exception ex) //find error
+                {
                 if (_conn.State != ConnectionState.Closed)
                 {
                     _conn.Close(); 
