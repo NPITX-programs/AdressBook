@@ -160,6 +160,11 @@ namespace AdressBook
             }
 
         } //edit contacts
+
+        internal static void deleteContact(int id)
+        {
+
+        }
     #endregion
 }
     internal static class coreCommands
