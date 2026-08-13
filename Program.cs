@@ -177,8 +177,8 @@ namespace AdressBook
                 MessageBox.Show("Error Occured when attempting to delete from contents: " + ex.Message); //error message
                 if (_conn.State != ConnectionState.Closed)
                 {
-                    _conn.Close(); 
                 } 
+                    _conn.Close(); //close connection
             }
         }
     #endregion
