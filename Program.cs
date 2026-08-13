@@ -169,12 +169,12 @@ namespace AdressBook
                 _cmd = new SqlCommand(sqlString, _conn); //set upp command
                 _cmd.Parameters.AddWithValue("@id", id); //set value of variable in command
 
-                MessageBox.Show("Error Occured when attempting to delete from contents: " + ex.Message);
                 _conn.Open(); //open
                 _cmd.ExecuteNonQuery(); //execute query
                 _conn.Close(); //close connection
             } catch (Exception ex) //find error
                 {
+                MessageBox.Show("Error Occured when attempting to delete from contents: " + ex.Message); //error message
                 if (_conn.State != ConnectionState.Closed)
                 {
                     _conn.Close(); 
