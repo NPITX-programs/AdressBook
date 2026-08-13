@@ -163,7 +163,7 @@ namespace AdressBook
 
         internal static void deleteContact(int id)
         {
-            string sqlString = "DELETE FROM Contacts WHERE ContactID = @id";
+            string sqlString = "DELETE FROM Contacts WHERE ContactID = @id"; //the command that will be executed
             try {
                 _conn = new SqlConnection(conString);
                 _cmd = new SqlCommand(sqlString, _conn);
