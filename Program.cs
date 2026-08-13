@@ -163,23 +163,24 @@ namespace AdressBook
 
         internal static void deleteContact(int id)
         {
-            string sqlString = "DELETE FROM Contacts WHERE ContactID = @id";
+            string sqlString = "DELETE FROM Contacts WHERE ContactID = @id"; //the command that will be executed
             try {
-                _conn = new SqlConnection(conString);
-                _cmd = new SqlCommand(sqlString, _conn);
-                _cmd.Parameters.AddWithValue("@id", id);
+                _conn = new SqlConnection(conString); //command to connect
+                _cmd = new SqlCommand(sqlString, _conn); //set upp command
+                _cmd.Parameters.AddWithValue("@id", id); //set value of variable in command
 
-                _conn.Open();
-                _cmd.ExecuteNonQuery();
-                _conn.Close();
-            } catch (Exception ex) {
-                MessageBox.Show("Error Occured when attempting to delete from contents: " + ex.Message);
+                _conn.Open(); //open
+                _cmd.ExecuteNonQuery(); //execute query
+                _conn.Close(); //close connection
+            } catch (Exception ex) //find error
+                {
+                MessageBox.Show("Error Occured when attempting to delete from contents: " + ex.Message); //error message
                 if (_conn.State != ConnectionState.Closed)
                 {
-                    _conn.Close(); 
-                } 
+                    _conn.Close(); //close connection
+                } //if it's open, close for security
             }
-        }
+        } //delete a contact
     #endregion
 }
     internal static class coreCommands
