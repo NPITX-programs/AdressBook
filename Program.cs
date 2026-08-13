@@ -165,7 +165,13 @@ namespace AdressBook
         {
             string sqlString = "DELETE FROM Contacts WHERE ContactID = @id";
             try {
-            
+                _conn = new SqlConnection(conString);
+                _cmd = new SqlCommand(sqlString, _conn);
+                _cmd.Parameters.AddWithValue("@id", id);
+
+                _conn.Open();
+                _cmd.ExecuteNonQuery();
+                _conn.Close();
             } catch (Exception ex) {
                 MessageBox.Show("Error Occured when attempting to delete from contents: " + ex.Message);
                 if (_conn.State != ConnectionState.Closed)
