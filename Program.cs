@@ -53,8 +53,43 @@ namespace AdressBook
             {
                 _conn = new SqlConnection(conString);
                 _cmd = new SqlCommand(sqlString, _conn);
+
+                //open the connection to allow "travel" to and from DB
+                _conn.Open();
+
+                _reader = _cmd.ExecuteReader();
+
+                while (_reader.Read())
+                {
+                    Contact c = new Contact();
+                    c.index = Convert.ToInt32(_reader.GetValue(0));
+                    c.firstname = _reader.GetString(1);
+                    c.lastname = _reader.GetString(2);
+                    c.phone = _reader.GetString(3);
+                    c.email = _reader.GetString(4);
+                    c.buisness = _reader.GetBoolean(5);
+                    if(_reader.GetValue(6) != DBNull.Value)
+                    {
+                        c.notes = _reader.GetString(6);
+                    } else
+                    {
+                        c.notes = string.Empty;
+                    }
+
+                    contacts.Add(c);
+                }
+                _conn.Close(); //close the connection for security
             }
-        }
+            catch ( Exception ex )
+            {
+                MessageBox.Show("Error ocured when attempting to retrieve from dbo.contacts" + ex.Message);
+                if(_conn.State != ConnectionState.Closed)
+                {
+                    _conn.Close(); //close the connection for security
+                }
+            }
+            
+        } //get contacts
     #endregion
 }
     internal static class coreCommands
