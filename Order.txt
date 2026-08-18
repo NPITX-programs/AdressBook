@@ -1,2 +1,3 @@
-When Start:
-- program (main)
+When Load
+file code 1 (read)
+45
