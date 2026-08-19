@@ -46,12 +46,17 @@ namespace AdressBook //major updates needed
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
         int distFromEdge = 0;
-
+        bool useDB = true;
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
-
-            readFromFile(); //read from the file
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory, "contacts", name1, exten1); //create the name, which is stored outside
+            if (useDB != true)
+            {   
+                readFromFile(); //read from the file, add into list
+            } else
+            {
+                Program.getContacts(); //read from the database, add into list
+            }
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
@@ -62,6 +67,7 @@ namespace AdressBook //major updates needed
             int formWidth = this.ClientSize.Width; //get the width of the form
             distFromEdge = formWidth - tblEdge; //calculate how far the edge of the form is from the table
             btnAddTex = btn_add.Text; //sets a variable to store the current text for the button. That way, when it's text is changed in-code, when it gets replaced, it's replaced with whatever the button had, not with a hardcoded text. So, edits in the form designer are kept!
+
 
         } //when form loads
         int ind = 0; //index for the current contact
@@ -172,6 +178,20 @@ namespace AdressBook //major updates needed
             errorProvider1.SetError(input, errorText); //display the provider on the "input" control
         } //create error provider system
 
+        private void store() {
+        if(useDB)
+            {
+
+            } else
+            {
+                if(autoSave)
+                {
+                    WriteToFile(); //write to the file
+                } //if the auto-save is on, save
+            }
+
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             bool valid = true; //default to valid
@@ -265,13 +285,11 @@ namespace AdressBook //major updates needed
             {
                 if (valid == true || debug == true)
                 {
+                    
                     newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                     entry = nextEntry(); //get the next entry
                     updateList(entry); //update the list
-                    if (autoSave)
-                    {
-                        WriteToFile(); //write to the file
-                    } //if the auto-save is on, save
+                    store();
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
             } //if it isn't edit
