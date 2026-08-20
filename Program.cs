@@ -42,20 +42,6 @@ namespace AdressBook
 
         //these are for classes that will be 
         #endregion
-
-        //clases
-        #region classes
-        //name of table: Contacts
-        internal static void getContacts()
-        {
-            string sqlString = "SELECT * FROM Contacts";
-            try
-            {
-                _conn = new SqlConnection(conString);
-                _cmd = new SqlCommand(sqlString, _conn);
-            }
-        }
-    #endregion
 }
     internal static class coreCommands
     {
