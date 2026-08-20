@@ -40,6 +40,11 @@ namespace AdressBook.files
             }
         } //the write function
 
+        internal static void writeToServer()
+        {
+
+        } //the write to sql code
+
         internal static void read(string path, char sep, int min) //the read function
         {
             bool status = File.Exists(path); //check if the file exists
