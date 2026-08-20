@@ -17,8 +17,14 @@ namespace AdressBook
         internal int index; //the index of the entry
     }
 
-    internal static class storageSystem
+    internal class storageSystem
     {
+        
+        private Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
+        {
+            Contact c = new Contact();
+            return c;
+        }
 
     }
 }
