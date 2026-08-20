@@ -8,7 +8,37 @@ namespace AdressBook.files
 {
     internal static class files
     {
+        internal static void Write(string filepath, char sep) 
         {
+            bool status = File.Exists(filepath); //check if the file exists
+            if (status || Program.debug)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(filepath))
+                    {
+                        foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
+                        {
+                            //csv - comma seperated values
+                            //firstname-lastname-email-phone-buisness-notes
+                            string ind = (c.index + 1).ToString();
+                            string line = c.firstname + sep + c.lastname + sep +  //first and last name
+                                c.phone + sep + c.email + sep + c.buisness + sep + //contact information
+                                c.notes + sep + ind; //notes
+                            sw.WriteLine(line); //write the information to the line
+                        }
+                    } //streamwriter
+                }
+                catch (Exception ex)
+                {
+                    AdressBook.coreCommands.error(Program.preMadeErrorMsg, ex, true); //show error
+                }
+            }
+            else
+            {
+                AdressBook.coreCommands.error("File Not Found"); //show error
+            }
+        } //the write function
 
         internal static void read(string path, char sep, int min) //the read function
         {
