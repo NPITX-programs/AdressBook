@@ -16,4 +16,22 @@ namespace AdressBook
         internal string notes; //notes about contact
         internal int index; //the index of the entry
     }
+
+    internal class storageSystem
+    {
+        
+        private Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
+        {
+            Contact c = new Contact();
+            c.firstname = firstname;
+            c.lastname = lastname;
+            c.email = email;
+            c.phone = phone;
+            c.buisness = buisness;
+            c.notes = notes;
+            c.index = index;
+            return c;
+        }
+
+    }
 }
