@@ -18,7 +18,6 @@ namespace AdressBook
     }
     internal class values
     {
-        internal static List<Contact> contacts2 = new List<Contact>(); //makes a collection that refferences the class that will store information
 
     }
     internal class storageSystem
