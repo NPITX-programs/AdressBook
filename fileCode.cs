@@ -11,13 +11,13 @@ namespace AdressBook.files
         internal static void Write(string filepath, char sep) 
         {
             bool status = File.Exists(filepath); //check if the file exists
-            if (status || contactConst.debug)
+            if (status || Program.debug)
             {
                 try
                 {
                     using (StreamWriter sw = new StreamWriter(filepath))
                     {
-                        foreach (var c in contactConst.contacts2) //the loop for createing the contents which will be saved
+                        foreach (var c in Program.contacts) //the loop for createing the contents which will be saved
                         {
                             //csv - comma seperated values
                             //firstname-lastname-email-phone-buisness-notes
@@ -31,7 +31,7 @@ namespace AdressBook.files
                 }
                 catch (Exception ex)
                 {
-                    AdressBook.coreCommands.error(contactConst.preMadeErrorMsg, ex, true); //show error
+                    AdressBook.coreCommands.error(Program.preMadeErrorMsg, ex, true); //show error
                 }
             }
             else
@@ -43,7 +43,7 @@ namespace AdressBook.files
         internal static void read(string path, char sep, int min) //the read function
         {
             bool status = File.Exists(path); //check if the file exists
-            if (status || contactConst.debug) //check if there
+            if (status || Program.debug) //check if there
             {
                 try
                 {
@@ -67,7 +67,7 @@ namespace AdressBook.files
                                     notes = cont[5], //same
                                     index = Convert.ToInt32(cont[6]) - 1 //more of the same             
                                 };
-                                contactConst.contacts2.Add(c); //add to list
+                                Program.contacts.Add(c); //add to list
                             }
                             else
                             {

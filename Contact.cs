@@ -16,9 +16,8 @@ namespace AdressBook
         internal string notes; //notes about contact
         internal int index; //the index of the entry
     }
-    internal class contactConst
+    internal class contConst
     {
-        internal static List<Contact> contacts2 = new List<Contact>(); //makes a collection that refferences the class that will store information
 
     }
     internal class storageSystem
