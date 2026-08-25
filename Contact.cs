@@ -16,7 +16,7 @@ namespace AdressBook
         internal string notes; //notes about contact
         internal int index; //the index of the entry
     }
-    internal class values
+    internal class contConst
     {
 
     }
