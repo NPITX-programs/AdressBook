@@ -15,7 +15,6 @@ namespace AdressBook
         internal bool buisness; //buisness
         internal string notes; //notes about contact
         internal int index; //the index of the entry
-        // internal int exIndex; //the index in the database
     }
 
     internal class storageSystem
