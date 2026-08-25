@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdressBook.files; //this is the namespace for the files that are in the project. This is where the classes are stored
 using System.Data.SqlClient;
-using System.Data;
+using System.Data; s
 
 namespace AdressBook
 {
-    internal static class Program
+    internal static class contactConst
     {
         /// <summary>
         /// The main entry point for the application.
@@ -23,7 +23,7 @@ namespace AdressBook
             Application.Run(new frm_addressForm());
         }
         internal const bool debug = true; //global var to controll default for debugs
-        internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
+        internal static List<Contact> contacts2 = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
 
         //SQL COMMAND DEFINITIONS
