@@ -16,6 +16,10 @@ namespace AdressBook
         internal string notes; //notes about contact
         internal int index; //the index of the entry
     }
+    internal class values
+    {
+
+    } //any values, lists, ect
 
     internal class storageSystem
     {
