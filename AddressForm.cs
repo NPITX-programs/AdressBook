@@ -14,7 +14,7 @@ namespace AdressBook //major updates needed
 {
     public partial class frm_addressForm : Form
     {
-        const bool debug = contactConst.debug; //this sets the debug system to the global debug variable
+        const bool debug = Program.debug; //this sets the debug system to the global debug variable
         const char sep = ','; //seperation character
         public frm_addressForm()
         {
@@ -43,14 +43,13 @@ namespace AdressBook //major updates needed
         const string name1 = "store"; //name of file
         const string exten1 = "csv"; //extension of file
         const int min = 6; //minimum total values in an entry
-                           //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts2";
+                           //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
         int distFromEdge = 0;
-        
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts2",name1,exten1); //create the name, which is stored outside
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
             readFromFile(); //read from the file
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
@@ -95,11 +94,11 @@ namespace AdressBook //major updates needed
 
         private Contact nextEntry()
         {          
-            int leng = contactConst.contacts2.Count; //get the length of the list
+            int leng = Program.contacts.Count; //get the length of the list
             ind = leng - 1; //get the index (a.k.a the length minus 1)
-            Contact curr = contactConst.contacts2[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
+            Contact curr = Program.contacts[ind]; //get the item at said index, A.K.A. the last item) (curr is for "current")
             return curr; //output that value 
-        } //gets the final entry in the list of contacts2, which is the one that was just made (and thus the one that should be added)
+        } //gets the final entry in the list of contacts, which is the one that was just made (and thus the one that should be added)
         
         private void updateList(Contact value, bool editMode = false )
         {
@@ -133,7 +132,7 @@ namespace AdressBook //major updates needed
             int ind = 0; //what will be the index to extract from the main list
             if(total == 0)
             {
-                val = contactConst.contacts2.Count; //set total to be the length of the list
+                val = Program.contacts.Count; //set total to be the length of the list
             } //if the input is 0
             else
             {
@@ -143,7 +142,7 @@ namespace AdressBook //major updates needed
                          //if the "total" was 0, then it will be set to the length of the list
             for (int count = 0; count < total; count++)
             {
-                updateList(contactConst.contacts2[ind]); //update the list
+                updateList(Program.contacts[ind]); //update the list
                 ind++; //increase index by one (apparently count doesn't increase)
             } //repeat to add all the stuff to the list
         } //generate the list, if no input it's assumed to use the entire length of the list
@@ -160,7 +159,7 @@ namespace AdressBook //major updates needed
                 buisness = contType, //same
                 index = contInd, //
             }; //assemble contact
-            contactConst.contacts2.Add(c); //add to list
+            Program.contacts.Add(c); //add to list
             return c; //output the new contact
         } //creates the class for the current input
 
@@ -266,7 +265,7 @@ namespace AdressBook //major updates needed
             {
                 if (valid == true || debug == true)
                 {
-                    newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, contactConst.contacts2.Count); //create the contact
+                    newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                     entry = nextEntry(); //get the next entry
                     updateList(entry); //update the list
                     if (autoSave)
@@ -303,17 +302,17 @@ namespace AdressBook //major updates needed
             {
                 filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
                     //also sets the filepath for saveing to be the new one, that way if you save the file it is now the one you used save as on, not the in-built default
-                contactConst.contacts2.Clear(); //clear the class
+                Program.contacts.Clear(); //clear the class
                 readFromFile(); //read from file
             }
         } //open
         private Contact selectContact(int index)
         {
-            int leng = contactConst.contacts2.Count; //find the length
+            int leng = Program.contacts.Count; //find the length
             int check = 0; //make a temporary variable
             try
             {
-                foreach (var c in contactConst.contacts2)
+                foreach (var c in Program.contacts)
                 {
                     check = check + 1; //add one to check
                     if (c.index == index) {
@@ -351,7 +350,7 @@ namespace AdressBook //major updates needed
                 txt_phoNum.Text = c.phone; //put phone number in text box
                 chk_type.Checked = c.buisness; //set the check box to match if they are buisness or not
                 txt_contNote.Text = c.notes; //put notes in text box
-                edInde = c.index; //set the index variable to the contacts2 index variable
+                edInde = c.index; //set the index variable to the contacts index variable
             } //check if it exists
             editInd = edInde; //set the global editInd to the determined edit index
             editMode = true; //turn edit mode on
