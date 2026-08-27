@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdressBook.files;
 
 namespace AdressBook
 {
@@ -23,7 +24,7 @@ namespace AdressBook
     internal partial class storageSystem
     {
         
-        private Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
+        internal Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
         {
             Contact c = new Contact();
             c.firstname = firstname;
