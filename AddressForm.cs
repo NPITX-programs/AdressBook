@@ -36,9 +36,9 @@ namespace AdressBook //major updates needed
             return finalPath; //output said path
         } //create the final directory path
 
-        int editInd = 0; //the index being edited
-        bool editMode = false; //curent state of edit mode
-        string btnAddTex = string.Empty; //placeholder button text
+        private int editInd = 0; //the index being edited
+        private bool editMode = false; //curent state of edit mode
+        private string btnAddTex = string.Empty; //placeholder button text
 
         const string name1 = "store"; //name of file
         const string exten1 = "csv"; //extension of file
