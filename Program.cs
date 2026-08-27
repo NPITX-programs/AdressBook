@@ -20,7 +20,7 @@ namespace AdressBook
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_addressForm());
         }
-        internal const bool debug = false; //global var to controll default for debugs
+        internal const bool debug = true; //global var to controll default for debugs
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
     }
