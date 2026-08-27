@@ -16,8 +16,11 @@ namespace AdressBook
         internal string notes; //notes about contact
         internal int index; //the index of the entry
     }
+    internal class contConst
+    {
 
-    internal class storageSystem
+    }
+    internal static class storageSystem
     {
         
         private Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
