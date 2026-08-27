@@ -20,7 +20,7 @@ namespace AdressBook
     {
 
     }
-    internal static class storageSystem
+    internal partial class storageSystem
     {
         
         private Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
