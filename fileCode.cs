@@ -57,6 +57,7 @@ namespace AdressBook.files
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
+                                contacts = 
                                 Contact c = new Contact //make new constact
                                 {
                                     firstname = cont[0], //put the realevent input into the releavent field
