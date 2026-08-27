@@ -5,8 +5,6 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdressBook.files; //this is the namespace for the files that are in the project. This is where the classes are stored
-using System.Data.SqlClient;
-using System.Data;
 
 namespace AdressBook
 {
@@ -25,24 +23,7 @@ namespace AdressBook
         internal const bool debug = true; //global var to controll default for debugs
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
-
-        //SQL COMMAND DEFINITIONS
-        #region SQL
-        //blueprint on how to create the connection
-        static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
-
-        //physical connection to the Database that we can open/close
-        static SqlConnection _conn;
-
-        //instructions to the DB that allow for SQL code
-        static SqlCommand _cmd;
-
-        //Allows to unpack records when a SELECT query is used
-        static SqlDataReader _reader;
-
-        //these are for classes that will be 
-        #endregion
-}
+    }
     internal static class coreCommands
     {
         internal static void error(string message, Exception ex = null, bool revealException = false)
