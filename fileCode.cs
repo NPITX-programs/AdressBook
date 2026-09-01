@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using System;
-using AdressBook; 
+using AdressBook;
 
 namespace AdressBook.files
 {
@@ -58,7 +58,7 @@ namespace AdressBook.files
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], cont[4], cont[5], cont[6]);
+                                contacts = 
                                 Contact c = new Contact //make new constact
                                 {
                                     firstname = cont[0], //put the realevent input into the releavent field
@@ -67,7 +67,7 @@ namespace AdressBook.files
                                     email = cont[3], //same
                                     buisness = Convert.ToBoolean(cont[4]), //same
                                     notes = cont[5], //same
-                                    index = Convert.ToInt32(cont[6]) - 1 //more of the same        
+                                    index = Convert.ToInt32(cont[6]) - 1 //more of the same             
                                 };
                                 Program.contacts.Add(c); //add to list
                             }
