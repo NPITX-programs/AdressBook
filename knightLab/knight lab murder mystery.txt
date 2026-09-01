@@ -52,3 +52,4 @@ person id:
 - 67318
 - 51739SELECT * FROM get_fit_now_member
 where person_id = 67318
+- 78193: not a member
