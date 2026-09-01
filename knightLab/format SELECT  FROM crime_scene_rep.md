@@ -8,3 +8,5 @@ Annabel, lives somewhere on "Franklin Ave"
 first:
 SELECT * FROM crime_scene_report
 WHERE date = 20180115 AND city = 'SQL City' AND type = "murder"
+SELECT * FROM person
+WHERE name LIKE '%Annabel%' AND address_street_name = 'Franklin Ave'
