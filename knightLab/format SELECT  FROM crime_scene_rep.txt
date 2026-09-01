@@ -3,10 +3,7 @@
 
 
 
-witnesses are:
 
-___ name, lives on the last house on Northwestern Dr
-Annabel, lives somewhere on "Franklin Ave"
 
 first:
 SELECT * FROM crime_scene_report
