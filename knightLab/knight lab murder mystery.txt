@@ -50,7 +50,7 @@ WHERE license_id = 664760
 person id:
 - 78193
 - 67318
-- 51739SELECT * FROM get_fit_now_member
+- 51739
 SELECT * FROM get_fit_now_member
 where person_id = 67318
 get fit now: 
