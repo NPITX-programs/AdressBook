@@ -43,6 +43,8 @@ based on liscense plate, possible liscense ID =
 - 183779
 - 423327
 - 664760
+SELECT * FROM person
+WHERE license_id = 664760
 person id:
 - 78193
 - 67318
