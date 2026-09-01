@@ -51,8 +51,11 @@ person id:
 - 78193
 - 67318
 - 51739
+_______________________________
+
 SELECT * FROM get_fit_now_member
 where person_id = 67318
+
 get fit now: 
 - 78193: not a member
 - 67318: gold member
