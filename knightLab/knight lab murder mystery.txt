@@ -53,4 +53,6 @@ person id:
 - 51739SELECT * FROM get_fit_now_member
 where person_id = 67318
 - 78193: not a member
+- 67318: gold member
+	- Jeremy Bowers
 - 51739: not a member
