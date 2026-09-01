@@ -9,4 +9,7 @@ first:
 SELECT * FROM crime_scene_report
 WHERE date = 20180115 AND city = 'SQL City' AND type = "murder"
 SELECT * FROM person
+WHERE address_street_name = 'Northwestern Dr' AND address_number = 4919
+	Witness 1: address number: 4919; Morty Schapiro ; 14887
+SELECT * FROM person
 WHERE name LIKE '%Annabel%' AND address_street_name = 'Franklin Ave'
