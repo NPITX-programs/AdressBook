@@ -13,3 +13,4 @@ WHERE address_street_name = 'Northwestern Dr' AND address_number = 4919
 	Witness 1: address number: 4919; Morty Schapiro ; 14887
 SELECT * FROM person
 WHERE name LIKE '%Annabel%' AND address_street_name = 'Franklin Ave'
+	witness 2 = Annabel Miller, id 16371
