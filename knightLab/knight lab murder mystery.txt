@@ -26,3 +26,5 @@ WHERE name LIKE '%Annabel%' AND address_street_name = 'Franklin Ave'
 	witness 2 = Annabel Miller, id 16371
 
 _______________________________________________________________interview: 
+morty:
+-I heard a gunshot and then saw a man run out. He had a "Get Fit Now Gym" bag. The membership number on the bag started with "48Z". Only gold members have those bags. The man got into a car with a plate that included "H42W".
