@@ -12,5 +12,8 @@ witnesses are:
 ___ name, lives on the last house on Northwestern Dr
 Annabel, lives somewhere on "Franklin Ave"
 
+first:
+SELECT * FROM crime_scene_report
+WHERE date = 20180115 AND city = 'SQL City' AND type = "murder"
 
 
