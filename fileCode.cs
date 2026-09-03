@@ -58,8 +58,7 @@ namespace AdressBook.files
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                Contact C = new Contact();
-                                Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+                                   Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
  
                                 Program.contacts.Add(c); //add to list
                             }
