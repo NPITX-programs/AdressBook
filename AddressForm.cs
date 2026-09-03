@@ -62,7 +62,7 @@ namespace AdressBook //major updates needed
         {
             //read from path: filepath
             // call other file
-            files.read(filepath, sep, min,)); //call the function used to read files
+            files.read(filepath, sep, min, storageClass)); //call the function used to read files
         } //call the read from file method (that way I don't have to do file.files first)
 
         private void WriteToFile()
