@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdressBook //major updates needed
@@ -70,12 +62,12 @@ namespace AdressBook //major updates needed
         {
             //read from path: filepath
             // call other file
-            files.files.read(filepath, sep, min, storageClass)); //call the function used to read files
+            files.read(filepath, sep, min, storageClass)); //call the function used to read files
         } //call the read from file method (that way I don't have to do file.files first)
 
         private void WriteToFile()
         {
-            files.files.Write(filepath, sep); //call the function used to write files
+            files.Write(filepath, sep); //call the function used to write files
         } //call the write to file. Same as above comment
          
         private void clear()
