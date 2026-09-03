@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System;
 
-namespace AdressBook.files
+namespace AdressBook
 {
     internal static class files
     {
