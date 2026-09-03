@@ -1,0 +1,8 @@
+stream writer
+	-over write
+	-line-by-line, just like string reader
+	-auto-creates file
+append text
+	-require existing file
+	-only add to end of text
+	-makes edits hard
