@@ -41,7 +41,7 @@ namespace AdressBook.files
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min, storageSystem storageSystem) //the read function
+        internal static void read(string path, char sep, int min, storageSystem storageClass) //the read function
         {
             bool status = File.Exists(path); //check if the file exists
             if (status || Program.debug) //check if there
@@ -58,7 +58,7 @@ namespace AdressBook.files
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                   Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+                                   Contact c = storageClass.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
  
                                 Program.contacts.Add(c); //add to list
                             }
