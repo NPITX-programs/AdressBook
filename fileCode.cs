@@ -1,9 +1,6 @@
-﻿
-using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using System.Windows.Forms;
 using System;
-using AdressBook;
 
 namespace AdressBook
 {
