@@ -38,7 +38,7 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min) //the read function
+        internal static void read(string path, char sep, int min) //the read function, which has the refferenced class hardcoded
         {
             bool status = File.Exists(path); //check if the file exists
             if (status || Program.debug) //check if there
