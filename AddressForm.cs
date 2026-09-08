@@ -46,17 +46,12 @@ namespace AdressBook //major updates needed
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
         int distFromEdge = 0;
-        bool useDB = true;
+
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory, "contacts", name1, exten1); //create the name, which is stored outside
-            if (useDB != true)
-            {   
-                readFromFile(); //read from the file, add into list
-            } else
-            {
-                Program.getContacts(); //read from the database, add into list
-            }
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
+
+            readFromFile(); //read from the file
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
@@ -67,7 +62,6 @@ namespace AdressBook //major updates needed
             int formWidth = this.ClientSize.Width; //get the width of the form
             distFromEdge = formWidth - tblEdge; //calculate how far the edge of the form is from the table
             btnAddTex = btn_add.Text; //sets a variable to store the current text for the button. That way, when it's text is changed in-code, when it gets replaced, it's replaced with whatever the button had, not with a hardcoded text. So, edits in the form designer are kept!
-
 
         } //when form loads
         int ind = 0; //index for the current contact
