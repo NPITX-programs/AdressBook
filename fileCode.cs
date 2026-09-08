@@ -40,7 +40,7 @@ namespace AdressBook.files
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min) //the read function
+        internal static void read(string path, char sep, int min)
         {
             bool status = File.Exists(path); //check if the file exists
             if (status || Program.debug) //check if there
@@ -88,6 +88,6 @@ namespace AdressBook.files
                 MessageBox.Show("file not found"); //show error
 
             }
-        }
+        } //the read function
     } //the code for files
 }
