@@ -1,10 +1,8 @@
-﻿
-using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using System.Windows.Forms;
 using System;
 
-namespace AdressBook.files
+namespace AdressBook
 {
     internal static class files
     {
@@ -81,6 +79,5 @@ namespace AdressBook.files
 
             }
         } // note: the refferenced storage class is hardcoded
-          //
     } //the code for files
 }
