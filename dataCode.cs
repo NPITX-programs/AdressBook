@@ -4,7 +4,7 @@ using System;
 
 namespace AdressBook
 {
-    internal static class files
+    internal static class fileCode
     {
         internal static void Write(string filepath, char sep) 
         {
@@ -38,7 +38,7 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min)//the read function 
+        internal static void read(string path, char sep, int min) //the read function, which has the refferenced class hardcoded
         {
             bool status = File.Exists(path); //check if the file exists
             if (status || Program.debug) //check if there
@@ -78,6 +78,10 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
-        } // note: the refferenced storage class is hardcoded
-    } //the code for files
+        }
+    } //the code for fileCode
+    internal static class manipulateData
+    {
+
+    }
 }
