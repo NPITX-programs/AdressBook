@@ -80,4 +80,8 @@ namespace AdressBook
             }
         }
     } //the code for fileCode
+    internal static class manipulateData
+    {
+
+    }
 }
