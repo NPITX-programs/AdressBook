@@ -40,7 +40,7 @@ namespace AdressBook.files
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min)
+        internal static void read(string path, char sep, int min)//the read function 
         {
             bool status = File.Exists(path); //check if the file exists
             if (status || Program.debug) //check if there
@@ -57,16 +57,8 @@ namespace AdressBook.files
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                Contact c = new Contact //make new constact
-                                {
-                                    firstname = cont[0], //put the realevent input into the releavent field
-                                    lastname = cont[1], //same
-                                    phone = cont[2], //same
-                                    email = cont[3], //same
-                                    buisness = Convert.ToBoolean(cont[4]), //same
-                                    notes = cont[5], //same
-                                    index = Convert.ToInt32(cont[6]) - 1 //more of the same             
-                                };
+                                   Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+ 
                                 Program.contacts.Add(c); //add to list
                             }
                             else
@@ -88,6 +80,7 @@ namespace AdressBook.files
                 MessageBox.Show("file not found"); //show error
 
             }
-        } //the read function
+        } // note: the refferenced storage class is hardcoded
+          //
     } //the code for files
 }
