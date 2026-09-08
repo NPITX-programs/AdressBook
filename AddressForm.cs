@@ -62,12 +62,12 @@ namespace AdressBook //major updates needed
         {
             //read from path: filepath
             // call other file
-            files.read(filepath, sep, min); //call the function used to read files (that way I can trigger it in this file without needing to put in the necessary variables)
-        } //call the read from file method (that way I don't have to do file.files first)
+            fileCode.read(filepath, sep, min); //call the function used to read fileCode (that way I can trigger it in this file without needing to put in the necessary variables)
+        } //call the read from file method (that way I don't have to do file.fileCode first)
 
         private void WriteToFile()
         {
-            files.Write(filepath, sep); //call the function used to write files
+            fileCode.Write(filepath, sep); //call the function used to write fileCode
         } //call the write to file. Same as above comment
          
         private void clear()
@@ -282,7 +282,7 @@ namespace AdressBook //major updates needed
             if(saveFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
             {
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
-                WriteToFile(); //write to files
+                WriteToFile(); //write to fileCode
             }
         } //save as
 

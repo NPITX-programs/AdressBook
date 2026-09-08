@@ -4,7 +4,7 @@ using System;
 
 namespace AdressBook
 {
-    internal static class files
+    internal static class fileCode
     {
         internal static void Write(string filepath, char sep) 
         {
@@ -79,5 +79,9 @@ namespace AdressBook
 
             }
         }
-    } //the code for files
+    } //the code for fileCode
+    internal static class manipulateData
+    {
+
+    }
 }
