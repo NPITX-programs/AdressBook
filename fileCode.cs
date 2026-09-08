@@ -38,7 +38,7 @@ namespace AdressBook.files
             {
                 AdressBook.coreCommands.error("File Not Found"); //show error
             }
-        } //the write function (to refactor)
+        } //the write function
 
         internal static void read(string path, char sep, int min) //the read function
         {
