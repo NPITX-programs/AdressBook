@@ -80,4 +80,8 @@ namespace AdressBook
             }
         }
     } //the code for readFiles
+    internal static class inputData
+    {
+
+    }
 }
