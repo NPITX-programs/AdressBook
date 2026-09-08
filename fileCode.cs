@@ -8,7 +8,7 @@ namespace AdressBook.files
 {
     internal static class files
     {
-        internal static void Write(string filepath, char sep) 
+        internal static void Write(string filepath, char sep) //the write function 
         {
             bool status = File.Exists(filepath); //check if the file exists
             if (status || Program.debug)
@@ -38,7 +38,7 @@ namespace AdressBook.files
             {
                 AdressBook.coreCommands.error("File Not Found"); //show error
             }
-        } //the write function (to refactor)
+        }
 
         internal static void read(string path, char sep, int min) //the read function
         {
