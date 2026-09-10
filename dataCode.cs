@@ -69,13 +69,18 @@ namespace AdressBook
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length == min)
                             {
-                                   Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
- 
-                                Program.contacts.Add(c); //add to list
+                                dI.firstname = cont[0];
+                                dI.lastname = cont[1];
+                                dI.email = cont[2];
+                                dI.phone = cont[3];
+                                dI.buisness = cont[4];
+                                dI.notes = cont[5];
+                                dI.index = cont[6];
+                                //necessary conversions:
+                                    //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
                             }
                             else
                             {
-                             
                                 AdressBook.coreCommands.error("error: below Max Length");
                             }
                         }
@@ -92,10 +97,6 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
-        }
-        internal static dataInput readFile2(string filePath, char sep = ',',int min = 1)
-        {
-            dataInput dI = new dataInput();
 
             return dI;
         }
