@@ -59,7 +59,7 @@
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Contact.cs" />
-    <Compile Include="fileCode.cs" />
+    <Compile Include="dataCode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddressForm.resx">
@@ -74,6 +74,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="adressClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
