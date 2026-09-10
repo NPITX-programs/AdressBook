@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System;
 using System.Windows.Documents;
+using System.Collections.Generic;
 
 namespace AdressBook
 {
@@ -81,6 +82,9 @@ namespace AdressBook
             }
         }
     } //the code for fileCode
+        internal static List readFiles(string filePath, char sep = ',')
+        {
+        }
     internal static class manipulateData
     {
 
