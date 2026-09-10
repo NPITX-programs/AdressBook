@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace AdressBook
 {
-    internal class dataRefference
+    internal class dataInput
     {
         internal dynamic firstname; //first name
         internal dynamic lastname; //last name
@@ -91,9 +91,11 @@ namespace AdressBook
 
             }
         }
-        internal static storeData readFile(string filePath, char sep = ',')
+        internal static dataInput readFile2(string filePath, char sep = ',')
         {
+            dataInput dI = new dataInput();
 
+            return dI;
         }
     } //the code for fileCode
     internal static class manipulateData
