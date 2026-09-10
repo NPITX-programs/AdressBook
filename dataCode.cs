@@ -6,6 +6,16 @@ using System.Collections.Generic;
 
 namespace AdressBook
 {
+    internal class dataRefference
+    {
+        internal var firstname; //first name
+        internal var lastname; //last name
+        internal var email; //e-mail address
+        internal var phone; //phone number
+        internal var buisness; //buisness
+        internal var notes; //notes about contact
+        internal var index; //the index of the entry
+    }
     internal partial class fileCode
     {
         internal static void Write(string filepath, char sep) 
@@ -81,11 +91,11 @@ namespace AdressBook
 
             }
         }
-    } //the code for fileCode
         internal static storeData readFile(string filePath, char sep = ',')
         {
 
         }
+    } //the code for fileCode
     internal static class manipulateData
     {
 
