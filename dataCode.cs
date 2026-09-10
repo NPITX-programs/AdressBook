@@ -16,7 +16,7 @@ namespace AdressBook
         internal dynamic notes; //notes about contact
         internal dynamic index; //the index of the entry
     }
-    internal partial class fileCode
+    internal partial class dataImport
     {
         internal static void Write(string filepath, char sep) 
         {
@@ -91,7 +91,7 @@ namespace AdressBook
 
             }
         }
-        internal static dataInput readFile2(string filePath, char sep = ',')
+        internal static dataInput readFile2(string filePath, char sep = ',',int min = 1)
         {
             dataInput dI = new dataInput();
 
