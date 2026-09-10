@@ -84,6 +84,7 @@ namespace AdressBook
     } //the code for fileCode
         internal static List readFiles(string filePath, char sep = ',')
         {
+            List<object> contents = new List<object>(); //makes a list to contain all inputs
         }
     internal static class manipulateData
     {
