@@ -6,15 +6,15 @@ using System.Collections.Generic;
 
 namespace AdressBook
 {
-    internal class Contact
+    internal class dataRefference
     {
-        internal dynamic firstname; //first name
-        internal string lastname; //last name
-        internal string email; //e-mail address
-        internal string phone; //phone number
-        internal bool buisness; //buisness
-        internal string notes; //notes about contact
-        internal int index; //the index of the entry
+        internal var firstname; //first name
+        internal var lastname; //last name
+        internal var email; //e-mail address
+        internal var phone; //phone number
+        internal var buisness; //buisness
+        internal var notes; //notes about contact
+        internal var index; //the index of the entry
     }
     internal partial class fileCode
     {
