@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System;
 using System.Windows.Documents;
 using System.Collections.Generic;
+using System.Windows.Shapes;
 
 namespace AdressBook
 {
@@ -58,7 +59,7 @@ namespace AdressBook
             {
                 try
                 {
-                    using (StreamReader sr = new StreamReader(path)) //make stringreader
+                    using (StreamReader sr = new StreamReader(filePath)) //make stringreader
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
@@ -66,7 +67,7 @@ namespace AdressBook
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
                             var cont = contact.Split(sep); //splits it by the seperator
-                            if (cont.Length >= min)
+                            if (cont.Length == min)
                             {
                                    Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
  
