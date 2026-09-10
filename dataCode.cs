@@ -1,10 +1,11 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using System;
+using System.Windows.Documents;
 
 namespace AdressBook
 {
-    internal static class fileCode
+    internal partial class fileCode
     {
         internal static void Write(string filepath, char sep) 
         {
