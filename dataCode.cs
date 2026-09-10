@@ -50,9 +50,10 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min) //the read function, which has the refferenced class hardcoded
+        internal static dataInput readFile(string filePath, char sep = ',',int min = 7)
         {
-            bool status = File.Exists(path); //check if the file exists
+            bool status = File.Exists(filePath); //check if the file exists
+            dataInput dI = new dataInput();
             if (status || Program.debug) //check if there
             {
                 try
