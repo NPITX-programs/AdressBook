@@ -1,10 +1,22 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using System;
+using System.Windows.Documents;
+using System.Collections.Generic;
 
 namespace AdressBook
 {
-    internal static class fileCode
+    internal class dataRefference
+    {
+        internal var firstname; //first name
+        internal var lastname; //last name
+        internal var email; //e-mail address
+        internal var phone; //phone number
+        internal var buisness; //buisness
+        internal var notes; //notes about contact
+        internal var index; //the index of the entry
+    }
+    internal partial class fileCode
     {
         internal static void Write(string filepath, char sep) 
         {
@@ -78,6 +90,10 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
+        }
+        internal static storeData readFile(string filePath, char sep = ',')
+        {
+
         }
     } //the code for fileCode
     internal static class manipulateData
