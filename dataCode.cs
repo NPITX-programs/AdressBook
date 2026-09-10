@@ -51,10 +51,11 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static dataInput readFile(string filePath, char sep = ',',int min = 7)
+        internal static List<dataInput> readFile(string filePath, char sep = ',',int min = 7)
         {
             bool status = File.Exists(filePath); //check if the file exists
-            dataInput dI = new dataInput();
+
+            List<dataInput> results = new List<dataInput>();
             if (status || Program.debug) //check if there
             {
                 try
@@ -67,6 +68,7 @@ namespace AdressBook
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
                             var cont = contact.Split(sep); //splits it by the seperator
+                            dataInput dI = new dataInput();
                             if (cont.Length == min)
                             {
                                 dI.firstname = cont[0];
@@ -78,6 +80,7 @@ namespace AdressBook
                                 dI.index = cont[6];
                                 //necessary conversions:
                                     //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+                                    results.Add(dI);
                             }
                             else
                             {
@@ -98,11 +101,17 @@ namespace AdressBook
 
             }
 
-            return dI;
+            return results;
         }
     } //the code for fileCode
     internal static class manipulateData
     {
-
+        internal static Contact input(bool database = false, bool file = true)
+        {
+            if (file)
+            {
+                dataImport.readFile()
+            }
+        }
     }
 }
