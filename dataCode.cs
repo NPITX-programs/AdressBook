@@ -8,13 +8,13 @@ namespace AdressBook
 {
     internal class dataRefference
     {
-        internal var firstname; //first name
-        internal var lastname; //last name
-        internal var email; //e-mail address
-        internal var phone; //phone number
-        internal var buisness; //buisness
-        internal var notes; //notes about contact
-        internal var index; //the index of the entry
+        internal dynamic firstname; //first name
+        internal dynamic lastname; //last name
+        internal dynamic email; //e-mail address
+        internal dynamic phone; //phone number
+        internal dynamic buisness; //buisness
+        internal dynamic notes; //notes about contact
+        internal dynamic index; //the index of the entry
     }
     internal partial class fileCode
     {
