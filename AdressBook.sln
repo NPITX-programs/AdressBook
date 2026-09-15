@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "snackShack", "snackShack", 
 		..\..\SnackShack\SnackShack\SnackShack.sln = ..\..\SnackShack\SnackShack\SnackShack.sln
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "snackShack", "snackShack", "{B0567BF9-7EC6-4BBC-B477-FF832AE4379F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE742802-551B-4EE8-84C8-76DB1310CD29} = {B0567BF9-7EC6-4BBC-B477-FF832AE4379F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE3247F1-7999-484B-A2CF-92AE6C31BC59}
