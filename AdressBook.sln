@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnackShack", "..\..\SnackShack\SnackShack\SnackShack.csproj", "{AE742802-551B-4EE8-84C8-76DB1310CD29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "snackShack", "snackShack", "{B0567BF9-7EC6-4BBC-B477-FF832AE4379F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\SnackShack\SnackShack\SnackShack.sln = ..\..\SnackShack\SnackShack\SnackShack.sln
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
