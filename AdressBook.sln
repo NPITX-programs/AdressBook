@@ -5,6 +5,11 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdressBook", "AdressBook.csproj", "{0B7C67A3-C011-4C1B-AAE5-E8233779010F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "snackShack", "snackShack", "{EC384C39-9E14-4A99-8A24-0AFFAB530607}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\SnackShack\SnackShack\SnackShack.sln = ..\..\SnackShack\SnackShack\SnackShack.sln
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
