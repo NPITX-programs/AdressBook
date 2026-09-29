@@ -19,6 +19,8 @@ namespace AdressBook
     }
     internal partial class dataImport
     {
+        #region File
+
         internal static void Write(string filepath, char sep) 
         {
             bool status = File.Exists(filepath); //check if the file exists
@@ -110,7 +112,11 @@ namespace AdressBook
         {
             if (file)
             {
-                dataImport.readFile()
+                dataImport.readFile();
+            }
+            if (database)
+            {
+                // dataImport.readDB();
             }
         }
     }
