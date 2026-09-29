@@ -2,7 +2,7 @@
 
 namespace AdressBook
 {
-    internal static class information
+    internal static class constants
     {
         internal const char seperationChar = ',';
         internal const string fileName = "store";
