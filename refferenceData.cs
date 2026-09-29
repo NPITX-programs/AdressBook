@@ -2,7 +2,7 @@
 
 namespace AdressBook
 {
-    internal partial class internalConstants
+    internal partial class information
     {
         const char seperationChar = ',';
         const string fileName = "store";

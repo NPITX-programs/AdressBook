@@ -109,7 +109,7 @@
             this.txt_contNote.Name = "txt_contNote";
             this.txt_contNote.Size = new System.Drawing.Size(188, 20);
             this.txt_contNote.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.txt_contNote, "Please input in whatever internalConstants about the contact\r\nmust be at least 1 charac" +
+            this.toolTip1.SetToolTip(this.txt_contNote, "Please input in whatever information about the contact\r\nmust be at least 1 charac" +
         "ter");
             // 
             // txt_phoNum
