@@ -12,10 +12,10 @@ namespace AdressBook
         internal static string root()
         {
             return AppDomain.CurrentDomain.BaseDirectory;
-        }
+        } //the root of the program
         internal static string path()
         {
             return root() + baseFolder + fileName + '.' + fileExtension;
-        }
+        } //the final path to the file
     }
 }
