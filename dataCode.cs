@@ -17,6 +17,7 @@ namespace AdressBook
         internal dynamic notes; //notes about contact
         internal dynamic index; //the index of the entry
     }
+
     internal partial class dataImport
     {
         #region File
@@ -110,10 +111,10 @@ namespace AdressBook
     {
         internal static Contact input(bool database = false, bool file = true)
         {
-            Contact
+            
             if (file)
             {
-            dataInput   = dataImport.readFile(constants.path(),constants.seperationChar,constants.min);
+
             } else
             {
                 
