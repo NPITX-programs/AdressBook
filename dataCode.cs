@@ -112,7 +112,10 @@ namespace AdressBook
         {
             if (file)
             {
-                dataImport.readFile();
+                dataImport.readFile(constants.path(),constants.seperationChar,constants.min);
+            } else
+            {
+                
             }
             if (database)
             {
