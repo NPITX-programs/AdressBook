@@ -110,9 +110,10 @@ namespace AdressBook
     {
         internal static Contact input(bool database = false, bool file = true)
         {
+            Contact
             if (file)
             {
-                dataImport.readFile(constants.path(),constants.seperationChar,constants.min);
+            dataInput   = dataImport.readFile(constants.path(),constants.seperationChar,constants.min);
             } else
             {
                 
@@ -121,6 +122,7 @@ namespace AdressBook
             {
                 // dataImport.readDB();
             }
+            return fromFile;
         }
     }
 }
