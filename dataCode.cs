@@ -112,6 +112,7 @@ namespace AdressBook
         {
             if (file)
             {
+                
                 dataImport.readFile();
             }
             if (database)
