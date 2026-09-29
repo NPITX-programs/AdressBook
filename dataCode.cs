@@ -1,12 +1,10 @@
-﻿
-using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using System.Windows.Forms;
 using System;
 
-namespace AdressBook.files
+namespace AdressBook
 {
-    internal static class files
+    internal static class fileCode
     {
         internal static void Write(string filepath, char sep) 
         {
@@ -40,7 +38,7 @@ namespace AdressBook.files
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min) //the read function
+        internal static void read(string path, char sep, int min) //the read function, which has the refferenced class hardcoded
         {
             bool status = File.Exists(path); //check if the file exists
             if (status || Program.debug) //check if there
@@ -57,16 +55,8 @@ namespace AdressBook.files
                             var cont = contact.Split(sep); //splits it by the seperator
                             if (cont.Length >= min)
                             {
-                                Contact c = new Contact //make new constact
-                                {
-                                    firstname = cont[0], //put the realevent input into the releavent field
-                                    lastname = cont[1], //same
-                                    phone = cont[2], //same
-                                    email = cont[3], //same
-                                    buisness = Convert.ToBoolean(cont[4]), //same
-                                    notes = cont[5], //same
-                                    index = Convert.ToInt32(cont[6]) - 1 //more of the same             
-                                };
+                                   Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+ 
                                 Program.contacts.Add(c); //add to list
                             }
                             else
@@ -89,14 +79,9 @@ namespace AdressBook.files
 
             }
         }
-    } //the code for files
-
-    /* internal static class sqlServer
+    } //the code for fileCode
+    internal static class manipulateData
     {
-        //name of table: Contacts
-        internal static void getContacts()
-        {
 
-        }
-    } */
+    }
 }
