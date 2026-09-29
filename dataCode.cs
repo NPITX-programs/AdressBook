@@ -17,7 +17,6 @@ namespace AdressBook
         internal dynamic notes; //notes about contact
         internal dynamic index; //the index of the entry
     }
-
     internal partial class dataImport
     {
         #region File
@@ -106,24 +105,26 @@ namespace AdressBook
 
             return results;
         }
+        #endregion File
+
     } //the code for fileCode
     internal static class manipulateData
     {
         internal static Contact input(bool database = false, bool file = true)
         {
-            
+            dataInput fullInput = new dataInput();
             if (file)
             {
-
+                var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
+                foreach (var value in values) {
+                f
+                }
             } else
-            {
-                
-            }
             if (database)
             {
+                return null; //temporary skip
                 // dataImport.readDB();
             }
-            return fromFile;
         }
     }
 }
