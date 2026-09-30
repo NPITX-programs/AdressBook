@@ -1,11 +1,26 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using System;
+using System.Windows.Documents;
+using System.Collections.Generic;
+using System.Windows.Shapes;
 
 namespace AdressBook
 {
-    internal static class fileCode
+    internal class dataInput
     {
+        internal dynamic firstname; //first name
+        internal dynamic lastname; //last name
+        internal dynamic email; //e-mail address
+        internal dynamic phone; //phone number
+        internal dynamic buisness; //buisness
+        internal dynamic notes; //notes about contact
+        internal dynamic index; //the index of the entry
+    }
+    internal partial class dataImport
+    {
+        #region File
+
         internal static void Write(string filepath, char sep) 
         {
             bool status = File.Exists(filepath); //check if the file exists
@@ -38,14 +53,16 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min) //the read function, which has the refferenced class hardcoded
+        internal static List<dataInput> readFile(string filePath, char sep = ',',int min = 7)
         {
-            bool status = File.Exists(path); //check if the file exists
+            bool status = File.Exists(filePath); //check if the file exists
+
+            List<dataInput> results = new List<dataInput>();
             if (status || Program.debug) //check if there
             {
                 try
                 {
-                    using (StreamReader sr = new StreamReader(path)) //make stringreader
+                    using (StreamReader sr = new StreamReader(filePath)) //make stringreader
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
@@ -53,15 +70,22 @@ namespace AdressBook
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
                             var cont = contact.Split(sep); //splits it by the seperator
-                            if (cont.Length >= min)
+                            dataInput dI = new dataInput();
+                            if (cont.Length == min)
                             {
-                                   Contact c = storageSystem.newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
- 
-                                Program.contacts.Add(c); //add to list
+                                dI.firstname = cont[0];
+                                dI.lastname = cont[1];
+                                dI.email = cont[2];
+                                dI.phone = cont[3];
+                                dI.buisness = cont[4];
+                                dI.notes = cont[5];
+                                dI.index = cont[6];
+                                //necessary conversions:
+                                    //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+                                    results.Add(dI);
                             }
                             else
                             {
-                             
                                 AdressBook.coreCommands.error("error: below Max Length");
                             }
                         }
@@ -78,10 +102,29 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
+
+            return results;
         }
+        #endregion File
+
     } //the code for fileCode
     internal static class manipulateData
     {
-
+        internal static List<dataInput> input(bool database = false, bool file = true)
+        {
+            List<dataInput> fullInput = new List<dataInput> ();
+            if (file)
+            {
+                var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
+                fullInput.AddRange(values);
+            } else
+            if (database)
+            {
+                //var values = dataImport.readDB();
+                //fullInput.AddRange(values);
+                    //location for code
+            }
+            return fullInput;
+        }
     }
 }
