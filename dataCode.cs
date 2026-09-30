@@ -116,10 +116,7 @@ namespace AdressBook
             if (file)
             {
                 var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
-                foreach (var value in values) {
-                {
-
-                }
+                fileInputs = values;
             } else
             if (database)
             {
