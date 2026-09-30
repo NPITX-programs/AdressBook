@@ -122,8 +122,9 @@ namespace AdressBook
             } else
             if (database)
             {
-                return null; //temporary skip
-                // dataImport.readDB();
+                //var values = dataImport.readDB();
+                //fullInput.AddRange(values);
+                    //location for code
             }
         }
     }
