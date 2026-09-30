@@ -112,7 +112,6 @@ namespace AdressBook
     {
         internal static List<dataInput> input(bool database = false, bool file = true)
         {
-            dataInput fullInput = new dataInput();
             List<dataInput> fullInput = new List<dataInput> ();
             if (file)
             {
@@ -124,6 +123,7 @@ namespace AdressBook
                 return null; //temporary skip
                 // dataImport.readDB();
             }
+            return fullInput;
         }
     }
 }
