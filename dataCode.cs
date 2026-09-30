@@ -110,9 +110,10 @@ namespace AdressBook
     } //the code for fileCode
     internal static class manipulateData
     {
-        internal static Contact input(bool database = false, bool file = true)
+        internal static List<dataInput> input(bool database = false, bool file = true)
         {
             dataInput fullInput = new dataInput();
+            List<dataInput> fullInput = new List<dataInput> ();
             if (file)
             {
                 var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
