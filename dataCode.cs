@@ -113,12 +113,10 @@ namespace AdressBook
         internal static List<dataInput> input(bool database = false, bool file = true)
         {
             List<dataInput> fullInput = new List<dataInput> ();
-            List fileInputs = new fullInput; //placeholder list for file inputs
-            list databaseInputs = new fullInput; //placeholder list for database inputs
             if (file)
             {
                 var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
-                fileInputs = values;
+                fullInput.AddRange(values);
             } else
             if (database)
             {
@@ -126,6 +124,7 @@ namespace AdressBook
                 //fullInput.AddRange(values);
                     //location for code
             }
+            return fullInput;
         }
     }
 }
