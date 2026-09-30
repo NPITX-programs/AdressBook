@@ -116,7 +116,7 @@ namespace AdressBook
             if (file)
             {
                 var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
-                fileInputs = values;
+                fullInput.AddRange(values);
             } else
             if (database)
             {
