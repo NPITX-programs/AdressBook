@@ -107,6 +107,12 @@ namespace AdressBook
         }
         #endregion File
 
+        #region SQL
+        #endregion
+
+        #region import
+
+        #endregion
     } //the code for fileCode
     internal static class manipulateData
     {
