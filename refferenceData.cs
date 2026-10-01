@@ -2,7 +2,7 @@
 
 namespace AdressBook
 {
-    internal partial class information
+    internal static class constants
     {
         internal const char seperationChar = ',';
         internal const string fileName = "store";
@@ -17,13 +17,5 @@ namespace AdressBook
         {
             return root() + baseFolder + fileName + '.' + fileExtension;
         } //the final path to the file
-        internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
-        const char seperationChar = ',';
-        const string fileName = "store";
-        const string baseFolder = "contacts"; //name of file
-        const string fileExtension = "csv"; //extension of file
-        const int min = 6;//minimum total values in an entry
-        string root = AppDomain.CurrentDomain.BaseDirectory;
-        string path = AppDomain.CurrentDomain.BaseDirectory + baseFolder + fileName + fileExtension;
     }
 }
