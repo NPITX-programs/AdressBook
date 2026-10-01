@@ -118,7 +118,10 @@ namespace AdressBook
         internal static List<Contact> AccessData(bool file = true, bool db = false)
         {
             var dI = manipulateData.input(file, db);
-
+            dI.ForEach(d =>
+            {
+                var formData = manipulateData.format(d);
+            }
 
         }
         #endregion
@@ -142,7 +145,9 @@ namespace AdressBook
             return fullInput;
         }
         internal static dataInput format(dataInput toFormat)
-
+        {
+            
         }
+
     }
 }
