@@ -68,7 +68,7 @@
       <FileName>dataCode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AdressBook.manipulateData">
+  <Class Name="AdressBook.manipulateData" Collapsed="true">
     <Position X="4" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAABAAAAAAAAAAAAA=</HashCode>
