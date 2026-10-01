@@ -129,8 +129,7 @@ namespace AdressBook
     
     internal static Contact acessData()
         {
-            Contact contact = new Contact();
-            return contact;
+            
         }
     }
 }
