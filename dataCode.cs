@@ -109,12 +109,12 @@ namespace AdressBook
 
         #region SQL
         #endregion
+
+        #region import
         internal static void AccessData()
         {
 
         }
-        #region import
-
         #endregion
     } //the code for fileCode
     internal static class manipulateData
