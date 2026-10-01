@@ -67,7 +67,7 @@ namespace AdressBook //major updates needed
 
         private void WriteToFile()
         {
-            fileCode.Write(filepath, sep); //call the function used to write fileCode
+             //call the function used to write fileCode
         } //call the write to file. Same as above comment
          
         private void clear()
