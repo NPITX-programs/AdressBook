@@ -53,8 +53,12 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static List<dataInput> readFile(string filePath, char sep = ',',int min = 7)
+        internal static List<dataInput> readFile(string filePath = null, char sep = ',',int min = 7)
         {
+            if (filePath == null)
+            {
+                filePath = constants.path();
+            }
             bool status = File.Exists(filePath); //check if the file exists
 
             List<dataInput> results = new List<dataInput>();
