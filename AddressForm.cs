@@ -60,9 +60,10 @@ namespace AdressBook //major updates needed
 
         private void readFromFile()
         {
+            var store = manipulateData.acessData();
             //read from path: filepath
             // call other file
-            fileCode.read(filepath, sep, min); //call the function used to read fileCode (that way I can trigger it in this file without needing to put in the necessary variables)
+            //call the function used to read fileCode (that way I can trigger it in this file without needing to put in the necessary variables)
         } //call the read from file method (that way I don't have to do file.fileCode first)
 
         private void WriteToFile()
