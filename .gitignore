@@ -12,6 +12,11 @@
 *.userosscache
 *.sln.docstates
 *.env
+##
+## Get latest from https://github.com/github/gitignore/blob/master/SSDT-sqlproj.gitignore
+# Build output
+bin/
+obj/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
