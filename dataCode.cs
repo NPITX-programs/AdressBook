@@ -44,7 +44,7 @@ namespace AdressBook
                 }
                 catch (Exception ex)
                 {
-                    AdressBook.coreCommands.error(Program.preMadeErrorMsg, ex, true); //show error
+                    AdressBook.coreCommands.error(constants.preMadeErrorMsg, ex, true); //show error
                 }
             }
             else
