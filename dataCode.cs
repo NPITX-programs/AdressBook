@@ -109,7 +109,10 @@ namespace AdressBook
 
         #region SQL
         #endregion
+        internal static void AccessData()
+        {
 
+        }
         #region import
 
         #endregion
@@ -131,11 +134,6 @@ namespace AdressBook
                 //location for code
             }
             return fullInput;
-        }
-    
-    internal static Contact acessData()
-        {
-            
         }
     }
 }

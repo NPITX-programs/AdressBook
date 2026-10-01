@@ -60,7 +60,7 @@ namespace AdressBook //major updates needed
 
         private void readFromFile()
         {
-            var store = manipulateData.acessData();
+            //var store = 
             //read from path: filepath
             // call other file
             //call the function used to read fileCode (that way I can trigger it in this file without needing to put in the necessary variables)
