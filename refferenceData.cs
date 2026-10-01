@@ -2,7 +2,7 @@
 
 namespace AdressBook
 {
-    internal partial class information
+    internal static class constants
     {
         internal const char seperationChar = ',';
         internal const string fileName = "store";
@@ -17,6 +17,5 @@ namespace AdressBook
         {
             return root() + baseFolder + fileName + '.' + fileExtension;
         } //the final path to the file
-        internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
     }
 }
