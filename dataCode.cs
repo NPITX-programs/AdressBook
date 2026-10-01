@@ -112,19 +112,25 @@ namespace AdressBook
     {
         internal static List<dataInput> input(bool database = false, bool file = true)
         {
-            List<dataInput> fullInput = new List<dataInput> ();
+            List<dataInput> fullInput = new List<dataInput>();
             if (file)
             {
-                var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
+                var values = (dataImport.readFile(constants.path(), constants.seperationChar, constants.min));
                 fullInput.AddRange(values);
             } else
             if (database)
             {
                 //var values = dataImport.readDB();
                 //fullInput.AddRange(values);
-                    //location for code
+                //location for code
             }
             return fullInput;
+        }
+    
+    internal static Contact acessData()
+        {
+            Contact contact = new Contact();
+            return contact;
         }
     }
 }
