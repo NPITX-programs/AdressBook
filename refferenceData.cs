@@ -17,5 +17,6 @@ namespace AdressBook
         {
             return root() + baseFolder + fileName + '.' + fileExtension;
         } //the final path to the file
+        internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
     }
 }
