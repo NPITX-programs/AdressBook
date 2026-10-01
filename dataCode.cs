@@ -1,8 +1,9 @@
-﻿using System.IO;
-using System.Windows.Forms;
-using System;
-using System.Windows.Documents;
+﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Shapes;
 
 namespace AdressBook
@@ -115,13 +116,20 @@ namespace AdressBook
         #endregion
 
         #region import
-        internal static List<Contact> AccessData(bool file = true, bool db = false)
+        internal static void AccessData(bool file = true, bool db = false)
         {
             var dI = manipulateData.input(file, db);
             dI.ForEach(d =>
             {
-                var formData = manipulateData.format(d);
+                var con = manipulateData.format(d);
+                if (con != null) {
+                    Program.contacts.Add(con);
+                } 
+                else { 
+                    //some sort of error
+                }
             }
+            );
 
         }
         #endregion
