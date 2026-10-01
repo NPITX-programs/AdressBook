@@ -115,8 +115,10 @@ namespace AdressBook
         #endregion
 
         #region import
-        internal static void AccessData()
+        internal static List<Contact> AccessData(bool file = true, bool db = false)
         {
+            var dI = manipulateData.input(file, db);
+
 
         }
         #endregion
@@ -138,6 +140,9 @@ namespace AdressBook
                 //location for code
             }
             return fullInput;
+        }
+        internal static dataInput format(dataInput toFormat)
+
         }
     }
 }
