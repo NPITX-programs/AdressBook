@@ -1,8 +1,9 @@
-﻿using System.IO;
-using System.Windows.Forms;
-using System;
-using System.Windows.Documents;
+﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Shapes;
 
 namespace AdressBook
@@ -53,8 +54,12 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static List<dataInput> readFile(string filePath, char sep = ',',int min = 7)
+        internal static List<dataInput> readFile(string filePath = null, char sep = ',',int min = 7)
         {
+            if (filePath == null)
+            {
+                filePath = constants.path();
+            }
             bool status = File.Exists(filePath); //check if the file exists
 
             List<dataInput> results = new List<dataInput>();
@@ -107,24 +112,50 @@ namespace AdressBook
         }
         #endregion File
 
+        #region SQL
+        #endregion
+
+        #region import
+        internal static void AccessData(bool file = true, bool db = false)
+        {
+            var dI = manipulateData.input(file, db);
+            dI.ForEach(d =>
+            {
+                var con = manipulateData.format(d);
+                if (con != null) {
+                    Program.contacts.Add(con);
+                } 
+                else { 
+                    //some sort of error
+                }
+            }
+            );
+
+        }
+        #endregion
     } //the code for fileCode
     internal static class manipulateData
     {
         internal static List<dataInput> input(bool database = false, bool file = true)
         {
-            List<dataInput> fullInput = new List<dataInput> ();
+            List<dataInput> fullInput = new List<dataInput>();
             if (file)
             {
-                var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
+                var values = (dataImport.readFile(constants.path(), constants.seperationChar, constants.min));
                 fullInput.AddRange(values);
             } else
             if (database)
             {
                 //var values = dataImport.readDB();
                 //fullInput.AddRange(values);
-                    //location for code
+                //location for code
             }
             return fullInput;
         }
+        internal static dataInput format(dataInput toFormat)
+        {
+            
+        }
+
     }
 }
