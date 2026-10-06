@@ -154,6 +154,13 @@ namespace AdressBook
         }
         internal static dataInput format(dataInput toFormat)
         {
+            toFormat.firstname;
+            toFormat.lastname;
+            toFormat.email;
+            toFormat.phone;
+            toFormat.buisness;
+            toFormat.notes;
+            toFormat.index;
             
         }
 
