@@ -121,7 +121,7 @@ namespace AdressBook
             var dI = manipulateData.input(file, db);
             dI.ForEach(d =>
             {
-                var con = manipulateData.format(d);
+                var con = manipulateData.convertToContact(d);
                 if (con != null) {
                     Program.contacts.Add(con);
                 } 
@@ -161,6 +161,14 @@ namespace AdressBook
             var formatBuis = toFormat.buisness;
             var formatNotes = toFormat.notes;
             var formatIndex = toFormat.index;
+            string conFirName = formatFirstName.ToString;
+            string conLaName = formatLastName.ToString;
+            string conEmail = formatEmail.ToString;
+            string conPhone = formatPhone.ToString;
+            bool conType = formatBuis.ToBool;
+            string conNotes = formatNotes.ToString;
+            int conIndex = formatIndex.ToInt;
+            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
             
         }
 
