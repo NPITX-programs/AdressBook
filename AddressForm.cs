@@ -36,7 +36,7 @@ namespace AdressBook //major updates needed
         const string exten1 = "csv"; //extension of file
         const int min = 6; //minimum total values in an entry
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
-        bool autoSave = false; //default auto-save
+        bool autoSave = true; //default auto-save
         int distFromEdge = 0;
 
         private void frm_addressForm_Load(object sender, EventArgs e)
