@@ -155,7 +155,6 @@ namespace AdressBook
         }
         internal static dataInput format(dataInput toFormat)
         {
-            toFormat.notes;
             toFormat.index;
             dataInput format = toFormat;
 
@@ -174,6 +173,8 @@ namespace AdressBook
             var formatBuisness = format.buisness;
             bool formatedBusness = false;
 
+            var formatNotes = format.notes;
+            string formatedNotes = string.Empty;
             if(formatFirstName is string) {
                 formatedFirstName = formatFirstName;
 
@@ -203,6 +204,11 @@ namespace AdressBook
             {
                 formatedBusness = formatBuisness;
             }
+
+            //format notes
+            if (formatNotes is string) 
+            { formatedNotes = formatNotes; }
+
         }
 
         internal static Contact convert(dataInput toConvert)
