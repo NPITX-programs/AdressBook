@@ -122,7 +122,7 @@ namespace AdressBook
             dI.ForEach(d =>
             {
                 var con = manipulateData.format(d);
-                var con2 = manipulateData.input(d);
+                var con2 = manipulateData.convert(con);
                 if (con != null) {
                     Program.contacts.Add(con2);
                 } 
