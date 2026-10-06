@@ -162,6 +162,7 @@ namespace AdressBook
             toFormat.buisness;
             toFormat.notes;
             toFormat.index;
+            dataInput format = toFormat;
         }
 
         internal static Contact convert(dataInput toConvert)
