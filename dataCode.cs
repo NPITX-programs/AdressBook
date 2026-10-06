@@ -155,7 +155,6 @@ namespace AdressBook
         }
         internal static dataInput format(dataInput toFormat)
         {
-            toFormat.lastname;
             toFormat.email;
             toFormat.phone;
             toFormat.buisness;
@@ -165,8 +164,19 @@ namespace AdressBook
 
             var formatFirstName = format.firstname;
             string formatedFirstName = string.Empty;
+
+            var formatLastName = format.lastname;
+            string formatedLastName = string.Empty;
+
             if(formatFirstName is string) {
                 formatedFirstName = formatFirstName;
+
+            }
+
+            //format last name
+            if (formatLastName is string)
+            {
+                formatedLastName = formatLastName;
 
             }
         }
