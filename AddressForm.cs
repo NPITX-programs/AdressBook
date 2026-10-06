@@ -12,7 +12,6 @@ namespace AdressBook //major updates needed
         {
             InitializeComponent();
         }
-
         string filepath = string.Empty; //a placeholder blank path
 
         private void error(string message, Exception ex = null, bool revealException = false)
@@ -43,7 +42,6 @@ namespace AdressBook //major updates needed
         {
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
-            readFromFile(); //read from the file
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
