@@ -155,7 +155,6 @@ namespace AdressBook
         }
         internal static dataInput format(dataInput toFormat)
         {
-            toFormat.index;
             dataInput format = toFormat;
 
             var formatFirstName = format.firstname;
@@ -175,6 +174,10 @@ namespace AdressBook
 
             var formatNotes = format.notes;
             string formatedNotes = string.Empty;
+
+            var formatIndex = format.index;
+            int formatedIndedx = 0;
+            //format first name
             if(formatFirstName is string) {
                 formatedFirstName = formatFirstName;
 
@@ -209,6 +212,15 @@ namespace AdressBook
             if (formatNotes is string) 
             { formatedNotes = formatNotes; }
 
+            //format index
+            if (formatIndex is int)
+            {
+                formatedIndedx = formatIndex;
+            } else if (formatIndex is string)
+            {
+                formatedIndedx = formatIndex.ToInt;
+                bool t = formatBuisness.ToBool;
+            }
         }
 
         internal static Contact convert(dataInput toConvert)
