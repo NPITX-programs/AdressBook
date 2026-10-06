@@ -40,6 +40,7 @@ namespace AdressBook //major updates needed
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
+            dataImport.AccessData(true,false);
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
 
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
