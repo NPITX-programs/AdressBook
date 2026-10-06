@@ -123,6 +123,7 @@ namespace AdressBook
             {
                 var con = manipulateData.format(d);
                 var con2 = manipulateData.convert(con);
+                var con = manipulateData.convertToContact(d);
                 if (con != null) {
                     Program.contacts.Add(con2);
                 } 
