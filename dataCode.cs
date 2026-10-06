@@ -166,7 +166,14 @@ namespace AdressBook
 
         internal static Contact convert(dataInput toConvert)
         {
-            return storagenewContact();
+            string firName = toConvert.firstname;
+            string laName = toConvert.lastname;
+            string email = toConvert.email;
+            string phone = toConvert.phone;
+            bool buisness = toConvert.buisness;
+            string notes = toConvert.notes;
+            int id = toConvert.index;
+            return storageSystem.newContact(firName,laName,email,phone,buisness,notes,id);
         }
 
     }
