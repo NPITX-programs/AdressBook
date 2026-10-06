@@ -121,9 +121,9 @@ namespace AdressBook
             var dI = manipulateData.input(file, db);
             dI.ForEach(d =>
             {
-                var con = manipulateData.convertToContact(d);
+                var con = manipulateData.format(d);
                 if (con != null) {
-                    Program.contacts.Add(con2);
+                    Program.contacts.Add(con);
                 } 
                 else { 
                     //some sort of error
@@ -152,86 +152,16 @@ namespace AdressBook
             }
             return fullInput;
         }
-        internal static dataInput format(dataInput toFormat)
+        internal static Contact convertToContact(dataInput toFormat)
         {
-            dataInput format = toFormat;
-
-            var formatFirstName = format.firstname;
-            string formatedFirstName = string.Empty;
-
-            var formatLastName = format.lastname;
-            string formatedLastName = string.Empty;
-
-            var formatEmail = format.email;
-            string formatedEmail = string.Empty;
-
-            var formatPhone = format.phone;
-            string formatedPhone = string.Empty;
-
-            var formatBuisness = format.buisness;
-            bool formatedBusness = false;
-
-            var formatNotes = format.notes;
-            string formatedNotes = string.Empty;
-
-            var formatIndex = format.index;
-            int formatedIndedx = 0;
-            //format first name
-            if(formatFirstName is string) {
-                formatedFirstName = formatFirstName;
-
-            }
-
-            //format last name
-            if (formatLastName is string)
-            {
-                formatedLastName = formatLastName;
-
-            }
-
-            //format email
-            if (formatEmail is string)
-            {
-                formatedEmail = formatEmail;
-            }
-
-            //format phone
-            if (formatPhone is string)
-            {
-                formatedPhone = formatPhone;
-            }
-
-            //format buisness flag
-            if (formatBuisness is bool)
-            {
-                formatedBusness = formatBuisness;
-            }
-
-            //format notes
-            if (formatNotes is string) 
-            { formatedNotes = formatNotes; }
-
-            //format index
-            if (formatIndex is int)
-            {
-                formatedIndedx = formatIndex;
-            } else if (formatIndex is string)
-            {
-                formatedIndedx = formatIndex.ToInt;
-                bool t = formatBuisness.ToBool;
-            }
-        }
-
-        internal static Contact convert(dataInput toConvert)
-        {
-            string firName = toConvert.firstname;
-            string laName = toConvert.lastname;
-            string email = toConvert.email;
-            string phone = toConvert.phone;
-            bool buisness = toConvert.buisness;
-            string notes = toConvert.notes;
-            int id = toConvert.index;
-            return storageSystem.newContact(firName,laName,email,phone,buisness,notes,id);
+            var formatFirstName = toFormat.firstname;
+            var formatLastName = toFormat.lastname;
+            var formatEmail = toFormat.email;
+            var formatPhone = toFormat.phone;
+            var formatBuis = toFormat.buisness;
+            var formatNotes = toFormat.notes;
+            var formatIndex = toFormat.index;
+            
         }
 
     }
