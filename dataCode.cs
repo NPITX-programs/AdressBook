@@ -1,8 +1,9 @@
-﻿using System.IO;
-using System.Windows.Forms;
-using System;
-using System.Windows.Documents;
+﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Shapes;
 
 namespace AdressBook
@@ -53,8 +54,12 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static List<dataInput> readFile(string filePath, char sep = ',',int min = 7)
+        internal static List<dataInput> readFile(string filePath = null, char sep = ',',int min = 7)
         {
+            if (filePath == null)
+            {
+                filePath = constants.path();
+            }
             bool status = File.Exists(filePath); //check if the file exists
 
             List<dataInput> results = new List<dataInput>();
@@ -71,7 +76,7 @@ namespace AdressBook
                             string contact = sr.ReadLine(); //gets the next line of text from the file
                             var cont = contact.Split(sep); //splits it by the seperator
                             dataInput dI = new dataInput();
-                            if (cont.Length == min)
+                            if (cont.Length <= min)
                             {
                                 dI.firstname = cont[0];
                                 dI.lastname = cont[1];
@@ -107,24 +112,65 @@ namespace AdressBook
         }
         #endregion File
 
+        #region SQL
+        #endregion
+
+        #region import
+        internal static void AccessData(bool file = true, bool db = false)
+        {
+            var dI = manipulateData.input(file, db);
+            dI.ForEach(d =>
+            {
+                var con = manipulateData.convertToContact(d);
+                if (con != null) {
+                    Program.contacts.Add(con);
+                } 
+                else { 
+                    //some sort of error
+                }
+            }
+            );
+
+        }
+        #endregion
     } //the code for fileCode
     internal static class manipulateData
     {
-        internal static List<dataInput> input(bool database = false, bool file = true)
+        internal static List<dataInput> input(bool file = true, bool database = false)
         {
-            List<dataInput> fullInput = new List<dataInput> ();
+            List<dataInput> fullInput = new List<dataInput>();
             if (file)
             {
-                var values = (dataImport.readFile(constants.path(),constants.seperationChar,constants.min));
+                var values = (dataImport.readFile(constants.path(), constants.seperationChar, constants.min));
                 fullInput.AddRange(values);
             } else
             if (database)
             {
                 //var values = dataImport.readDB();
                 //fullInput.AddRange(values);
-                    //location for code
+                //location for code
             }
             return fullInput;
         }
+        internal static Contact convertToContact(dataInput toFormat)
+        {
+            var formatFirstName = toFormat.firstname;
+            var formatLastName = toFormat.lastname;
+            var formatEmail = toFormat.email;
+            var formatPhone = toFormat.phone;
+            var formatBuis = toFormat.buisness;
+            var formatNotes = toFormat.notes;
+            var formatIndex = toFormat.index;
+            string conFirName = formatFirstName.ToString;
+            string conLaName = formatLastName.ToString;
+            string conEmail = formatEmail.ToString;
+            string conPhone = formatPhone.ToString;
+            bool conType = formatBuis.ToBool;
+            string conNotes = formatNotes.ToString;
+            int conIndex = formatIndex.ToInt;
+            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
+            
+        }
+
     }
 }
