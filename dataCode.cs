@@ -154,13 +154,13 @@ namespace AdressBook
         }
         internal static Contact convertToContact(dataInput toFormat)
         {
-            toFormat.firstname;
-            toFormat.lastname;
-            toFormat.email;
-            toFormat.phone;
-            toFormat.buisness;
-            toFormat.notes;
-            toFormat.index;
+            var formatFirstName = toFormat.firstname;
+            var formatLastName = toFormat.lastname;
+            var formatEmail = toFormat.email;
+            var formatPhone = toFormat.phone;
+            var formatBuis = toFormat.buisness;
+            var formatNotes = toFormat.notes;
+            var formatIndex = toFormat.index;
             
         }
 
