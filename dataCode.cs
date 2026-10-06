@@ -152,7 +152,7 @@ namespace AdressBook
             }
             return fullInput;
         }
-        internal static dataInput format(dataInput toFormat)
+        internal static Contact convertToContact(dataInput toFormat)
         {
             toFormat.firstname;
             toFormat.lastname;
