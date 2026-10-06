@@ -122,8 +122,9 @@ namespace AdressBook
             dI.ForEach(d =>
             {
                 var con = manipulateData.format(d);
+                var con2 = manipulateData.input(d);
                 if (con != null) {
-                    Program.contacts.Add(con);
+                    Program.contacts.Add(con2);
                 } 
                 else { 
                     //some sort of error
@@ -161,7 +162,11 @@ namespace AdressBook
             toFormat.buisness;
             toFormat.notes;
             toFormat.index;
-            
+        }
+
+        internal static Contact convert(dataInput toConvert)
+        {
+            return storagenewContact();
         }
 
     }
