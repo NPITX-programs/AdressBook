@@ -136,7 +136,7 @@ namespace AdressBook
     } //the code for fileCode
     internal static class manipulateData
     {
-        internal static List<dataInput> input(bool database = false, bool file = true)
+        internal static List<dataInput> input(bool file = true, bool database = false)
         {
             List<dataInput> fullInput = new List<dataInput>();
             if (file)
