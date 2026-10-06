@@ -22,8 +22,11 @@ namespace AdressBook
     {
         #region File
 
-        internal static void Write(string filepath, char sep) 
+        internal static void Write(string filepath = null, char sep = constants.seperationChar)
         {
+            if (filepath == null) {
+                filepath = constants.path(); 
+            }
             bool status = File.Exists(filepath); //check if the file exists
             if (status || Program.debug)
             {
