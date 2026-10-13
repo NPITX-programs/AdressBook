@@ -1,0 +1,3 @@
+to find program
+
+use "string writer(budget.turtule)" will default to same location as .exe, which you can use to get a location to build dynamicly from
