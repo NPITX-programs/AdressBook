@@ -341,6 +341,10 @@ namespace AdressBook //major updates needed
             editInd = 0; //set edit index to 0
             btn_add.Text = btnAddTex; //set button back to original text
         } //clear entry
+        private void error(string message, Exception ex = null, bool revealException = false)
+        {
+            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
+        } //error system
         private void errorIcon(Control input, string error, bool clear = false)
         {
             var errorText = error; //change name of variable
@@ -349,9 +353,5 @@ namespace AdressBook //major updates needed
             }
             errorProvider1.SetError(input, errorText); //display the provider on the "input" control
         } //create error provider system
-        private void error(string message, Exception ex = null, bool revealException = false)
-        {
-            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
-        } //error system
     }
 }
