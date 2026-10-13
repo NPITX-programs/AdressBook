@@ -328,8 +328,7 @@ namespace AdressBook //major updates needed
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WriteToFile(); //save the file to the most recent path
-                //when you hit save as, the "path" variable is updated, and write to file utilizes that path variable, so using save as on it changes the save target
+            //SAVE FILE
         } //save
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
