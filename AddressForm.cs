@@ -219,7 +219,7 @@ namespace AdressBook //major updates needed
                     edit.buisness = contType; //set the contact type to the new value
                     if (autoSave)
                     {
-                        WriteToFile(); //save
+                        //SAVE TO FILE
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     clear(); //clear entry and deselect row
