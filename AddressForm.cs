@@ -258,7 +258,7 @@ namespace AdressBook //major updates needed
             if(saveFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
             {
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
-                WriteToFile(); //write to fileCode
+                //SAVE TO FILE
             }
         } //save as
 
