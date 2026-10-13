@@ -40,11 +40,6 @@ namespace AdressBook //major updates needed
 
         } //when form loads
         int ind = 0; //index for the current contact
-
-        private void WriteToFile()
-        {
-             //call the function used to write fileCode
-        } //call the write to file. Same as above comment
          
         private void clear()
         {
