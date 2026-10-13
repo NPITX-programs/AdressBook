@@ -294,7 +294,8 @@ namespace AdressBook //major updates needed
                 filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
                     //also sets the filepath for saveing to be the new one, that way if you save the file it is now the one you used save as on, not the in-built default
                 Program.contacts.Clear(); //clear the class
-                readFromFile(); //read from file
+
+                //READ FROM FILE
             }
         } //open
         private Contact selectContact(int index)
