@@ -13,11 +13,7 @@ namespace AdressBook //major updates needed
         }
         string filepath = string.Empty; //a placeholder blank path
 
-        private void error(string message, Exception ex = null, bool revealException = false)
-        {
-            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
 
-        } //error system
 
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
@@ -353,5 +349,9 @@ namespace AdressBook //major updates needed
             }
             errorProvider1.SetError(input, errorText); //display the provider on the "input" control
         } //create error provider system
+        private void error(string message, Exception ex = null, bool revealException = false)
+        {
+            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
+        } //error system
     }
 }
