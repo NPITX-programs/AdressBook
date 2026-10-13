@@ -238,7 +238,7 @@ namespace AdressBook //major updates needed
                     updateList(entry); //update the list
                     if (autoSave)
                     {
-                        WriteToFile(); //write to the file
+                        //SAVE TO FILE
                     } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
