@@ -161,13 +161,13 @@ namespace AdressBook
             var formatBuis = toFormat.buisness;
             var formatNotes = toFormat.notes;
             var formatIndex = toFormat.index;
-            string conFirName = formatFirstName.ToString;
-            string conLaName = formatLastName.ToString;
-            string conEmail = formatEmail.ToString;
-            string conPhone = formatPhone.ToString;
-            bool conType = formatBuis.ToBool;
-            string conNotes = formatNotes.ToString;
-            int conIndex = formatIndex.ToInt;
+            string conFirName = formatFirstName.ToString();
+            string conLaName = formatLastName.ToString();
+            string conEmail = formatEmail.ToString();
+            string conPhone = formatPhone.ToString();
+            bool conType = formatBuis.ToBool();
+            string conNotes = formatNotes.ToString();
+            int conIndex = formatIndex.ToInt();
             return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
             
         }
