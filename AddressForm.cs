@@ -56,14 +56,6 @@ namespace AdressBook //major updates needed
         } //when form loads
         int ind = 0; //index for the current contact
 
-        private void readFromFile()
-        {
-            //var store = 
-            //read from path: filepath
-            // call other file
-            //call the function used to read fileCode (that way I can trigger it in this file without needing to put in the necessary variables)
-        } //call the read from file method (that way I don't have to do file.fileCode first)
-
         private void WriteToFile()
         {
              //call the function used to write fileCode
