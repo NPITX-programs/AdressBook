@@ -20,8 +20,13 @@ namespace AdressBook //major updates needed
 
         } //error system
 
+        private string CreatePath(string root, string path, string name, string extension)
+        {
+            string finalPath = root + path + @"/" + name + "." + extension; //create the final path
 
+            return finalPath; //output said path
         } //create the final directory path
+
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
