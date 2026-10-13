@@ -126,15 +126,6 @@ namespace AdressBook //major updates needed
             return c; //output the new contact
         } //creates the class for the current input
 
-        private void errorIcon(Control input, string error, bool clear = false)
-        {
-            var errorText = error; //change name of variable
-            if (clear) {
-                errorText = ""; //if it's set to clear, change the text so it clears it
-            }
-            errorProvider1.SetError(input, errorText); //display the provider on the "input" control
-        } //create error provider system
-
         private void btn_add_Click(object sender, EventArgs e)
         {
             bool valid = true; //default to valid
@@ -354,5 +345,13 @@ namespace AdressBook //major updates needed
             editInd = 0; //set edit index to 0
             btn_add.Text = btnAddTex; //set button back to original text
         } //clear entry
+        private void errorIcon(Control input, string error, bool clear = false)
+        {
+            var errorText = error; //change name of variable
+            if (clear) {
+                errorText = ""; //if it's set to clear, change the text so it clears it
+            }
+            errorProvider1.SetError(input, errorText); //display the provider on the "input" control
+        } //create error provider system
     }
 }
