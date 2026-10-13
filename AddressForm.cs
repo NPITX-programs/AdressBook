@@ -7,7 +7,6 @@ namespace AdressBook //major updates needed
     public partial class frm_addressForm : Form
     {
         const bool debug = Program.debug; //this sets the debug system to the global debug variable
-        const char sep = ','; //seperation character
         public frm_addressForm()
         {
             InitializeComponent();
@@ -20,28 +19,14 @@ namespace AdressBook //major updates needed
 
         } //error system
 
-        private string CreatePath(string root, string path, string name, string extension)
-        {
-            string finalPath = root + path + @"/" + name + "." + extension; //create the final path
-
-            return finalPath; //output said path
-        } //create the final directory path
-
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
-
-        const string name1 = "store"; //name of file
-        const string exten1 = "csv"; //extension of file
-        const int min = 6; //minimum total values in an entry
-                           //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = true; //default auto-save
         int distFromEdge = 0;
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
-
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
@@ -55,19 +40,6 @@ namespace AdressBook //major updates needed
 
         } //when form loads
         int ind = 0; //index for the current contact
-
-        private void readFromFile()
-        {
-            //var store = 
-            //read from path: filepath
-            // call other file
-            //call the function used to read fileCode (that way I can trigger it in this file without needing to put in the necessary variables)
-        } //call the read from file method (that way I don't have to do file.fileCode first)
-
-        private void WriteToFile()
-        {
-             //call the function used to write fileCode
-        } //call the write to file. Same as above comment
          
         private void clear()
         {
@@ -242,7 +214,7 @@ namespace AdressBook //major updates needed
                     edit.buisness = contType; //set the contact type to the new value
                     if (autoSave)
                     {
-                        WriteToFile(); //save
+                        //SAVE TO FILE
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     clear(); //clear entry and deselect row
@@ -261,7 +233,7 @@ namespace AdressBook //major updates needed
                     updateList(entry); //update the list
                     if (autoSave)
                     {
-                        WriteToFile(); //write to the file
+                        //SAVE TO FILE
                     } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
@@ -281,7 +253,7 @@ namespace AdressBook //major updates needed
             if(saveFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
             {
                 filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
-                WriteToFile(); //write to fileCode
+                //SAVE TO FILE
             }
         } //save as
 
@@ -294,7 +266,8 @@ namespace AdressBook //major updates needed
                 filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
                     //also sets the filepath for saveing to be the new one, that way if you save the file it is now the one you used save as on, not the in-built default
                 Program.contacts.Clear(); //clear the class
-                readFromFile(); //read from file
+
+                //READ FROM FILE
             }
         } //open
         private Contact selectContact(int index)
@@ -350,8 +323,7 @@ namespace AdressBook //major updates needed
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WriteToFile(); //save the file to the most recent path
-                //when you hit save as, the "path" variable is updated, and write to file utilizes that path variable, so using save as on it changes the save target
+            //SAVE FILE
         } //save
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
