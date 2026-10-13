@@ -23,7 +23,6 @@ namespace AdressBook //major updates needed
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
 
-        const int min = 6; //minimum total values in an entry
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = true; //default auto-save
         int distFromEdge = 0;
