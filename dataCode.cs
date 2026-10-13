@@ -54,7 +54,7 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static List<dataInput> readFile1(string filePath = null, char sep = ',',int min = 7)
+        internal static List<dataInput> readFile(string filePath = null, char sep = ',',int min = 7)
         {
             if (filePath == null)
             {
@@ -141,7 +141,7 @@ namespace AdressBook
             List<dataInput> fullInput = new List<dataInput>();
             if (file)
             {
-                var values = (dataImport.readFile1(constants.path(), constants.seperationChar, constants.min));
+                var values = (dataImport.readFile(constants.path(), constants.seperationChar, constants.min));
                 fullInput.AddRange(values);
             } else
             if (database)
