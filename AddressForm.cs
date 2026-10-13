@@ -22,8 +22,6 @@ namespace AdressBook //major updates needed
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
-
-                           //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = true; //default auto-save
         int distFromEdge = 0;
 
