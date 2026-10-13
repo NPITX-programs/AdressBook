@@ -20,13 +20,6 @@ namespace AdressBook //major updates needed
 
         } //error system
 
-        private string CreatePath(string root, string path, string name, string extension)
-        {
-            string finalPath = root + path + @"/" + name + "." + extension; //create the final path
-
-            return finalPath; //output said path
-        } //create the final directory path
-
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
@@ -40,8 +33,6 @@ namespace AdressBook //major updates needed
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
-
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
             openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
@@ -55,6 +46,11 @@ namespace AdressBook //major updates needed
 
         } //when form loads
         int ind = 0; //index for the current contact
+
+        private void WriteToFile()
+        {
+             //call the function used to write fileCode
+        } //call the write to file. Same as above comment
          
         private void clear()
         {
@@ -281,7 +277,8 @@ namespace AdressBook //major updates needed
                 filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
                     //also sets the filepath for saveing to be the new one, that way if you save the file it is now the one you used save as on, not the in-built default
                 Program.contacts.Clear(); //clear the class
-                readFromFile(); //read from file
+
+                //READ FROM FILE
             }
         } //open
         private Contact selectContact(int index)
