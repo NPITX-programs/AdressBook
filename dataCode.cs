@@ -85,7 +85,9 @@ namespace AdressBook
                                 dI.buisness = cont[4];
                                 dI.notes = cont[5];
                                 dI.index = cont[6];
-                                results.Add(dI);
+                                //necessary conversions:
+                                    //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+                                    results.Add(dI);
                             }
                             else
                             {
