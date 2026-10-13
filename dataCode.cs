@@ -167,7 +167,7 @@ namespace AdressBook
             string conPhone = formatPhone.ToString();
             bool conType = Convert.ToBoolean(formatBuis);
             string conNotes = formatNotes.ToString();
-            int conIndex = formatIndex.ToInt();
+            int conIndex = Convert.ToInt32(formatIndex)-1;
             return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
             
         }
