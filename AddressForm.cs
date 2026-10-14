@@ -26,8 +26,6 @@ namespace AdressBook //major updates needed
             dataImport.AccessData(true, false);
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
-            openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
-            saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
 
             int tblEdge = this.dgv_contacts.Width; //get the current width of the table
