@@ -247,16 +247,7 @@ namespace AdressBook //major updates needed
 
         private void btn_op_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con"; //allow them to sort for a specific extension (the one utilized by this program), or any file
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
-            {
-                filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
-                    //also sets the filepath for saveing to be the new one, that way if you save the file it is now the one you used save as on, not the in-built default
-                Program.contacts.Clear(); //clear the class
-
-                //READ FROM FILE
-            }
+            //re-open the file to refresh it from computer file
         } //open
         private Contact selectContact(int index)
         {
