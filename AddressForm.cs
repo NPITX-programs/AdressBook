@@ -11,7 +11,6 @@ namespace AdressBook //major updates needed
         {
             InitializeComponent();
         }
-        string filepath = string.Empty; //a placeholder blank path
 
 
 
@@ -231,13 +230,10 @@ namespace AdressBook //major updates needed
             Application.Exit(); //close
         } //exit system
 
-        private void btn_svAs_Click(object sender, EventArgs e)
-        {
-        } //save as
-
         private void btn_op_Click(object sender, EventArgs e)
         {
-        }
+            //re-open the file to refresh it from computer file
+        } //refresh file
         private Contact selectContact(int index)
         {
             int leng = Program.contacts.Count; //find the length
