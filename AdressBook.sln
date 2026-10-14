@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdressBook", "AdressBook\Ad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "snackShack", "SnackShack\snackShack.csproj", "{0B7C67A3-C011-4C1B-AAE5-E8233779010F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "addressShack", "addressShack\addressShack.csproj", "{05E6B5FB-A248-45CA-AD07-ED5FDB95BB17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{0B7C67A3-C011-4C1B-AAE5-E8233779010F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B7C67A3-C011-4C1B-AAE5-E8233779010F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B7C67A3-C011-4C1B-AAE5-E8233779010F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E6B5FB-A248-45CA-AD07-ED5FDB95BB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E6B5FB-A248-45CA-AD07-ED5FDB95BB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E6B5FB-A248-45CA-AD07-ED5FDB95BB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E6B5FB-A248-45CA-AD07-ED5FDB95BB17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
