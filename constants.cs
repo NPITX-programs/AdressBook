@@ -22,7 +22,7 @@ namespace AdressBook
     }
     internal partial class inputTypes 
     {
-        internal bool file = true;
-        internal bool db = false;
+        internal static bool file = true;
+        internal static bool db = false;
     }
 }
