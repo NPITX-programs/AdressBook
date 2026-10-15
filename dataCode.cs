@@ -134,8 +134,13 @@ namespace AdressBook
             }
             );
 
+
+
         #endregion
         #region export
+        {
+            outputData(file, db);
+            //error
         }
         #endregion
     } //the code for fileCode
@@ -186,6 +191,9 @@ namespace AdressBook
             if (database)
             {
 
+                //var values = dataImport.readDB();
+                //fullInput.AddRange(values);
+                //location for code
             }
         }
 
