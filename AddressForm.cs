@@ -28,7 +28,7 @@ namespace AdressBook //major updates needed
         } //read the input from the file and generate the list
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            readInput(); //read the input from the file and generate the list
+            readInput(true,false); //read the input from the file and generate the list
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
 
             int tblEdge = this.dgv_contacts.Width; //get the current width of the table
@@ -237,7 +237,7 @@ namespace AdressBook //major updates needed
         private void btn_op_Click(object sender, EventArgs e)
         {
             Program.contacts.Clear(); //clear the list
-            readInput(); //read the input from the file and re-generate the list
+            readInput(true,false); //read the input from the file and re-generate the list
         } //refresh table
         private Contact selectContact(int index)
         {
