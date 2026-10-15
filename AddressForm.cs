@@ -22,7 +22,7 @@ namespace AdressBook //major updates needed
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            dataImport.AccessData(true, false);
+            dataImport.AccessData(file, db);
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
