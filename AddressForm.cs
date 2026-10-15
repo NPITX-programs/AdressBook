@@ -20,11 +20,14 @@ namespace AdressBook //major updates needed
         bool autoSave = true; //default auto-save
         int distFromEdge = 0;
 
-        private void frm_addressForm_Load(object sender, EventArgs e)
+        private void readInput(bool file =true, bool database = false)
         {
             dataImport.AccessData(true, false);
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
+        }
+        private void frm_addressForm_Load(object sender, EventArgs e)
+        {
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
 
             int tblEdge = this.dgv_contacts.Width; //get the current width of the table
