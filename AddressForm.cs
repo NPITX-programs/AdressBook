@@ -40,6 +40,12 @@ namespace AdressBook //major updates needed
         } //when form loads
         int ind = 0; //index for the current contact
          
+
+        private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
         private void clear()
         {
             if (dgv_contacts.CurrentRow != null)
