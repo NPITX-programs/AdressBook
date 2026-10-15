@@ -15,14 +15,18 @@ namespace AdressBook //major updates needed
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
-        bool autoSave = true; //default auto-save
+        bool autoSave = false; //default auto-save
         int distFromEdge = 0;
         bool file = inputTypes.file; //default to file input
         bool db = inputTypes.db; //default to no database input
 
         private void frm_save(object sender, FormClosingEventArgs e)
         {
-
+            if(autoSave == true)
+            {
+                dataImport.Write();
+            } else
+            }
         }
 
         private void frm_addressForm_Load(object sender, EventArgs e)
