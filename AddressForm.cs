@@ -291,7 +291,7 @@ namespace AdressBook //major updates needed
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //SAVE FILE
+            dataImport.Write();
         } //save
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
@@ -338,6 +338,6 @@ namespace AdressBook //major updates needed
             }
             errorProvider1.SetError(input, errorText); //display the provider on the "input" control
         } //create error provider system
-#endregion
+        #endregion
     }
 }
