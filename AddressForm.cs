@@ -236,8 +236,7 @@ namespace AdressBook //major updates needed
 
         private void btn_op_Click(object sender, EventArgs e)
         {
-            //re-open the file to refresh it from computer file
-        } //refresh file
+            Program.contacts.Clear(); //clear the list
             readInput(); //read the input from the file and re-generate the list
         private Contact selectContact(int index)
         {
