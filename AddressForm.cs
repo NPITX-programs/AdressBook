@@ -20,6 +20,11 @@ namespace AdressBook //major updates needed
         bool file = inputTypes.file; //default to file input
         bool db = inputTypes.db; //default to no database input
 
+        private void frm_save(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
             dataImport.AccessData(file, db);
