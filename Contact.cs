@@ -25,7 +25,11 @@
             c.notes = notes;
             c.index = index;
             return c;
+        } //creates the contact
+        internal static void contactList(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index) //creates the contact, and adds it to the list.
+        {
+            Contact con = newContact(firstname, lastname, email, phone, buisness, notes, index);
+            Program.contacts.Add(con);
         }
-
     }
 }
