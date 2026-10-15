@@ -173,6 +173,18 @@ namespace AdressBook
             int conIndex = Convert.ToInt32(formatIndex)-1;
             return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
             
+        } //the unformated thing to convert into the contact
+
+        internal static void output(bool file = true, bool database = false)
+        {
+            if (file)
+            {
+                dataImport.Write();
+            }
+            if (database)
+            {
+
+            }
         }
 
     }
