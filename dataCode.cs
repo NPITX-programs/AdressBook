@@ -134,10 +134,14 @@ namespace AdressBook
             }
             );
 
+        {
 
+        }
 
+        }
         #endregion
         #region export
+        internal static void outputData(bool file = true, bool db = false)
         {
             outputData(file, db);
             //error
@@ -190,7 +194,6 @@ namespace AdressBook
             }
             if (database)
             {
-
                 //var values = dataImport.readDB();
                 //fullInput.AddRange(values);
                 //location for code
