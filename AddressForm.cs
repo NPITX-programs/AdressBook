@@ -223,6 +223,7 @@ namespace AdressBook //major updates needed
                     updateList(entry); //update the list
                     if (autoSave)
                     {
+                        dataImport.Write();
                         //SAVE TO FILE
                     } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
