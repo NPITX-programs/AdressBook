@@ -20,4 +20,9 @@ namespace AdressBook
         } //the final path to the file
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
     }
+    internal partial class inputTypes 
+    {
+        internal static bool file = true;
+        internal static bool db = false;
+    }
 }

@@ -79,7 +79,7 @@ namespace AdressBook
                             string contact = sr.ReadLine(); //gets the next line of text from the file
                             var cont = contact.Split(sep); //splits it by the seperator
                             dataInput dI = new dataInput();
-                            if (cont.Length <= min)
+                            if (cont.Length >= min)
                             {
                                 dI.firstname = cont[0];
                                 dI.lastname = cont[1];
@@ -164,13 +164,13 @@ namespace AdressBook
             var formatBuis = toFormat.buisness;
             var formatNotes = toFormat.notes;
             var formatIndex = toFormat.index;
-            string conFirName = formatFirstName.ToString;
-            string conLaName = formatLastName.ToString;
-            string conEmail = formatEmail.ToString;
-            string conPhone = formatPhone.ToString;
-            bool conType = formatBuis.ToBool;
-            string conNotes = formatNotes.ToString;
-            int conIndex = formatIndex.ToInt;
+            string conFirName = formatFirstName.ToString();
+            string conLaName = formatLastName.ToString();
+            string conEmail = formatEmail.ToString();
+            string conPhone = formatPhone.ToString();
+            bool conType = Convert.ToBoolean(formatBuis);
+            string conNotes = formatNotes.ToString();
+            int conIndex = Convert.ToInt32(formatIndex)-1;
             return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
             
         }
