@@ -238,6 +238,7 @@ namespace AdressBook //major updates needed
         {
             Program.contacts.Clear(); //clear the list
             readInput(); //read the input from the file and re-generate the list
+        } //refresh table
         private Contact selectContact(int index)
         {
             int leng = Program.contacts.Count; //find the length
