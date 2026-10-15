@@ -22,7 +22,7 @@ namespace AdressBook
     {
         #region File
 
-        internal static void Write(string filepath = null, char sep = constants.seperationChar)
+        internal static void Write(string filepath = null, char sep = ',')
         {
             if (filepath == null) {
                 filepath = constants.path(); 
