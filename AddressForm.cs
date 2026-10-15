@@ -24,7 +24,7 @@ namespace AdressBook //major updates needed
         {
             if (autoSave == true)
             {
-                dataImport.Write();
+                dataImport.outputData(file, db);
             }
         }
 
@@ -226,8 +226,8 @@ namespace AdressBook //major updates needed
                     updateList(entry); //update the list
                     if (autoSave)
                     {
-                        dataImport.Write();
-                        //SAVE TO FILE
+                        dataImport.outputData(file, db);
+                        //SAVE TO  & database
                     } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
