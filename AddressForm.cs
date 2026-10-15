@@ -28,6 +28,7 @@ namespace AdressBook //major updates needed
         }
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
+            readInput(); //read the input from the file and generate the list
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
 
             int tblEdge = this.dgv_contacts.Width; //get the current width of the table
@@ -237,6 +238,7 @@ namespace AdressBook //major updates needed
         {
             //re-open the file to refresh it from computer file
         } //refresh file
+            readInput(); //read the input from the file and re-generate the list
         private Contact selectContact(int index)
         {
             int leng = Program.contacts.Count; //find the length
