@@ -22,7 +22,10 @@ namespace AdressBook //major updates needed
 
         private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
         {
-
+            if (autoSave == true)
+            {
+                dataImport.outputData(file, db);
+            }
         }
 
         private void frm_addressForm_Load(object sender, EventArgs e)
@@ -223,8 +226,8 @@ namespace AdressBook //major updates needed
                     updateList(entry); //update the list
                     if (autoSave)
                     {
-                        dataImport.Write();
-                        //SAVE TO FILE
+                        dataImport.outputData(file, db);
+                        //SAVE TO  & database
                     } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
