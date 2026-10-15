@@ -20,7 +20,7 @@ namespace AdressBook //major updates needed
         bool file = inputTypes.file; //default to file input
         bool db = inputTypes.db; //default to no database input
 
-        private void frm_save(object sender, FormClosingEventArgs e)
+        private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
         {
 
         }
@@ -39,12 +39,6 @@ namespace AdressBook //major updates needed
 
         } //when form loads
         int ind = 0; //index for the current contact
-         
-
-        private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
-        {
-
-        }
 
         private void clear()
         {
