@@ -233,6 +233,7 @@ namespace AdressBook //major updates needed
         private void btn_op_Click(object sender, EventArgs e)
         {
             Program.contacts.Clear(); //clear the list of contacts
+            dgv_contacts.Rows.Clear(); //clear the table
             dataImport.AccessData(true, false);
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
