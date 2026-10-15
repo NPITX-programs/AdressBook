@@ -400,7 +400,6 @@
             this.Name = "frm_addressForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primary Form";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_save);
             this.Load += new System.EventHandler(this.frm_addressForm_Load);
             this.Resize += new System.EventHandler(this.frm_addressForm_reSize);
             this.menuStrip1.ResumeLayout(false);
