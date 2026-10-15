@@ -22,10 +22,9 @@ namespace AdressBook //major updates needed
 
         private void frm_save(object sender, FormClosingEventArgs e)
         {
-            if(autoSave == true)
+            if (autoSave == true)
             {
                 dataImport.Write();
-            } else
             }
         }
 
