@@ -12,23 +12,23 @@ namespace AdressBook //major updates needed
             InitializeComponent();
         }
 
-
-
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
         bool autoSave = true; //default auto-save
         int distFromEdge = 0;
+        bool file = inputTypes.file; //default to file input
+        bool db = inputTypes.db; //default to no database input
 
         private void readInput(bool file =true, bool database = false)
         {
-            dataImport.AccessData(true, false);
+            dataImport.AccessData(file, db);
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
         } //read the input from the file and generate the list
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            readInput(true,false); //read the input from the file and generate the list
+            readInput(file,db); //read the input from the file and generate the list
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
 
             int tblEdge = this.dgv_contacts.Width; //get the current width of the table
@@ -236,8 +236,9 @@ namespace AdressBook //major updates needed
 
         private void btn_op_Click(object sender, EventArgs e)
         {
+            dgv_contacts.Rows.Clear(); //clear the table
             Program.contacts.Clear(); //clear the list
-            readInput(true,false); //read the input from the file and re-generate the list
+            readInput(file,db); //read the input from the file and re-generate the list
         } //refresh table
         private Contact selectContact(int index)
         {
