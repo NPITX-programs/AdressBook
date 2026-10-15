@@ -26,8 +26,6 @@ namespace AdressBook //major updates needed
             {
                 dataImport.Write();
             } else
-            {
-                MessageBox sq = new MessageBox();
             }
         }
 
