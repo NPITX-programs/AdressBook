@@ -9,13 +9,15 @@
         internal bool buisness; //buisness
         internal string notes; //notes about contact
         internal int index; //the index of the entry
-        internal int exIndex; //the index in the database
     }
+    internal class contConst
+    {
 
-    internal class storageSystem
+    }
+    internal partial class storageSystem
     {
         
-        private Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
+        internal static Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index)
         {
             Contact c = new Contact();
             c.firstname = firstname;
