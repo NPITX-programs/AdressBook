@@ -221,6 +221,7 @@ namespace AdressBook //major updates needed
             {
                 if (valid == true || debug == true)
                 {
+                    
                     newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                     entry = nextEntry(); //get the next entry
                     updateList(entry); //update the list
