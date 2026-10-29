@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdressBook //major updates needed
@@ -15,52 +7,32 @@ namespace AdressBook //major updates needed
     public partial class frm_addressForm : Form
     {
         const bool debug = Program.debug; //this sets the debug system to the global debug variable
-        const char sep = ','; //seperation character
         public frm_addressForm()
         {
             InitializeComponent();
         }
 
-        string filepath = string.Empty; //a placeholder blank path
-
-        private void error(string message, Exception ex = null, bool revealException = false)
-        {
-            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
-
-        } //error system
-
-        private string CreatePath(string root, string path, string name, string extension)
-        {
-            string finalPath = root + path + @"/" + name + "." + extension; //create the final path
-
-            return finalPath; //output said path
-        } //create the final directory path
-
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
-
-        const string name1 = "store"; //name of file
-        const string exten1 = "csv"; //extension of file
-        const int min = 6; //minimum total values in an entry
-                           //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
         int distFromEdge = 0;
-        bool useDB = true;
+        bool file = inputTypes.file; //default to file input
+        bool db = inputTypes.db; //default to no database input
+
+        private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
+        {
+            if (autoSave == true)
+            {
+                dataImport.outputData(file, db);
+            }
+        }
+
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory, "contacts", name1, exten1); //create the name, which is stored outside
-            if (useDB != true)
-            {   
-                readFromFile(); //read from the file, add into list
-            } else
-            {
-                Program.getContacts(); //read from the database, add into list
-            }
+            dataImport.AccessData(file, db);
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
             dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
-            openFileDialog1.InitialDirectory = filepath; //set the initial directory to the base default file path
-            saveFileDialog1.InitialDirectory = filepath; //set the initial directory to the default file path
             toolStrip_autoSave.BackColor = Color.Red; //ensure auto-save color is red (disabled)
 
             int tblEdge = this.dgv_contacts.Width; //get the current width of the table
@@ -68,22 +40,9 @@ namespace AdressBook //major updates needed
             distFromEdge = formWidth - tblEdge; //calculate how far the edge of the form is from the table
             btnAddTex = btn_add.Text; //sets a variable to store the current text for the button. That way, when it's text is changed in-code, when it gets replaced, it's replaced with whatever the button had, not with a hardcoded text. So, edits in the form designer are kept!
 
-
         } //when form loads
         int ind = 0; //index for the current contact
 
-        private void readFromFile()
-        {
-            //read from path: filepath
-            // call other file
-            files.files.read(filepath, sep, min); //call the function used to read files
-        } //call the read from file method (that way I don't have to do file.files first)
-
-        private void WriteToFile()
-        {
-            files.files.Write(filepath, sep); //call the function used to write files
-        } //call the write to file. Same as above comment
-         
         private void clear()
         {
             if (dgv_contacts.CurrentRow != null)
@@ -169,29 +128,6 @@ namespace AdressBook //major updates needed
             return c; //output the new contact
         } //creates the class for the current input
 
-        private void errorIcon(Control input, string error, bool clear = false)
-        {
-            var errorText = error; //change name of variable
-            if (clear) {
-                errorText = ""; //if it's set to clear, change the text so it clears it
-            }
-            errorProvider1.SetError(input, errorText); //display the provider on the "input" control
-        } //create error provider system
-
-        private void store() {
-        if(useDB)
-            {
-
-            } else
-            {
-                if(autoSave)
-                {
-                    WriteToFile(); //write to the file
-                } //if the auto-save is on, save
-            }
-
-        }
-
         private void btn_add_Click(object sender, EventArgs e)
         {
             bool valid = true; //default to valid
@@ -271,7 +207,7 @@ namespace AdressBook //major updates needed
                     edit.buisness = contType; //set the contact type to the new value
                     if (autoSave)
                     {
-                        WriteToFile(); //save
+                        //SAVE TO FILE
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
                     clear(); //clear entry and deselect row
@@ -289,7 +225,11 @@ namespace AdressBook //major updates needed
                     newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                     entry = nextEntry(); //get the next entry
                     updateList(entry); //update the list
-                    store();
+                    if (autoSave)
+                    {
+                        dataImport.outputData(file, db);
+                        //SAVE TO  & database
+                    } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
             } //if it isn't edit
@@ -300,30 +240,14 @@ namespace AdressBook //major updates needed
             Application.Exit(); //close
         } //exit system
 
-        private void btn_svAs_Click(object sender, EventArgs e)
-        {
-            //filter
-            saveFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con"; //allow them to sort for a specific extension (the one utilized by this program), or any file
-
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
-            {
-                filepath = saveFileDialog1.FileName; //gets the file path from the save file dialog
-                WriteToFile(); //write to files
-            }
-        } //save as
-
         private void btn_op_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "All Files (*.*)|*.*|Contact Files (*.con*)|*.con"; //allow them to sort for a specific extension (the one utilized by this program), or any file
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) //if the hit okay
-            {
-                filepath = openFileDialog1.FileName; //gets the file path from the save file dialog
-                    //also sets the filepath for saveing to be the new one, that way if you save the file it is now the one you used save as on, not the in-built default
-                Program.contacts.Clear(); //clear the class
-                readFromFile(); //read from file
-            }
-        } //open
+            Program.contacts.Clear(); //clear the list of contacts
+            dgv_contacts.Rows.Clear(); //clear the table
+            dataImport.AccessData(file, db);
+            generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
+            dgv_contacts.ClearSelection(); //make sure nothing on the table is selected
+        } //clear and re-load information
         private Contact selectContact(int index)
         {
             int leng = Program.contacts.Count; //find the length
@@ -377,8 +301,7 @@ namespace AdressBook //major updates needed
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WriteToFile(); //save the file to the most recent path
-                //when you hit save as, the "path" variable is updated, and write to file utilizes that path variable, so using save as on it changes the save target
+            dataImport.Write();
         } //save
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
@@ -409,5 +332,22 @@ namespace AdressBook //major updates needed
             editInd = 0; //set edit index to 0
             btn_add.Text = btnAddTex; //set button back to original text
         } //clear entry
+
+
+# region unrelated-ish
+        private void error(string message, Exception ex = null, bool revealException = false)
+        {
+            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
+
+        } //error system
+        private void errorIcon(Control input, string error, bool clear = false)
+        {
+            var errorText = error; //change name of variable
+            if (clear) {
+                errorText = ""; //if it's set to clear, change the text so it clears it
+            }
+            errorProvider1.SetError(input, errorText); //display the provider on the "input" control
+        } //create error provider system
+        #endregion
     }
 }
