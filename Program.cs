@@ -23,21 +23,14 @@ namespace AdressBook
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
         #region SQL Code
         //SQL COMMAND DEFINITIONS
-        #region SQL Constants
-        //blueprint on how to create the connection
         static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
 
-        //physical connection to the Database that we can open/close
         static SqlConnection _conn;
 
-        //instructions to the DB that allow for SQL code
         static SqlCommand _cmd;
 
-        //Allows to unpack records when a SELECT query is used
         static SqlDataReader _reader;
 
-        //these are for classes that will be 
-        #endregion //sql constants
 
         //clases
         #region Database Code
