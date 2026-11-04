@@ -23,7 +23,7 @@ namespace AdressBook
     internal partial class inputTypes 
     {
         internal static bool file = true;
-        internal static bool db = false;
+        internal static bool db = true;
     }
     internal static class SQLConstants
     {
