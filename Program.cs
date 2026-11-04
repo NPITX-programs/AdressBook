@@ -25,7 +25,6 @@ namespace AdressBook
         //SQL COMMAND DEFINITIONS
 
 
-        static SqlCommand _cmd;
 
         static SqlDataReader _reader;
 

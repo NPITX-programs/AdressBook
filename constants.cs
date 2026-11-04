@@ -35,6 +35,7 @@ namespace AdressBook
         //physical connection to the Database that we can open/close
         internal static SqlConnection _conn;
         //instructions to the DB that allow for SQL code
+        internal static SqlCommand _cmd;
         //Allows to unpack records when a SELECT query is used
         //these are for classes that will be 
         #endregion //sql constants
