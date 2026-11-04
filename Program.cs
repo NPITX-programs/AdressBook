@@ -24,7 +24,6 @@ namespace AdressBook
         #region SQL Code
         //SQL COMMAND DEFINITIONS
 
-        static SqlConnection _conn;
 
         static SqlCommand _cmd;
 
