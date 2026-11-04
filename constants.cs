@@ -30,6 +30,7 @@ namespace AdressBook
     {
         #region SQL Constants
         //blueprint on how to create the connection
+        internal static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
 
         //physical connection to the Database that we can open/close
         //instructions to the DB that allow for SQL code

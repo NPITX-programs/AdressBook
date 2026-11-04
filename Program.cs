@@ -23,7 +23,6 @@ namespace AdressBook
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
         #region SQL Code
         //SQL COMMAND DEFINITIONS
-        static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
 
         static SqlConnection _conn;
 
