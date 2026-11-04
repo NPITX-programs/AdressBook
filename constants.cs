@@ -37,6 +37,7 @@ namespace AdressBook
         //instructions to the DB that allow for SQL code
         internal static SqlCommand _cmd;
         //Allows to unpack records when a SELECT query is used
+        internal static SqlDataReader _reader;
         //these are for classes that will be 
         #endregion //sql constants
     }

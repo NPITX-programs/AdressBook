@@ -26,7 +26,6 @@ namespace AdressBook
 
 
 
-        static SqlDataReader _reader;
 
 
         //clases
