@@ -46,8 +46,12 @@ namespace AdressBook //major updates needed
                            //const string direct = AppDomain.CurrentDomain.BaseDirectory + "contacts";
         bool autoSave = false; //default auto-save
         int distFromEdge = 0;
+
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
+            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory,"contacts",name1,exten1); //create the name, which is stored outside
+
+            readFromFile(); //read from the file
             filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory, "contacts", name1, exten1); //create the name, which is stored outside
             readFromFile(); //read from the file, add into list
             generateList(); //generate the list, useing the default input of 0 (which will mean that it will run for the whole list. I think.
