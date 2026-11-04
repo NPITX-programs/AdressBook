@@ -29,13 +29,17 @@ namespace AdressBook
     internal static class SQLConstants
     {
         #region SQL Constants
+   //SQL COMMAND DEFINITIONS
+
         //blueprint on how to create the connection
         internal static string conString = "Data Source=nphdc2;Initial Catalog=chatch;Integrated Security=True";
 
         //physical connection to the Database that we can open/close
         internal static SqlConnection _conn;
+
         //instructions to the DB that allow for SQL code
         internal static SqlCommand _cmd;
+
         //Allows to unpack records when a SELECT query is used
         internal static SqlDataReader _reader;
         #endregion //sql constants
