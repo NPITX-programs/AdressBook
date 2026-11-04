@@ -25,4 +25,8 @@ namespace AdressBook
         internal static bool file = true;
         internal static bool db = false;
     }
+    internal static class SQLConstants
+    {
+
+    }
 }
