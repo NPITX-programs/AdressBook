@@ -32,9 +32,12 @@ namespace AdressBook
         //blueprint on how to create the connection
 
         //physical connection to the Database that we can open/close
+
         //instructions to the DB that allow for SQL code
+
         //Allows to unpack records when a SELECT query is used
         //these are for classes that will be 
+
         #endregion //sql constants
     }
 }
