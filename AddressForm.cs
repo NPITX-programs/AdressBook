@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace AdressBook //major updates needed
+namespace AdressBook
 {
     public partial class frm_addressForm : Form
     {
