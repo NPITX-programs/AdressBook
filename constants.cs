@@ -29,6 +29,9 @@ namespace AdressBook
     internal static class SQLConstants
     {
         #region SQL Constants
+        //SQL COMMAND DEFINITIONS
+
+
         //blueprint on how to create the connection
 
         //physical connection to the Database that we can open/close
