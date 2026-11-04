@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Windows.Shapes;
 
 namespace AdressBook
 {
@@ -113,10 +116,7 @@ namespace AdressBook
         #endregion File
 
         #region SQL
-        internal static void readDB()
-        {
-            Program.
-        }
+
         #endregion
 
         #region import
@@ -195,7 +195,7 @@ namespace AdressBook
             }
             if (database)
             {
-                dataImport.readDB();
+                //var values = dataImport.readDB();
                 //fullInput.AddRange(values);
                 //location for code
             }
