@@ -116,7 +116,10 @@ namespace AdressBook
         #endregion File
 
         #region SQL
-
+        internal static void readDB()
+        {
+            Program.
+        }
         #endregion
 
         #region import
@@ -195,7 +198,7 @@ namespace AdressBook
             }
             if (database)
             {
-                //var values = dataImport.readDB();
+                dataImport.readDB();
                 //fullInput.AddRange(values);
                 //location for code
             }
