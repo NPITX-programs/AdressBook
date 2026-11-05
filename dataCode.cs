@@ -136,9 +136,11 @@ namespace AdressBook
         {
 
         }
-    } //the code for files
+    } //the code for accessing files
 
-    /* internal static class sqlServer
+    internal static class sqlServer
+        {
+
         }
         #endregion
         #region export
