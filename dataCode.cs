@@ -141,7 +141,7 @@ namespace AdressBook
     internal static class sqlServer
         {
 
-        }
+        } //the code for useing the SQL server?
         #endregion
         #region export
         internal static void outputData(bool file = true, bool db = false)
