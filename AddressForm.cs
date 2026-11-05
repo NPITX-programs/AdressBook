@@ -26,13 +26,11 @@ namespace AdressBook
         bool autoSave = false; //default auto-save
         int distFromEdge = 0;
         bool useDB = true;
-        private void frm_addressForm_Load(object sender, EventArgs e)
         bool file = inputTypes.file; //default to file input
         bool db = inputTypes.db; //default to no database input
 
         private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
         {
-            filepath = CreatePath(AppDomain.CurrentDomain.BaseDirectory, "contacts", name1, exten1); //create the name, which is stored outside
             if (useDB != true)
             {   
                 readFromFile(); //read from the file, add into list
@@ -63,12 +61,12 @@ namespace AdressBook
         {
             //read from path: filepath
             // call other file
-            files.files.read(filepath, sep, min); //call the function used to read files
+            //files.files.read(filepath, sep, min); //call the function used to read files
         } //call the read from file method (that way I don't have to do file.files first)
 
         private void WriteToFile()
         {
-            files.files.Write(filepath, sep); //call the function used to write files
+           // files.files.Write(filepath, sep); //call the function used to write files
         } //call the write to file. Same as above comment
          
         private void clear()
@@ -155,15 +153,6 @@ namespace AdressBook
             Program.contacts.Add(c); //add to list
             return c; //output the new contact
         } //creates the class for the current input
-
-        private void errorIcon(Control input, string error, bool clear = false)
-        {
-            var errorText = error; //change name of variable
-            if (clear) {
-                errorText = ""; //if it's set to clear, change the text so it clears it
-            }
-            errorProvider1.SetError(input, errorText); //display the provider on the "input" control
-        } //create error provider system
 
         private void store() {
         if(useDB)
