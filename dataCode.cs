@@ -172,12 +172,10 @@ namespace AdressBook
         }
         internal static Contact convertToContact(dataInput toFormat)
         {
-            var formatEmail = toFormat.email;
             var formatPhone = toFormat.phone;
             var formatBuis = toFormat.buisness;
             var formatNotes = toFormat.notes;
             var formatIndex = toFormat.index;
-            string conEmail = formatEmail.ToString();
             string conPhone = formatPhone.ToString();
             bool conType = Convert.ToBoolean(formatBuis);
             string conNotes = formatNotes.ToString();
@@ -185,8 +183,10 @@ namespace AdressBook
             return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
             var formatFirstName = toFormat.firstname; //get firstname
             var formatLastName = toFormat.lastname; //get last name
+            var formatEmail = toFormat.email; //get e-mail
             string conFirName = formatFirstName.ToString(); //ensure name string
             string conLaName = formatLastName.ToString(); //ensure name string
+            string conEmail = formatEmail.ToString(); //ensure email string
             
         } //the unformated thing to convert into the contact
 
