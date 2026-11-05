@@ -114,11 +114,32 @@ namespace AdressBook
         #endregion File
 
         #region SQL
+
         #endregion
+
+        #region import
+        internal static void AccessData(bool file = true, bool db = false)
+        {
+            var dI = manipulateData.input(file, db);
+            dI.ForEach(d =>
+            {
+                var con = manipulateData.convertToContact(d);
+                if (con != null) {
+                    Program.contacts.Add(con);
+                } 
+                else { 
+                    //some sort of error
+                }
+            }
+            );
+
+
         }
     } //the code for files
 
     /* internal static class sqlServer
+        }
+        #endregion
         #region export
         internal static void outputData(bool file = true, bool db = false)
         {
