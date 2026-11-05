@@ -46,7 +46,7 @@ namespace AdressBook
                 }
                 catch (Exception ex)
                 {
-                    AdressBook.coreCommands.error(Program.preMadeErrorMsg, ex, true); //show error
+                    AdressBook.coreCommands.error(constants.preMadeErrorMsg, ex, true); //show error
                 }
             }
             else
@@ -108,9 +108,13 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
+
             return results;
         }
         #endregion File
+
+        #region SQL
+        #endregion
         }
     } //the code for files
 
