@@ -384,6 +384,8 @@ namespace AdressBook
             editInd = 0; //set edit index to 0
             btn_add.Text = btnAddTex; //set button back to original text
         } //clear entry
+
+
 # region unrelated-ish
         private void error(string message, Exception ex = null, bool revealException = false)
         {
