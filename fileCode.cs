@@ -1,15 +1,30 @@
-﻿
 using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using System;
 
 namespace AdressBook
 {
-    internal static class files
+    internal class dataInput
     {
-        internal static void Write(string filepath, char sep) 
+        internal dynamic firstname; //first name
+        internal dynamic lastname; //last name
+        internal dynamic email; //e-mail address
+        internal dynamic phone; //phone number
+        internal dynamic buisness; //buisness
+        internal dynamic notes; //notes about contact
+        internal dynamic index; //the index of the entry
+    }
+    internal partial class dataImport
+    {
+        #region File
+
+        internal static void Write(string filepath = null, char sep = ',')
         {
+            if (filepath == null) {
+                filepath = constants.path(); 
+            }
             bool status = File.Exists(filepath); //check if the file exists
             if (status || Program.debug)
             {
@@ -40,14 +55,20 @@ namespace AdressBook
             }
         } //the write function
 
-        internal static void read(string path, char sep, int min) //the read function
+        internal static List<dataInput> readFile(string filePath = null, char sep = ',',int min = 7)
         {
-            bool status = File.Exists(path); //check if the file exists
+            if (filePath == null)
+            {
+                filePath = constants.path();
+            }
+            bool status = File.Exists(filePath); //check if the file exists
+
+            List<dataInput> results = new List<dataInput>();
             if (status || Program.debug) //check if there
             {
                 try
                 {
-                    using (StreamReader sr = new StreamReader(path)) //make stringreader
+                    using (StreamReader sr = new StreamReader(filePath)) //make stringreader
                     {
                         //csv - comma seperated values
                         //firstname-lastname-email-phone-buisness-notes
@@ -55,23 +76,22 @@ namespace AdressBook
                         {
                             string contact = sr.ReadLine(); //gets the next line of text from the file
                             var cont = contact.Split(sep); //splits it by the seperator
+                            dataInput dI = new dataInput();
                             if (cont.Length >= min)
                             {
-                                Contact c = new Contact //make new constact
-                                {
-                                    firstname = cont[0], //put the realevent input into the releavent field
-                                    lastname = cont[1], //same
-                                    phone = cont[2], //same
-                                    email = cont[3], //same
-                                    buisness = Convert.ToBoolean(cont[4]), //same
-                                    notes = cont[5], //same
-                                    index = Convert.ToInt32(cont[6]) - 1 //more of the same             
-                                };
-                                Program.contacts.Add(c); //add to list
+                                dI.firstname = cont[0];
+                                dI.lastname = cont[1];
+                                dI.email = cont[2];
+                                dI.phone = cont[3];
+                                dI.buisness = cont[4];
+                                dI.notes = cont[5];
+                                dI.index = cont[6];
+                                //necessary conversions:
+                                    //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
+                                    results.Add(dI);
                             }
                             else
                             {
-                             
                                 AdressBook.coreCommands.error("error: below Max Length");
                             }
                         }
@@ -88,6 +108,9 @@ namespace AdressBook
                 MessageBox.Show("file not found"); //show error
 
             }
+            return results;
+        }
+        #endregion File
         }
     } //the code for files
 
