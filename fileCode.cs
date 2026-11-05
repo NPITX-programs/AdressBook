@@ -115,11 +115,66 @@ namespace AdressBook
     } //the code for files
 
     /* internal static class sqlServer
+        #region export
+        internal static void outputData(bool file = true, bool db = false)
+        {
+            outputData(file, db);
+            //error
+        }
+        #endregion
+    } //the code for fileCode
+    internal static class manipulateData
     {
         //name of table: Contacts
-        internal static void getContacts()
+        internal static List<dataInput> input(bool file = true, bool database = false)
         {
-
+            List<dataInput> fullInput = new List<dataInput>();
+            if (file)
+            {
+                var values = (dataImport.readFile(constants.path(), constants.seperationChar, constants.min));
+                fullInput.AddRange(values);
+            } else
+            if (database)
+            {
+                //var values = dataImport.readDB();
+                //fullInput.AddRange(values);
+                //location for code
+            }
+            return fullInput;
         }
-    } */
+        internal static Contact convertToContact(dataInput toFormat)
+        {
+            var formatFirstName = toFormat.firstname;
+            var formatLastName = toFormat.lastname;
+            var formatEmail = toFormat.email;
+            var formatPhone = toFormat.phone;
+            var formatBuis = toFormat.buisness;
+            var formatNotes = toFormat.notes;
+            var formatIndex = toFormat.index;
+            string conFirName = formatFirstName.ToString();
+            string conLaName = formatLastName.ToString();
+            string conEmail = formatEmail.ToString();
+            string conPhone = formatPhone.ToString();
+            bool conType = Convert.ToBoolean(formatBuis);
+            string conNotes = formatNotes.ToString();
+            int conIndex = Convert.ToInt32(formatIndex)-1;
+            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
+            
+        } //the unformated thing to convert into the contact
+
+        internal static void output(bool file = true, bool database = false)
+        {
+            if (file)
+            {
+                dataImport.Write();
+            }
+            if (database)
+            {
+                //var values = dataImport.readDB();
+                //fullInput.AddRange(values);
+                //location for code
+            }
+        }
+
+    }
 }
