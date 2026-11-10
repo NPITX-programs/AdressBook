@@ -386,3 +386,7 @@ FodyWeavers.xsd
 *.bkp
 *.dtmp
 /.github/.worktree
+.github/SQL Notes/Editing/Thumbs.db
+.github/SQL Notes/Images/Thumbs.db
+.github/SQL Notes/Remove/Thumbs.db
+.github/SQL Notes/Thumbs.db
