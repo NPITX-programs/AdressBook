@@ -1,8 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net.Mime;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdressBook //major updates needed
+namespace AdressBook
 {
     public partial class frm_addressForm : Form
     {
@@ -17,13 +25,19 @@ namespace AdressBook //major updates needed
         string btnAddTex = string.Empty; //placeholder button text
         bool autoSave = false; //default auto-save
         int distFromEdge = 0;
+        bool useDB = true;
         bool file = inputTypes.file; //default to file input
         bool db = inputTypes.db; //default to no database input
 
         private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
         {
+            if (useDB != true)
+            {   
+                readFromFile(); //read from the file, add into list
+            } else
             if (autoSave == true)
             {
+                Program.getContacts(); //read from the database, add into list
                 dataImport.outputData(file, db);
             }
         }
@@ -43,6 +57,18 @@ namespace AdressBook //major updates needed
         } //when form loads
         int ind = 0; //index for the current contact
 
+        private void readFromFile()
+        {
+            //read from path: filepath
+            // call other file
+            //files.files.read(filepath, sep, min); //call the function used to read files
+        } //call the read from file method (that way I don't have to do file.files first)
+
+        private void WriteToFile()
+        {
+           // files.files.Write(filepath, sep); //call the function used to write files
+        } //call the write to file. Same as above comment
+         
         private void clear()
         {
             if (dgv_contacts.CurrentRow != null)
@@ -128,6 +154,20 @@ namespace AdressBook //major updates needed
             return c; //output the new contact
         } //creates the class for the current input
 
+        private void store() {
+        if(useDB)
+            {
+
+            } else
+            {
+                if(autoSave)
+                {
+                    WriteToFile(); //write to the file
+                } //if the auto-save is on, save
+            }
+
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             bool valid = true; //default to valid
@@ -207,6 +247,7 @@ namespace AdressBook //major updates needed
                     edit.buisness = contType; //set the contact type to the new value
                     if (autoSave)
                     {
+                        WriteToFile(); //save
                         //SAVE TO FILE
                     } //autosave
                     updateList(edit, editMode); //use edit mode, thereby allowing for the current entry
