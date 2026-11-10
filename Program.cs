@@ -42,7 +42,7 @@ namespace AdressBook
         //clases
         #region Database Code
         //name of table: Contacts
-        internal static void getContacts()
+        internal static Contact getContacts()
         {
             string sqlString = "SELECT * FROM Contacts"; //query string
             try
@@ -57,20 +57,19 @@ namespace AdressBook
 
                 while (_reader.Read()) //if it can read, continue
                 {
-                    Contact c = new Contact(); //make contact
-                    c.index = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
-                    c.firstname = _reader.GetString(1); //get the first name, store it in firstname
-                    c.lastname = _reader.GetString(2); //get the last name, st ore it in lastname
-                    c.phone = _reader.GetString(3); //get the phone number, store it in phone number
-                    c.email = _reader.GetString(4); //get the e-mail, store it in e-mail
-                    c.buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
+                    string notes = string.Empty; //make blank notes
+                    int index = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
+                    string firstname = _reader.GetString(1); //get the first name, store it in firstname
+                    string lastname = _reader.GetString(2); //get the last name, st ore it in lastname
+                    string phone = _reader.GetString(3); //get the phone number, store it in phone number
+                    string email = _reader.GetString(4); //get the e-mail, store it in e-mail
+                    bool buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
                     if(_reader.GetValue(6) != DBNull.Value) //check for notes
                     {
-                        c.notes = _reader.GetString(6); //if notes, put notes in notes
-                    } else
-                    {
-                        c.notes = string.Empty; //if no notes, put empty string in notes
+                        notes = _reader.GetString(6); //if notes, put notes in place of empty input
                     }
+
+                    storageSystem.newContact(notes, firstname, lastname,phone, email, buisness, index);
 
                     contacts.Add(c); //add the class into the list
                 }
