@@ -44,6 +44,7 @@ namespace AdressBook
         //name of table: Contacts
         internal static List<dataInput> getContacts()
         {
+            List<dataInput> results = new List<dataInput>();
             string sqlString = "SELECT * FROM Contacts"; //query string
             try
             {
@@ -57,18 +58,22 @@ namespace AdressBook
 
                 while (_reader.Read()) //if it can read, continue
                 {
-                    string notes = string.Empty; //make blank notes
-                    int index = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
-                    string firstname = _reader.GetString(1); //get the first name, store it in firstname
-                    string lastname = _reader.GetString(2); //get the last name, st ore it in lastname
-                    string phone = _reader.GetString(3); //get the phone number, store it in phone number
-                    string email = _reader.GetString(4); //get the e-mail, store it in e-mail
-                    bool buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
+                    dataInput c = new dataInput(); //make contact
+                    c.index = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
+                    c.firstname = _reader.GetString(1); //get the first name, store it in firstname
+                    c.lastname = _reader.GetString(2); //get the last name, st ore it in lastname
+                    c.phone = _reader.GetString(3); //get the phone number, store it in phone number
+                    c.email = _reader.GetString(4); //get the e-mail, store it in e-mail
+                    c.buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
                     if(_reader.GetValue(6) != DBNull.Value) //check for notes
                     {
-                        notes = _reader.GetString(6); //if notes, put notes in place of empty input
+                        c.notes = _reader.GetString(6); //if notes, put notes in notes
+                    } else
+                    {
+                        c.notes = string.Empty; //if no notes, put empty string in notes
                     }
-                    
+
+                    results.Add(c); //add the class into the list
                 }
                 _conn.Close(); //close the connection for security
             }
@@ -81,6 +86,7 @@ namespace AdressBook
                 }
             }
             
+            return results;
         } //get contacts
 
         internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes) //add contents

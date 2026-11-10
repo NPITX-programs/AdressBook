@@ -114,10 +114,7 @@ namespace AdressBook
         #endregion File
 
         #region SQL
-        internal static List<dataImport> readDatabase()
-        {
-            new
-        }
+
         #endregion
 
         #region import
