@@ -42,7 +42,7 @@ namespace AdressBook
         //clases
         #region Database Code
         //name of table: Contacts
-        internal static void getContacts()
+        internal static List<dataInput> getContacts()
         {
             string sqlString = "SELECT * FROM Contacts"; //query string
             try
