@@ -69,9 +69,9 @@ namespace AdressBook
                         notes = _reader.GetString(6); //if notes, put notes in place of empty input
                     }
 
-                    storageSystem.newContact(notes, firstname, lastname,phone, email, buisness, index);
+                    return storageSystem.newContact(notes, firstname, lastname,phone,buisness,notes,index);
 
-                    contacts.Add(c); //add the class into the list
+                    
                 }
                 _conn.Close(); //close the connection for security
             }
