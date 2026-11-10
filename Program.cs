@@ -42,7 +42,7 @@ namespace AdressBook
         //clases
         #region Database Code
         //name of table: Contacts
-        internal static Contact getContacts()
+        internal static List<dataInput> getContacts()
         {
             string sqlString = "SELECT * FROM Contacts"; //query string
             try
@@ -68,9 +68,6 @@ namespace AdressBook
                     {
                         notes = _reader.GetString(6); //if notes, put notes in place of empty input
                     }
-
-                    return storageSystem.newContact(notes, firstname, lastname,phone,buisness,notes,index);
-
                     
                 }
                 _conn.Close(); //close the connection for security
