@@ -386,3 +386,6 @@ FodyWeavers.xsd
 /.transfer
 *.bkp
 *.dtmp
+
+/.github/SQL Notes/*.db
+/.github/SQL Notes/Images/*.db
