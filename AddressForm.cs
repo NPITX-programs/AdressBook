@@ -178,6 +178,20 @@ namespace AdressBook //major updates needed
             errorProvider1.SetError(input, errorText); //display the provider on the "input" control
         } //create error provider system
 
+        private void store() {
+        if(useDB)
+            {
+
+            } else
+            {
+                if(autoSave)
+                {
+                    WriteToFile(); //write to the file
+                } //if the auto-save is on, save
+            }
+
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             bool valid = true; //default to valid
@@ -271,13 +285,11 @@ namespace AdressBook //major updates needed
             {
                 if (valid == true || debug == true)
                 {
+                    
                     newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                     entry = nextEntry(); //get the next entry
                     updateList(entry); //update the list
-                    if (autoSave)
-                    {
-                        WriteToFile(); //write to the file
-                    } //if the auto-save is on, save
+                    store();
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
             } //if it isn't edit
