@@ -61,19 +61,30 @@ namespace AdressBook.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tests,test,1,test,True,test,1
-        ///testing,test2,     1,test,False,test,2
-        ///test,test, 2,test,True,test,3
-        ///tests,testing,,     11,True,1,4
-        ///w,test,  12   124,test,False,testasae,5
-        ///t,e,    1,s,False,tests,6
-        ///hi,test,test,      1,False,test,7
-        ///tests,h,test,      1,True,test,8
-        ///tests ,h,      1,      11,True,test,9
-        ///1,2,         4,3,False,5,10
-        ///t,e,    1,        1,False,tests,11
-        ///charlie,hatch,1234567891,test,True,this is a largeer scale test,12
-        ///test,test,    12,large,True,this is a very large scale test and I do [rest of string was truncated]&quot;;.
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] adressClassDiagram {
+            get {
+                object obj = ResourceManager.GetObject("adressClassDiagram", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tests,test,test,1,True,test,1
+        ///testi,test2,,     1,False,test,21
+        ///test,test,test, 2,True,test,31
+        ///tests,testing,     11,,True,1,41
+        ///w,test,test,  12   124,False,testasae,51
+        ///t,e,s,    1,False,tests,61
+        ///hi,test,      1,test,False,test,71
+        ///tests,h,      1,test,True,test,81
+        ///tests ,h,      11,      1,True,test,91
+        ///1,2,3,         4,False,5,101
+        ///t,e,        1,    1,False,tests,111
+        ///charlie,hatch,test,1234567891,True,this is a largeer scale test,121
+        ///tests,test,1, 1,True,test,1
+        ///testing,test2,     1,test,False,te [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string store {
             get {
