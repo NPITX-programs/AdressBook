@@ -386,4 +386,6 @@ FodyWeavers.xsd
 *.bkp
 *.dtmp
 /.github/.worktree
-/.github/*.db
+
+/.github/SQL Notes/*.db
+/.github/SQL Notes/Images/*.db
