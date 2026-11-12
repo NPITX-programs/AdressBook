@@ -42,8 +42,9 @@ namespace AdressBook
         //clases
         #region Database Code
         //name of table: Contacts
-        internal static void getContacts()
+        internal static List<dataInput> getContacts()
         {
+            List<dataInput> results = new List<dataInput>();
             string sqlString = "SELECT * FROM Contacts"; //query string
             try
             {
@@ -57,7 +58,7 @@ namespace AdressBook
 
                 while (_reader.Read()) //if it can read, continue
                 {
-                    Contact c = new Contact(); //make contact
+                    dataInput c = new dataInput(); //make contact
                     c.index = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
                     c.firstname = _reader.GetString(1); //get the first name, store it in firstname
                     c.lastname = _reader.GetString(2); //get the last name, st ore it in lastname
@@ -72,7 +73,7 @@ namespace AdressBook
                         c.notes = string.Empty; //if no notes, put empty string in notes
                     }
 
-                    contacts.Add(c); //add the class into the list
+                    results.Add(c); //add the class into the list
                 }
                 _conn.Close(); //close the connection for security
             }
@@ -85,6 +86,7 @@ namespace AdressBook
                 }
             }
             
+            return results;
         } //get contacts
 
         internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes) //add contents
