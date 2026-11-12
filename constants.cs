@@ -20,7 +20,7 @@ namespace AdressBook
         } //the final path to the file
         internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
     }
-    internal partial class inputTypes 
+    internal partial class inputTypes
     {
         internal static bool file = true;
         internal static bool db = false;
@@ -28,11 +28,19 @@ namespace AdressBook
 
     internal partial class appSettings
     {
-        bool debugValue = true;
-        bool debugDefault = true;
-        internal static bool debug(bool input = debugDefault)
+        internal static bool debugValue = true;
+        internal static void toggleDebug()
         {
-            Properties.Settings.Default.Debug.Equals("true");
+            bool mode = Properties.Settings.Default.Debug.Equals("true");
+            if (mode)
+            {
+                mode = false;
+            } else
+            { 
+                mode = true;
+            }
+            Properties.Settings.Default.Debug = mode;
+            debugValue = mode;
         }
     }
 }
