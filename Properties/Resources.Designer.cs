@@ -71,6 +71,16 @@ namespace AdressBook.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] config {
+            get {
+                object obj = ResourceManager.GetObject("config", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to tests,test,test,1,True,test,1
         ///testi,test2,,     1,False,test,21
         ///test,test,test, 2,True,test,31

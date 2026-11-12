@@ -121,6 +121,9 @@
   <data name="adressClassDiagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\adressClassDiagram.cd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\.github\devSettings\config.vsconfig;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="store" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\debug\contacts\store.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
   </data>
