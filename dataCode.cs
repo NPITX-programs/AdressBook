@@ -48,12 +48,12 @@ namespace AdressBook
                 }
                 catch (Exception ex)
                 {
-                    AdressBook.coreCommands.error(constants.preMadeErrorMsg, ex, true); //show error
+                    coreCommands.error(constants.preMadeErrorMsg, ex, true); //show error
                 }
             }
             else
             {
-                AdressBook.coreCommands.error("File Not Found"); //show error
+                coreCommands.error("File Not Found"); //show error
             }
         } //the write function
 
@@ -94,7 +94,7 @@ namespace AdressBook
                             }
                             else
                             {
-                                AdressBook.coreCommands.error("error: below Max Length");
+                                coreCommands.error("error: below Max Length");
                             }
                         }
                     }
