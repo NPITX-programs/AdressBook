@@ -25,4 +25,14 @@ namespace AdressBook
         internal static bool file = true;
         internal static bool db = false;
     }
+
+    internal partial class appSettings
+    {
+        bool debugValue = true;
+        bool debugDefault = true;
+        internal static bool debug(bool input = debugDefault)
+        {
+            Properties.Settings.Default.Debug.Equals("true");
+        }
+    }
 }
