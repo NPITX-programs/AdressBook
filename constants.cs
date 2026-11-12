@@ -28,7 +28,7 @@ namespace AdressBook
 
     internal partial class appSettings
     {
-        internal static bool debugValue = true;
+        internal static bool debug = true;
         internal static void toggleDebug()
         {
             bool mode = Properties.Settings.Default.Debug.Equals("true");
@@ -40,7 +40,7 @@ namespace AdressBook
                 mode = true;
             }
             Properties.Settings.Default.Debug = mode;
-            debugValue = mode;
+            debug = mode;
         }
     }
 }

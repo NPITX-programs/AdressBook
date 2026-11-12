@@ -348,5 +348,11 @@ namespace AdressBook //major updates needed
             errorProvider1.SetError(input, errorText); //display the provider on the "input" control
         } //create error provider system
         #endregion
+
+        private void debugToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            appSettings.toggleDebug();
+            txt_contNote.Text = appSettings.debug.ToString();
+        }
     }
 }
