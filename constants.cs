@@ -24,5 +24,6 @@ namespace AdressBook
     {
         internal static bool file = true;
         internal static bool db = true;
+        internal const bool debug = true;
     }
 }
