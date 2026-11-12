@@ -23,7 +23,10 @@ namespace AdressBook
     {
         internal static void error(string message = constants.preMadeErrorMsg, Exception ex = null, bool revealException = false)
         {
-            string msg = message; //what message to display
+            string msg = message; //what message to display (if left blank, defaults to the pre-made message.)
+            if (msg == string.Empty) { 
+                msg = constants.preMadeErrorMsg;
+                } //if an empty string is passed, premade error message)
             if (revealException) //put the toggle
             {
                 msg = msg + ": " + ex.Message; //the message
