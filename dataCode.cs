@@ -114,7 +114,12 @@ namespace AdressBook
         #endregion File
 
         #region SQL
-
+        internal static List<dataInput> readDB()
+        {
+            var results = new List<dataInput>();
+            results = Program.getContacts();
+            return results;
+        }
         #endregion
 
         #region import
