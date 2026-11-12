@@ -39,7 +39,6 @@ namespace AdressBook
     {
         internal static void initial()
         {
-
         }
     }
 }
