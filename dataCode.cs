@@ -25,7 +25,7 @@ namespace AdressBook
                 filepath = constants.path(); 
             }
             bool status = File.Exists(filepath); //check if the file exists
-            if (status || Program.debug)
+            if (status || settings.debug)
             {
                 try
                 {
@@ -63,7 +63,7 @@ namespace AdressBook
             bool status = File.Exists(filePath); //check if the file exists
 
             List<dataInput> results = new List<dataInput>();
-            if (status || Program.debug) //check if there
+            if (status || settings.debug) //check if there
             {
                 try
                 {
