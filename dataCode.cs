@@ -1,3 +1,4 @@
+using System.Diagnostics;
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -113,7 +114,12 @@ namespace AdressBook
         #endregion File
 
         #region SQL
-
+        internal static List<dataInput> readDB()
+        {
+            var results = new List<dataInput>();
+            results = Program.getContacts();
+            return results;
+        }
         #endregion
 
         #region import
@@ -135,8 +141,12 @@ namespace AdressBook
         {
 
         }
+    } //the code for accessing files
 
-        }
+    internal static class sqlServer
+        {
+
+        } //the code for useing the SQL server?
         #endregion
         #region export
         internal static void outputData(bool file = true, bool db = false)
@@ -148,6 +158,7 @@ namespace AdressBook
     } //the code for fileCode
     internal static class manipulateData
     {
+        //name of table: Contacts
         internal static List<dataInput> input(bool file = true, bool database = false)
         {
             List<dataInput> fullInput = new List<dataInput>();
@@ -158,29 +169,29 @@ namespace AdressBook
             } else
             if (database)
             {
-                //var values = dataImport.readDB();
-                //fullInput.AddRange(values);
+                var values = dataImport.readDB();
+                fullInput.AddRange(values);
                 //location for code
             }
             return fullInput;
         }
         internal static Contact convertToContact(dataInput toFormat)
         {
-            var formatFirstName = toFormat.firstname;
-            var formatLastName = toFormat.lastname;
-            var formatEmail = toFormat.email;
-            var formatPhone = toFormat.phone;
-            var formatBuis = toFormat.buisness;
-            var formatNotes = toFormat.notes;
-            var formatIndex = toFormat.index;
-            string conFirName = formatFirstName.ToString();
-            string conLaName = formatLastName.ToString();
-            string conEmail = formatEmail.ToString();
-            string conPhone = formatPhone.ToString();
-            bool conType = Convert.ToBoolean(formatBuis);
-            string conNotes = formatNotes.ToString();
-            int conIndex = Convert.ToInt32(formatIndex)-1;
-            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
+            var formatFirstName = toFormat.firstname; //get firstname
+            var formatLastName = toFormat.lastname; //get last name
+            var formatEmail = toFormat.email; //get e-mail
+            var formatPhone = toFormat.phone; //get phone
+            var formatBuis = toFormat.buisness; //get buisness
+            var formatNotes = toFormat.notes; //get notes
+            var formatIndex = toFormat.index; //get index
+            string conFirName = formatFirstName.ToString(); //ensure name string
+            string conLaName = formatLastName.ToString(); //ensure name string
+            string conEmail = formatEmail.ToString(); //ensure email string
+            string conPhone = formatPhone.ToString(); //ensure phone string
+            bool conType = Convert.ToBoolean(formatBuis); //convert buisness to bool
+            string conNotes = formatNotes.ToString(); //ensure notes string
+            int conIndex = Convert.ToInt32(formatIndex)-1; //convert and format index
+            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex); //turn into new contact
             
         } //the unformated thing to convert into the contact
 
