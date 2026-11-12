@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using System.Windows.Shapes;
 
 namespace AdressBook
 {
@@ -116,6 +113,7 @@ namespace AdressBook
         #endregion File
 
         #region SQL
+
         #endregion
 
         #region import
