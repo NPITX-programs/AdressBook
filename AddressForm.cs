@@ -15,10 +15,18 @@ namespace AdressBook //major updates needed
         int editInd = 0; //the index being edited
         bool editMode = false; //curent state of edit mode
         string btnAddTex = string.Empty; //placeholder button text
-        bool autoSave = true; //default auto-save
+        bool autoSave = false; //default auto-save
         int distFromEdge = 0;
         bool file = inputTypes.file; //default to file input
         bool db = inputTypes.db; //default to no database input
+
+        private void frm_addressForm_Closeing(object sender, FormClosingEventArgs e)
+        {
+            if (autoSave == true)
+            {
+                dataImport.outputData(file, db);
+            }
+        }
 
         private void frm_addressForm_Load(object sender, EventArgs e)
         {
@@ -34,7 +42,7 @@ namespace AdressBook //major updates needed
 
         } //when form loads
         int ind = 0; //index for the current contact
-         
+
         private void clear()
         {
             if (dgv_contacts.CurrentRow != null)
@@ -218,7 +226,8 @@ namespace AdressBook //major updates needed
                     updateList(entry); //update the list
                     if (autoSave)
                     {
-                        //SAVE TO FILE
+                        dataImport.outputData(file, db);
+                        //SAVE TO  & database
                     } //if the auto-save is on, save
                     clear(); //clear inputs and set checkbox to false
                 } //the creation and setting code
@@ -291,7 +300,7 @@ namespace AdressBook //major updates needed
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //SAVE FILE
+            dataImport.Write();
         } //save
 
         private void toolStrip_autoSave_Click(object sender, EventArgs e)
@@ -338,6 +347,6 @@ namespace AdressBook //major updates needed
             }
             errorProvider1.SetError(input, errorText); //display the provider on the "input" control
         } //create error provider system
-#endregion
+        #endregion
     }
 }

@@ -22,8 +22,11 @@ namespace AdressBook
     {
         #region File
 
-        internal static void Write(string filepath, char sep) 
+        internal static void Write(string filepath = null, char sep = ',')
         {
+            if (filepath == null) {
+                filepath = constants.path(); 
+            }
             bool status = File.Exists(filepath); //check if the file exists
             if (status || Program.debug)
             {
@@ -131,6 +134,17 @@ namespace AdressBook
             }
             );
 
+        {
+
+        }
+
+        }
+        #endregion
+        #region export
+        internal static void outputData(bool file = true, bool db = false)
+        {
+            outputData(file, db);
+            //error
         }
         #endregion
     } //the code for fileCode
@@ -170,6 +184,20 @@ namespace AdressBook
             int conIndex = Convert.ToInt32(formatIndex)-1;
             return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex);
             
+        } //the unformated thing to convert into the contact
+
+        internal static void output(bool file = true, bool database = false)
+        {
+            if (file)
+            {
+                dataImport.Write();
+            }
+            if (database)
+            {
+                //var values = dataImport.readDB();
+                //fullInput.AddRange(values);
+                //location for code
+            }
         }
 
     }
