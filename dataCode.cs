@@ -169,8 +169,8 @@ namespace AdressBook
             } else
             if (database)
             {
-                //var values = dataImport.readDB();
-                //fullInput.AddRange(values);
+                var values = dataImport.readDB();
+                fullInput.AddRange(values);
                 //location for code
             }
             return fullInput;
