@@ -386,3 +386,4 @@ FodyWeavers.xsd
 *.bkp
 *.dtmp
 /.github/.worktree
+/.github/*.db
