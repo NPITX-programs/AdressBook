@@ -18,9 +18,7 @@ namespace AdressBook
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_addressForm());
         }
-        internal const bool debug = true; //global var to controll default for debugs
         internal static List<Contact> contacts = new List<Contact>(); //makes a collection that refferences the class that will store information
-        internal const string preMadeErrorMsg = "I'm sorry dave, I'm afraid I can't do that";
         #region SQL Code
         //SQL COMMAND DEFINITIONS
         #region SQL Constants
@@ -182,9 +180,12 @@ namespace AdressBook
     }
     internal static class coreCommands
     {
-        internal static void error(string message, Exception ex = null, bool revealException = false)
+        internal static void error(string message = constants.preMadeErrorMsg, Exception ex = null, bool revealException = false)
         {
-            string msg = message; //what message to display
+            string msg = message; //what message to display (if left blank, defaults to the pre-made message.)
+            if (msg == string.Empty) { 
+                msg = constants.preMadeErrorMsg;
+                } //if an empty string is passed, premade error message)
             if (revealException) //put the toggle
             {
                 msg = msg + ": " + ex.Message; //the message
