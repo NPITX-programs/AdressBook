@@ -23,6 +23,7 @@ obj/
 
 # Mono auto generated files
 mono_crash.*
+# Publish profiles (optional, if environment-specific)
 *.publish.xml
 
 # Build results
@@ -385,7 +386,6 @@ FodyWeavers.xsd
 /.transfer
 *.bkp
 *.dtmp
-/.github/.worktree
 
 /.github/SQL Notes/*.db
 /.github/SQL Notes/Images/*.db
