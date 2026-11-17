@@ -144,7 +144,11 @@ namespace AdressBook
                         Program.contacts.Add(con);
                     } else
                     {
-                        Program.contacts.Remove(con);
+                        int leng = Program.contacts.Count; //get the length of the list
+                        int posVal = leng - 1; //get the index (a.k.a the length minus 1)
+                        var curCont = Program.contacts[posVal]; //get the item at said index, A.K.A. the last item) (curr is for "current")
+                        con.index = curCont.index + 1;
+                        Program.contacts.Add(con);
                     }
 
                 } 
