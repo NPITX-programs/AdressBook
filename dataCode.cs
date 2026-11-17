@@ -184,6 +184,7 @@ namespace AdressBook
             var formatBuis = toFormat.buisness; //get buisness
             var formatNotes = toFormat.notes; //get notes
             var formatIndex = toFormat.index; //get index
+            
             string conFirName = formatFirstName.ToString(); //ensure name string
             string conLaName = formatLastName.ToString(); //ensure name string
             string conEmail = formatEmail.ToString(); //ensure email string
