@@ -9,7 +9,7 @@
         internal bool buisness; //buisness
         internal string notes; //notes about contact
         internal int index; //the index of the entry
-        internal int dbIndex; //the index in the database (0 if not in the database)
+        internal int dbInd; //the index in the database (0 if not in the database)
     }
 
     internal partial class storageSystem
@@ -25,7 +25,7 @@
             c.buisness = buisness;
             c.notes = notes;
             c.index = index;
-            c.dbIndex = dbIndex;
+            c.dbInd = dbIndex;
             return c;
         } //creates the contact
         internal static void contactList(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index) //creates the contact, and adds it to the list.
