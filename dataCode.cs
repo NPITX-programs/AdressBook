@@ -15,6 +15,7 @@ namespace AdressBook
         internal dynamic buisness; //buisness
         internal dynamic notes; //notes about contact
         internal dynamic index; //the index of the entry
+        internal dynamic dbIndex; //the index in the database
     }
     internal partial class dataImport
     {
