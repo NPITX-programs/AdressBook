@@ -64,12 +64,12 @@ namespace AdressBook
                     c.email = _reader.GetString(4); //get the e-mail, store it in e-mail
                     c.buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
                     c.index = _reader.GetInt32(6);
-                    if (_reader.IsDBNull(7)) //check for ID
+                    if (_reader.IsDBNull(6)) //check for ID
                     {
                         c.index = -1;
                     } else
                     {
-                        c.index = _reader.GetInt32(7);
+                        c.index = _reader.GetInt32(6);
                     }
                     if(_reader.GetValue(6) != DBNull.Value) //check for notes
                     {
