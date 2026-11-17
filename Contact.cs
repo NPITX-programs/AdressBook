@@ -15,7 +15,7 @@
     internal partial class storageSystem
     {
         
-        internal static Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index, int dbIndex = -1)
+        internal static Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index = -1, int dbIndex = -1)
         {
             Contact c = new Contact();
             c.firstname = firstname;
