@@ -57,7 +57,7 @@ namespace AdressBook
                 while (_reader.Read()) //if it can read, continue
                 {
                     dataInput c = new dataInput(); //make contact
-                    c.index = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
+                    c.dbIndex = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
                     c.firstname = _reader.GetString(1); //get the first name, store it in firstname
                     c.lastname = _reader.GetString(2); //get the last name, st ore it in lastname
                     c.phone = _reader.GetString(3); //get the phone number, store it in phone number
@@ -69,6 +69,14 @@ namespace AdressBook
                     } else
                     {
                         c.notes = string.Empty; //if no notes, put empty string in notes
+                    }
+                    if (_reader.IsDBNull(7)) //check for ID
+                    {
+                        c.index = -1;
+                    }
+                    else
+                    {
+                        c.index = Convert.ToInt32(_reader.GetValue(7));
                     }
 
                     results.Add(c); //add the class into the list
