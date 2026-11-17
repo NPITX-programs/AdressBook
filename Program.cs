@@ -63,7 +63,6 @@ namespace AdressBook
                     c.phone = _reader.GetString(3); //get the phone number, store it in phone number
                     c.email = _reader.GetString(4); //get the e-mail, store it in e-mail
                     c.buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
-                    c.index = _reader.GetInt32(6);
                     if (_reader.IsDBNull(6)) //check for ID
                     {
                         c.index = -1;
