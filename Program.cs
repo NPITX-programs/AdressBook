@@ -69,7 +69,7 @@ namespace AdressBook
                         c.index = -1;
                     } else
                     {
-                        c.index = _reader.GetInt32(6);
+                        c.index = _reader.GetInt32(7);
                     }
                     if(_reader.GetValue(6) != DBNull.Value) //check for notes
                     {
