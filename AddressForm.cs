@@ -6,7 +6,7 @@ namespace AdressBook
 {
     public partial class frm_addressForm : Form
     {
-        const bool debug = Program.debug; //this sets the debug system to the global debug variable
+        const bool debug = settings.debug; //this sets the debug system to the global debug variable
         public frm_addressForm()
         {
             InitializeComponent();
