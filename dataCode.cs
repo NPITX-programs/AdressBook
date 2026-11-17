@@ -94,11 +94,7 @@ namespace AdressBook
                                 {
                                     dI.dbInd = -1;
                                 }
-                                if (dI.index == -1)
-                                {
-                                    int leng = Program.contacts.Count; //get the length of the list
-                                    prev = leng - 1; //get the "posistion", which is 1 less than the length
-                                }
+                                dI.dbInd = cont[7];
                                 //necessary conversions:
                                     //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
                                     results.Add(dI);
