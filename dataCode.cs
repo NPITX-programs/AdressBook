@@ -200,7 +200,7 @@ namespace AdressBook
             var formatBuis = toFormat.buisness; //get buisness
             var formatNotes = toFormat.notes; //get notes
             var formatIndex = toFormat.index; //get index
-            
+            var fromatDbInd = toFormat.dbInd; //get database index
             string conFirName = formatFirstName.ToString(); //ensure name string
             string conLaName = formatLastName.ToString(); //ensure name string
             string conEmail = formatEmail.ToString(); //ensure email string
@@ -208,7 +208,8 @@ namespace AdressBook
             bool conType = Convert.ToBoolean(formatBuis); //convert buisness to bool
             string conNotes = formatNotes.ToString(); //ensure notes string
             int conIndex = Convert.ToInt32(formatIndex)-1; //convert and format index
-            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex); //turn into new contact
+            int conDb = Convert.ToInt32(fromatDbInd); //convert and format database index
+            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex, conDb); //turn into new contact
             
         } //the unformated thing to convert into the contact
 
