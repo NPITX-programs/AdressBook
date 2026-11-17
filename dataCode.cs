@@ -131,7 +131,14 @@ namespace AdressBook
             {
                 var con = manipulateData.convertToContact(d);
                 if (con != null) {
-                    Program.contacts.Add(con);
+                    if (con.index != -1)
+                    {
+                        Program.contacts.Add(con);
+                    } else
+                    {
+                        Program.contacts.Remove(con);
+                    }
+
                 } 
                 else { 
                     //some sort of error
