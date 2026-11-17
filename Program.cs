@@ -63,19 +63,20 @@ namespace AdressBook
                     c.phone = _reader.GetString(3); //get the phone number, store it in phone number
                     c.email = _reader.GetString(4); //get the e-mail, store it in e-mail
                     c.buisness = _reader.GetBoolean(5); //get if buisness, store in buisness
-                    if (_reader.IsDBNull(6)) //check for ID
-                    {
-                        c.index = -1;
-                    } else
-                    {
-                        c.index = Convert.ToInt32(_reader.GetValue(6));
-                    }
                     if(_reader.GetValue(6) != DBNull.Value) //check for notes
                     {
                         c.notes = _reader.GetString(6); //if notes, put notes in notes
                     } else
                     {
                         c.notes = string.Empty; //if no notes, put empty string in notes
+                    }
+                    if (_reader.IsDBNull(7)) //check for ID
+                    {
+                        c.index = -1;
+                    }
+                    else
+                    {
+                        c.index = Convert.ToInt32(_reader.GetValue(7));
                     }
 
                     results.Add(c); //add the class into the list
