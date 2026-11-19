@@ -189,6 +189,7 @@ namespace AdressBook
         #endregion
     }
     internal static class coreCommands
+
     {
         internal static void error(string message = constants.preMadeErrorMsg, Exception ex = null, bool revealException = false)
         {
