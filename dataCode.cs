@@ -78,7 +78,7 @@ namespace AdressBook
                             string contact = sr.ReadLine(); //gets the next line of text from the file
                             var cont = contact.Split(sep); //splits it by the seperator
                             dataInput dI = new dataInput();
-                            if (cont.Length >= min)
+                            if (cont.Length  min)
                             {
                                 dI.firstname = cont[0];
                                 dI.lastname = cont[1];
@@ -87,7 +87,7 @@ namespace AdressBook
                                 dI.buisness = cont[4];
                                 dI.notes = cont[5];
                                 dI.index = cont[6];
-                                if(cont.Length >= min + 1)
+                                if(cont.Length > min + 1)
                                 {
                                     dI.dbInd = cont[7];
                                 } else
