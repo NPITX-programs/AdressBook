@@ -87,14 +87,13 @@ namespace AdressBook
                                 dI.buisness = cont[4];
                                 dI.notes = cont[5];
                                 dI.index = cont[6];
-                                if(cont.Length >= min + 1)
+                                if(cont.Length == 8)
                                 {
                                     dI.dbInd = cont[7];
                                 } else
                                 {
                                     dI.dbInd = -1;
                                 }
-                                dI.dbInd = cont[7];
                                 //necessary conversions:
                                     //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
                                     results.Add(dI);
