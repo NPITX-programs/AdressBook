@@ -95,7 +95,7 @@ namespace AdressBook
             return results;
         } //get contacts
 
-        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes) //add contents
+        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes, int storageID) //add contents
         {
             int id = 0; //set ID to 0 (that way, if a 0 appears elsewhere, we know something is off)
 
@@ -114,6 +114,7 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@emal", email); //set fourth paramater to input value
                 _cmd.Parameters.AddWithValue("@buisness", buisness); //set fifth paramater to input value
                 _cmd.Parameters.AddWithValue("@notes", notes); //set sixth paramater
+                _cmd.Parameters.AddWithValue("@storageid", storageID); //set seventh paramater
 
                 _conn.Open(); //open connection
 
