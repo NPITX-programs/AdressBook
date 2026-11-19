@@ -1,5 +1,5 @@
-tests,test,test,1,True,test,1
-testi,test2,,     1,False,test,21
+tests,test,test,1,True,test,1,-1
+testi,test2,,     1,False,test,21,-1
 test,test,test, 2,True,test,31
 tests,testing,     11,,True,1,41
 w,test,test,  12   124,False,testasae,51
