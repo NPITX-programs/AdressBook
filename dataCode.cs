@@ -87,7 +87,8 @@ namespace AdressBook
                                 dI.buisness = cont[4];
                                 dI.notes = cont[5];
                                 dI.index = cont[6];
-                                if(cont.Length >= min + 1)
+                                int dbIndex = Convert.ToInt32(cont[7]);
+                                if(dbIndex == -1)
                                 {
                                     dI.dbInd = cont[7];
                                 } else
