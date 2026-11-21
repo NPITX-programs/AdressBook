@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace AdressBook //major updates needed
+namespace AdressBook
 {
     public partial class frm_addressForm : Form
     {
@@ -221,6 +221,7 @@ namespace AdressBook //major updates needed
             {
                 if (valid == true || debug == true)
                 {
+                    
                     newContact = createCont(firstName, lastName, phoNum, eMail, contNote, contType, Program.contacts.Count); //create the contact
                     entry = nextEntry(); //get the next entry
                     updateList(entry); //update the list
@@ -336,7 +337,7 @@ namespace AdressBook //major updates needed
 # region unrelated-ish
         private void error(string message, Exception ex = null, bool revealException = false)
         {
-            AdressBook.coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
+            coreCommands.error(message, ex, revealException); // WARNING: If you provide a boolean, you can controll if it's hidden. If you provide a boolean but no error, well, it won't work righ
 
         } //error system
         private void errorIcon(Control input, string error, bool clear = false)

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using System.Windows.Shapes;
 
 namespace AdressBook
 {
@@ -28,7 +25,7 @@ namespace AdressBook
                 filepath = constants.path(); 
             }
             bool status = File.Exists(filepath); //check if the file exists
-            if (status || Program.debug)
+            if (status || settings.debug)
             {
                 try
                 {
@@ -48,12 +45,12 @@ namespace AdressBook
                 }
                 catch (Exception ex)
                 {
-                    AdressBook.coreCommands.error(constants.preMadeErrorMsg, ex, true); //show error
+                    coreCommands.error(constants.preMadeErrorMsg, ex, true); //show error
                 }
             }
             else
             {
-                AdressBook.coreCommands.error("File Not Found"); //show error
+                coreCommands.error("File Not Found"); //show error
             }
         } //the write function
 
@@ -66,7 +63,7 @@ namespace AdressBook
             bool status = File.Exists(filePath); //check if the file exists
 
             List<dataInput> results = new List<dataInput>();
-            if (status || Program.debug) //check if there
+            if (status || settings.debug) //check if there
             {
                 try
                 {
@@ -94,7 +91,7 @@ namespace AdressBook
                             }
                             else
                             {
-                                AdressBook.coreCommands.error("error: below Max Length");
+                                coreCommands.error("error: below Max Length");
                             }
                         }
                     }
@@ -116,6 +113,7 @@ namespace AdressBook
         #endregion File
 
         #region SQL
+
         #endregion
 
         #region import
