@@ -9,13 +9,13 @@
         internal bool buisness; //buisness
         internal string notes; //notes about contact
         internal int index; //the index of the entry
-        internal int dbIndex; //the index in the database (0 if not in the database)
+        internal int dbInd; //the index in the database (0 if not in the database)
     }
 
     internal partial class storageSystem
     {
         
-        internal static Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index, int dbIndex = -1)
+        internal static Contact newContact(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index, int dbIndex = 0)
         {
             Contact c = new Contact();
             c.firstname = firstname;
@@ -25,10 +25,10 @@
             c.buisness = buisness;
             c.notes = notes;
             c.index = index;
-            c.dbIndex = dbIndex;
+            c.dbInd = dbIndex;
             return c;
         } //creates the contact
-        internal static void contactList(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index) //creates the contact, and adds it to the list.
+        internal static void contactList(string firstname, string lastname, string email, string phone, bool buisness, string notes, int index =  -1) //creates the contact, and adds it to the list.
         {
             Contact con = newContact(firstname, lastname, email, phone, buisness, notes, index);
             Program.contacts.Add(con);

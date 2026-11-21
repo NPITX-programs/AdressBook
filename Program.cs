@@ -57,7 +57,7 @@ namespace AdressBook
                 while (_reader.Read()) //if it can read, continue
                 {
                     dataInput c = new dataInput(); //make contact
-                    c.dbIndex = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
+                    c.dbInd = Convert.ToInt32(_reader.GetValue(0)); //get the first value (which will be the auto-filled index) and store it in index
                     c.firstname = _reader.GetString(1); //get the first name, store it in firstname
                     c.lastname = _reader.GetString(2); //get the last name, st ore it in lastname
                     c.phone = _reader.GetString(3); //get the phone number, store it in phone number
@@ -95,7 +95,7 @@ namespace AdressBook
             return results;
         } //get contacts
 
-        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes) //add contents
+        internal static int addContacts(string firstname, string lastname, string phone, string email,bool buisness, string notes, int storageID) //add contents
         {
             int id = 0; //set ID to 0 (that way, if a 0 appears elsewhere, we know something is off)
 
@@ -114,6 +114,7 @@ namespace AdressBook
                 _cmd.Parameters.AddWithValue("@emal", email); //set fourth paramater to input value
                 _cmd.Parameters.AddWithValue("@buisness", buisness); //set fifth paramater to input value
                 _cmd.Parameters.AddWithValue("@notes", notes); //set sixth paramater
+                _cmd.Parameters.AddWithValue("@storageid", storageID); //set seventh paramater
 
                 _conn.Open(); //open connection
 

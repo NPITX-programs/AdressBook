@@ -15,7 +15,7 @@ namespace AdressBook
         internal dynamic buisness; //buisness
         internal dynamic notes; //notes about contact
         internal dynamic index; //the index of the entry
-        internal dynamic dbIndex; //the index in the database
+        internal dynamic dbInd; //the index in the database
     }
     internal partial class dataImport
     {
@@ -40,7 +40,7 @@ namespace AdressBook
                             string ind = (c.index + 1).ToString();
                             string line = c.firstname + sep + c.lastname + sep +  //first and last name
                                 c.phone + sep + c.email + sep + c.buisness + sep + //contact information
-                                c.notes + sep + ind; //notes
+                                c.notes + sep + ind + c.dbInd; //notes
                             sw.WriteLine(line); //write the information to the line
                         }
                     } //streamwriter
@@ -87,6 +87,13 @@ namespace AdressBook
                                 dI.buisness = cont[4];
                                 dI.notes = cont[5];
                                 dI.index = cont[6];
+                                if(cont.Length == 8)
+                                {
+                                    dI.dbInd = cont[7];
+                                } else
+                                {
+                                    dI.dbInd = -1;
+                                }
                                 //necessary conversions:
                                     //newContact(cont[0], cont[1], cont[2], cont[3], Convert.ToBoolean(cont[4]), cont[5], Convert.ToInt32(cont[6]) - 1);
                                     results.Add(dI);
@@ -131,7 +138,18 @@ namespace AdressBook
             {
                 var con = manipulateData.convertToContact(d);
                 if (con != null) {
-                    Program.contacts.Add(con);
+                    if (con.index != -1)
+                    {
+                        Program.contacts.Add(con);
+                    } else
+                    {
+                        int leng = Program.contacts.Count; //get the length of the list
+                        int posVal = leng - 1; //get the index (a.k.a the length minus 1)
+                        var curCont = Program.contacts[posVal]; //get the item at said index, A.K.A. the last item) (curr is for "current")
+                        con.index = curCont.index + 1;
+                        Program.contacts.Add(con);
+                    }
+
                 } 
                 else { 
                     //some sort of error
@@ -185,6 +203,7 @@ namespace AdressBook
             var formatBuis = toFormat.buisness; //get buisness
             var formatNotes = toFormat.notes; //get notes
             var formatIndex = toFormat.index; //get index
+            var fromatDbInd = toFormat.dbInd; //get database index
             string conFirName = formatFirstName.ToString(); //ensure name string
             string conLaName = formatLastName.ToString(); //ensure name string
             string conEmail = formatEmail.ToString(); //ensure email string
@@ -192,7 +211,8 @@ namespace AdressBook
             bool conType = Convert.ToBoolean(formatBuis); //convert buisness to bool
             string conNotes = formatNotes.ToString(); //ensure notes string
             int conIndex = Convert.ToInt32(formatIndex)-1; //convert and format index
-            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex); //turn into new contact
+            int conDb = Convert.ToInt32(fromatDbInd); //convert and format database index
+            return storageSystem.newContact(conFirName, conLaName, conEmail, conPhone, conType, conNotes, conIndex, conDb); //turn into new contact
             
         } //the unformated thing to convert into the contact
 
